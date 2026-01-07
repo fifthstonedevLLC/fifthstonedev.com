@@ -55,18 +55,32 @@ nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow: visible;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  z-index: 1001;
+}
+
+.logo a {
+  display: block;
+  line-height: 0;
+  cursor: pointer;
 }
 
 .logo img {
-  height: 125px;
+  height: 90px;
   width: auto;
   display: block;
+  transition: opacity 0.3s ease;
+}
+
+.logo a:hover img {
+  opacity: 0.85;
 }
 
 .logo-text {
@@ -1128,6 +1142,14 @@ footer p {
     height: 250px;
   }
 
+  .hero-image {
+    display: none;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+
   .hero-logo {
     font-size: 3rem;
   }
@@ -1182,6 +1204,11 @@ footer p {
 
   .service-card h3 {
     font-size: 1.5rem;
+  }
+
+  /* Developer Photo */
+  .developer-image-placeholder {
+    margin: 0 auto;
   }
 
   /* Developer Highlights */
