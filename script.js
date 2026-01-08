@@ -44,38 +44,51 @@ async function handleFormSubmit(event, modalId) {
   
   // Add metadata
   data.formType = modalId.replace('Modal', '');
-  data.timestamp = new Date().toISOString();
+  data.timestamp = new Date().toLocaleString();
   
   // Disable submit button during submission
   submitButton.disabled = true;
-  submitButton.textContent = 'Submitting...';
+  const originalButtonText = submitButton.textContent;
+  submitButton.textContent = 'Sending...';
   
   try {
-    // ===== GOOGLE SHEETS INTEGRATION =====
-    // Replace YOUR_GOOGLE_APPS_SCRIPT_URL with your actual deployment URL
-    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
+    // ===== EMAILJS CONFIGURATION =====
+    // Sign up at https://www.emailjs.com/
+    // Replace these with your EmailJS credentials:
+    const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';  // e.g., 'service_abc123'
+    const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // e.g., 'template_xyz789'
+    const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY';   // e.g., 'user_123abc456def'
     
-    const response = await fetch(GOOGLE_SCRIPT_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
-    });
+    // Format the email parameters
+    const emailParams = {
+      form_type: getFormTypeName(data.formType),
+      from_name: data.name || 'N/A',
+      from_email: data.email || 'N/A',
+      phone: data.phone || 'N/A',
+      company: data.company || 'N/A',
+      project_type: data['project-type'] || data['automation-type'] || data['consulting-area'] || data.interest || 'N/A',
+      message: data.details || data['current-process'] || data.challenges || data.message || 'N/A',
+      timeline: data.timeline || 'N/A',
+      budget: data.budget || 'N/A',
+      tools: data.tools || 'N/A',
+      website: data.website || 'N/A',
+      goals: data.goals || 'N/A',
+      timestamp: data.timestamp,
+      to_email: 'fifthstonedev@outlook.com'
+    };
     
-    // Note: mode: 'no-cors' means we won't get response data back
-    // The submission will still work, but we can't check response.ok
-    // This is a limitation of Google Apps Script with cross-origin requests
+    // Send email using EmailJS
+    const response = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      emailParams,
+      EMAILJS_PUBLIC_KEY
+    );
     
-    // Log for debugging
-    console.log('Form submitted to Google Sheets:', data);
-    
-    // Simulate brief delay for better UX
-    await new Promise(resolve => setTimeout(resolve, 800));
+    console.log('Email sent successfully:', response);
     
     // Show success message
-    showNotification('Thank you for your request! We\'ll get back to you shortly.', 'success');
+    showNotification('Thank you for your request! We\'ll get back to you within 24 hours.', 'success');
     
     // Reset form and close modal
     form.reset();
@@ -83,12 +96,23 @@ async function handleFormSubmit(event, modalId) {
     
   } catch (error) {
     console.error('Form submission error:', error);
-    showNotification('There was an error submitting your request. Please try again or contact us directly.', 'error');
+    showNotification('There was an error sending your message. Please email us directly at fifthstonedev@outlook.com', 'error');
   } finally {
     // Re-enable submit button
     submitButton.disabled = false;
-    submitButton.textContent = 'Submit Request';
+    submitButton.textContent = originalButtonText;
   }
+}
+
+// Helper function to get readable form type names
+function getFormTypeName(formType) {
+  const names = {
+    'webDev': 'Web Development Request',
+    'automation': 'Process Automation Request',
+    'consulting': 'Strategic Consulting Request',
+    'contact': 'General Contact Form'
+  };
+  return names[formType] || 'Form Submission';
 }
 
 // Notification system
