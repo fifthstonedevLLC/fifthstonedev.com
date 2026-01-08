@@ -406,7 +406,7 @@ nav .container {
 
 .developer-main {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-columns: 0.65fr 1.35fr;
   gap: 4rem;
   align-items: end;
   margin-bottom: 3rem;
@@ -423,8 +423,8 @@ nav .container {
   box-shadow: 0 10px 40px rgba(42, 52, 57, 0.2);
   overflow: hidden;
   width: 100%;
-  max-width: 350px;
-  height: 480px;
+  max-width: 500px;
+  height: 510px;
   margin-bottom: 1.5rem;
 }
 
