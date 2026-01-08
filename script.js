@@ -63,6 +63,25 @@ async function handleFormSubmit(event, modalId) {
     const EMAILJS_PUBLIC_KEY = "euyy_dhHmVC2Mgkv5";
 
     // Format the email parameters
+    // Build message field - combine current-process with additional details for automation form
+    console.log("Form data:", data); // Debug logging
+    let messageContent = "N/A";
+
+    // Check if current-process exists and has content (trim to handle whitespace)
+    const currentProcess = data["current-process"]?.trim();
+    if (currentProcess) {
+      messageContent = currentProcess;
+      const additionalDetails = data.details?.trim();
+      if (additionalDetails) {
+        messageContent += "\n\nAdditional Details:\n" + additionalDetails;
+      }
+    } else {
+      // Fallback for other forms
+      messageContent = data.details || data.challenges || data.message || "N/A";
+    }
+
+    console.log("Final message content:", messageContent); // Debug logging
+
     const emailParams = {
       form_type: getFormTypeName(data.formType),
       from_name: data.name || "N/A",
@@ -75,12 +94,7 @@ async function handleFormSubmit(event, modalId) {
         data["consulting-area"] ||
         data.interest ||
         "N/A",
-      message:
-        data.details ||
-        data["current-process"] ||
-        data.challenges ||
-        data.message ||
-        "N/A",
+      message: messageContent,
       timeline: data.timeline || "N/A",
       budget: data.budget || "N/A",
       tools: data.tools || "N/A",
