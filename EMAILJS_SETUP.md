@@ -75,7 +75,7 @@ Reply to this email to respond directly to {{from_name}}
 
 4. Set **"To Email"** to: `{{to_email}}` (this allows dynamic recipient)
 5. Set **"Reply To"** to: `{{from_email}}` (allows you to reply directly)
-6. Save the template and **copy your Template ID** (e.g., `template_xyz789`)
+6. Save the template and **copy your Template ID** (template_ekk9kgu)
 
 ## Step 4: Get Your Public Key
 
