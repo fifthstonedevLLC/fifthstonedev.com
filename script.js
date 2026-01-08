@@ -1,3 +1,8 @@
+// Initialize EmailJS
+(function () {
+  emailjs.init("euyy_dhHmVC2Mgkv5");
+})();
+
 // Modal functions
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
