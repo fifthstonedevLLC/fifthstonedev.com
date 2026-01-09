@@ -216,7 +216,7 @@ function testFormSubmission() {
         'project-type': 'New Website',
         details: 'This is a test submission',
         timeline: '2-3 months',
-        budget: '$5,000 - $10,000'
+        budget: '$3,000 - $5,000'
       })
     }
   };
@@ -224,7 +224,7 @@ function testFormSubmission() {
   const response = doPost(testData);
   Logger.log(response.getContent());
 }
-S ====================
+// ====================
 // Run these functions to test your setup
 
 function testWebDevForm() {
@@ -240,7 +240,7 @@ function testWebDevForm() {
         'project-type': 'New Website',
         details: 'Looking to build a modern e-commerce website with product catalog.',
         timeline: '2-3 months',
-        budget: '$10,000 - $25,000'
+        budget: '$10,000+'
       })
     }
   };

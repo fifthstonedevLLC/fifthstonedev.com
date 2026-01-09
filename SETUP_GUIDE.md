@@ -161,7 +161,7 @@ Company: Acme Corp
 
 Project Type: New Website
 Timeline: 2-3 months
-Budget: $10,000 - $25,000
+Budget: $5,000 - $10,000
 
 Project Details:
 Looking to build a modern e-commerce website...
