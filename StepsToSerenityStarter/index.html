@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Steps to Serenity Counseling | Professional Mental Health Services
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#1a1a1a",
+              fg: "#f5f5f0",
+              accent: "#c9a227",
+              "accent-light": "#e3c565",
+              "accent-dark": "#a07d1c",
+              muted: "#a8a89a",
+              border: "#2a2520",
+              card: "#222222",
+            },
+            fontFamily: {
+              serif: ["Cormorant Garamond", "serif"],
+              sans: ["Raleway", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.4;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translate(-50%, -50%);
+        }
+        50% {
+          transform: translate(-50%, -60%);
+        }
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 0.6s ease forwards;
+      }
+      .animate-pulse-dot {
+        animation: pulse 2s infinite;
+      }
+      .animate-bounce-pin {
+        animation: bounce 2s infinite;
+      }
+
+      .gold-gradient {
+        background: linear-gradient(
+          135deg,
+          #c9a227 0%,
+          #e3c565 50%,
+          #c9a227 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .gold-shimmer {
+        background: linear-gradient(
+          90deg,
+          #c9a227 0%,
+          #e3c565 25%,
+          #c9a227 50%,
+          #e3c565 75%,
+          #c9a227 100%
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 4s linear infinite;
+      }
+
+      .nav-link.active {
+        background: linear-gradient(
+          90deg,
+          #c9a227 0%,
+          #e3c565 25%,
+          #c9a227 50%,
+          #e3c565 75%,
+          #c9a227 100%
+        );
+        color: #0a0a0a;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: 3px solid #c9a227;
+        outline-offset: 2px;
+        border-color: #c9a227;
+      }
+
+      button:focus,
+      a:focus {
+        outline: 3px solid #c9a227;
+        outline-offset: 2px;
+      }
+
+      .btn-gold {
+        background: linear-gradient(
+          135deg,
+          #c9a227 0%,
+          #e3c565 50%,
+          #c9a227 100%
+        );
+        color: #0a0a0a;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-gold::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn-gold:hover::before {
+        left: 100%;
+      }
+
+      .card-glow:hover {
+        box-shadow: 0 0 30px rgba(201, 162, 39, 0.15);
+      }
+
+      /* Decorative flower of life pattern */
+      .flower-pattern {
+        opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='30' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='67' cy='40' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='67' cy='60' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='50' cy='70' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='33' cy='60' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3Ccircle cx='33' cy='40' r='20' fill='none' stroke='%23c9a227' stroke-width='0.5'/%3E%3C/svg%3E");
+      }
+
+      /* Section header with decorative lines */
+      .section-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .section-label::before,
+      .section-label::after {
+        content: "";
+        height: 1px;
+        width: 60px;
+        background: linear-gradient(90deg, transparent, #c9a227, transparent);
+      }
+
+      .section-label span {
+        color: #c9a227;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-family: "Raleway", sans-serif;
+      }
+
+      /* Carousel Styles */
+      .carousel-container {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-slide {
+        min-width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-slide {
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
+
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(201, 162, 39, 0.2);
+        border: 1px solid rgba(201, 162, 39, 0.3);
+        color: #c9a227;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+
+      .carousel-btn:hover {
+        background: rgba(201, 162, 39, 0.3);
+        border-color: #c9a227;
+      }
+
+      .carousel-btn.prev {
+        left: 0;
+      }
+      .carousel-btn.next {
+        right: 0;
+      }
+
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(201, 162, 39, 0.3);
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-dot.active {
+        background: #c9a227;
+        transform: scale(1.2);
+      }
+
+      /* Section styling for smooth scroll */
+      section {
+        scroll-margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body class="bg-bg text-fg min-h-screen">
+    <!-- Navigation -->
+    <nav
+      class="flex justify-between items-center px-12 py-5 border-b border-border sticky top-0 bg-bg/98 backdrop-blur-sm z-40 max-md:px-6 max-md:py-4"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="flex items-center gap-4">
+        <img
+          src="assets/Color+logo+with+no+background"
+          alt="Steps to Serenity Counseling"
+          style="height: 80px; width: auto"
+        />
+      </div>
+      <div class="flex items-center gap-3 ml-auto">
+        <div id="nav-links" class="flex gap-1 max-md:hidden" role="menubar">
+          <a
+            href="#home"
+            class="nav-link px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 text-muted hover:text-fg hover:bg-card"
+            role="menuitem"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="nav-link px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 text-muted hover:text-fg hover:bg-card"
+            role="menuitem"
+            >About</a
+          >
+          <a
+            href="#team"
+            class="nav-link px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 text-muted hover:text-fg hover:bg-card"
+            role="menuitem"
+            >Our Team</a
+          >
+          <a
+            href="#resources"
+            class="nav-link px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 text-muted hover:text-fg hover:bg-card"
+            role="menuitem"
+            >Resources</a
+          >
+          <a
+            href="#contact"
+            class="nav-link px-5 py-2.5 rounded-lg text-sm font-medium tracking-wide transition-all duration-300 text-muted hover:text-fg hover:bg-card"
+            role="menuitem"
+            >Contact</a
+          >
+        </div>
+        <a
+          href="#"
+          class="btn-gold px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-accent/20 max-md:hidden"
+          aria-label="Access client portal"
+        >
+          Portal Login
+        </a>
+        <button
+          id="mobile-toggle"
+          class="max-md:block hidden bg-transparent border-none text-accent text-2xl cursor-pointer"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="hidden flex-col gap-2 p-4 border-b border-border bg-bg"
+    >
+      <a
+        href="#home"
+        class="nav-link-mobile px-5 py-3 rounded-lg text-sm text-left text-muted hover:text-accent"
+        >Home</a
+      >
+      <a
+        href="#about"
+        class="nav-link-mobile px-5 py-3 rounded-lg text-sm text-left text-muted hover:text-accent"
+        >About</a
+      >
+      <a
+        href="#team"
+        class="nav-link-mobile px-5 py-3 rounded-lg text-sm text-left text-muted hover:text-accent"
+        >Our Team</a
+      >
+      <a
+        href="#resources"
+        class="nav-link-mobile px-5 py-3 rounded-lg text-sm text-left text-muted hover:text-accent"
+        >Resources</a
+      >
+      <a
+        href="#contact"
+        class="nav-link-mobile px-5 py-3 rounded-lg text-sm text-left text-muted hover:text-accent"
+        >Contact</a
+      >
+      <a
+        href="#"
+        class="btn-gold px-6 py-2.5 rounded-full text-sm font-semibold tracking-wide text-center mt-2"
+        >Portal Login</a
+      >
+    </div>
+
+    <!-- Main Content -->
+    <main class="relative">
+      <div class="absolute inset-0 flower-pattern pointer-events-none"></div>
+
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="max-w-6xl mx-auto px-12 py-20 max-md:px-6 max-md:py-12"
+      >
+        <div class="text-center py-16 max-md:py-8">
+          <div class="section-label mb-8">
+            <span>Professional Mental Health Care</span>
+          </div>
+          <h1
+            class="font-serif text-7xl max-md:text-5xl font-normal leading-tight mb-6"
+          >
+            <span class="block text-fg">Your path to</span>
+            <span class="block italic gold-shimmer"
+              >inner peace begins here.</span
+            >
+          </h1>
+          <p
+            class="text-muted text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light"
+          >
+            At Steps to Serenity Counseling, we provide compassionate,
+            professional mental health services in a sanctuary of healing. Our
+            experienced team guides you on your journey to wellness with care
+            and understanding.
+          </p>
+          <div
+            class="flex gap-4 justify-center mb-20 max-md:flex-col max-md:items-center"
+          >
+            <a
+              href="#contact"
+              class="btn-gold px-10 py-4 text-sm font-semibold tracking-wide rounded-full cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30"
+              >Schedule a Consultation</a
+            >
+            <a
+              href="#about"
+              class="bg-transparent text-accent border border-accent/50 px-10 py-4 text-sm font-medium tracking-wide rounded-full cursor-pointer transition-all duration-300 hover:bg-accent/10 hover:border-accent"
+              >Learn More</a
+            >
+          </div>
+          <div class="flex justify-center gap-16 max-md:gap-8">
+            <div class="text-center">
+              <span class="block font-serif text-5xl gold-gradient">15+</span>
+              <span
+                class="text-muted text-xs uppercase tracking-[0.15em] mt-2 block"
+                >Years Experience</span
+              >
+            </div>
+            <div class="text-center">
+              <span class="block font-serif text-5xl gold-gradient">500+</span>
+              <span
+                class="text-muted text-xs uppercase tracking-[0.15em] mt-2 block"
+                >Clients Served</span
+              >
+            </div>
+            <div class="text-center">
+              <span class="block font-serif text-5xl gold-gradient">100%</span>
+              <span
+                class="text-muted text-xs uppercase tracking-[0.15em] mt-2 block"
+                >Confidential</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="grid grid-cols-3 gap-6 mt-20 max-md:grid-cols-1">
+          <div
+            class="bg-card border border-border rounded-2xl p-10 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1 card-glow"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-5 rounded-full bg-accent/10 flex items-center justify-center"
+            >
+              <span class="text-2xl text-accent">✧</span>
+            </div>
+            <h3 class="text-lg font-medium mb-2 text-fg">Evidence-Based</h3>
+            <p class="text-muted text-sm font-light">
+              Proven therapeutic approaches tailored to you
+            </p>
+          </div>
+          <div
+            class="bg-card border border-border rounded-2xl p-10 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1 card-glow"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-5 rounded-full bg-accent/10 flex items-center justify-center"
+            >
+              <span class="text-2xl text-accent">◈</span>
+            </div>
+            <h3 class="text-lg font-medium mb-2 text-fg">Confidential Care</h3>
+            <p class="text-muted text-sm font-light">
+              HIPAA-compliant privacy protection
+            </p>
+          </div>
+          <div
+            class="bg-card border border-border rounded-2xl p-10 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1 card-glow"
+          >
+            <div
+              class="w-14 h-14 mx-auto mb-5 rounded-full bg-accent/10 flex items-center justify-center"
+            >
+              <span class="text-2xl text-accent">❋</span>
+            </div>
+            <h3 class="text-lg font-medium mb-2 text-fg">Compassionate Team</h3>
+            <p class="text-muted text-sm font-light">
+              Licensed therapists dedicated to your wellbeing
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section (Condensed) -->
+      <section id="about" class="bg-card/50 border-y border-border">
+        <div class="max-w-6xl mx-auto px-12 py-20 max-md:px-6 max-md:py-12">
+          <div class="text-center mb-12">
+            <div class="section-label">
+              <span>Our Mission</span>
+            </div>
+            <h2 class="font-serif text-5xl max-md:text-4xl font-normal mb-4">
+              About Us
+            </h2>
+          </div>
+
+          <div
+            class="grid grid-cols-2 gap-16 items-center max-md:grid-cols-1 max-md:gap-10"
+          >
+            <div>
+              <h3 class="font-serif text-3xl font-normal mb-4 text-fg">
+                Healing through connection and understanding.
+              </h3>
+              <p class="text-muted text-base leading-relaxed mb-6 font-light">
+                At Steps to Serenity Counseling, we believe that everyone
+                deserves access to quality mental health care in a supportive,
+                non-judgmental environment. We integrate evidence-based
+                therapeutic approaches with genuine compassion, meeting each
+                client where they are.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <div class="flex items-center gap-2 text-sm text-fg">
+                  <span class="text-accent">✓</span>
+                  <span class="font-light">Client-centered care</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-fg">
+                  <span class="text-accent">✓</span>
+                  <span class="font-light">Evidence-based approaches</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-fg">
+                  <span class="text-accent">✓</span>
+                  <span class="font-light">Safe environment</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-card border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:border-accent/50 card-glow"
+              >
+                <div
+                  class="w-10 h-10 mx-auto mb-3 rounded-full bg-accent/10 flex items-center justify-center"
+                >
+                  <span class="text-lg text-accent">◎</span>
+                </div>
+                <h4 class="text-sm font-medium mb-1 text-fg">Individual</h4>
+                <p class="text-muted text-xs font-light">One-on-one sessions</p>
+              </div>
+              <div
+                class="bg-card border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:border-accent/50 card-glow"
+              >
+                <div
+                  class="w-10 h-10 mx-auto mb-3 rounded-full bg-accent/10 flex items-center justify-center"
+                >
+                  <span class="text-lg text-accent">❖</span>
+                </div>
+                <h4 class="text-sm font-medium mb-1 text-fg">Couples</h4>
+                <p class="text-muted text-xs font-light">
+                  Relationship support
+                </p>
+              </div>
+              <div
+                class="bg-card border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:border-accent/50 card-glow"
+              >
+                <div
+                  class="w-10 h-10 mx-auto mb-3 rounded-full bg-accent/10 flex items-center justify-center"
+                >
+                  <span class="text-lg text-accent">✧</span>
+                </div>
+                <h4 class="text-sm font-medium mb-1 text-fg">Family</h4>
+                <p class="text-muted text-xs font-light">Family dynamics</p>
+              </div>
+              <div
+                class="bg-card border border-border rounded-2xl p-6 text-center transition-all duration-300 hover:border-accent/50 card-glow"
+              >
+                <div
+                  class="w-10 h-10 mx-auto mb-3 rounded-full bg-accent/10 flex items-center justify-center"
+                >
+                  <span class="text-lg text-accent">⬡</span>
+                </div>
+                <h4 class="text-sm font-medium mb-1 text-fg">Group</h4>
+                <p class="text-muted text-xs font-light">Shared healing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team Section (Carousel) -->
+      <section
+        id="team"
+        class="max-w-6xl mx-auto px-12 py-20 max-md:px-6 max-md:py-12"
+      >
+        <div class="text-center mb-12">
+          <div class="section-label">
+            <span>Meet Our Professionals</span>
+          </div>
+          <h2 class="font-serif text-5xl max-md:text-4xl font-normal mb-4">
+            Our Team
+          </h2>
+          <p class="text-muted text-lg font-light">
+            Licensed, experienced therapists dedicated to your wellbeing
+          </p>
+        </div>
+
+        <div class="carousel-container relative px-14 max-md:px-8">
+          <button class="carousel-btn prev" aria-label="Previous slide">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <div class="carousel-track" id="teamCarousel">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <div
+                class="bg-card border border-border rounded-2xl p-8 text-center transition-all duration-300 hover:border-accent/50 card-glow w-64 max-md:w-full"
+              >
+                <div
+                  class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-accent/20 to-accent/5 rounded-full flex items-center justify-center border border-accent/20"
+                >
+                  <span class="text-2xl text-accent">✦</span>
+                </div>
+                <h3 class="font-serif text-xl font-normal mb-1 text-fg">
+                  Dr. Sarah Mitchell
+                </h3>
+                <p class="text-accent text-sm font-medium tracking-wide">
+                  Licensed Clinical Psychologist
+                </p>
+              </div>
+              <div
+                class="bg-card border border-border rounded-2xl p-8 text-center transition-all duration-300 hover:border-accent/50 card-glow w-64 max-md:w-full"
+              >
+                <div
+                  class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-accent/20 to-accent/5 rounded-full flex items-center justify-center border border-accent/20"
+                >
+                  <span class="text-2xl text-accent">✦</span>
+                </div>
+                <h3 class="font-serif text-xl font-normal mb-1 text-fg">
+                  Michael Chen, LMFT
+                </h3>
+                <p class="text-accent text-sm font-medium tracking-wide">
+                  Marriage & Family Therapist
+                </p>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <div
+                class="bg-card border border-border rounded-2xl p-8 text-center transition-all duration-300 hover:border-accent/50 card-glow w-64 max-md:w-full"
+              >
+                <div
+                  class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-accent/20 to-accent/5 rounded-full flex items-center justify-center border border-accent/20"
+                >
+                  <span class="text-2xl text-accent">✦</span>
+                </div>
+                <h3 class="font-serif text-xl font-normal mb-1 text-fg">
+                  Jennifer Rodriguez, LCSW
+                </h3>
+                <p class="text-accent text-sm font-medium tracking-wide">
+                  Clinical Social Worker
+                </p>
+              </div>
+              <div
+                class="bg-card border border-border rounded-2xl p-8 text-center transition-all duration-300 hover:border-accent/50 card-glow w-64 max-md:w-full"
+              >
+                <div
+                  class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-accent/20 to-accent/5 rounded-full flex items-center justify-center border border-accent/20"
+                >
+                  <span class="text-2xl text-accent">✦</span>
+                </div>
+                <h3 class="font-serif text-xl font-normal mb-1 text-fg">
+                  Dr. James Patterson
+                </h3>
+                <p class="text-accent text-sm font-medium tracking-wide">
+                  Licensed Professional Counselor
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="carousel-btn next" aria-label="Next slide">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button>
+
+          <div class="carousel-dots">
+            <button
+              class="carousel-dot active"
+              data-slide="0"
+              aria-label="Go to slide 1"
+            ></button>
+            <button
+              class="carousel-dot"
+              data-slide="1"
+              aria-label="Go to slide 2"
+            ></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resources Section -->
+      <section id="resources" class="bg-card/50 border-y border-border">
+        <div class="max-w-6xl mx-auto px-12 py-20 max-md:px-6 max-md:py-12">
+          <div class="text-center mb-12">
+            <div class="section-label">
+              <span>Helpful Information</span>
+            </div>
+            <h2 class="font-serif text-5xl max-md:text-4xl font-normal mb-4">
+              Resources
+            </h2>
+            <p class="text-muted text-lg font-light">
+              Mental health support extends beyond our office
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-6 max-md:grid-cols-1">
+            <div
+              class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:border-accent/50 card-glow"
+            >
+              <div
+                class="w-12 h-12 mb-4 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20"
+              >
+                <span class="text-xl text-accent">☎</span>
+              </div>
+              <h3 class="font-serif text-xl font-normal mb-2 text-fg">
+                Crisis Support
+              </h3>
+              <p class="text-muted text-sm leading-relaxed font-light mb-3">
+                Immediate help available 24/7.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="tel:988"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >988 Suicide & Crisis Lifeline</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.crisistextline.org"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >Crisis Text Line</a
+                  >
+                  <span class="text-muted text-xs">— Text HOME to 741741</span>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:border-accent/50 card-glow"
+            >
+              <div
+                class="w-12 h-12 mb-4 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20"
+              >
+                <span class="text-xl text-accent">✦</span>
+              </div>
+              <h3 class="font-serif text-xl font-normal mb-2 text-fg">
+                Mental Health Organizations
+              </h3>
+              <p class="text-muted text-sm leading-relaxed font-light mb-3">
+                Education, support, and advocacy.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://www.nami.org"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >NAMI</a
+                  >
+                  <span class="text-muted text-xs"
+                    >— National Alliance on Mental Illness</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.mhanational.org"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >Mental Health America</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:border-accent/50 card-glow"
+            >
+              <div
+                class="w-12 h-12 mb-4 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20"
+              >
+                <span class="text-xl text-accent">◈</span>
+              </div>
+              <h3 class="font-serif text-xl font-normal mb-2 text-fg">
+                Self-Help Tools
+              </h3>
+              <p class="text-muted text-sm leading-relaxed font-light mb-3">
+                Support your wellness journey.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://www.headspace.com"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >Headspace</a
+                  >
+                  <span class="text-muted text-xs"
+                    >— Meditation & mindfulness</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.calm.com"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >Calm</a
+                  >
+                  <span class="text-muted text-xs">— Sleep & relaxation</span>
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="bg-card border border-border rounded-2xl p-8 transition-all duration-300 hover:border-accent/50 card-glow"
+            >
+              <div
+                class="w-12 h-12 mb-4 rounded-full bg-accent/10 flex items-center justify-center border border-accent/20"
+              >
+                <span class="text-xl text-accent">❋</span>
+              </div>
+              <h3 class="font-serif text-xl font-normal mb-2 text-fg">
+                Educational Resources
+              </h3>
+              <p class="text-muted text-sm leading-relaxed font-light mb-3">
+                Learn about mental health.
+              </p>
+              <ul class="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://www.nimh.nih.gov"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >NIMH</a
+                  >
+                  <span class="text-muted text-xs"
+                    >— National Institute of Mental Health</span
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.psychologytoday.com"
+                    target="_blank"
+                    class="text-accent hover:text-accent-light transition-colors"
+                    >Psychology Today</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="border-t border-border">
+        <div class="max-w-6xl mx-auto px-12 py-20 max-md:px-6 max-md:py-12">
+          <div class="text-center mb-12">
+            <div class="section-label">
+              <span>Get In Touch</span>
+            </div>
+            <h2 class="font-serif text-5xl max-md:text-4xl font-normal mb-4">
+              Contact Us
+            </h2>
+            <p class="text-muted text-lg font-light">
+              Take the first step toward healing
+            </p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-16 max-md:grid-cols-1">
+            <div class="flex flex-col gap-5">
+              <div>
+                <label
+                  class="block text-xs font-medium text-muted mb-2 tracking-wide uppercase"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  placeholder="Your name"
+                  class="w-full bg-card border border-border rounded-xl px-4 py-3 text-base text-fg transition-colors duration-200"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-medium text-muted mb-2 tracking-wide uppercase"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  class="w-full bg-card border border-border rounded-xl px-4 py-3 text-base text-fg transition-colors duration-200"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-medium text-muted mb-2 tracking-wide uppercase"
+                  >Phone</label
+                >
+                <input
+                  type="tel"
+                  placeholder="(555) 123-4567"
+                  class="w-full bg-card border border-border rounded-xl px-4 py-3 text-base text-fg transition-colors duration-200"
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-xs font-medium text-muted mb-2 tracking-wide uppercase"
+                  >How can we help?</label
+                >
+                <textarea
+                  placeholder="Share a bit about what brings you here today..."
+                  rows="4"
+                  class="w-full bg-card border border-border rounded-xl px-4 py-3 text-base text-fg transition-colors duration-200 resize-y"
+                ></textarea>
+              </div>
+              <button
+                class="btn-gold px-10 py-4 text-sm font-semibold tracking-wide rounded-full cursor-pointer transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/30 w-fit"
+              >
+                Request Consultation
+              </button>
+              <p class="text-xs text-muted font-light">
+                All inquiries are completely confidential. We'll respond within
+                24 hours.
+              </p>
+            </div>
+
+            <div class="flex items-center justify-center">
+              <div
+                class="relative w-full h-72 bg-card border border-border rounded-3xl overflow-hidden"
+              >
+                <div class="grid grid-cols-4 grid-rows-4 h-full opacity-20">
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                  <div class="border border-border"></div>
+                </div>
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-3xl text-accent animate-bounce-pin"
+                >
+                  ◉
+                </div>
+                <div
+                  class="absolute bottom-6 left-6 text-sm text-muted leading-relaxed font-light"
+                >
+                  <strong class="text-fg font-medium"
+                    >Steps to Serenity Counseling</strong
+                  ><br />
+                  456 Wellness Boulevard<br />
+                  Suite 200<br />
+                  Cedar Falls, IA 50613
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border px-12 py-12 text-center bg-card">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <img
+          src="assets/Color+logo+with+no+background"
+          alt="Steps to Serenity Counseling"
+          class="h-10 w-auto"
+        />
+      </div>
+      <p class="text-sm text-muted mb-4 font-light">
+        Compassionate mental health care for individuals, couples, and families.
+      </p>
+      <p class="text-xs text-muted mb-4">
+        456 Wellness Boulevard, Suite 200 | Cedar Falls, IA 50613 | (555)
+        123-4567
+      </p>
+      <p class="text-xs text-muted mb-6">
+        © 2026 Steps to Serenity Counseling. All rights reserved. | HIPAA
+        Compliant
+      </p>
+      <div class="border-t border-border pt-6">
+        <p class="text-xs text-muted/60">
+          Demo by <span class="text-accent">Fifth Stone Dev</span> • Starter
+          Package • 2 week delivery
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("mobile-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          const isHidden = menu.classList.contains("hidden");
+          menu.classList.toggle("hidden");
+          menu.classList.toggle("flex");
+          this.textContent = isHidden ? "✕" : "☰";
+        });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-link-mobile").forEach((link) => {
+        link.addEventListener("click", () => {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          document.getElementById("mobile-toggle").textContent = "☰";
+        });
+      });
+
+      // Carousel functionality
+      const carousel = document.getElementById("teamCarousel");
+      const slides = carousel.querySelectorAll(".carousel-slide");
+      const dots = document.querySelectorAll(".carousel-dot");
+      const prevBtn = document.querySelector(".carousel-btn.prev");
+      const nextBtn = document.querySelector(".carousel-btn.next");
+      let currentSlide = 0;
+
+      function goToSlide(index) {
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        currentSlide = index;
+        carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentSlide);
+        });
+      }
+
+      prevBtn.addEventListener("click", () => goToSlide(currentSlide - 1));
+      nextBtn.addEventListener("click", () => goToSlide(currentSlide + 1));
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => goToSlide(i));
+      });
+
+      // Auto-advance carousel every 5 seconds
+      setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+      // Highlight active nav link on scroll
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 150;
+          if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
