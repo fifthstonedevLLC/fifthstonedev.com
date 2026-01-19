@@ -205,3 +205,95 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Portfolio Carousel
+let currentSlide = 0;
+
+function getItemsPerSlide() {
+  return window.innerWidth <= 768 ? 1 : 2;
+}
+
+function updateCarouselDots() {
+  const items = document.querySelectorAll('.portfolio-item');
+  const dotsContainer = document.querySelector('.carousel-dots');
+  const itemsPerSlide = getItemsPerSlide();
+  const totalSlides = Math.ceil(items.length / itemsPerSlide);
+  
+  if (dotsContainer) {
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === currentSlide ? ' active' : '');
+      dot.setAttribute('onclick', `goToSlide(${i})`);
+      dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+      dotsContainer.appendChild(dot);
+    }
+  }
+}
+
+function updateCarousel() {
+  const track = document.querySelector('.portfolio-track');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+  const carousel = document.querySelector('.portfolio-carousel');
+  const items = document.querySelectorAll('.portfolio-item');
+  const itemsPerSlide = getItemsPerSlide();
+  const totalSlides = Math.ceil(items.length / itemsPerSlide);
+  
+  // Ensure currentSlide is within bounds
+  if (currentSlide >= totalSlides) {
+    currentSlide = totalSlides - 1;
+  }
+  
+  if (track && carousel && items.length > 0) {
+    const gap = 32; // 2rem gap
+    const item = items[0];
+    const itemWidth = item.offsetWidth;
+    const slideOffset = currentSlide * (itemWidth * itemsPerSlide + gap * itemsPerSlide);
+    track.style.transform = `translateX(-${slideOffset}px)`;
+  }
+  
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentSlide);
+  });
+}
+
+function moveCarousel(direction) {
+  const items = document.querySelectorAll('.portfolio-item');
+  const itemsPerSlide = getItemsPerSlide();
+  const totalSlides = Math.ceil(items.length / itemsPerSlide);
+  
+  currentSlide += direction;
+  
+  if (currentSlide < 0) {
+    currentSlide = totalSlides - 1;
+  } else if (currentSlide >= totalSlides) {
+    currentSlide = 0;
+  }
+  
+  updateCarousel();
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  updateCarousel();
+}
+
+// Recalculate on window resize
+let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    updateCarouselDots();
+    updateCarousel();
+  }, 100);
+});
+
+// Initialize dots on page load
+document.addEventListener('DOMContentLoaded', function() {
+  updateCarouselDots();
+});
+
+// Auto-advance carousel (optional)
+// setInterval(() => {
+//   moveCarousel(1);
+// }, 5000);
