@@ -1614,11 +1614,37 @@ footer p {
   }
 
   .portfolio-image {
-    height: 220px;
+    height: 160px;
   }
 
   .portfolio-content {
-    padding: 1.5rem;
+    padding: 1rem 1.25rem;
+  }
+  
+  .portfolio-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .portfolio-content p {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  
+  .portfolio-tags {
+    min-height: auto;
+    gap: 0.4rem;
+  }
+  
+  .portfolio-tags .tag {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .btn-case-study {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
   }
 
   /* Services */
