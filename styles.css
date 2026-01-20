@@ -626,14 +626,16 @@ nav .container {
   line-height: 1.6;
   margin-bottom: 1rem;
   font-size: 0.95rem;
+  align-self: start;
 }
 
 .portfolio-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  align-content: flex-start;
-  min-height: 3.5rem;
+  align-content: start;
+  align-self: start;
+  height: 4.5rem;
 }
 
 .portfolio-tags .tag {
@@ -653,8 +655,9 @@ nav .container {
 }
 
 .btn-case-study {
-  display: inline-block;
-  padding: 0.6rem 1.25rem;
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
   background: var(--accent-bronze);
   color: var(--white);
   font-family: "Archivo", sans-serif;
@@ -665,6 +668,8 @@ nav .container {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 1rem;
+  align-self: end;
+  text-align: center;
 }
 
 .btn-case-study:hover {
