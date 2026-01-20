@@ -1,7 +1,9 @@
-// Initialize EmailJS
-(function () {
-  emailjs.init("euyy_dhHmVC2Mgkv5");
-})();
+// Initialize EmailJS (wait for script to load since it's deferred)
+document.addEventListener('DOMContentLoaded', function() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init("euyy_dhHmVC2Mgkv5");
+  }
+});
 
 // Modal functions
 function openModal(modalId) {
@@ -297,3 +299,173 @@ document.addEventListener('DOMContentLoaded', function() {
 // setInterval(() => {
 //   moveCarousel(1);
 // }, 5000);
+
+// ========================================
+// Cookie Consent Management
+// ========================================
+
+const CookieConsent = {
+  // Cookie names
+  CONSENT_COOKIE: 'fifthstonedev_cookie_consent',
+  
+  // Initialize consent system
+  init() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (!banner) return;
+    
+    // Check if user has already made a choice
+    const consent = this.getConsent();
+    
+    if (consent === null) {
+      // No consent given yet - show banner
+      banner.classList.remove('hidden');
+    } else {
+      // Consent already given - hide banner and load scripts if accepted
+      banner.classList.add('hidden');
+      if (consent.analytics) {
+        this.loadAnalytics();
+      }
+    }
+    
+    // Set up event listeners
+    this.setupEventListeners();
+  },
+  
+  // Get stored consent from cookie
+  getConsent() {
+    const cookie = document.cookie
+      .split('; ')
+      .find(row => row.startsWith(this.CONSENT_COOKIE + '='));
+    
+    if (!cookie) return null;
+    
+    try {
+      return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+    } catch (e) {
+      return null;
+    }
+  },
+  
+  // Save consent to cookie (expires in 1 year)
+  saveConsent(preferences) {
+    const expires = new Date();
+    expires.setFullYear(expires.getFullYear() + 1);
+    
+    document.cookie = `${this.CONSENT_COOKIE}=${encodeURIComponent(JSON.stringify(preferences))}; expires=${expires.toUTCString()}; path=/; SameSite=Lax`;
+  },
+  
+  // Accept all cookies
+  acceptAll() {
+    const preferences = {
+      essential: true,
+      analytics: true,
+      timestamp: new Date().toISOString()
+    };
+    
+    this.saveConsent(preferences);
+    this.hideBanner();
+    this.loadAnalytics();
+  },
+  
+  // Reject non-essential cookies
+  rejectAll() {
+    const preferences = {
+      essential: true,
+      analytics: false,
+      timestamp: new Date().toISOString()
+    };
+    
+    this.saveConsent(preferences);
+    this.hideBanner();
+  },
+  
+  // Save custom preferences
+  savePreferences() {
+    const analyticsCheckbox = document.getElementById('cookie-analytics');
+    
+    const preferences = {
+      essential: true,
+      analytics: analyticsCheckbox ? analyticsCheckbox.checked : false,
+      timestamp: new Date().toISOString()
+    };
+    
+    this.saveConsent(preferences);
+    this.hideBanner();
+    
+    if (preferences.analytics) {
+      this.loadAnalytics();
+    }
+  },
+  
+  // Hide the banner
+  hideBanner() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      banner.classList.add('hidden');
+    }
+  },
+  
+  // Show/hide settings panel
+  toggleSettings() {
+    const panel = document.getElementById('cookie-settings-panel');
+    if (panel) {
+      panel.hidden = !panel.hidden;
+    }
+  },
+  
+  // Load analytics scripts dynamically
+  loadAnalytics() {
+    // Only load if not already loaded
+    if (window.clarity || window.gtag) return;
+    
+    // Load Microsoft Clarity
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "uyvg6201g1");
+    
+    // Load Google Analytics
+    const gtagScript = document.createElement('script');
+    gtagScript.async = true;
+    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-5MMSCWWMBQ';
+    document.head.appendChild(gtagScript);
+    
+    gtagScript.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-5MMSCWWMBQ');
+    };
+  },
+  
+  // Set up event listeners
+  setupEventListeners() {
+    const acceptBtn = document.getElementById('cookie-accept');
+    const rejectBtn = document.getElementById('cookie-reject');
+    const settingsBtn = document.getElementById('cookie-settings');
+    const saveBtn = document.getElementById('cookie-save');
+    
+    if (acceptBtn) {
+      acceptBtn.addEventListener('click', () => this.acceptAll());
+    }
+    
+    if (rejectBtn) {
+      rejectBtn.addEventListener('click', () => this.rejectAll());
+    }
+    
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', () => this.toggleSettings());
+    }
+    
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => this.savePreferences());
+    }
+  }
+};
+
+// Initialize cookie consent when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+  CookieConsent.init();
+});

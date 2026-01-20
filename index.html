@@ -29,6 +29,10 @@
     <meta name="theme-color" content="#1a1a2e" />
     <meta name="msapplication-TileColor" content="#1a1a2e" />
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/fifth_stone_dev_favicon.ico" />
+    <link rel="shortcut icon" href="assets/fifth_stone_dev_favicon.ico" />
+
     <!-- Open Graph Meta Tags -->
     <!-- Optional: Add fb:app_id for Facebook Insights -->
     <!-- <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID" /> -->
@@ -217,24 +221,7 @@
       }
     </script>
 
-    <!--- Microsoft Clarity Analytics -->
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "uyvg6201g1");
-    </script>
-
-    <!-- Google Analytics tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5MMSCWWMBQ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-5MMSCWWMBQ');
-    </script>
+    <!-- Analytics scripts are loaded dynamically after cookie consent -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -252,10 +239,49 @@
     />
     <link rel="stylesheet" href="styles.css" />
     
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS SDK (deferred - not needed until form submission) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3 id="cookie-title">🍪 We value your privacy</h3>
+          <p id="cookie-description">
+            We use cookies to enhance your browsing experience and analyze site traffic. 
+            This includes Microsoft Clarity for user behavior insights and Google Analytics for site performance.
+            By clicking "Accept All", you consent to our use of cookies.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="Accept all cookies">Accept All</button>
+          <button id="cookie-reject" class="cookie-btn cookie-reject" aria-label="Reject non-essential cookies">Reject All</button>
+          <button id="cookie-settings" class="cookie-btn cookie-settings" aria-label="Customize cookie settings">Customize</button>
+        </div>
+      </div>
+      
+      <!-- Cookie Settings Panel (hidden by default) -->
+      <div id="cookie-settings-panel" class="cookie-settings-panel" hidden>
+        <h4>Cookie Preferences</h4>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="cookie-essential" checked disabled />
+            <span><strong>Essential Cookies</strong> - Required for the website to function. Cannot be disabled.</span>
+          </label>
+        </div>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="cookie-analytics" />
+            <span><strong>Analytics Cookies</strong> - Help us understand how visitors interact with our website (Google Analytics, Microsoft Clarity).</span>
+          </label>
+        </div>
+        <div class="cookie-settings-buttons">
+          <button id="cookie-save" class="cookie-btn cookie-accept">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
       <div class="container">
