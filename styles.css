@@ -518,9 +518,10 @@ nav .container {
 
 .portfolio-header h2 {
   font-family: "Archivo", sans-serif;
-  font-size: 3rem;
-  font-weight: 600;
-  color: var(--stone-charcoal);
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--stone-slate);
+  letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
 
@@ -1577,6 +1578,7 @@ footer p {
   }
 
   .services-header h2,
+  .portfolio-header h2,
   .why-choose h2,
   .contact h2 {
     font-size: 2rem;
@@ -1765,6 +1767,7 @@ footer p {
   }
 
   .services-header h2,
+  .portfolio-header h2,
   .why-choose h2,
   .contact h2 {
     font-size: 1.75rem;
