@@ -663,7 +663,7 @@ nav .container {
   font-family: "Archivo", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  border: none;
+  border: 1px solid var(--stone-charcoal);
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
