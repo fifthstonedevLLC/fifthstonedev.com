@@ -19,6 +19,16 @@
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
 
+    <!-- Local SEO Geo Tags -->
+    <meta name="geo.region" content="US-IA" />
+    <meta name="geo.placename" content="Cedar Falls, Iowa" />
+    <meta name="geo.position" content="42.5349;-92.4453" />
+    <meta name="ICBM" content="42.5349, -92.4453" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="msapplication-TileColor" content="#1a1a2e" />
+
     <!-- Open Graph Meta Tags -->
     <!-- Optional: Add fb:app_id for Facebook Insights -->
     <!-- <meta property="fb:app_id" content="YOUR_FACEBOOK_APP_ID" /> -->
@@ -31,12 +41,12 @@
       content="Transform your business with custom web development and intelligent process automation solutions."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fifthstonedev.com/" />
+    <meta property="og:url" content="https://www.fifthstonedev.com/" />
     <meta property="og:site_name" content="Fifth Stone Dev" />
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:image"
-      content="https://fifthstonedev.com/assets/logo-with-overflow.png"
+      content="https://www.fifthstonedev.com/assets/logo-with-overflow.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -57,7 +67,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://fifthstonedev.com/assets/logo-with-overflow.png"
+      content="https://www.fifthstonedev.com/assets/logo-with-overflow.png"
     />
     <meta
       name="twitter:image:alt"
@@ -71,7 +81,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://fifthstonedev.com/" />
+    <link rel="canonical" href="https://www.fifthstonedev.com/" />
 
     <!-- Sitemap -->
     <link
@@ -81,47 +91,129 @@
       href="/sitemap.xml"
     />
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD) - LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "ProfessionalService",
+        "@id": "https://www.fifthstonedev.com/#business",
         "name": "Fifth Stone Dev LLC",
         "alternateName": "Fifth Stone Dev",
-        "url": "https://fifthstonedev.com",
-        "logo": "https://fifthstonedev.com/assets/fifth_stone_logo.JPEG",
-        "description": "Professional web development and process automation services for businesses seeking digital transformation.",
+        "url": "https://www.fifthstonedev.com",
+        "logo": "https://www.fifthstonedev.com/assets/fifth_stone_logo.JPEG",
+        "image": "https://www.fifthstonedev.com/assets/logo-with-overflow.png",
+        "description": "Fifth Stone Dev delivers custom web development and process automation solutions in Cedar Falls, Iowa. Transform your business with expert software engineering, AI integration, and workflow optimization.",
+        "priceRange": "$$",
+        "telephone": "+1-641-849-7311",
         "address": {
           "@type": "PostalAddress",
+          "addressLocality": "Cedar Falls",
+          "addressRegion": "IA",
+          "postalCode": "50613",
           "addressCountry": "US"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 42.5349,
+          "longitude": -92.4453
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "17:00"
+        },
         "sameAs": [],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Business Inquiries",
-          "availableLanguage": ["English"],
-          "areaServed": "US"
+        "founder": {
+          "@type": "Person",
+          "name": "Phil Harberts",
+          "jobTitle": "Founder & Developer"
         },
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",
           "reviewCount": "1"
         },
-        "founder": {
-          "@type": "Person",
-          "name": "Fifth Stone Dev"
-        },
+        "areaServed": [
+          {
+            "@type": "State",
+            "name": "Iowa"
+          },
+          {
+            "@type": "Country",
+            "name": "United States"
+          }
+        ],
         "knowsAbout": [
           "Web Development",
           "Process Automation",
           "Software Engineering",
           "AI Integration",
-          "Workflow Optimization"
+          "Workflow Optimization",
+          "Custom Software Development",
+          "Business Automation"
         ],
-        "areaServed": {
-          "@type": "Country",
-          "name": "United States"
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Web Development & Automation Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Custom Web Development",
+                "description": "Custom websites that are beautiful, functional, and built to grow with your organization. From landing pages to full-scale web applications."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Business Process Automation",
+                "description": "Streamline your operations with custom internal tools that save time, reduce errors, and increase efficiency across your team."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Digital Strategy Consulting",
+                "description": "Expert guidance for small businesses managing their digital presence. UX/UI analysis, website audits, and performance optimization."
+              }
+            }
+          ]
         }
+      }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.fifthstonedev.com/#website",
+        "url": "https://www.fifthstonedev.com",
+        "name": "Fifth Stone Dev",
+        "description": "Web Development & Process Automation in Cedar Falls, Iowa",
+        "publisher": {
+          "@id": "https://www.fifthstonedev.com/#business"
+        }
+      }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.fifthstonedev.com/"
+          }
+        ]
       }
     </script>
 
@@ -146,6 +238,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.clarity.ms" />
     <link
       rel="preload"
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
@@ -211,8 +306,11 @@
           <div class="logo-graphic">
             <img
               src="assets/stone_and_sling.png"
-              alt="Fifth Stone Dev"
+              alt="Fifth Stone Dev - Web Development and Process Automation Services in Cedar Falls Iowa"
               class="hero-image"
+              fetchpriority="high"
+              width="500"
+              height="500"
             />
           </div>
         </div>
@@ -257,8 +355,10 @@
           <div class="developer-image-placeholder">
             <img
               src="assets/professional_stone_slate.jpg"
-              alt="Phil Harberts"
+              alt="Phil Harberts - Founder and Web Developer at Fifth Stone Dev in Cedar Falls Iowa"
               class="developer-photo"
+              width="400"
+              height="400"
             />
           </div>
           <div class="developer-content">
@@ -329,7 +429,7 @@
               <!-- Project 1 -->
               <div class="portfolio-item">
                 <div class="portfolio-image">
-                  <img src="assets/Candeo_Our_Team_Page.png" alt="Project Name" loading="lazy" />
+                  <img src="assets/Candeo_Our_Team_Page.png" alt="Candeo Counseling Center website redesign - Our Team page showing clinician profiles" loading="lazy" width="600" height="400" />
                   <div class="portfolio-overlay">
                     <span class="portfolio-category">Web Development</span>
                   </div>
@@ -352,7 +452,7 @@
               <!-- Project 2 -->
               <div class="portfolio-item">
                 <div class="portfolio-image">
-                  <img src="assets/Inovalon_Query_Tool.png" alt="Inovalon Project" loading="lazy" />
+                  <img src="assets/Inovalon_Query_Tool.png" alt="Internal database querying tool built with Python for enterprise healthcare data analysis" loading="lazy" width="600" height="400" />
                   <div class="portfolio-overlay">
                     <span class="portfolio-category">Custom Tool</span>
                   </div>
@@ -375,7 +475,7 @@
               <!-- Project 3 -->
               <div class="portfolio-item">
                 <div class="portfolio-image">
-                  <img src="assets/gov_agency_app.png" alt="Government Agency Data Processing" loading="lazy" />
+                  <img src="assets/gov_agency_app.png" alt="Government agency data processing automation tool for disaster recovery Excel reconciliation and PDF parsing" loading="lazy" width="600" height="400" />
                   <div class="portfolio-overlay">
                     <span class="portfolio-category">Process Automation</span>
                   </div>
@@ -398,7 +498,7 @@
               <!-- Project 4 -->
               <div class="portfolio-item">
                 <div class="portfolio-image">
-                  <img src="assets/isles_of_hope_Page.png" alt="Isles of Hope International" loading="lazy" />
+                  <img src="assets/isles_of_hope_Page.png" alt="Isles of Hope International nonprofit website with donation integration and mission storytelling" loading="lazy" width="600" height="400" />
                   <div class="portfolio-overlay">
                     <span class="portfolio-category">Web Development</span>
                   </div>
@@ -572,7 +672,7 @@
           <div class="contact-item">
             <div class="contact-item-label">Phone</div>
             <div class="contact-item-value">
-              <a href="tel:+15551234567">(641) 849-7311</a>
+              <a href="tel:+16418497311">(641) 849-7311</a>
             </div>
           </div>
         </div>

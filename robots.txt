@@ -1,4 +1,22 @@
+# Fifth Stone Dev - Web Development & Process Automation
+# https://www.fifthstonedev.com
+
 User-agent: *
 Allow: /
+Disallow: /assets/*.pdf
 
-Sitemap: https://fifthstonedev.com/sitemap.xml
+# Allow all major search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.fifthstonedev.com/sitemap.xml
+
+# Crawl-delay for polite bots (optional)
+# Crawl-delay: 10
