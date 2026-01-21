@@ -1934,12 +1934,12 @@ html {
 }
 
 .cookie-accept {
-  background: #8b6914;
-  color: #ffffff;
+  background: var(--accent-bronze);
+  color: var(--white);
 }
 
 .cookie-accept:hover {
-  background: var(--accent-copper);
+  background: var(--stone-slate);
   transform: translateY(-2px);
 }
 
