@@ -243,10 +243,11 @@
     </noscript>
     <!-- Critical CSS inlined to avoid render-blocking -->
     <style>
-      /* Critical above-the-fold styles */
+      /* Critical above-the-fold styles with font fallback */
+      @font-face{font-family:'Archivo Fallback';src:local('Arial');size-adjust:97.5%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
       :root{--stone-slate:#2c3e50;--stone-charcoal:#1a252f;--stone-river:#5d6d7e;--stone-sand:#bdc3c7;--stone-light:#ecf0f1;--accent-bronze:#b8956a;--white:#ffffff;--off-white:#f8f9fa}
       *{margin:0;padding:0;box-sizing:border-box}
-      body{font-family:"Archivo",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--stone-charcoal);background:var(--off-white);line-height:1.6;overflow-x:hidden}
+      body{font-family:"Archivo","Archivo Fallback",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--stone-charcoal);background:var(--off-white);line-height:1.6;overflow-x:hidden}
       nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000;border-bottom:1px solid rgba(44,62,80,.1)}
       nav .container{max-width:1400px;margin:0 auto;padding:.1rem 2rem;display:flex;justify-content:space-between;align-items:center}
       .logo{display:flex;align-items:center;gap:.5rem;position:relative;z-index:1001}
@@ -256,7 +257,7 @@
       .nav-links a{color:var(--stone-river);text-decoration:none;font-weight:500;font-size:1.1rem}
       .hero{margin-top:80px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--stone-charcoal) 0%,var(--stone-slate) 100%)}
       .hero .container{max-width:1400px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-      .hero-content h1{font-family:"Archivo",sans-serif;font-size:4.5rem;font-weight:300;line-height:1.1;margin-bottom:2rem;color:var(--white)}
+      .hero-content h1{font-family:"Archivo","Archivo Fallback",sans-serif;font-size:4.5rem;font-weight:300;line-height:1.1;margin-bottom:2rem;color:var(--white)}
       .hero-content h1 strong{font-weight:700;color:var(--accent-bronze);display:block}
       .hero-content p{font-size:1.25rem;color:var(--stone-sand);margin-bottom:2.5rem;max-width:600px;line-height:1.8}
       .btn{padding:1rem 2.5rem;font-size:1rem;font-weight:500;text-decoration:none;border-radius:4px;cursor:pointer;border:none;display:inline-block}
@@ -1041,7 +1042,7 @@
         <button class="case-study-website-link" onclick="openToolImage('inovalonToolImage')" aria-label="View screenshot of the Internal Data Query Tool">View Tool</button>
         
         <div id="inovalonToolImage" class="tool-image-container" style="display: none;">
-          <img src="assets/Inovalon_Query_Tool.png" alt="Inovalon Data Query Tool Screenshot" class="tool-screenshot" />
+          <img src="assets/Inovalon_Query_Tool.png" alt="Inovalon Data Query Tool Screenshot" class="tool-screenshot" width="800" height="600" />
           <button class="tool-image-close" onclick="closeToolImage('inovalonToolImage')" aria-label="Close tool screenshot">&times;</button>
         </div>
 
@@ -1115,7 +1116,7 @@
         <button class="case-study-website-link" onclick="openToolImage('govToolImage')" aria-label="View screenshot of the Government Data Processing Tool">View Tool</button>
         
         <div id="govToolImage" class="tool-image-container" style="display: none;">
-          <img src="assets/gov_agency_app.png" alt="Government Agency Data Processing Tool Screenshot" class="tool-screenshot" />
+          <img src="assets/gov_agency_app.png" alt="Government Agency Data Processing Tool Screenshot" class="tool-screenshot" width="800" height="600" />
           <button class="tool-image-close" onclick="closeToolImage('govToolImage')" aria-label="Close tool screenshot">&times;</button>
         </div>
 
