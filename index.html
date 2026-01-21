@@ -228,11 +228,19 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.clarity.ms" />
-    <!-- Load Google Fonts with font-display:optional to eliminate CLS from font swap -->
+    <!-- Load Google Fonts asynchronously with display:optional to eliminate render-blocking and CLS -->
     <link
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=optional"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=optional"
+        rel="stylesheet"
+      />
+    </noscript>
     <!-- Critical CSS inlined to avoid render-blocking -->
     <style>
       /* Critical above-the-fold styles with font fallback */
