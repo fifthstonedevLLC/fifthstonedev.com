@@ -211,6 +211,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Portfolio Carousel
 let currentSlide = 0;
 let cachedItemWidth = null;
+let isCarouselInitialized = false;
 
 function getItemsPerSlide() {
   return window.innerWidth <= 768 ? 1 : 2;
@@ -249,12 +250,12 @@ function updateCarousel() {
   
   if (track && carousel && items.length > 0) {
     const gap = 32; // 2rem gap
-    // Use cached width or read once, avoiding repeated forced reflows
-    if (cachedItemWidth === null) {
-      cachedItemWidth = items[0].offsetWidth;
+    // Use cached width to avoid forced reflows
+    // Width is calculated once during initialization via requestAnimationFrame
+    if (cachedItemWidth !== null) {
+      const slideOffset = currentSlide * (cachedItemWidth * itemsPerSlide + gap * itemsPerSlide);
+      track.style.transform = `translateX(-${slideOffset}px)`;
     }
-    const slideOffset = currentSlide * (cachedItemWidth * itemsPerSlide + gap * itemsPerSlide);
-    track.style.transform = `translateX(-${slideOffset}px)`;
   }
   
   dots.forEach((dot, index) => {
@@ -283,21 +284,37 @@ function goToSlide(index) {
   updateCarousel();
 }
 
-// Recalculate on window resize
+// Recalculate on window resize - debounced and using requestAnimationFrame
 let resizeTimeout;
 window.addEventListener('resize', function() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
-    // Invalidate cached width on resize so it gets recalculated
-    cachedItemWidth = null;
-    updateCarouselDots();
-    updateCarousel();
+    // Use requestAnimationFrame to batch layout read after styles settle
+    requestAnimationFrame(function() {
+      const items = document.querySelectorAll('.portfolio-item');
+      if (items.length > 0) {
+        cachedItemWidth = items[0].offsetWidth;
+      }
+      updateCarouselDots();
+      updateCarousel();
+    });
   }, 100);
 });
 
-// Initialize dots on page load
+// Initialize carousel on page load using requestAnimationFrame to avoid forced reflow
 document.addEventListener('DOMContentLoaded', function() {
   updateCarouselDots();
+  // Defer layout read to after initial render completes
+  requestAnimationFrame(function() {
+    requestAnimationFrame(function() {
+      const items = document.querySelectorAll('.portfolio-item');
+      if (items.length > 0) {
+        cachedItemWidth = items[0].offsetWidth;
+        isCarouselInitialized = true;
+        updateCarousel();
+      }
+    });
+  });
 });
 
 // Auto-advance carousel (optional)
