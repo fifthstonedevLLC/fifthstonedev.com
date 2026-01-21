@@ -506,6 +506,9 @@
           includedLanguages: 'en,es,fr,de,zh-CN,ja,pt,ar',
           autoDisplay: false
         }, 'google_translate_element');
+        
+        // Once Google Translate is initialized, sync the dropdown
+        setTimeout(syncDropdownWithGoogleTranslate, 500);
       }
     </script>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
@@ -530,44 +533,27 @@
         'ar': 'العربية'
       };
 
-      // Function to get current language from Google Translate cookie
-      function getCurrentLanguage() {
-        const match = document.cookie.match(/googtrans=\/en\/([^;]+)/);
-        return match ? match[1] : 'en';
+      // Sync our dropdown with Google Translate's actual state
+      function syncDropdownWithGoogleTranslate() {
+        const select = document.querySelector('.goog-te-combo');
+        if (select && select.value) {
+          const currentLang = select.value || 'en';
+          updateDropdownUI(currentLang);
+        }
       }
 
-      // Function to clear all Google Translate cookies
-      function clearGoogleTranslateCookies() {
-        const domains = ['', window.location.hostname, '.' + window.location.hostname];
-        const paths = ['/', ''];
-        
-        domains.forEach(domain => {
-          paths.forEach(path => {
-            document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${path};${domain ? ' domain=' + domain + ';' : ''}`;
-          });
-        });
-      }
-
-      // Sync dropdown state with current translation on page load
-      function syncDropdownState() {
-        const currentLang = getCurrentLanguage();
-        
-        // Update button text
-        currentLangSpan.textContent = languageNames[currentLang] || 'English';
-        
-        // Update active state in dropdown
+      // Update dropdown UI without triggering translation
+      function updateDropdownUI(lang) {
+        currentLangSpan.textContent = languageNames[lang] || 'English';
         languageOptions.forEach(opt => {
           const optLang = opt.getAttribute('data-lang');
-          if (optLang === currentLang) {
+          if (optLang === lang) {
             opt.classList.add('active');
           } else {
             opt.classList.remove('active');
           }
         });
       }
-
-      // Run sync on page load
-      syncDropdownState();
 
       // Toggle dropdown
       languageBtn.addEventListener('click', function(e) {
@@ -589,47 +575,47 @@
         option.addEventListener('click', function() {
           const lang = this.getAttribute('data-lang');
           
-          // Update active state
+          // Update UI immediately
           languageOptions.forEach(opt => opt.classList.remove('active'));
           this.classList.add('active');
-          
-          // Update button text
           currentLangSpan.textContent = languageNames[lang] || 'English';
           
           // Close dropdown
           languageSelector.classList.remove('open');
           languageBtn.setAttribute('aria-expanded', 'false');
           
-          // Trigger Google Translate
+          // Change language
           changeLanguage(lang);
         });
       });
 
       // Function to change language using Google Translate
       function changeLanguage(langCode) {
-        // Always clear existing cookies first
-        clearGoogleTranslateCookies();
+        const select = document.querySelector('.goog-te-combo');
         
-        if (langCode === 'en') {
-          // For English, just reload without translation cookies
-          location.reload();
+        if (!select) {
+          console.warn('Google Translate not ready yet');
           return;
         }
         
-        // Set the translation cookie for all possible domain variations
-        const domains = ['', window.location.hostname, '.' + window.location.hostname];
-        domains.forEach(domain => {
-          document.cookie = `googtrans=/en/${langCode}; path=/;${domain ? ' domain=' + domain + ';' : ''}`;
-        });
-        
-        // Try to use the Google Translate dropdown directly if available
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
+        if (langCode === 'en') {
+          // To show original content, we need to select empty value or trigger restore
+          // First try the select approach
+          select.value = '';
+          select.dispatchEvent(new Event('change'));
+          
+          // Also try to find and click the "Show original" button
+          setTimeout(() => {
+            const banner = document.querySelector('.goog-te-banner-frame');
+            if (banner && banner.contentDocument) {
+              const restoreBtn = banner.contentDocument.querySelector('.goog-te-button button');
+              if (restoreBtn) restoreBtn.click();
+            }
+          }, 100);
+        } else {
+          // Set the selected language
           select.value = langCode;
           select.dispatchEvent(new Event('change'));
-        } else {
-          // Otherwise reload to apply translation
-          location.reload();
         }
       }
 
@@ -644,14 +630,28 @@
       // Hide Google Translate banner and elements
       const style = document.createElement('style');
       style.textContent = `
-        .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame, .goog-te-gadget {
+        .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame {
           display: none !important;
+        }
+        .skiptranslate {
+          display: none !important;
+          height: 0 !important;
         }
         body {
           top: 0 !important;
+          position: static !important;
         }
       `;
       document.head.appendChild(style);
+
+      // Watch for Google Translate changes and sync our dropdown
+      const observer = new MutationObserver(() => {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          syncDropdownWithGoogleTranslate();
+        }
+      });
+      observer.observe(document.body, { childList: true, subtree: true });
     </script>
   </body>
 </html>
