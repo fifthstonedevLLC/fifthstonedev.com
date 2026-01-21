@@ -245,9 +245,9 @@ nav .container {
 }
 
 .btn-primary:hover {
-  background: var(--accent-copper);
+  background: var(--stone-slate);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(184, 149, 106, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
@@ -257,9 +257,10 @@ nav .container {
 }
 
 .btn-secondary:hover {
-  background: var(--white);
-  color: var(--stone-slate);
+  background: var(--stone-slate);
+  color: var(--white);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero-visual {
@@ -356,7 +357,7 @@ nav .container {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--accent-bronze);
+  color: #8b6914; /* Darker bronze for WCAG AA contrast (5.5:1 with white) */
   margin-bottom: 1rem;
 }
 
@@ -646,12 +647,6 @@ nav .container {
   font-size: 0.85rem;
   font-weight: 500;
   border-radius: 6px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-tags .tag {
-  background: var(--accent-bronze);
-  color: var(--white);
 }
 
 .btn-case-study {
@@ -663,7 +658,7 @@ nav .container {
   font-family: "Archivo", sans-serif;
   font-size: 0.9rem;
   font-weight: 600;
-  border: 1px solid var(--stone-charcoal);
+  border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -875,7 +870,7 @@ nav .container {
 }
 
 .btn-service:hover {
-  background: var(--accent-copper);
+  background: var(--stone-slate);
   transform: translateY(-2px);
 }
 
