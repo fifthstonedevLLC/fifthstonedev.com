@@ -237,6 +237,8 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <!-- Preload main stylesheet for faster rendering -->
+    <link rel="preload" href="styles.css" as="style" />
     <link rel="stylesheet" href="styles.css" />
     
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
@@ -256,8 +258,8 @@
             </p>
         </div>
         <div class="cookie-buttons">
-          <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="Accept all cookies">Accept All</button>
-          <button id="cookie-reject" class="cookie-btn cookie-reject" aria-label="Reject non-essential cookies">Reject All</button>
+          <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="Accept All cookies">Accept All</button>
+          <button id="cookie-reject" class="cookie-btn cookie-reject" aria-label="Reject All non-essential cookies">Reject All</button>
           <button id="cookie-settings" class="cookie-btn cookie-settings" aria-label="Customize cookie settings">Customize</button>
         </div>
       </div>
@@ -302,13 +304,13 @@
           <span></span>
           <span></span>
         </button>
-        <ul class="nav-links" role="navigation" aria-label="Main navigation">
-          <li><a href="#about" aria-label="Learn about Fifth Stone Dev">About</a></li>
-          <li><a href="#developer" aria-label="Meet Phil Harberts, the developer">The Developer</a></li>
-          <li><a href="#portfolio" aria-label="View our portfolio of work">Portfolio</a></li>
-          <li><a href="#services" aria-label="Explore our services">Services</a></li>
-          <li><a href="#why" aria-label="Why choose Fifth Stone Dev">Why Us</a></li>
-          <li><a href="#contact" aria-label="Contact Fifth Stone Dev">Contact</a></li>
+        <ul class="nav-links">
+          <li><a href="#about" aria-label="About - Learn about Fifth Stone Dev">About</a></li>
+          <li><a href="#developer" aria-label="The Developer - Meet Phil Harberts">The Developer</a></li>
+          <li><a href="#portfolio" aria-label="Portfolio - View our work">Portfolio</a></li>
+          <li><a href="#services" aria-label="Services - Explore our services">Services</a></li>
+          <li><a href="#why" aria-label="Why Us - Why choose Fifth Stone Dev">Why Us</a></li>
+          <li><a href="#contact" aria-label="Contact - Contact Fifth Stone Dev">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -325,8 +327,8 @@
             code.
           </p>
           <div class="cta-buttons">
-            <a href="#contact" class="btn btn-primary" aria-label="Start your web development project - Contact us">Start Your Project</a>
-            <a href="#services" class="btn btn-secondary" aria-label="View our web development and automation services">Our Services</a>
+            <a href="#contact" class="btn btn-primary" aria-label="Start Your Project - Contact us">Start Your Project</a>
+            <a href="#services" class="btn btn-secondary" aria-label="Our Services - View web development and automation">Our Services</a>
           </div>
         </div>
         <div class="hero-visual">
@@ -464,7 +466,7 @@
                 <div class="portfolio-content">
                   <h3>Candeo Counseling Center</h3>
                   <p>Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.</p>
-                  <button class="btn-case-study" onclick="openModal('candeoCaseStudyModal')" aria-label="View Candeo Counseling Center case study">
+                  <button class="btn-case-study" onclick="openModal('candeoCaseStudyModal')" aria-label="View Case Study - Candeo Counseling Center">
                     View Case Study
                   </button>
                   <div class="portfolio-tags">
@@ -487,7 +489,7 @@
                 <div class="portfolio-content">
                   <h3>Internal Database Querying Tool</h3>
                   <p>Enterprise-level process automation and internal tool development for a healthcare technology SaaS company.</p>
-                  <button class="btn-case-study" onclick="openModal('inovalonCaseStudyModal')" aria-label="View Internal Database Querying Tool case study">
+                  <button class="btn-case-study" onclick="openModal('inovalonCaseStudyModal')" aria-label="View Case Study - Internal Database Querying Tool">
                     View Case Study
                   </button>
                   <div class="portfolio-tags">
@@ -510,7 +512,7 @@
                 <div class="portfolio-content">
                   <h3>Government Agency Data Processing</h3>
                   <p>Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.</p>
-                  <button class="btn-case-study" onclick="openModal('govDataProcessingModal')" aria-label="View Government Agency Data Processing case study">
+                  <button class="btn-case-study" onclick="openModal('govDataProcessingModal')" aria-label="View Case Study - Government Agency Data Processing">
                     View Case Study
                   </button>
                   <div class="portfolio-tags">
@@ -533,7 +535,7 @@
                 <div class="portfolio-content">
                   <h3>Isles of Hope International</h3>
                   <p>Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.</p>
-                  <button class="btn-case-study" onclick="openModal('islesOfHopeIntlModal')" aria-label="View Isles of Hope International case study">
+                  <button class="btn-case-study" onclick="openModal('islesOfHopeIntlModal')" aria-label="View Case Study - Isles of Hope International">
                     View Case Study
                   </button>
                   <div class="portfolio-tags">
@@ -699,13 +701,13 @@
           <div class="contact-item">
             <div class="contact-item-label">Phone</div>
             <div class="contact-item-value">
-              <a href="tel:+16418497311" aria-label="Call Fifth Stone Dev at 641-849-7311">(641) 849-7311</a>
+              <a href="tel:+16418497311" aria-label="(641) 849-7311 - Call Fifth Stone Dev">(641) 849-7311</a>
             </div>
           </div>
         </div>
 
         <div style="margin-top: 3rem">
-          <button class="btn btn-primary" onclick="openModal('contactModal')" aria-label="Open contact form to send us a message">
+          <button class="btn btn-primary" onclick="openModal('contactModal')" aria-label="Send Us A Message - Open contact form">
             Send Us A Message
           </button>
         </div>

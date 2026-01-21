@@ -1932,8 +1932,8 @@ html {
 }
 
 .cookie-accept {
-  background: var(--accent-bronze);
-  color: var(--white);
+  background: #8b6914;
+  color: #ffffff;
 }
 
 .cookie-accept:hover {
