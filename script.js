@@ -208,10 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Portfolio Carousel
+// Portfolio Carousel - Uses percentage-based positioning to avoid forced reflows
 let currentSlide = 0;
-let cachedItemWidth = null;
-let isCarouselInitialized = false;
 
 function getItemsPerSlide() {
   return window.innerWidth <= 768 ? 1 : 2;
@@ -238,7 +236,6 @@ function updateCarouselDots() {
 function updateCarousel() {
   const track = document.querySelector('.portfolio-track');
   const dots = document.querySelectorAll('.carousel-dots .dot');
-  const carousel = document.querySelector('.portfolio-carousel');
   const items = document.querySelectorAll('.portfolio-item');
   const itemsPerSlide = getItemsPerSlide();
   const totalSlides = Math.ceil(items.length / itemsPerSlide);
@@ -247,14 +244,27 @@ function updateCarousel() {
   if (currentSlide >= totalSlides) {
     currentSlide = totalSlides - 1;
   }
+  if (currentSlide < 0) {
+    currentSlide = 0;
+  }
   
-  if (track && carousel && items.length > 0) {
-    const gap = 32; // 2rem gap
-    // Use cached width to avoid forced reflows
-    // Width is calculated once during initialization via requestAnimationFrame
-    if (cachedItemWidth !== null) {
-      const slideOffset = currentSlide * (cachedItemWidth * itemsPerSlide + gap * itemsPerSlide);
-      track.style.transform = `translateX(-${slideOffset}px)`;
+  if (track && items.length > 0) {
+    // Use percentage-based transform to avoid reading offsetWidth (forced reflow)
+    // Each slide is 100% of visible area, so we translate by currentSlide * 100%
+    // Gap is handled via CSS calc - on desktop each item is 50%-1rem with 2rem gap
+    // This means each "page" of items = 100% + gap percentage
+    const gapRem = 2; // 2rem gap in CSS
+    const baseFontSize = 16; // Assume 16px base
+    const gapPx = gapRem * baseFontSize;
+    
+    if (itemsPerSlide === 1) {
+      // Mobile: each item is 100% width, plus 2rem gap
+      // Transform by (100% + gap) per slide
+      track.style.transform = `translateX(calc(-${currentSlide * 100}% - ${currentSlide * gapPx}px))`;
+    } else {
+      // Desktop: 2 items per slide, each is 50%-1rem with 2rem gap between
+      // One "page" = 2 items = 100% + 2rem gap
+      track.style.transform = `translateX(calc(-${currentSlide * 100}% - ${currentSlide * gapPx}px))`;
     }
   }
   
@@ -284,37 +294,20 @@ function goToSlide(index) {
   updateCarousel();
 }
 
-// Recalculate on window resize - debounced and using requestAnimationFrame
+// Recalculate dots on window resize (no layout reads needed)
 let resizeTimeout;
 window.addEventListener('resize', function() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
-    // Use requestAnimationFrame to batch layout read after styles settle
-    requestAnimationFrame(function() {
-      const items = document.querySelectorAll('.portfolio-item');
-      if (items.length > 0) {
-        cachedItemWidth = items[0].offsetWidth;
-      }
-      updateCarouselDots();
-      updateCarousel();
-    });
+    updateCarouselDots();
+    updateCarousel();
   }, 100);
 });
 
-// Initialize carousel on page load using requestAnimationFrame to avoid forced reflow
+// Initialize carousel on page load
 document.addEventListener('DOMContentLoaded', function() {
   updateCarouselDots();
-  // Defer layout read to after initial render completes
-  requestAnimationFrame(function() {
-    requestAnimationFrame(function() {
-      const items = document.querySelectorAll('.portfolio-item');
-      if (items.length > 0) {
-        cachedItemWidth = items[0].offsetWidth;
-        isCarouselInitialized = true;
-        updateCarousel();
-      }
-    });
-  });
+  updateCarousel();
 });
 
 // Auto-advance carousel (optional)
