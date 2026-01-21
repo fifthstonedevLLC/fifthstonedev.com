@@ -283,8 +283,8 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   </head>
   <body>
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-consent-banner" class="cookie-banner" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true" style="position:fixed;bottom:0;left:0;right:0;top:auto;z-index:10000;">
+    <!-- Cookie Consent Banner - hidden by default, shown via JS to avoid blocking LCP -->
+    <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true" style="display:none;position:fixed;bottom:0;left:0;right:0;top:auto;z-index:10000;">
       <div class="cookie-content">
         <div class="cookie-text">
           <h3 id="cookie-title">🍪 We value your privacy</h3>

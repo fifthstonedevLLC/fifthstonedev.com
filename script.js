@@ -332,11 +332,13 @@ const CookieConsent = {
     const consent = this.getConsent();
     
     if (consent === null) {
-      // No consent given yet - show banner
-      banner.classList.remove('hidden');
+      // No consent given yet - show banner after a short delay to avoid blocking LCP
+      setTimeout(() => {
+        banner.style.display = 'block';
+        banner.classList.remove('hidden');
+      }, 100);
     } else {
-      // Consent already given - hide banner and load scripts if accepted
-      banner.classList.add('hidden');
+      // Consent already given - keep banner hidden and load scripts if accepted
       if (consent.analytics) {
         this.loadAnalytics();
       }
@@ -417,6 +419,7 @@ const CookieConsent = {
     const banner = document.getElementById('cookie-consent-banner');
     if (banner) {
       banner.classList.add('hidden');
+      banner.style.display = 'none';
     }
   },
   
