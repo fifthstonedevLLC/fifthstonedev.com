@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Fifth Stone Dev LLC</title>
+    <meta name="description" content="Privacy Policy for Fifth Stone Dev LLC. Learn how we collect, use, and protect your personal information." />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/fifth_stone_dev_favicon.ico" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.fifthstonedev.com/privacy-policy.html" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .privacy-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 120px 24px 80px;
+      }
+      
+      .privacy-header {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+      
+      .privacy-header h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 16px;
+        background: linear-gradient(135deg, var(--accent-bronze), var(--accent-copper));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      
+      .privacy-header .last-updated {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+      
+      .privacy-content {
+        background: var(--card-bg);
+        border-radius: 16px;
+        padding: 48px;
+        border: 1px solid var(--border-color);
+      }
+      
+      .privacy-content h2 {
+        font-size: 1.5rem;
+        margin-top: 40px;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+        padding-bottom: 8px;
+        border-bottom: 2px solid var(--accent-primary);
+      }
+      
+      .privacy-content h2:first-child {
+        margin-top: 0;
+      }
+      
+      .privacy-content h3 {
+        font-size: 1.1rem;
+        margin-top: 24px;
+        margin-bottom: 12px;
+        color: var(--text-primary);
+      }
+      
+      .privacy-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 16px;
+      }
+      
+      .privacy-content ul {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 16px;
+        padding-left: 24px;
+      }
+      
+      .privacy-content li {
+        margin-bottom: 8px;
+      }
+      
+      .privacy-content a {
+        color: var(--accent-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .privacy-content a:hover {
+        color: var(--accent-secondary);
+        text-decoration: underline;
+      }
+      
+      .privacy-content strong {
+        color: var(--text-primary);
+      }
+      
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--accent-primary);
+        text-decoration: none;
+        margin-bottom: 24px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .back-link:hover {
+        color: var(--accent-secondary);
+      }
+      
+      .contact-box {
+        background: rgba(102, 126, 234, 0.1);
+        border: 1px solid var(--accent-primary);
+        border-radius: 12px;
+        padding: 24px;
+        margin-top: 32px;
+      }
+      
+      .contact-box h3 {
+        margin-top: 0;
+        color: var(--accent-primary);
+      }
+
+      @media (max-width: 768px) {
+        .privacy-content {
+          padding: 24px;
+        }
+        
+        .privacy-container {
+          padding: 100px 16px 60px;
+        }
+      }
+      
+      .privacy-logo {
+        display: block;
+        max-width: 280px;
+        height: auto;
+        margin: 0 auto 32px;
+      }
+      
+      /* Top bar with back button and language selector */
+      .privacy-top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      
+      /* Language dropdown */
+      .language-selector {
+        position: relative;
+      }
+      
+      .language-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 18px;
+        background: var(--white);
+        color: var(--stone-charcoal);
+        border: 1px solid var(--stone-sand);
+        border-radius: 50px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+      
+      .language-btn:hover {
+        border-color: var(--accent-bronze);
+        background: rgba(184, 149, 106, 0.1);
+      }
+      
+      .language-btn svg {
+        width: 18px;
+        height: 18px;
+      }
+      
+      .language-btn .chevron {
+        width: 14px;
+        height: 14px;
+        transition: transform 0.3s ease;
+      }
+      
+      .language-selector.open .chevron {
+        transform: rotate(180deg);
+      }
+      
+      .language-dropdown {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 0;
+        min-width: 180px;
+        background: var(--white);
+        border: 1px solid var(--stone-sand);
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        overflow: hidden;
+      }
+      
+      .language-selector.open .language-dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+      
+      .language-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        color: var(--stone-river);
+        text-decoration: none;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        font-size: 0.9rem;
+        font-family: inherit;
+      }
+      
+      .language-option:hover {
+        background: rgba(184, 149, 106, 0.1);
+        color: var(--stone-charcoal);
+      }
+      
+      .language-option.active {
+        background: rgba(184, 149, 106, 0.15);
+        color: var(--accent-bronze);
+      }
+      
+      .language-option .flag {
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 768px) {
+        .privacy-top-bar {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        
+        .language-selector {
+          width: 100%;
+        }
+        
+        .language-btn {
+          width: 100%;
+          justify-content: center;
+        }
+        
+        .language-dropdown {
+          left: 0;
+          right: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Translate Element (hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+    
+    <main class="privacy-container">
+      <div class="privacy-top-bar">
+        <a href="/" class="back-link">← Back to Home</a>
+        
+        <div class="language-selector" id="languageSelector">
+          <button class="language-btn" id="languageBtn" aria-expanded="false" aria-haspopup="true">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <span id="currentLang">English</span>
+            <svg class="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="language-dropdown" id="languageDropdown">
+            <button class="language-option active" data-lang="en">
+              <span class="flag">🇺🇸</span> English
+            </button>
+            <button class="language-option" data-lang="es">
+              <span class="flag">🇪🇸</span> Español
+            </button>
+            <button class="language-option" data-lang="fr">
+              <span class="flag">🇫🇷</span> Français
+            </button>
+            <button class="language-option" data-lang="de">
+              <span class="flag">🇩🇪</span> Deutsch
+            </button>
+            <button class="language-option" data-lang="zh-CN">
+              <span class="flag">🇨🇳</span> 中文
+            </button>
+            <button class="language-option" data-lang="ja">
+              <span class="flag">🇯🇵</span> 日本語
+            </button>
+            <button class="language-option" data-lang="pt">
+              <span class="flag">🇧🇷</span> Português
+            </button>
+            <button class="language-option" data-lang="ar">
+              <span class="flag">🇸🇦</span> العربية
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <a href="/">
+        <img src="assets/horz-logo.png" alt="Fifth Stone Dev Logo" class="privacy-logo" />
+      </a>
+      
+      <header class="privacy-header">
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last Updated: January 20, 2026</p>
+      </header>
+
+      <div class="privacy-content">
+        <h2>Introduction</h2>
+        <p>
+          Fifth Stone Dev LLC ("we," "our," or "us") respects your privacy and is committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://www.fifthstonedev.com">www.fifthstonedev.com</a>.
+        </p>
+        <p>
+          By using our website, you consent to the data practices described in this policy. If you do not agree with this policy, please do not use our website.
+        </p>
+
+        <h2>Information We Collect</h2>
+        
+        <h3>Information You Provide Directly</h3>
+        <p>We may collect personal information that you voluntarily provide when you:</p>
+        <ul>
+          <li>Fill out a contact form or consultation request</li>
+          <li>Request a quote for our services</li>
+          <li>Subscribe to communications from us</li>
+          <li>Communicate with us via email or phone</li>
+        </ul>
+        <p>This information may include:</p>
+        <ul>
+          <li>Name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Company name</li>
+          <li>Project details and requirements you share with us</li>
+        </ul>
+
+        <h3>Information Collected Automatically</h3>
+        <p>When you visit our website, we may automatically collect certain information about your device and usage, including:</p>
+        <ul>
+          <li>IP address</li>
+          <li>Browser type and version</li>
+          <li>Operating system</li>
+          <li>Pages visited and time spent on pages</li>
+          <li>Referring website or source</li>
+          <li>Device type (desktop, mobile, tablet)</li>
+          <li>Screen resolution</li>
+          <li>Clicks, scrolls, and other interactions</li>
+        </ul>
+
+        <h2>Cookies and Tracking Technologies</h2>
+        <p>We use cookies and similar tracking technologies to enhance your experience on our website. You can manage your cookie preferences through our cookie consent banner.</p>
+
+        <h3>Essential Cookies</h3>
+        <p>These cookies are necessary for the website to function properly. They enable core functionality such as remembering your cookie consent preferences. These cannot be disabled.</p>
+
+        <h3>Analytics Cookies</h3>
+        <p>With your consent, we use the following analytics services:</p>
+        
+        <p><strong>Google Analytics (Google LLC)</strong></p>
+        <ul>
+          <li>Purpose: To understand how visitors interact with our website, including page views, session duration, and traffic sources</li>
+          <li>Data collected: Anonymized IP address, pages visited, time on site, device information</li>
+          <li>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+          <li>Opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer">Google Analytics Opt-out Browser Add-on</a></li>
+        </ul>
+
+        <p><strong>Microsoft Clarity (Microsoft Corporation)</strong></p>
+        <ul>
+          <li>Purpose: To understand user behavior through session recordings and heatmaps, helping us improve website usability</li>
+          <li>Data collected: Mouse movements, clicks, scrolls, page interactions (personal data is masked)</li>
+          <li>Privacy Policy: <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer">Microsoft Privacy Statement</a></li>
+        </ul>
+
+        <h2>How We Use Your Information</h2>
+        <p>We use the information we collect to:</p>
+        <ul>
+          <li>Respond to your inquiries and provide requested services</li>
+          <li>Send you project proposals and quotes</li>
+          <li>Communicate with you about our services</li>
+          <li>Improve our website and user experience</li>
+          <li>Analyze website traffic and usage patterns</li>
+          <li>Protect against fraud and unauthorized access</li>
+          <li>Comply with legal obligations</li>
+        </ul>
+
+        <h2>Third-Party Services</h2>
+        <p>We use the following third-party services to operate our website:</p>
+        
+        <p><strong>EmailJS</strong></p>
+        <ul>
+          <li>Purpose: To process and deliver contact form submissions</li>
+          <li>Data shared: Information you submit through our contact forms (name, email, message content)</li>
+          <li>Privacy Policy: <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">EmailJS Privacy Policy</a></li>
+        </ul>
+
+        <p><strong>Google Fonts</strong></p>
+        <ul>
+          <li>Purpose: To display fonts on our website</li>
+          <li>Data collected: Your IP address may be transmitted to Google servers</li>
+          <li>Privacy Policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        </ul>
+
+        <h2>Data Retention</h2>
+        <p>We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, including:</p>
+        <ul>
+          <li>Contact form submissions: Retained for the duration of any business relationship, plus a reasonable period thereafter for legal and administrative purposes</li>
+          <li>Analytics data: Retained according to the default retention periods of Google Analytics (26 months) and Microsoft Clarity (13 months)</li>
+          <li>Cookie consent preferences: Retained for 12 months</li>
+        </ul>
+
+        <h2>Data Security</h2>
+        <p>We implement appropriate technical and organizational measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h2>Your Rights</h2>
+        <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+        <ul>
+          <li><strong>Access:</strong> Request a copy of the personal data we hold about you</li>
+          <li><strong>Correction:</strong> Request correction of inaccurate or incomplete data</li>
+          <li><strong>Deletion:</strong> Request deletion of your personal data</li>
+          <li><strong>Objection:</strong> Object to processing of your data for certain purposes</li>
+          <li><strong>Portability:</strong> Request transfer of your data to another service</li>
+          <li><strong>Withdraw Consent:</strong> Withdraw consent for analytics cookies at any time through our cookie settings</li>
+        </ul>
+        <p>To exercise any of these rights, please contact us using the information below.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>Our website is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us so we can delete it.</p>
+
+        <h2>Links to Other Websites</h2>
+        <p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+        <h2>Changes to This Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons. We will post the updated policy on this page with a revised "Last Updated" date. We encourage you to review this policy periodically.</p>
+
+        <h2>Contact Us</h2>
+        <div class="contact-box">
+          <h3>Fifth Stone Dev LLC</h3>
+          <p>
+            <strong>Location:</strong> Cedar Falls, Iowa 50613<br />
+            <strong>Phone:</strong> <a href="tel:+16418497311">(641) 849-7311</a><br />
+            <strong>Email:</strong> <a href="mailto:fifthstonedev@outlook.com">fifthstonedev@outlook.com</a><br />
+            <strong>Website:</strong> <a href="https://www.fifthstonedev.com">www.fifthstonedev.com</a>
+          </p>
+          <p>If you have any questions about this Privacy Policy or our data practices, please contact us using the information above.</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Fifth Stone Dev</h3>
+          <p>Web Development & Process Automation in Cedar Falls, Iowa</p>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Cedar Falls, Iowa 50613</p>
+          <p><a href="tel:+16418497311">(641) 849-7311</a></p>
+          <p><a href="mailto:fifthstonedev@outlook.com">fifthstonedev@outlook.com</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Legal</h3>
+          <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Google Translate Script -->
+    <script>
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'en,es,fr,de,zh-CN,ja,pt,ar',
+          autoDisplay: false
+        }, 'google_translate_element');
+      }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+      // Language dropdown functionality
+      const languageSelector = document.getElementById('languageSelector');
+      const languageBtn = document.getElementById('languageBtn');
+      const languageDropdown = document.getElementById('languageDropdown');
+      const languageOptions = document.querySelectorAll('.language-option');
+      const currentLangSpan = document.getElementById('currentLang');
+
+      // Language names mapping
+      const languageNames = {
+        'en': 'English',
+        'es': 'Español',
+        'fr': 'Français',
+        'de': 'Deutsch',
+        'zh': '中文',
+        'ja': '日本語',
+        'pt': 'Português',
+        'ar': 'العربية'
+      };
+
+      // Google Translate language codes
+      const gtLangCodes = {
+        'en': 'en',
+        'es': 'es',
+        'fr': 'fr',
+        'de': 'de',
+        'zh': 'zh-CN',
+        'ja': 'ja',
+        'pt': 'pt',
+        'ar': 'ar'
+      };
+
+      // Toggle dropdown
+      languageBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const isOpen = languageSelector.classList.toggle('open');
+        languageBtn.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!languageSelector.contains(e.target)) {
+          languageSelector.classList.remove('open');
+          languageBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Handle language selection
+      languageOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const lang = this.getAttribute('data-lang');
+          
+          // Update active state
+          languageOptions.forEach(opt => opt.classList.remove('active'));
+          this.classList.add('active');
+          
+          // Update button text
+          currentLangSpan.textContent = languageNames[lang];
+          
+          // Close dropdown
+          languageSelector.classList.remove('open');
+          languageBtn.setAttribute('aria-expanded', 'false');
+          
+          // Trigger Google Translate
+          changeLanguage(gtLangCodes[lang]);
+        });
+      });
+
+      // Function to change language using Google Translate
+      function changeLanguage(langCode) {
+        if (langCode === 'en') {
+          // Reset to original language
+          const iframe = document.querySelector('.goog-te-banner-frame');
+          if (iframe) {
+            const innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+            const restoreButton = innerDoc.querySelector('.goog-te-button button');
+            if (restoreButton) restoreButton.click();
+          }
+          // Also try the cookie method
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=." + window.location.hostname;
+          location.reload();
+          return;
+        }
+        
+        // Set the translation cookie
+        document.cookie = "googtrans=/en/" + langCode + "; path=/";
+        document.cookie = "googtrans=/en/" + langCode + "; path=/; domain=." + window.location.hostname;
+        
+        // Trigger translation
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = langCode;
+          select.dispatchEvent(new Event('change'));
+        } else {
+          // If Google Translate isn't ready yet, reload
+          location.reload();
+        }
+      }
+
+      // Keyboard navigation for dropdown
+      languageBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.click();
+        }
+      });
+
+      // Hide Google Translate banner
+      const style = document.createElement('style');
+      style.textContent = `
+        .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame {
+          display: none !important;
+        }
+        body {
+          top: 0 !important;
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>
