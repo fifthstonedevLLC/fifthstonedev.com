@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Portfolio Carousel
 let currentSlide = 0;
+let cachedItemWidth = null;
 
 function getItemsPerSlide() {
   return window.innerWidth <= 768 ? 1 : 2;
@@ -248,9 +249,11 @@ function updateCarousel() {
   
   if (track && carousel && items.length > 0) {
     const gap = 32; // 2rem gap
-    const item = items[0];
-    const itemWidth = item.offsetWidth;
-    const slideOffset = currentSlide * (itemWidth * itemsPerSlide + gap * itemsPerSlide);
+    // Use cached width or read once, avoiding repeated forced reflows
+    if (cachedItemWidth === null) {
+      cachedItemWidth = items[0].offsetWidth;
+    }
+    const slideOffset = currentSlide * (cachedItemWidth * itemsPerSlide + gap * itemsPerSlide);
     track.style.transform = `translateX(-${slideOffset}px)`;
   }
   
@@ -285,6 +288,8 @@ let resizeTimeout;
 window.addEventListener('resize', function() {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(function() {
+    // Invalidate cached width on resize so it gets recalculated
+    cachedItemWidth = null;
     updateCarouselDots();
     updateCarousel();
   }, 100);

@@ -228,18 +228,47 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://www.clarity.ms" />
+    <!-- Load Google Fonts asynchronously to avoid blocking render -->
     <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
-      as="style"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
-    <!-- Preload main stylesheet for faster rendering -->
-    <link rel="preload" href="styles.css" as="style" />
-    <link rel="stylesheet" href="styles.css" />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <!-- Critical CSS inlined to avoid render-blocking -->
+    <style>
+      /* Critical above-the-fold styles */
+      :root{--stone-slate:#2c3e50;--stone-charcoal:#1a252f;--stone-river:#5d6d7e;--stone-sand:#bdc3c7;--stone-light:#ecf0f1;--accent-bronze:#b8956a;--white:#ffffff;--off-white:#f8f9fa}
+      *{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:"Archivo",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--stone-charcoal);background:var(--off-white);line-height:1.6;overflow-x:hidden}
+      nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000;border-bottom:1px solid rgba(44,62,80,.1)}
+      nav .container{max-width:1400px;margin:0 auto;padding:.1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+      .logo{display:flex;align-items:center;gap:.5rem;position:relative;z-index:1001}
+      .logo a{display:block;line-height:0;cursor:pointer}
+      .logo img{height:130px;width:auto;display:block}
+      .nav-links{display:flex;gap:2.5rem;list-style:none}
+      .nav-links a{color:var(--stone-river);text-decoration:none;font-weight:500;font-size:1.1rem}
+      .hero{margin-top:80px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--stone-charcoal) 0%,var(--stone-slate) 100%)}
+      .hero .container{max-width:1400px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+      .hero-content h1{font-family:"Archivo",sans-serif;font-size:4.5rem;font-weight:300;line-height:1.1;margin-bottom:2rem;color:var(--white)}
+      .hero-content h1 strong{font-weight:700;color:var(--accent-bronze);display:block}
+      .hero-content p{font-size:1.25rem;color:var(--stone-sand);margin-bottom:2.5rem;max-width:600px;line-height:1.8}
+      .btn{padding:1rem 2.5rem;font-size:1rem;font-weight:500;text-decoration:none;border-radius:4px;cursor:pointer;border:none;display:inline-block}
+      .btn-primary{background:var(--accent-bronze);color:var(--white)}
+      .btn-secondary{background:transparent;color:var(--white);border:2px solid var(--white)}
+      .cta-buttons{display:flex;gap:1.5rem}
+      .mobile-menu-toggle{display:none}
+      @media(max-width:768px){.logo img{height:80px}.mobile-menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.mobile-menu-toggle span{width:25px;height:3px;background:var(--stone-slate);border-radius:2px}.nav-links{position:fixed;top:0;right:0;height:100vh;width:280px;background:var(--white);flex-direction:column;padding:6rem 2rem 2rem;gap:2rem;transform:translateX(100%);transition:transform .3s ease;z-index:999}.nav-links.active{transform:translateX(0)}.hero{margin-top:80px;min-height:auto}.hero .container{grid-template-columns:1fr;padding:2rem 1.25rem}.hero-content h1{font-size:2.2rem}.hero-visual{display:none}.cta-buttons{flex-direction:column;gap:1rem}}
+    </style>
+    <!-- Main stylesheet loaded asynchronously -->
+    <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
     
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1271,7 +1300,7 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <script>
       // Tool image toggle functions
       function openToolImage(imageId) {
