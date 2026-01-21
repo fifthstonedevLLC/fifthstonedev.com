@@ -499,6 +499,7 @@
     </footer>
 
     <!-- Google Translate Script -->
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script>
       function googleTranslateElementInit() {
         new google.translate.TranslateElement({
@@ -506,18 +507,11 @@
           includedLanguages: 'en,es,fr,de,zh-CN,ja,pt,ar',
           autoDisplay: false
         }, 'google_translate_element');
-        
-        // Once Google Translate is initialized, sync the dropdown
-        setTimeout(syncDropdownWithGoogleTranslate, 500);
       }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script>
       // Language dropdown functionality
       const languageSelector = document.getElementById('languageSelector');
       const languageBtn = document.getElementById('languageBtn');
-      const languageDropdown = document.getElementById('languageDropdown');
       const languageOptions = document.querySelectorAll('.language-option');
       const currentLangSpan = document.getElementById('currentLang');
 
@@ -532,28 +526,6 @@
         'pt': 'Português',
         'ar': 'العربية'
       };
-
-      // Sync our dropdown with Google Translate's actual state
-      function syncDropdownWithGoogleTranslate() {
-        const select = document.querySelector('.goog-te-combo');
-        if (select && select.value) {
-          const currentLang = select.value || 'en';
-          updateDropdownUI(currentLang);
-        }
-      }
-
-      // Update dropdown UI without triggering translation
-      function updateDropdownUI(lang) {
-        currentLangSpan.textContent = languageNames[lang] || 'English';
-        languageOptions.forEach(opt => {
-          const optLang = opt.getAttribute('data-lang');
-          if (optLang === lang) {
-            opt.classList.add('active');
-          } else {
-            opt.classList.remove('active');
-          }
-        });
-      }
 
       // Toggle dropdown
       languageBtn.addEventListener('click', function(e) {
@@ -575,7 +547,7 @@
         option.addEventListener('click', function() {
           const lang = this.getAttribute('data-lang');
           
-          // Update UI immediately
+          // Update UI
           languageOptions.forEach(opt => opt.classList.remove('active'));
           this.classList.add('active');
           currentLangSpan.textContent = languageNames[lang] || 'English';
@@ -584,42 +556,16 @@
           languageSelector.classList.remove('open');
           languageBtn.setAttribute('aria-expanded', 'false');
           
-          // Change language
-          changeLanguage(lang);
+          // Change language using Google Translate
+          const select = document.querySelector('.goog-te-combo');
+          if (select) {
+            select.value = lang === 'en' ? '' : lang;
+            select.dispatchEvent(new Event('change'));
+          }
         });
       });
 
-      // Function to change language using Google Translate
-      function changeLanguage(langCode) {
-        const select = document.querySelector('.goog-te-combo');
-        
-        if (!select) {
-          console.warn('Google Translate not ready yet');
-          return;
-        }
-        
-        if (langCode === 'en') {
-          // To show original content, we need to select empty value or trigger restore
-          // First try the select approach
-          select.value = '';
-          select.dispatchEvent(new Event('change'));
-          
-          // Also try to find and click the "Show original" button
-          setTimeout(() => {
-            const banner = document.querySelector('.goog-te-banner-frame');
-            if (banner && banner.contentDocument) {
-              const restoreBtn = banner.contentDocument.querySelector('.goog-te-button button');
-              if (restoreBtn) restoreBtn.click();
-            }
-          }, 100);
-        } else {
-          // Set the selected language
-          select.value = langCode;
-          select.dispatchEvent(new Event('change'));
-        }
-      }
-
-      // Keyboard navigation for dropdown
+      // Keyboard navigation
       languageBtn.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
@@ -627,31 +573,15 @@
         }
       });
 
-      // Hide Google Translate banner and elements
+      // Hide Google Translate UI elements
       const style = document.createElement('style');
       style.textContent = `
-        .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame {
+        .goog-te-banner-frame, #goog-gt-tt, .goog-te-balloon-frame, .skiptranslate {
           display: none !important;
         }
-        .skiptranslate {
-          display: none !important;
-          height: 0 !important;
-        }
-        body {
-          top: 0 !important;
-          position: static !important;
-        }
+        body { top: 0 !important; }
       `;
       document.head.appendChild(style);
-
-      // Watch for Google Translate changes and sync our dropdown
-      const observer = new MutationObserver(() => {
-        const select = document.querySelector('.goog-te-combo');
-        if (select) {
-          syncDropdownWithGoogleTranslate();
-        }
-      });
-      observer.observe(document.body, { childList: true, subtree: true });
     </script>
   </body>
 </html>
