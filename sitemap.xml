@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.fifthstonedev.com/</loc>
-    <lastmod>2026-01-20</lastmod>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -11,32 +12,68 @@
       <image:title>Fifth Stone Dev - Web Development and Process Automation</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/stone_and_sling.png</image:loc>
+      <image:title>Fifth Stone Dev - Web Development Services Cedar Falls Iowa</image:title>
+    </image:image>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://www.fifthstonedev.com/about</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
       <image:loc>https://www.fifthstonedev.com/assets/professional_stone_slate.jpg</image:loc>
       <image:title>Phil Harberts - Founder of Fifth Stone Dev</image:title>
     </image:image>
   </url>
+  
+  <!-- Services Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/#services</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://www.fifthstonedev.com/services</loc>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
+  <!-- Portfolio Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/#portfolio</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://www.fifthstonedev.com/portfolio</loc>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png</image:loc>
+      <image:title>Candeo Counseling Center Website Redesign</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/Inovalon_Query_Tool.png</image:loc>
+      <image:title>Internal Database Querying Tool</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/gov_agency_app.png</image:loc>
+      <image:title>Government Agency Data Processing Tool</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/isles_of_hope_Page.png</image:loc>
+      <image:title>Isles of Hope International Website</image:title>
+    </image:image>
   </url>
+  
+  <!-- Contact Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/#about</loc>
-    <lastmod>2026-01-20</lastmod>
+    <loc>https://www.fifthstonedev.com/contact</loc>
+    <lastmod>2026-01-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
+  
+  <!-- Privacy Policy -->
   <url>
-    <loc>https://www.fifthstonedev.com/#contact</loc>
-    <lastmod>2026-01-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://www.fifthstonedev.com/privacy-policy.html</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
