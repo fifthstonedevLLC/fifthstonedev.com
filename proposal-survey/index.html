@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Web Proposal Survey | Fifth Stone Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --stone-slate: #2c3e50;
+        --stone-charcoal: #1a252f;
+        --stone-river: #5d6d7e;
+        --stone-sand: #bdc3c7;
+        --stone-light: #ecf0f1;
+        --accent-bronze: #b8956a;
+        --accent-copper: #cd7f32;
+        --accent-sage: #7d9d8e;
+        --white: #ffffff;
+        --off-white: #f8f9fa;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          "Archivo",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        color: var(--stone-charcoal);
+        background: var(--off-white);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Header */
+      .survey-header-bar {
+        background: var(--white);
+        border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+        padding: 1rem 2rem;
+        text-align: center;
+      }
+
+      .survey-header-bar img {
+        height: 80px;
+        width: auto;
+      }
+
+      .survey-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        min-height: 80vh;
+      }
+
+      .access-gate {
+        text-align: center;
+        padding: 60px 20px;
+        background: var(--white);
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+        margin-top: 20px;
+      }
+
+      .access-gate h1 {
+        color: var(--stone-slate);
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .access-gate p {
+        color: var(--stone-river);
+        margin-bottom: 30px;
+      }
+
+      .access-form {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .access-form input {
+        width: 100%;
+        padding: 15px;
+        font-size: 18px;
+        text-align: center;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        border: 2px solid var(--stone-sand);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        transition: border-color 0.3s;
+        font-family: inherit;
+      }
+
+      .access-form input:focus {
+        outline: none;
+        border-color: var(--accent-bronze);
+      }
+
+      .access-form button {
+        width: 100%;
+        padding: 15px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        background: var(--accent-bronze);
+        color: var(--white);
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .access-form button:hover {
+        background: var(--stone-slate);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(44, 62, 80, 0.2);
+      }
+
+      .error-message {
+        color: #c0392b;
+        margin-top: 15px;
+        display: none;
+      }
+
+      /* Survey Styles */
+      .survey-content {
+        display: none;
+      }
+
+      .survey-content.active {
+        display: block;
+      }
+
+      .survey-header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px;
+        background: var(--white);
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+      }
+
+      .survey-header h1 {
+        color: var(--stone-slate);
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .survey-header p {
+        color: var(--stone-river);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .survey-section {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 16px;
+        margin-bottom: 24px;
+        box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+        border-left: 4px solid var(--accent-bronze);
+      }
+
+      .survey-section h2 {
+        color: var(--stone-slate);
+        margin-bottom: 24px;
+        font-size: 1.25em;
+        font-weight: 600;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--stone-light);
+      }
+
+      .question-group {
+        margin-bottom: 28px;
+      }
+
+      .question-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .question-group > label:first-child {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: var(--stone-charcoal);
+      }
+
+      .question-group .required {
+        color: var(--accent-copper);
+      }
+
+      .question-group input[type="text"],
+      .question-group input[type="email"],
+      .question-group textarea,
+      .question-group select {
+        width: 100%;
+        padding: 14px;
+        border: 1px solid var(--stone-sand);
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: inherit;
+        transition: all 0.3s;
+        background: var(--off-white);
+      }
+
+      .question-group input:focus,
+      .question-group textarea:focus,
+      .question-group select:focus {
+        outline: none;
+        border-color: var(--accent-bronze);
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(184, 149, 106, 0.15);
+      }
+
+      .question-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .radio-group,
+      .checkbox-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .radio-group label,
+      .checkbox-group label {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        cursor: pointer;
+        padding: 12px 16px;
+        background: var(--off-white);
+        border-radius: 8px;
+        transition: all 0.2s;
+        border: 1px solid transparent;
+      }
+
+      .radio-group label:hover,
+      .checkbox-group label:hover {
+        background: var(--stone-light);
+        border-color: var(--stone-sand);
+      }
+
+      .radio-group input,
+      .checkbox-group input {
+        margin-right: 12px;
+        width: 18px;
+        height: 18px;
+        accent-color: var(--accent-bronze);
+      }
+
+      .rating-group {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        width: 100%;
+      }
+
+      .rating-group label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px 8px;
+        border: 2px solid var(--stone-sand);
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: normal;
+        background: var(--off-white);
+        text-align: center;
+        min-height: 90px;
+      }
+
+      .rating-group label:hover {
+        border-color: var(--accent-bronze);
+        background: var(--white);
+      }
+
+      .rating-group label:has(input:checked) {
+        border-color: var(--accent-bronze);
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(184, 149, 106, 0.2);
+      }
+
+      .rating-group input:checked + span {
+        color: var(--accent-bronze);
+        font-weight: 600;
+      }
+
+      .rating-group input {
+        margin-bottom: 8px;
+        accent-color: var(--accent-bronze);
+        width: 18px;
+        height: 18px;
+      }
+
+      .rating-group span {
+        font-size: 0.9em;
+        line-height: 1.3;
+      }
+
+      .submit-section {
+        text-align: center;
+        padding: 30px 0;
+      }
+
+      .submit-btn {
+        padding: 16px 60px;
+        font-size: 18px;
+        font-weight: 600;
+        background: var(--accent-bronze);
+        color: var(--white);
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: inherit;
+      }
+
+      .submit-btn:hover {
+        background: var(--stone-slate);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(44, 62, 80, 0.25);
+      }
+
+      .submit-btn:disabled {
+        background: var(--stone-sand);
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Thank You Message */
+      .thank-you {
+        display: none;
+        text-align: center;
+        padding: 80px 20px;
+        background: var(--white);
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(44, 62, 80, 0.08);
+        margin-top: 20px;
+      }
+
+      .thank-you.active {
+        display: block;
+      }
+
+      .thank-you h1 {
+        color: var(--stone-slate);
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .thank-you p {
+        color: var(--stone-river);
+        font-size: 1.1em;
+      }
+
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 30px;
+        background: var(--accent-sage);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .checkmark svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--white);
+      }
+
+      /* Footer */
+      .survey-footer {
+        text-align: center;
+        padding: 30px 20px;
+        color: var(--stone-river);
+        font-size: 0.9em;
+      }
+
+      .survey-footer a {
+        color: var(--accent-bronze);
+        text-decoration: none;
+      }
+
+      .survey-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .survey-header-bar {
+          padding: 0.75rem 1rem;
+        }
+
+        .survey-header-bar img {
+          height: 60px;
+        }
+
+        .rating-group {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 8px;
+        }
+
+        .rating-group label {
+          padding: 12px 4px;
+          min-height: 80px;
+        }
+
+        .rating-group span {
+          font-size: 0.75em;
+        }
+
+        .rating-group input {
+          width: 16px;
+          height: 16px;
+          margin-bottom: 6px;
+        }
+
+        .survey-section {
+          padding: 20px;
+        }
+
+        .access-gate {
+          padding: 40px 20px;
+        }
+      }
+
+      @media (max-width: 400px) {
+        .rating-group {
+          grid-template-columns: repeat(5, 1fr);
+          gap: 6px;
+        }
+
+        .rating-group label {
+          padding: 10px 2px;
+          min-height: 75px;
+          border-radius: 8px;
+        }
+
+        .rating-group span {
+          font-size: 0.7em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Logo -->
+    <header class="survey-header-bar">
+      <a href="https://fifthstonedev.com" target="_blank">
+        <img
+          src="../assets/horz-logo.original.png"
+          alt="Fifth Stone Dev Logo"
+        />
+      </a>
+    </header>
+
+    <div class="survey-container">
+      <!-- Access Code Gate -->
+      <div class="access-gate" id="accessGate">
+        <h1>Website Proposal Feedback</h1>
+        <p>Please enter your access code to view the survey.</p>
+        <form class="access-form" id="accessForm">
+          <input
+            type="text"
+            id="accessCode"
+            placeholder="Enter Access Code"
+            maxlength="10"
+            autocomplete="off"
+          />
+          <button type="submit">Continue</button>
+          <p class="error-message" id="errorMessage">
+            Invalid access code. Please try again.
+          </p>
+        </form>
+      </div>
+
+      <!-- Survey Content -->
+      <div class="survey-content" id="surveyContent">
+        <div class="survey-header">
+          <h1>Website Proposal Feedback Survey</h1>
+          <p>
+            Thank you for considering us for your website project. Your feedback
+            is invaluable in helping us improve our services. Please take a few
+            minutes to complete this brief survey.
+          </p>
+        </div>
+
+        <form id="surveyForm">
+          <!-- Section 1: Primary Decision Factors -->
+          <div class="survey-section">
+            <h2>Section 1: Primary Decision Factors</h2>
+
+            <div class="question-group">
+              <label
+                >1. What was the primary reason for declining our proposal?
+                <span class="required">*</span> (Select all that apply)</label
+              >
+              <div class="checkbox-group">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="pricing-above-budget"
+                  />
+                  Pricing was above our budget</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="timeline-not-met"
+                  />
+                  Timeline did not meet our needs</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="features-mismatch"
+                  />
+                  Proposed features did not match our requirements</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="chose-different-provider"
+                  />
+                  Chose a different provider</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="project-postponed"
+                  />
+                  Project was postponed or cancelled</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="lack-confidence"
+                  />
+                  Lack of confidence in our capabilities</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="declineReason"
+                    value="communication-concerns"
+                  />
+                  Communication concerns</label
+                >
+                <label
+                  ><input type="checkbox" name="declineReason" value="other" />
+                  Other (please specify below)</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >2. If you selected 'Other' or would like to elaborate on your
+                selection, please explain:</label
+              >
+              <textarea
+                name="declineElaboration"
+                placeholder="Please provide more details..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Section 2: Proposal Evaluation -->
+          <div class="survey-section">
+            <h2>Section 2: Proposal Evaluation</h2>
+
+            <div class="question-group">
+              <label>3. How would you rate the clarity of our proposal?</label>
+              <div class="rating-group">
+                <label
+                  ><input type="radio" name="clarityRating" value="1" /><span
+                    >1<br />Poor</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="clarityRating" value="2" /><span
+                    >2</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="clarityRating" value="3" /><span
+                    >3<br />Average</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="clarityRating" value="4" /><span
+                    >4</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="clarityRating" value="5" /><span
+                    >5<br />Excellent</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >4. How would you rate the value offered relative to the
+                pricing?</label
+              >
+              <div class="rating-group">
+                <label
+                  ><input type="radio" name="valueRating" value="1" /><span
+                    >1<br />Poor</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="valueRating" value="2" /><span
+                    >2</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="valueRating" value="3" /><span
+                    >3<br />Average</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="valueRating" value="4" /><span
+                    >4</span
+                  ></label
+                >
+                <label
+                  ><input type="radio" name="valueRating" value="5" /><span
+                    >5<br />Excellent</span
+                  ></label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >5. How would you rate our communication throughout the proposal
+                process?</label
+              >
+              <div class="rating-group">
+                <label
+                  ><input
+                    type="radio"
+                    name="communicationRating"
+                    value="1"
+                  /><span>1<br />Poor</span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="communicationRating"
+                    value="2"
+                  /><span>2</span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="communicationRating"
+                    value="3"
+                  /><span>3<br />Average</span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="communicationRating"
+                    value="4"
+                  /><span>4</span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="communicationRating"
+                    value="5"
+                  /><span>5<br />Excellent</span></label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >6. Which aspects of our proposal were most appealing? (Select
+                all that apply)</label
+              >
+              <div class="checkbox-group">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="design-concepts"
+                  />
+                  Design concepts / mockups</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="technical-approach"
+                  />
+                  Technical approach</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="project-timeline"
+                  />
+                  Project timeline</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="team-expertise"
+                  />
+                  Team expertise</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="portfolio"
+                  />
+                  Portfolio / past work</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="support-plan"
+                  />
+                  Customer support plan</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="appealingAspects"
+                    value="none"
+                  />
+                  None of the above</label
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: Competitive Insights -->
+          <div class="survey-section">
+            <h2>Section 3: Competitive Insights</h2>
+
+            <div class="question-group">
+              <label
+                >7. If you chose another provider, what factors influenced your
+                decision? (Select all that apply)</label
+              >
+              <div class="checkbox-group">
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="lower-price"
+                  />
+                  Lower price</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="faster-timeline"
+                  />
+                  Faster timeline</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="better-portfolio"
+                  />
+                  Better portfolio / previous work</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="industry-experience"
+                  />
+                  Stronger industry experience</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="more-features"
+                  />
+                  More comprehensive features</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="better-communication"
+                  />
+                  Better communication</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="referral-relationship"
+                  />
+                  Personal referral or existing relationship</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    name="competitorFactors"
+                    value="did-not-choose-another"
+                  />
+                  Did not choose another provider</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >8. What could we have done differently to win your
+                business?</label
+              >
+              <textarea
+                name="improvementSuggestions"
+                placeholder="Please share your thoughts..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Section 4: Future Engagement -->
+          <div class="survey-section">
+            <h2>Section 4: Future Engagement</h2>
+
+            <div class="question-group">
+              <label
+                >9. Would you consider us for future web projects?
+                <span class="required">*</span></label
+              >
+              <div class="radio-group">
+                <label
+                  ><input
+                    type="radio"
+                    name="futureConsideration"
+                    value="yes-definitely"
+                    required
+                  />
+                  Yes, definitely</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="futureConsideration"
+                    value="yes-possibly"
+                  />
+                  Yes, possibly</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="futureConsideration"
+                    value="unsure"
+                  />
+                  Unsure</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="futureConsideration"
+                    value="probably-not"
+                  />
+                  Probably not</label
+                >
+                <label
+                  ><input type="radio" name="futureConsideration" value="no" />
+                  No</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >10. Would you be open to discussing a revised proposal?</label
+              >
+              <div class="radio-group">
+                <label
+                  ><input type="radio" name="revisedProposal" value="yes" />
+                  Yes</label
+                >
+                <label
+                  ><input type="radio" name="revisedProposal" value="no" />
+                  No</label
+                >
+                <label
+                  ><input type="radio" name="revisedProposal" value="maybe" />
+                  Maybe, depending on changes</label
+                >
+              </div>
+            </div>
+
+            <div class="question-group">
+              <label
+                >11. Is there any additional feedback you would like to share
+                with us?</label
+              >
+              <textarea
+                name="additionalFeedback"
+                placeholder="Any other thoughts or comments..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="submit-section">
+            <button type="submit" class="submit-btn">Submit Survey</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Thank You Message -->
+      <div class="thank-you" id="thankYou">
+        <div class="checkmark">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+          </svg>
+        </div>
+        <h1>Thank You!</h1>
+        <p>
+          Your feedback has been submitted successfully.<br />We appreciate you
+          taking the time to share your thoughts.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="survey-footer">
+      <p>
+        &copy; 2026
+        <a href="https://fifthstonedev.com" target="_blank"
+          >Fifth Stone Dev LLC</a
+        >. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- EmailJS SDK -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+
+    <script>
+      // ============================================
+      // EMAILJS CONFIGURATION
+      // ============================================
+      const EMAILJS_SERVICE_ID = "service_n965k06";
+      const EMAILJS_TEMPLATE_ID = "template_ekk9kgu";
+      const EMAILJS_PUBLIC_KEY = "euyy_dhHmVC2Mgkv5";
+
+      // Initialize EmailJS
+      emailjs.init(EMAILJS_PUBLIC_KEY);
+      // ============================================
+
+      // ============================================
+      // ACCESS CODE CONFIGURATION
+      // ============================================
+      // To generate a new access code, simply add it to this array
+      // Format: 'CODE' (case-insensitive)
+      // Example codes below - replace with your own
+      const VALID_ACCESS_CODES = [
+        "PROPOSAL2026",
+        "WEBSURVEY",
+        "FIFTHSTONE",
+        "STS-2026",
+        "NGC-2026",
+        // Add more codes as needed
+      ];
+      // ============================================
+
+      const accessGate = document.getElementById("accessGate");
+      const surveyContent = document.getElementById("surveyContent");
+      const thankYou = document.getElementById("thankYou");
+      const accessForm = document.getElementById("accessForm");
+      const surveyForm = document.getElementById("surveyForm");
+      const accessCodeInput = document.getElementById("accessCode");
+      const errorMessage = document.getElementById("errorMessage");
+
+      // Check if already authenticated (session only)
+      if (sessionStorage.getItem("surveyAuthenticated") === "true") {
+        accessGate.style.display = "none";
+        surveyContent.classList.add("active");
+      }
+
+      // Access code validation
+      accessForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const enteredCode = accessCodeInput.value.trim().toUpperCase();
+
+        if (
+          VALID_ACCESS_CODES.map((code) => code.toUpperCase()).includes(
+            enteredCode,
+          )
+        ) {
+          sessionStorage.setItem("surveyAuthenticated", "true");
+          sessionStorage.setItem("accessCodeUsed", enteredCode);
+          accessGate.style.display = "none";
+          surveyContent.classList.add("active");
+          errorMessage.style.display = "none";
+        } else {
+          errorMessage.style.display = "block";
+          accessCodeInput.value = "";
+          accessCodeInput.focus();
+        }
+      });
+
+      // Survey submission
+      surveyForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const submitBtn = surveyForm.querySelector(".submit-btn");
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Submitting...";
+
+        const formData = new FormData(surveyForm);
+        const data = {
+          accessCode: sessionStorage.getItem("accessCodeUsed"),
+          timestamp: new Date().toISOString(),
+          responses: {},
+        };
+
+        // Collect all form data
+        for (let [key, value] of formData.entries()) {
+          if (data.responses[key]) {
+            // Handle multiple values (checkboxes)
+            if (Array.isArray(data.responses[key])) {
+              data.responses[key].push(value);
+            } else {
+              data.responses[key] = [data.responses[key], value];
+            }
+          } else {
+            data.responses[key] = value;
+          }
+        }
+
+        // Format checkbox arrays as strings
+        const declineReasons = Array.isArray(data.responses.declineReason)
+          ? data.responses.declineReason.join(", ")
+          : data.responses.declineReason || "None selected";
+
+        const appealingAspects = Array.isArray(data.responses.appealingAspects)
+          ? data.responses.appealingAspects.join(", ")
+          : data.responses.appealingAspects || "None selected";
+
+        const competitorFactors = Array.isArray(
+          data.responses.competitorFactors,
+        )
+          ? data.responses.competitorFactors.join(", ")
+          : data.responses.competitorFactors || "None selected";
+
+        // Build the survey message
+        const surveyMessage = `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 SECTION 1: PRIMARY DECISION FACTORS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Reasons for Declining:
+${declineReasons}
+
+Elaboration:
+${data.responses.declineElaboration || "No additional details provided"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 SECTION 2: PROPOSAL EVALUATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Clarity Rating: ${data.responses.clarityRating || "Not rated"}/5
+Value Rating: ${data.responses.valueRating || "Not rated"}/5
+Communication Rating: ${data.responses.communicationRating || "Not rated"}/5
+
+Most Appealing Aspects:
+${appealingAspects}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 SECTION 3: COMPETITIVE INSIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Competitor Factors:
+${competitorFactors}
+
+What Could We Have Done Differently:
+${data.responses.improvementSuggestions || "No response"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔮 SECTION 4: FUTURE ENGAGEMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Consider for Future Projects: ${data.responses.futureConsideration || "Not answered"}
+Open to Revised Proposal: ${data.responses.revisedProposal || "Not answered"}
+
+Additional Feedback:
+${data.responses.additionalFeedback || "No response"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔑 ACCESS CODE USED: ${data.accessCode}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+
+        // Send via EmailJS
+        emailjs
+          .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+            to_email: "fifthstonedev@outlook.com",
+            from_name: "Survey Respondent",
+            from_email: "noreply@fifthstonedev.com",
+            company: data.accessCode,
+            form_type: "Website Proposal Feedback Survey",
+            message: surveyMessage,
+            timestamp: new Date().toLocaleString(),
+          })
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              // Show thank you message
+              surveyContent.classList.remove("active");
+              thankYou.classList.add("active");
+              // Clear session
+              sessionStorage.removeItem("surveyAuthenticated");
+              sessionStorage.removeItem("accessCodeUsed");
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              alert(
+                "There was an error submitting your survey. Please try again.",
+              );
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            },
+          );
+      });
+    </script>
+  </body>
+</html>
