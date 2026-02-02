@@ -988,6 +988,22 @@
       emailjs.init(EMAILJS_PUBLIC_KEY);
       // ============================================
 
+      // ============================================
+      // ACCESS CODE CONFIGURATION
+      // ============================================
+      // To generate a new access code, simply add it to this array
+      // Format: 'CODE' (case-insensitive)
+      // Example codes below - replace with your own
+      const VALID_ACCESS_CODES = [
+        "PROPOSAL2026",
+        "WEBSURVEY",
+        "FIFTHSTONE",
+        "STS-2026",
+        "NGC-2026",
+        // Add more codes as needed
+      ];
+      // ============================================
+
       const accessGate = document.getElementById("accessGate");
       const surveyContent = document.getElementById("surveyContent");
       const thankYou = document.getElementById("thankYou");
@@ -1002,39 +1018,30 @@
         surveyContent.classList.add("active");
       }
 
-      // Access code validation (client-side)
-      // Add your valid access codes here
-      const VALID_ACCESS_CODES = ["SURVEY2026", "FEEDBACK", "REVIEW"];
-      
-      accessForm.addEventListener("submit", async function (e) {
+      // Access code validation
+      accessForm.addEventListener("submit", function (e) {
         e.preventDefault();
         const enteredCode = accessCodeInput.value.trim().toUpperCase();
-        const submitBtn = accessForm.querySelector("button");
-        const originalText = submitBtn.textContent;
-        
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Validating...";
-        errorMessage.style.display = "none";
 
-        // Simple client-side validation
-        if (VALID_ACCESS_CODES.includes(enteredCode)) {
+        if (
+          VALID_ACCESS_CODES.map((code) => code.toUpperCase()).includes(
+            enteredCode,
+          )
+        ) {
           sessionStorage.setItem("surveyAuthenticated", "true");
           sessionStorage.setItem("accessCodeUsed", enteredCode);
           accessGate.style.display = "none";
           surveyContent.classList.add("active");
+          errorMessage.style.display = "none";
         } else {
-          errorMessage.textContent = "Invalid access code. Please try again.";
           errorMessage.style.display = "block";
           accessCodeInput.value = "";
           accessCodeInput.focus();
         }
-        
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
       });
 
       // Survey submission
-      surveyForm.addEventListener("submit", async function (e) {
+      surveyForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const submitBtn = surveyForm.querySelector(".submit-btn");
@@ -1119,49 +1126,42 @@ Consider for Future Projects: ${data.responses.futureConsideration || "Not answe
 Open to Revised Proposal: ${data.responses.revisedProposal || "Not answered"}
 
 Additional Feedback:
-${data.responses.additionalFeedback || "No response"}`;
+${data.responses.additionalFeedback || "No response"}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔑 ACCESS CODE USED: ${data.accessCode}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
 
         // Send via EmailJS
-        try {
-          const emailParams = {
-            form_type: "Proposal Survey Response",
-            from_name: "Survey Respondent",
-            from_email: "survey@fifthstonedev.com",
-            phone: "N/A",
-            company: "N/A",
-            project_type: "Proposal Survey",
-            message: surveyMessage,
-            timeline: "N/A",
-            budget: "N/A",
-            tools: "N/A",
-            website: "N/A",
-            goals: "N/A",
-            timestamp: data.timestamp,
+        emailjs
+          .send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
             to_email: "fifthstonedev@outlook.com",
-          };
-
-          const response = await emailjs.send(
-            EMAILJS_SERVICE_ID,
-            EMAILJS_TEMPLATE_ID,
-            emailParams,
-            EMAILJS_PUBLIC_KEY
+            from_name: "Survey Respondent",
+            from_email: "noreply@fifthstonedev.com",
+            company: data.accessCode,
+            form_type: "Website Proposal Feedback Survey",
+            message: surveyMessage,
+            timestamp: new Date().toLocaleString(),
+          })
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              // Show thank you message
+              surveyContent.classList.remove("active");
+              thankYou.classList.add("active");
+              // Clear session
+              sessionStorage.removeItem("surveyAuthenticated");
+              sessionStorage.removeItem("accessCodeUsed");
+            },
+            function (error) {
+              console.log("FAILED...", error);
+              alert(
+                "There was an error submitting your survey. Please try again.",
+              );
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+            },
           );
-
-          console.log("SUCCESS!", response);
-          // Show thank you message
-          surveyContent.classList.remove("active");
-          thankYou.classList.add("active");
-          // Clear session
-          sessionStorage.removeItem("surveyAuthenticated");
-          sessionStorage.removeItem("accessCodeUsed");
-        } catch (error) {
-          console.log("FAILED...", error);
-          alert(
-            "There was an error submitting your survey. Please try again.",
-          );
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalText;
-        }
       });
     </script>
   </body>
