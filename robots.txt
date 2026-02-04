@@ -1,22 +1,65 @@
-# Fifth Stone Dev - Web Development & Process Automation
+# Fifth Stone Dev - Custom Web Development & Process Automation
 # https://www.fifthstonedev.com
+# Last updated: 2026-02-04
 
+# Default rules for all crawlers
 User-agent: *
 Allow: /
-Disallow: /assets/*.pdf
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /portfolio.html
+Allow: /contact.html
+Allow: /privacy-policy.html
+Allow: /assets/
 
-# Allow all major search engine crawlers
+# Disallow non-essential paths
+Disallow: /assets/*.pdf
+Disallow: /proposal-survey/
+Disallow: /StepsToSerenityBasic/
+Disallow: /StepsToSerenityStarter/
+
+# Allow all major search engine crawlers with specific rules
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /assets/
 
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
 User-agent: DuckDuckBot
 Allow: /
 
+User-agent: Slurp
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
 # Sitemap location
 Sitemap: https://www.fifthstonedev.com/sitemap.xml
 
+# Host directive (helps some search engines)
+Host: https://www.fifthstonedev.com
 # Crawl-delay for polite bots (optional)
 # Crawl-delay: 10

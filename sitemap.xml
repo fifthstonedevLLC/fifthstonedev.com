@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Homepage -->
   <url>
     <loc>https://www.fifthstonedev.com/</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://www.fifthstonedev.com/assets/logo-with-overflow.png</image:loc>
-      <image:title>Fifth Stone Dev - Web Development and Process Automation</image:title>
+      <image:title>Fifth Stone Dev - Custom Web Development and Process Automation in Cedar Falls Iowa</image:title>
+      <image:caption>Fifth Stone Dev LLC Logo - Professional web development and business automation services</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.fifthstonedev.com/assets/stone_and_sling.png</image:loc>
       <image:title>Fifth Stone Dev - Web Development Services Cedar Falls Iowa</image:title>
+      <image:caption>Stone and sling imagery representing Fifth Stone Dev's approach to web development</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.fifthstonedev.com/assets/ai_blog_daily_app.png</image:loc>
+      <image:title>AI Blog Platform - Full-stack Web Application</image:title>
+      <image:caption>AI-powered blog platform built by Fifth Stone Dev featuring subscription-based content access</image:caption>
     </image:image>
   </url>
   
   <!-- About Page -->
   <url>
     <loc>https://www.fifthstonedev.com/about.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://www.fifthstonedev.com/assets/professional_stone_slate.jpg</image:loc>
-      <image:title>Phil Harberts - Founder of Fifth Stone Dev</image:title>
+      <image:title>Phil Harberts - Founder of Fifth Stone Dev Cedar Falls Iowa</image:title>
+      <image:caption>Phil Harberts, founder and lead developer at Fifth Stone Dev LLC</image:caption>
     </image:image>
   </url>
   
   <!-- Services Page -->
   <url>
     <loc>https://www.fifthstonedev.com/services.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -40,39 +49,38 @@
   <!-- Portfolio Page -->
   <url>
     <loc>https://www.fifthstonedev.com/portfolio.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png</image:loc>
-      <image:title>Candeo Counseling Center Website Redesign</image:title>
+      <image:loc>https://www.fifthstonedev.com/assets/ai_blog_daily_app.png</image:loc>
+      <image:title>AI Blog Platform Web Application</image:title>
+      <image:caption>Full-stack AI blog platform with subscription-based access built by Fifth Stone Dev</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.fifthstonedev.com/assets/Inovalon_Query_Tool.png</image:loc>
-      <image:title>Internal Database Querying Tool</image:title>
+      <image:loc>https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png</image:loc>
+      <image:title>Candeo Counseling Center Website Redesign</image:title>
+      <image:caption>Professional healthcare website redesign improving user engagement and HIPAA compliance</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://www.fifthstonedev.com/assets/gov_agency_app.png</image:loc>
-      <image:title>Government Agency Data Processing Tool</image:title>
-    </image:image>
-    <image:image>
-      <image:loc>https://www.fifthstonedev.com/assets/isles_of_hope_Page.png</image:loc>
-      <image:title>Isles of Hope International Website</image:title>
+      <image:title>Government Agency Data Processing Automation Tool</image:title>
+      <image:caption>Custom automation tool achieving 90%+ time savings in disaster recovery data processing</image:caption>
     </image:image>
   </url>
   
   <!-- Contact Page -->
   <url>
     <loc>https://www.fifthstonedev.com/contact.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   
   <!-- Privacy Policy -->
   <url>
     <loc>https://www.fifthstonedev.com/privacy-policy.html</loc>
-    <lastmod>2026-02-02</lastmod>
+    <lastmod>2026-02-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
