@@ -329,7 +329,7 @@ nav .container {
 
 /* About Section */
 .about {
-  padding: 8rem 2rem;
+  padding: 6rem 2rem;
   background: var(--white);
   position: relative;
 }
@@ -338,7 +338,8 @@ nav .container {
   content: "";
   position: absolute;
   top: 0;
-  left: 10%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1px;
   height: 100%;
   background: linear-gradient(
@@ -347,16 +348,12 @@ nav .container {
     var(--stone-sand),
     transparent
   );
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .about .container {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: 6rem;
-  align-items: center;
 }
 
 .section-label {
@@ -379,10 +376,11 @@ nav .container {
 }
 
 .about-content p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--stone-river);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   line-height: 1.8;
+  text-align: left;
 }
 
 .about-content strong {
@@ -391,17 +389,21 @@ nav .container {
 }
 
 .story-highlight {
-  margin-top: 2.5rem;
-  padding: 2rem;
-  background: var(--stone-light);
+  margin-top: 3rem;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--stone-light) 0%, var(--off-white) 100%);
   border-left: 4px solid var(--accent-bronze);
   font-style: italic;
-  color: var(--stone-river);
+  font-size: 1.2rem;
+  color: var(--stone-slate);
+  line-height: 1.7;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 /* Developer Section */
 .developer {
-  padding: 8rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(
     135deg,
     var(--stone-light) 0%,
@@ -420,7 +422,7 @@ nav .container {
   grid-template-columns: 0.65fr 1.35fr;
   gap: 4rem;
   align-items: end;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .developer-image-placeholder {
@@ -531,6 +533,10 @@ nav .container {
   color: var(--stone-slate);
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
+}
+
+.portfolio-header h2 strong {
+  color: var(--accent-bronze);
 }
 
 .portfolio-header p {
@@ -781,7 +787,7 @@ nav .container {
 
 .service-card {
   background: var(--white);
-  padding: 3rem 2.5rem;
+  padding: 2rem 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 30px rgba(42, 52, 57, 0.08);
   transition: all 0.4s ease;
@@ -1159,7 +1165,11 @@ nav .container {
 /* Why Choose Section */
 .why-choose {
   padding: 8rem 2rem;
-  background: var(--stone-slate);
+  background: linear-gradient(
+    135deg,
+    var(--stone-slate) 0%,
+    var(--stone-charcoal) 100%
+  );
   color: var(--stone-light);
   position: relative;
   overflow: hidden;
@@ -1169,12 +1179,12 @@ nav .container {
   content: "";
   position: absolute;
   top: -50%;
-  left: -10%;
+  right: -10%;
   width: 60%;
   height: 200%;
   background: radial-gradient(
     circle,
-    rgba(184, 149, 106, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 0%,
     transparent 70%
   );
 }
@@ -1204,16 +1214,17 @@ nav .container {
 
 .value-item {
   padding: 2.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
 .value-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(184, 149, 106, 0.3);
-  transform: translateX(10px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .value-item h3 {
@@ -1225,7 +1236,7 @@ nav .container {
 }
 
 .value-item p {
-  color: var(--stone-sand);
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
 }
 
@@ -1453,7 +1464,7 @@ footer p {
 
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .services-grid {
@@ -2424,23 +2435,22 @@ html {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
-  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
   margin: 0 auto;
-  perspective: 1000px;
 }
 
 .portfolio-card {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
   position: relative;
   opacity: 1;
   animation: fadeInUp 0.6s ease-out;
-  transform-style: preserve-3d;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 @keyframes fadeInUp {
@@ -2458,31 +2468,15 @@ html {
   display: none;
 }
 
-.portfolio-card::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: var(--accent-bronze);
-  border-radius: 16px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
-}
-
-.portfolio-card:hover::before {
-  opacity: 0.6;
-}
-
 .portfolio-card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: var(--accent-bronze);
 }
 
 .portfolio-card .portfolio-image {
   position: relative;
-  height: 280px;
+  height: 220px;
   overflow: hidden;
   background: var(--stone-light);
 }
@@ -2494,7 +2488,7 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(26, 37, 47, 0.4) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 37, 47, 0.15) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2507,13 +2501,13 @@ html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.4s ease;
   filter: brightness(1);
 }
 
 .portfolio-card:hover .portfolio-image img {
-  transform: scale(1.08);
-  filter: brightness(1.05);
+  transform: scale(1.03);
+  filter: brightness(1.02);
 }
 
 .portfolio-card .portfolio-overlay {
@@ -2548,16 +2542,21 @@ html {
 }
 
 .portfolio-card .portfolio-content {
-  padding: 2rem;
+  padding: 1.5rem;
   position: relative;
 }
 
 .portfolio-card h2 {
   font-family: "Archivo", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--stone-slate);
   margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.portfolio-card:hover h2 {
+  color: var(--accent-bronze);
 }
 
 .portfolio-card > .portfolio-content > p {
@@ -2599,24 +2598,11 @@ html {
 .portfolio-card .portfolio-tags .tag {
   transition: all 0.3s ease;
   background: var(--stone-light);
-  position: relative;
-  overflow: hidden;
 }
 
-.portfolio-card .portfolio-tags .tag::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-  transition: left 0.5s ease;
-}
-
-.portfolio-card:hover .portfolio-tags .tag:nth-child(1)::before {
-  left: 100%;
-  transition-delay: 0.1s;
+.portfolio-card:hover .portfolio-tags .tag {
+  background: rgba(184, 149, 106, 0.1);
+  border-color: var(--accent-bronze);
 }
 
 .portfolio-card:hover .portfolio-tags .tag:nth-child(2)::before {
@@ -2838,6 +2824,7 @@ html {
   
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
   
   .contact-layout {
@@ -3170,17 +3157,6 @@ html {
   background: #fff;
   color: var(--stone-charcoal);
 }
-
-/* Why Choose Section */
-.why-choose {
-  padding: 5rem 0;
-  background: var(--stone-light);
-}
-
-.why-choose h2 {
-  text-align: center;
-  color: var(--stone-slate);
-  margin-bottom: 3rem;
 }
 
 /* Contact CTA Section */
