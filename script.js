@@ -3,7 +3,40 @@ document.addEventListener('DOMContentLoaded', function() {
   if (typeof emailjs !== 'undefined') {
     emailjs.init("euyy_dhHmVC2Mgkv5");
   }
+  
+  // Handle scrolling to hash targets on page load
+  handleHashNavigation();
 });
+
+// Handle hash navigation for deep linking to sections
+function handleHashNavigation() {
+  // Check if there's a hash in the URL
+  const hash = window.location.hash;
+  
+  if (hash) {
+    // Remove the # to get the element ID
+    const targetId = hash.substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+      // Small delay to ensure page is fully loaded
+      setTimeout(() => {
+        // Calculate offset (accounting for fixed nav if present)
+        const navHeight = document.querySelector('nav')?.offsetHeight || 0;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight - 20; // 20px extra padding
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
+  }
+}
+
+// Listen for hash changes (when clicking links on the same page)
+window.addEventListener('hashchange', handleHashNavigation);
 
 // Modal functions
 function openModal(modalId) {
@@ -487,3 +520,73 @@ const CookieConsent = {
 document.addEventListener('DOMContentLoaded', function() {
   CookieConsent.init();
 });
+
+// ========================================
+// Portfolio Filter System
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+  if (portfolioCards.length === 0) return;
+
+  // Add subtle 3D tilt effect on mouse move
+  portfolioCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateY(-6px)';
+    });
+    
+    card.addEventListener('mousemove', function(e) {
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 50;
+      const rotateY = (centerX - x) / 50;
+      
+      this.style.transform = `translateY(-6px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    card.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
+    });
+  });
+});
+
+// Add fade out animation to stylesheet dynamically
+if (!document.querySelector('#portfolio-animations')) {
+  const style = document.createElement('style');
+  style.id = 'portfolio-animations';
+  style.textContent = `
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      to {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+    
+    /* Smooth scrolling for page */
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    /* Enhanced focus states for accessibility */
+    .filter-btn:focus-visible {
+      outline: 3px solid var(--accent-bronze);
+      outline-offset: 2px;
+    }
+    
+    .btn-case-study:focus-visible {
+      outline: 3px solid var(--accent-bronze);
+      outline-offset: 2px;
+    }
+  `;
+  document.head.appendChild(style);
+}
