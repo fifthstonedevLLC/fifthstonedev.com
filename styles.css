@@ -530,7 +530,7 @@ nav .container {
   font-family: "Archivo", sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: var(--stone-slate);
+  color: var(--white);
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
 }
@@ -1199,11 +1199,16 @@ nav .container {
 .why-choose h2 {
   font-family: "Archivo", sans-serif;
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 300;
   color: var(--white);
   letter-spacing: -0.02em;
   margin-bottom: 4rem;
   text-align: center;
+}
+
+.why-choose h2 strong {
+  color: var(--accent-bronze);
+  font-weight: 700;
 }
 
 .values-grid {
@@ -2422,10 +2427,13 @@ html {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1.5rem;
 }
 
 .footer-links li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .footer-links a {
@@ -3495,7 +3503,13 @@ html {
 .portfolio-preview h2 {
   text-align: center;
   margin-bottom: 1rem;
+  color: var(--white);
+  font-weight: 300;
+}
+
+.portfolio-preview h2 strong {
   color: var(--accent-bronze);
+  font-weight: 700;
 }
 
 .portfolio-preview > .container > p {
