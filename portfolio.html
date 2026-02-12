@@ -737,49 +737,51 @@
           <div class="case-section">
             <h3>Project Overview</h3>
             <p>
-              AI Blog is a full-stack web application that aggregates and compares AI-generated content from multiple 
-              leading AI models (ChatGPT, Claude, Gemini, Grok) in a single, unified platform. The application 
-              automatically generates fresh blog posts daily across 15+ categories and provides unique side-by-side 
-              comparisons, allowing users to analyze how different AI models approach identical topics.
+              AI Blog Daily is a full-stack web application that aggregates and compares AI-generated content from multiple
+              leading AI models (ChatGPT, Claude, Gemini, Grok, and Llama) in a single, unified platform. The application
+              automatically generates fresh blog posts daily across 15+ categories and features a blind head-to-head voting
+              system, allowing users to evaluate how different AI models approach identical topics — without bias.
             </p>
           </div>
 
           <div class="case-section">
             <h3>The Challenge</h3>
             <p>
-              With the rapid proliferation of AI language models, users face several key challenges: content from 
-              different AI models is scattered across multiple platforms, there's no easy way to compare outputs 
-              from different models on the same topic, separate subscriptions are required to access multiple AI 
-              services, and it's difficult to systematically explore diverse AI-generated content.
+              With the rapid proliferation of AI language models, users face several key challenges: content from
+              different AI models is scattered across multiple platforms, there's no easy way to compare outputs
+              from different models on the same topic, separate subscriptions are required to access multiple AI
+              services, and it's difficult to systematically explore diverse AI-generated content. The goal was to
+              create a centralized platform with meaningful comparison tools and a sustainable monetization strategy.
             </p>
           </div>
 
           <div class="case-section">
             <h3>The Solution</h3>
             <p>
-              Built a comprehensive platform using <strong>Python</strong> and <strong>Flask</strong> with a 
-              <strong>PostgreSQL</strong> database, integrating multiple AI APIs (OpenAI, Anthropic, Google, xAI). 
-              Implemented automated daily content generation via cron jobs, a unique side-by-side comparison system 
-              with crowdsourced voting, and a three-tier subscription model using <strong>Stripe</strong> integration. 
-              The platform features user authentication, bookmarking, commenting, search capabilities, and a comprehensive 
-              admin dashboard.
+              Built a comprehensive platform using <strong>Python</strong> and <strong>Flask</strong> with a
+              <strong>PostgreSQL</strong> database, integrating 5 AI APIs (OpenAI, Anthropic, Google, xAI, Together AI).
+              The core feature is a <strong>blind voting system</strong> — users read paired posts without knowing which AI
+              wrote them, vote across 5 categories (Writing Quality, Accuracy, Creativity, Usefulness, Overall), and only
+              then are the authors revealed. Position randomization prevents positional bias, and a 5-minute edit window
+              locks votes permanently. Free users receive 3 votes per week to seed community data.
             </p>
             <p>
-              Key technical achievements include modular AI provider integration with consistent interfaces, 
-              subscription-based access control middleware, Flask-WTF CSRF protection, rate limiting, and 
-              comprehensive security implementation including password hashing and webhook signature verification.
+              Additional features include a premium analytics dashboard with leaderboards and head-to-head matrices,
+              a follow system for AI tool notifications, <strong>Stripe</strong>-powered tiered subscriptions,
+              bookmarking, threaded comments, in-app notifications, dark/light theming, and a comprehensive admin panel —
+              spanning ~64 distinct routes across the platform.
             </p>
           </div>
 
           <div class="case-section">
             <h3>Measurable Outcomes</h3>
             <ul>
-              <li><strong>100% Automated:</strong> Zero manual intervention for daily content generation across 4+ AI providers.</li>
-              <li><strong>Unique Value Proposition:</strong> Side-by-side comparison system enabling direct evaluation of AI model strengths across content types.</li>
-              <li><strong>Sustainable Monetization:</strong> Freemium model with 5 posts/month free tier successfully converting to premium subscriptions ($4.99/month, $49.99/year).</li>
-              <li><strong>Comprehensive Security:</strong> Production-grade security with CSRF protection, rate limiting, SQL injection prevention, and secure payment processing.</li>
-              <li><strong>Scalable Architecture:</strong> Modular design with database views for performance optimization, handling growing user base efficiently.</li>
-              <li><strong>Rich Feature Set:</strong> User authentication, bookmarking, commenting, notifications, search, and admin dashboard all implemented.</li>
+              <li><strong>100% Automated:</strong> Zero manual intervention for daily content generation across 5 AI providers with modular, fault-tolerant architecture.</li>
+              <li><strong>Bias-Free Comparisons:</strong> Blind voting with position randomization eliminates brand and positional bias, producing authentic crowdsourced insights into AI model strengths.</li>
+              <li><strong>Sustainable Monetization:</strong> Freemium model with bootstrap free voting (3/week), 5 posts/month free tier, and premium subscriptions ($4.99/month, $49.99/year).</li>
+              <li><strong>Data-Driven Analytics:</strong> Premium leaderboards with confidence badges, head-to-head matrices, personal vote history, and 7-day trend tracking.</li>
+              <li><strong>Production-Grade Security:</strong> CSRF protection, rate limiting with IP whitelisting, parameterized queries, webhook signature verification, and secure session management.</li>
+              <li><strong>Rich Engagement:</strong> Follow system with email notifications, threaded comments, bookmarks, in-app notifications with badge counts, and dark/light theme toggle.</li>
             </ul>
           </div>
         </section>
@@ -790,9 +792,9 @@
           <span class="tag">PostgreSQL</span>
           <span class="tag">OpenAI API</span>
           <span class="tag">Anthropic API</span>
+          <span class="tag">Google AI API</span>
           <span class="tag">Stripe Payments</span>
           <span class="tag">Full-Stack Development</span>
-          <span class="tag">Subscription System</span>
         </div>
       </div>
     </div>
