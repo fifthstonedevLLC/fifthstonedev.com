@@ -593,11 +593,15 @@ function closePromoPopup() {
   if (!popup) return;
   popup.setAttribute('hidden', '');
   document.body.style.overflow = '';
+}
+
+function dismissPromoPopup() {
+  closePromoPopup();
   localStorage.setItem('fifthstonedev_april_promo_dismissed', '1');
 }
 
 function claimAprilOffer() {
-  closePromoPopup();
+  dismissPromoPopup();
   openModal('webDevModal');
 }
 
