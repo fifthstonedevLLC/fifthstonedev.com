@@ -279,8 +279,8 @@
       @media(max-width:768px){.logo img{height:70px}nav .container{padding:.5rem 1rem}.mobile-menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.mobile-menu-toggle span{width:25px;height:3px;background:var(--stone-slate);border-radius:2px}.nav-links{position:fixed;top:0;right:0;height:100vh;width:100%;background:var(--white);flex-direction:column;padding:5rem 2rem 2rem;gap:1.5rem;transform:translateX(100%);transition:transform .3s ease;z-index:999}.nav-links.active{transform:translateX(0)}.nav-links a{font-size:1.25rem;padding:1rem 0;border-bottom:1px solid var(--stone-light)}.hero{margin-top:70px;min-height:auto}.hero .container{grid-template-columns:1fr;padding:2.5rem 1.25rem 3rem;gap:2rem}.hero-content h1{font-size:2rem;line-height:1.2;margin-bottom:1.25rem}.hero-content p{font-size:1rem;margin-bottom:1.5rem}.hero-visual{display:none}.cta-buttons{flex-direction:column;gap:.75rem;width:100%}.btn{padding:.875rem 1.5rem;min-height:48px;width:100%;text-align:center;display:flex;align-items:center;justify-content:center}}
     </style>
     <!-- Main stylesheet loaded asynchronously -->
-    <link rel="preload" href="styles.css?v=20260207" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="styles.css?v=20260207" /></noscript>
+    <link rel="preload" href="styles.css?v=20260331" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260331" /></noscript>
 
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -474,11 +474,9 @@
           <div class="portfolio-preview-item">
             <div class="portfolio-image">
               <img src="assets/ai_blog_daily_app.png" alt="AI Blog Platform - Full-stack web application" loading="lazy" width="600" height="400" />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Web Application</span>
-              </div>
             </div>
             <div class="portfolio-content">
+              <span class="portfolio-category">Web Application</span>
               <h3>AI Blog Platform</h3>
               <p>Full-stack application aggregating AI-generated content with subscription-based access.</p>
             </div>
@@ -488,11 +486,9 @@
           <div class="portfolio-preview-item">
             <div class="portfolio-image">
               <img src="assets/Candeo_Our_Team_Page.png" alt="Candeo Counseling Center website redesign" loading="lazy" width="600" height="400" />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Web Development</span>
-              </div>
             </div>
             <div class="portfolio-content">
+              <span class="portfolio-category">Web Development</span>
               <h3>Candeo Counseling Center</h3>
               <p>Comprehensive website redesign improving user engagement and compliance.</p>
             </div>
@@ -502,11 +498,9 @@
           <div class="portfolio-preview-item">
             <div class="portfolio-image">
               <img src="assets/gov_agency_app.png" alt="Government agency data processing automation tool" loading="lazy" width="600" height="400" />
-              <div class="portfolio-overlay">
-                <span class="portfolio-category">Process Automation</span>
-              </div>
             </div>
             <div class="portfolio-content">
+              <span class="portfolio-category">Process Automation</span>
               <h3>Government Data Processing</h3>
               <p>Automation tool for disaster recovery with 90%+ time savings.</p>
             </div>
@@ -567,6 +561,81 @@
       </div>
     </footer>
 
-    <script defer src="script.js?v=20260207"></script>
+    <!-- April Promo Popup -->
+    <div id="april-promo-popup" class="promo-popup" role="dialog" aria-modal="true" aria-labelledby="promo-popup-title" hidden>
+      <div class="promo-popup-content">
+        <button class="promo-popup-close" onclick="closePromoPopup()" aria-label="Close promotion">&times;</button>
+        <div class="promo-popup-badge">April Special</div>
+        <h2 id="promo-popup-title" class="promo-popup-headline">$250 Off Your New Website</h2>
+        <p class="promo-popup-body">Launch your professional website this April and save $250. Custom-built, SEO-optimized, and ready to convert visitors into clients.</p>
+        <p class="promo-popup-expiry">Offer expires April 30, 2026</p>
+        <div class="promo-popup-actions">
+          <button class="btn btn-primary promo-popup-cta" onclick="claimAprilOffer()">Claim This Offer</button>
+          <button class="promo-popup-dismiss" onclick="closePromoPopup()">No thanks</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web Development Request Modal (used by April promo) -->
+    <div id="webDevModal" class="modal" role="dialog" aria-labelledby="webDevModalTitle" aria-modal="true">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeModal('webDevModal')" aria-label="Close web development request form">&times;</button>
+        <h2 id="webDevModalTitle">Claim Your April Discount</h2>
+        <p>Fill out the form below and we'll apply your <strong>$250 April discount</strong> to your new website project.</p>
+        <form onsubmit="handleFormSubmit(event, 'webDevModal')">
+          <input type="hidden" name="promo" value="April Special – $250 Off New Website" />
+          <div class="form-group">
+            <label for="webdev-name">Name *</label>
+            <input type="text" id="webdev-name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="webdev-email">Email *</label>
+            <input type="email" id="webdev-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="webdev-phone">Phone</label>
+            <input type="tel" id="webdev-phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="webdev-company">Company/Organization</label>
+            <input type="text" id="webdev-company" name="company" />
+          </div>
+          <div class="form-group">
+            <label for="webdev-type">Project Type *</label>
+            <select id="webdev-type" name="project-type" required>
+              <option value="">Select a project type</option>
+              <option value="new-website">New Website</option>
+              <option value="redesign">Website Redesign</option>
+              <option value="web-app">Web Application</option>
+              <option value="landing-page">Landing Page</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="webdev-timeline">Desired Timeline</label>
+            <input type="text" id="webdev-timeline" name="timeline" placeholder="e.g., 2-3 months" />
+          </div>
+          <div class="form-group">
+            <label for="webdev-budget">Budget Range</label>
+            <select id="webdev-budget" name="budget">
+              <option value="">Select a budget range</option>
+              <option value="under-1k">Under $1,000</option>
+              <option value="1k-3k">$1,000 - $3,000</option>
+              <option value="3k-5k">$3,000 - $5,000</option>
+              <option value="5k-10k">$5,000 - $10,000</option>
+              <option value="10k-plus">$10,000+</option>
+              <option value="not-sure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="webdev-details">Project Details *</label>
+            <textarea id="webdev-details" name="details" required placeholder="Please describe your project, goals, and any specific requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Submit Request</button>
+        </form>
+      </div>
+    </div>
+
+    <script defer src="script.js?v=20260331"></script>
   </body>
 </html>

@@ -117,6 +117,11 @@ async function handleFormSubmit(event, modalId) {
 
     console.log("Final message content:", messageContent); // Debug logging
 
+    // Prepend promo info to message if present
+    if (data.promo) {
+      messageContent = `[PROMO: ${data.promo}]\n\n` + messageContent;
+    }
+
     const emailParams = {
       form_type: getFormTypeName(data.formType),
       from_name: data.name || "N/A",
@@ -554,6 +559,54 @@ document.addEventListener('DOMContentLoaded', function() {
       this.style.transform = 'translateY(0) rotateX(0) rotateY(0)';
     });
   });
+});
+
+// ========================================
+// April Promo Popup
+// ========================================
+
+(function initAprilPromoPopup() {
+  const STORAGE_KEY = 'fifthstonedev_april_promo_dismissed';
+  const PROMO_EXPIRY = new Date('2026-05-01'); // Hide permanently after April
+
+  function shouldShowPromo() {
+    if (new Date() >= PROMO_EXPIRY) return false;
+    return !localStorage.getItem(STORAGE_KEY);
+  }
+
+  function showPromoPopup() {
+    const popup = document.getElementById('april-promo-popup');
+    if (!popup) return;
+    popup.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  if (shouldShowPromo()) {
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(showPromoPopup, 2500);
+    });
+  }
+})();
+
+function closePromoPopup() {
+  const popup = document.getElementById('april-promo-popup');
+  if (!popup) return;
+  popup.setAttribute('hidden', '');
+  document.body.style.overflow = '';
+  localStorage.setItem('fifthstonedev_april_promo_dismissed', '1');
+}
+
+function claimAprilOffer() {
+  closePromoPopup();
+  openModal('webDevModal');
+}
+
+// Close promo popup when clicking the backdrop
+document.addEventListener('click', function (e) {
+  const popup = document.getElementById('april-promo-popup');
+  if (popup && !popup.hasAttribute('hidden') && e.target === popup) {
+    closePromoPopup();
+  }
 });
 
 // Add fade out animation to stylesheet dynamically

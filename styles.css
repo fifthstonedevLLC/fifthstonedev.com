@@ -968,6 +968,139 @@ nav .container {
   line-height: 1.7;
 }
 
+/* April Promo Popup */
+.promo-popup {
+  display: none;
+  position: fixed;
+  z-index: 3000;
+  inset: 0;
+  background-color: rgba(26, 37, 47, 0.75);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.promo-popup:not([hidden]) {
+  display: flex;
+}
+
+@keyframes promoSlideIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.promo-popup-content {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 3rem 2.5rem 2.5rem;
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  animation: promoSlideIn 0.4s ease;
+  border-top: 5px solid var(--accent-bronze);
+}
+
+.promo-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--stone-river);
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.promo-popup-close:hover {
+  background: var(--stone-light);
+  color: var(--stone-slate);
+}
+
+.promo-popup-badge {
+  display: inline-block;
+  background: var(--accent-bronze);
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.25rem;
+}
+
+.promo-popup-headline {
+  font-family: "Archivo", sans-serif;
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--stone-slate);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.promo-popup-body {
+  color: var(--stone-river);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.promo-popup-expiry {
+  font-size: 0.85rem;
+  color: var(--accent-copper);
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.promo-popup-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.promo-popup-cta {
+  width: 100%;
+  text-align: center;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+}
+
+.promo-popup-dismiss {
+  background: none;
+  border: none;
+  color: var(--stone-river);
+  font-size: 0.875rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.promo-popup-dismiss:hover {
+  color: var(--stone-slate);
+}
+
+@media (max-width: 480px) {
+  .promo-popup-content {
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .promo-popup-headline {
+    font-size: 1.75rem;
+  }
+}
+
 /* Case Study Modal Styles */
 .case-study-modal {
   max-width: 800px;
@@ -3495,9 +3628,14 @@ html {
 
 /* Portfolio Preview Section */
 .portfolio-preview {
-  padding: 5rem 0;
+  padding: 5rem 2rem;
   background: var(--stone-charcoal);
   color: #fff;
+}
+
+.portfolio-preview .container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .portfolio-preview h2 {
@@ -3531,46 +3669,76 @@ html {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 3px solid var(--accent-bronze);
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
 }
 
 .portfolio-preview-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(184, 149, 106, 0.2);
 }
 
 .portfolio-preview-item .portfolio-image {
   width: 100%;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--stone-charcoal) 0%, var(--stone-slate) 100%);
-  font-size: 3rem;
+  height: 225px;
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-preview-item .portfolio-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(44, 62, 80, 0), var(--stone-slate));
+  pointer-events: none;
+}
+
+.portfolio-preview-item .portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.portfolio-preview-item:hover .portfolio-image img {
+  transform: scale(1.05);
 }
 
 .portfolio-preview-item .portfolio-content {
-  padding: 1.5rem;
+  padding: 0.75rem 1.25rem 1.5rem;
 }
 
 .portfolio-preview-item .portfolio-category {
+  display: inline-block;
+  background: rgba(184, 149, 106, 0.15);
   color: var(--accent-bronze);
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.68rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 0.5rem;
+  letter-spacing: 1.2px;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid rgba(184, 149, 106, 0.3);
+  margin-bottom: 0.6rem;
 }
 
 .portfolio-preview-item h3 {
   color: #fff;
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
 }
 
 .portfolio-preview-item p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.85rem;
+  line-height: 1.55;
 }
 
 .portfolio-preview .section-cta .btn {
@@ -3581,7 +3749,6 @@ html {
 .portfolio-preview .section-cta .btn:hover {
   background: #fff;
   color: var(--stone-charcoal);
-}
 }
 
 /* Contact CTA Section */
@@ -3738,35 +3905,23 @@ html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px 12px 0 0;
-  }
-
-  .portfolio-preview-item .portfolio-overlay {
-    position: absolute;
-    top: 0.75rem;
-    left: 0.75rem;
   }
 
   .portfolio-preview-item .portfolio-category {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.6rem;
+    font-size: 0.68rem;
+    padding: 0.25rem 0.55rem;
   }
 
   .portfolio-preview-item .portfolio-content {
-    padding: 1rem 1.25rem 1.25rem;
-    background: var(--white);
+    padding: 0.75rem 1.25rem 1.25rem;
   }
 
   .portfolio-preview-item h3 {
     font-size: 1rem;
-    margin-bottom: 0.35rem;
-    color: var(--stone-charcoal);
   }
 
   .portfolio-preview-item p {
     font-size: 0.85rem;
-    line-height: 1.5;
-    color: var(--stone-river);
     margin: 0;
   }
 
