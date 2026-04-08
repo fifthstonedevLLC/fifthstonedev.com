@@ -441,11 +441,15 @@ nav .container {
   margin-bottom: 1.5rem;
 }
 
+.developer-image-placeholder picture {
+  display: contents;
+}
+
 .developer-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
 }
 
 .developer-content h2 {
