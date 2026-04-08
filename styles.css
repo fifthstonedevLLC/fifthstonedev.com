@@ -13,8 +13,8 @@
 
 /* Font fallback with size-adjust to minimize layout shift during font swap */
 @font-face {
-  font-family: 'Archivo Fallback';
-  src: local('Arial');
+  font-family: "Archivo Fallback";
+  src: local("Arial");
   size-adjust: 97.5%;
   ascent-override: 95%;
   descent-override: 22%;
@@ -28,7 +28,12 @@
 }
 
 body {
-  font-family: "Archivo", "Archivo Fallback", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family:
+    "Archivo",
+    "Archivo Fallback",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
   color: var(--stone-charcoal);
   background: var(--off-white);
   line-height: 1.6;
@@ -391,7 +396,11 @@ nav .container {
 .story-highlight {
   margin-top: 3rem;
   padding: 2.5rem;
-  background: linear-gradient(135deg, var(--stone-light) 0%, var(--off-white) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--stone-light) 0%,
+    var(--off-white) 100%
+  );
   border-left: 4px solid var(--accent-bronze);
   font-style: italic;
   font-size: 1.2rem;
@@ -403,7 +412,7 @@ nav .container {
 
 /* Developer Section */
 .developer {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   background: linear-gradient(
     135deg,
     var(--stone-light) 0%,
@@ -419,7 +428,7 @@ nav .container {
 
 .developer-main {
   display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
+  grid-template-columns: 420px 1fr;
   gap: 4rem;
   align-items: end;
   margin-bottom: 2rem;
@@ -436,8 +445,9 @@ nav .container {
   box-shadow: 0 10px 40px rgba(42, 52, 57, 0.2);
   overflow: hidden;
   width: 100%;
-  max-width: 500px;
-  height: 510px;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 500 / 628;
   margin-bottom: 1.5rem;
 }
 
@@ -990,8 +1000,14 @@ nav .container {
 }
 
 @keyframes promoSlideIn {
-  from { opacity: 0; transform: translateY(40px) scale(0.97); }
-  to   { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .promo-popup-content {
@@ -1023,7 +1039,9 @@ nav .container {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .promo-popup-close:hover {
@@ -1869,8 +1887,10 @@ footer p {
 
   .developer-image-placeholder {
     margin: 0 auto;
-    height: 300px;
-    max-width: 280px;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 500 / 628;
   }
 
   .developer-photo {
@@ -2120,8 +2140,7 @@ footer p {
   }
 
   .developer-image-placeholder {
-    height: 220px;
-    max-width: 200px;
+    max-width: 320px;
   }
 
   /* Portfolio Preview - Extra Small */
@@ -2256,7 +2275,9 @@ html {
 /* Mobile-specific optimizations */
 @media (max-width: 768px) {
   /* Improve tap highlight */
-  a, button, .btn {
+  a,
+  button,
+  .btn {
     -webkit-tap-highlight-color: rgba(184, 149, 106, 0.2);
   }
 
@@ -2266,7 +2287,9 @@ html {
   }
 
   /* Improve form inputs on mobile */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     font-size: 16px;
   }
 }
@@ -2433,28 +2456,28 @@ html {
     padding: 1.25rem 1rem;
     z-index: 10000 !important;
   }
-  
+
   .cookie-content {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
   }
-  
+
   .cookie-text {
     min-width: unset;
   }
-  
+
   .cookie-buttons {
     justify-content: center;
   }
-  
+
   .cookie-btn {
     flex: 1;
     min-width: 100px;
     padding: 0.65rem 1rem;
     font-size: 0.85rem;
   }
-  
+
   .cookie-option label {
     text-align: left;
   }
@@ -2467,7 +2490,11 @@ html {
 .page-header {
   margin-top: 130px;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, var(--stone-charcoal) 0%, var(--stone-slate) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--stone-charcoal) 0%,
+    var(--stone-slate) 100%
+  );
   text-align: center;
 }
 
@@ -2798,7 +2825,7 @@ html {
 }
 
 .filter-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2807,7 +2834,9 @@ html {
   border-radius: 50%;
   background: var(--accent-bronze);
   transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
+  transition:
+    width 0.4s ease,
+    height 0.4s ease;
   z-index: 0;
 }
 
@@ -2879,13 +2908,17 @@ html {
 }
 
 .portfolio-card .portfolio-image::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(26, 37, 47, 0.15) 100%);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(26, 37, 47, 0.15) 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -2970,7 +3003,7 @@ html {
 }
 
 .portfolio-card .btn-case-study::after {
-  content: '→';
+  content: "→";
   position: absolute;
   right: 1.5rem;
   opacity: 0;
@@ -3210,25 +3243,25 @@ html {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .footer-brand {
     grid-column: 1 / -1;
   }
-  
+
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  
+
   .faq-grid {
     grid-template-columns: 1fr;
   }
@@ -3239,51 +3272,51 @@ html {
     margin-top: 70px;
     padding: 2.5rem 1rem;
   }
-  
+
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .page-header p {
     font-size: 1rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .footer-bottom {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .service-detail-content {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .service-detail-content.reverse {
     direction: ltr;
   }
-  
+
   .service-icon-large {
     margin-bottom: 1rem;
   }
-  
+
   .service-features-list li {
     text-align: left;
   }
-  
+
   .process-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .cta-section {
     padding: 3rem 1rem;
   }
@@ -3297,7 +3330,7 @@ html {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .cta-section .cta-buttons {
     flex-direction: column;
     align-items: center;
@@ -3308,16 +3341,16 @@ html {
     width: 100%;
     max-width: 280px;
   }
-  
+
   .quick-service-links {
     text-align: center;
   }
-  
+
   .service-quick-links {
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   /* Portfolio Mobile Styles */
   .portfolio-filters {
     flex-direction: row;
@@ -3326,17 +3359,17 @@ html {
     margin-bottom: 2rem;
     padding: 0;
   }
-  
+
   .filter-btn {
     padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
     flex: 0 0 auto;
   }
-  
+
   .portfolio-card {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
-  
+
   .portfolio-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
@@ -3536,7 +3569,9 @@ html {
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .service-preview-card:hover {
@@ -3568,7 +3603,9 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: gap 0.3s ease, color 0.3s ease;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
 }
 
 .service-preview-card .btn-text:hover {
@@ -3672,7 +3709,9 @@ html {
   background: var(--stone-slate);
   border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border-top: 3px solid var(--accent-bronze);
   will-change: transform;
   display: flex;
@@ -3681,7 +3720,9 @@ html {
 
 .portfolio-preview-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(184, 149, 106, 0.2);
+  box-shadow:
+    0 12px 32px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(184, 149, 106, 0.2);
 }
 
 .portfolio-preview-item .portfolio-image {
@@ -3692,13 +3733,17 @@ html {
 }
 
 .portfolio-preview-item .portfolio-image::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 60px;
-  background: linear-gradient(to bottom, rgba(44, 62, 80, 0), var(--stone-slate));
+  background: linear-gradient(
+    to bottom,
+    rgba(44, 62, 80, 0),
+    var(--stone-slate)
+  );
   pointer-events: none;
 }
 
@@ -3758,7 +3803,11 @@ html {
 /* Contact CTA Section */
 .contact-cta {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--stone-slate) 0%, var(--stone-charcoal) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--stone-slate) 0%,
+    var(--stone-charcoal) 100%
+  );
   color: #fff;
   text-align: center;
 }
@@ -3828,21 +3877,21 @@ html {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .about-preview-content {
     grid-template-columns: 1fr;
     gap: 2rem;
     text-align: center;
   }
-  
+
   .about-preview-image {
     order: -1;
   }
-  
+
   .about-preview-image .brand-icon {
     font-size: 6rem;
   }
-  
+
   .portfolio-preview-grid {
     grid-template-columns: 1fr;
     max-width: 100%;
@@ -3850,7 +3899,7 @@ html {
     margin-right: auto;
     gap: 1.25rem;
   }
-  
+
   .contact-cta .contact-info {
     flex-direction: column;
     gap: 1.5rem;
@@ -3940,7 +3989,7 @@ html {
     padding: 0.875rem 1.5rem;
     font-size: 0.95rem;
   }
-  
+
   .about-preview-text h2 {
     font-size: 1.75rem;
   }
