@@ -204,8 +204,8 @@
         rel="stylesheet"
       />
     </noscript>
-    <link rel="preload" href="styles.css?v=20260408" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="styles.css?v=20260408" /></noscript>
+    <link rel="preload" href="styles.css?v=20260410" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260410" /></noscript>
 
     <!-- EmailJS SDK -->
     <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -288,24 +288,24 @@
       <!-- Process Section -->
       <section class="process-section">
         <div class="container">
-          <h2>Our Process</h2>
+          <h2 class="animate-on-scroll">Our Process</h2>
           <div class="process-grid">
-            <div class="process-step">
+            <div class="process-step animate-on-scroll" data-anim-delay="0">
               <div class="process-number">1</div>
               <h3>Discovery</h3>
               <p>We start by understanding your goals, challenges, and vision. Every great project begins with listening.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step animate-on-scroll" data-anim-delay="100">
               <div class="process-number">2</div>
               <h3>Strategy</h3>
               <p>We develop a clear plan with timelines, deliverables, and milestones tailored to your needs.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step animate-on-scroll" data-anim-delay="200">
               <div class="process-number">3</div>
               <h3>Build</h3>
               <p>We bring your project to life with clean code, thoughtful design, and regular communication.</p>
             </div>
-            <div class="process-step">
+            <div class="process-step animate-on-scroll" data-anim-delay="300">
               <div class="process-number">4</div>
               <h3>Launch & Support</h3>
               <p>We ensure a smooth launch and provide ongoing support to keep everything running perfectly.</p>
@@ -316,79 +316,90 @@
 
 
       <!-- Services Section -->
-      <section id="services" class="services services-page">
+      <section id="services" class="services-page">
         <div class="container">
+
           <!-- Web Development -->
-          <div class="service-detail" id="web-development">
-            <div class="service-detail-content">
-              <div class="service-icon-large">🌐</div>
-              <div class="service-info">
-                <h2>Custom Web Development Services</h2>
-                <p>
-                  Custom websites that are beautiful, functional, and built to grow
-                  with your organization. From landing pages to full-scale web
-                  applications, we create digital experiences that serve your mission.
-                </p>
-                <ul class="service-features-list">
-                  <li><strong>Responsive, mobile-first design</strong> — Your site looks great on every device</li>
-                  <li><strong>Modern frameworks & technologies</strong> — Built with the latest tools for performance and security</li>
-                  <li><strong>SEO optimization</strong> — Structured for search engine visibility from day one</li>
-                  <li><strong>Website Hosting & Management</strong> — Ongoing support to keep your site running smoothly</li>
-                </ul>
-                <button class="btn btn-primary" onclick="openModal('webDevModal')" aria-label="Request web development services">
-                  Request Web Development
-                </button>
-              </div>
+          <div class="service-row" id="web-development">
+            <div class="service-row-label animate-on-scroll from-left">
+              <span class="service-index">01</span>
+              <h2><span class="service-name-dark">Custom</span> Web Development</h2>
+            </div>
+            <div class="service-row-content animate-on-scroll" data-anim-delay="150">
+              <p>
+                We build websites the right way — clean code, fast load times, and a structure designed to scale. Every project starts with understanding your goals, your audience, and what success actually looks like for your organization. You work directly with the developer, not an account manager, so nothing gets lost in translation.
+              </p>
+              <p>
+                Whether you need a polished marketing site, a content-managed platform, or a full web application with custom functionality, we scope the right solution for your budget and timeline — no over-engineering, no unnecessary complexity.
+              </p>
+              <span class="features-label">What's included</span>
+              <ul class="service-features-list">
+                <li><strong>Responsive, mobile-first design</strong></li>
+                <li><strong>Performance-focused builds</strong></li>
+                <li><strong>SEO-structured from day one</strong></li>
+                <li><strong>CMS & third-party integrations</strong></li>
+                <li><strong>Hosting & ongoing management</strong></li>
+              </ul>
+              <button class="btn btn-primary" onclick="openModal('webDevModal')" aria-label="Request web development services">
+                Request Web Development
+              </button>
             </div>
           </div>
 
           <!-- Process Automation -->
-          <div class="service-detail" id="process-automation">
-            <div class="service-detail-content reverse">
-              <div class="service-icon-large">⚙️</div>
-              <div class="service-info">
-                <h2>Business Process Automation</h2>
-                <p>
-                  Streamline your operations with custom internal tools that save
-                  time, reduce errors, and increase efficiency across your team.
-                  We identify bottlenecks and build solutions that work.
-                </p>
-                <ul class="service-features-list">
-                  <li><strong>Workflow automation</strong> — Eliminate repetitive manual tasks</li>
-                  <li><strong>Custom business tools</strong> — Purpose-built applications for your specific needs</li>
-                  <li><strong>Form & email automation</strong> — Streamline communication and data collection</li>
-                  <li><strong>Task automation</strong> — Let software handle the routine so you can focus on growth</li>
-                </ul>
-                <button class="btn btn-primary" onclick="openModal('automationModal')" aria-label="Request process automation services">
-                  Request Process Automation
-                </button>
-              </div>
+          <div class="service-row" id="process-automation">
+            <div class="service-row-label animate-on-scroll from-left">
+              <span class="service-index">02</span>
+              <h2><span class="service-name-dark">Business</span> Process Automation</h2>
+            </div>
+            <div class="service-row-content animate-on-scroll" data-anim-delay="150">
+              <p>
+                Most businesses are sitting on hundreds of hours of recoverable time — locked in repetitive manual tasks, copy-paste workflows, and disconnected tools that don't talk to each other. We build custom automation solutions that eliminate those bottlenecks and free your team to focus on the work that actually matters.
+              </p>
+              <p>
+                Our automation engagements start with a discovery phase: we map your current workflows, identify the highest-impact opportunities, and build targeted solutions. Clients have seen time savings exceeding 90% on previously manual processes.
+              </p>
+              <span class="features-label">What's included</span>
+              <ul class="service-features-list">
+                <li><strong>Workflow & task automation</strong></li>
+                <li><strong>API & system integration</strong></li>
+                <li><strong>AI-powered automation</strong></li>
+                <li><strong>Custom internal tools</strong></li>
+                <li><strong>Form & communication automation</strong></li>
+              </ul>
+              <button class="btn btn-primary" onclick="openModal('automationModal')" aria-label="Request process automation services">
+                Request Process Automation
+              </button>
             </div>
           </div>
 
           <!-- Digital Strategy Consulting -->
-          <div class="service-detail" id="consulting">
-            <div class="service-detail-content">
-              <div class="service-icon-large">💡</div>
-              <div class="service-info">
-                <h2>Digital Strategy Consulting</h2>
-                <p>
-                  Expert guidance for small businesses managing their digital
-                  presence. We help improve user experience and maximize your
-                  website's impact with actionable insights and strategic planning.
-                </p>
-                <ul class="service-features-list">
-                  <li><strong>UX/UI analysis & recommendations</strong> — Identify what's working and what needs improvement</li>
-                  <li><strong>Website audits</strong> — Comprehensive review of performance, SEO, and accessibility</li>
-                  <li><strong>Performance optimization</strong> — Speed up your site and improve user experience</li>
-                  <li><strong>Training & documentation</strong> — Empower your team to manage their digital presence</li>
-                </ul>
-                <button class="btn btn-primary" onclick="openModal('consultingModal')" aria-label="Request strategic consulting services">
-                  Request Strategic Consulting
-                </button>
-              </div>
+          <div class="service-row" id="consulting">
+            <div class="service-row-label animate-on-scroll from-left">
+              <span class="service-index">03</span>
+              <h2><span class="service-name-dark">Digital</span> Strategy Consulting</h2>
+            </div>
+            <div class="service-row-content animate-on-scroll" data-anim-delay="150">
+              <p>
+                Not every problem requires a full build. Sometimes what you need is an outside perspective — someone who can look at your digital presence objectively, tell you what's actually hurting you, and help you prioritize what to fix first.
+              </p>
+              <p>
+                We work with small businesses that are managing their own websites, evaluating vendors, or trying to get more out of the tools they already have. Engagements are scoped by the hour or project, with no long-term retainer required.
+              </p>
+              <span class="features-label">What's included</span>
+              <ul class="service-features-list">
+                <li><strong>Website & SEO audits</strong></li>
+                <li><strong>UX/UI analysis</strong></li>
+                <li><strong>Vendor & platform evaluation</strong></li>
+                <li><strong>Digital roadmapping</strong></li>
+                <li><strong>Team training & documentation</strong></li>
+              </ul>
+              <button class="btn btn-primary" onclick="openModal('consultingModal')" aria-label="Request strategic consulting services">
+                Request Strategic Consulting
+              </button>
             </div>
           </div>
+
         </div>
       </section>
 
@@ -396,9 +407,9 @@
       <!-- CTA Section -->
       <section class="cta-section">
         <div class="container">
-          <h2>Not Sure Which Service You Need?</h2>
-          <p>Let's talk about your goals and find the right solution together.</p>
-          <div class="cta-buttons">
+          <h2 class="animate-on-scroll">Not Sure Which Service You Need?</h2>
+          <p class="animate-on-scroll" data-anim-delay="100">Let's talk about your goals and find the right solution together.</p>
+          <div class="cta-buttons animate-on-scroll" data-anim-delay="200">
             <a href="contact.html" class="btn btn-primary">Schedule a Consultation</a>
             <a href="portfolio.html" class="btn btn-secondary-dark">View Our Work</a>
           </div>
@@ -651,6 +662,6 @@
       </div>
     </div>
 
-    <script defer src="script.js?v=20260207"></script>
+    <script defer src="script.js?v=20260410"></script>
   </body>
 </html>

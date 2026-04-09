@@ -866,11 +866,10 @@ nav .container {
 
 .service-card h3 {
   font-family: "Archivo", sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--stone-slate);
   margin-bottom: 1rem;
-  white-space: nowrap;
 }
 
 .service-card p {
@@ -1809,7 +1808,11 @@ footer p {
   /* Services Grid */
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  .services-header {
+    margin-bottom: 2.5rem;
   }
 
   .service-card {
@@ -1818,7 +1821,7 @@ footer p {
 
   .service-card-img {
     margin: -1.5rem -1.5rem 1.25rem -1.5rem;
-    height: 180px;
+    height: 200px;
   }
 
   .service-icon {
@@ -1829,12 +1832,12 @@ footer p {
   }
 
   .service-card h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: 0.75rem;
   }
 
   .service-card p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 1rem;
   }
 
@@ -1843,13 +1846,17 @@ footer p {
   }
 
   .service-features li {
-    font-size: 0.875rem;
-    padding: 0.4rem 0;
+    font-size: 0.9rem;
+    padding: 0.4rem 0 0.4rem 1.5rem;
   }
 
   .btn-service {
+    display: block;
+    margin-top: 1rem;
     min-height: 44px;
-    padding: 0.75rem 1.25rem;
+    padding: 0.875rem 1.5rem;
+    width: 100%;
+    text-align: center;
     font-size: 0.9rem;
   }
 
@@ -2682,72 +2689,94 @@ html {
    ======================================== */
 
 .services-page {
-  padding: 4rem 2rem;
+  padding: 0;
 }
 
 .services-page .container {
-  max-width: 1000px;
+  max-width: 100%;
+  padding: 0;
 }
 
-.service-detail {
-  margin-bottom: 5rem;
-  padding-bottom: 5rem;
-  border-bottom: 1px solid var(--stone-sand);
-}
-
-.service-detail:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-.service-detail-content {
+/* Agency-style horizontal service rows */
+.service-row {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 3rem;
-  align-items: start;
+  grid-template-columns: 28% 1fr;
+  gap: 5rem;
+  padding: 3.5rem clamp(2rem, 6vw, 8rem);
+  border-bottom: 1px solid var(--stone-light);
+  transition: background 0.3s ease;
+  border-radius: 4px;
 }
 
-.service-detail-content.reverse {
-  direction: rtl;
+.service-row:first-of-type {
+  border-top: 1px solid var(--stone-light);
 }
 
-.service-detail-content.reverse > * {
-  direction: ltr;
+.service-row:hover {
+  background: rgba(184, 149, 106, 0.04);
 }
 
-.service-icon-large {
-  font-size: 5rem;
-  text-align: center;
+.service-index {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent-bronze);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--accent-bronze);
+  width: 2rem;
 }
 
-.service-info h2 {
+.service-row-label h2 {
   font-family: "Archivo", sans-serif;
   font-size: 2rem;
   font-weight: 700;
-  color: var(--stone-slate);
-  margin-bottom: 1rem;
+  color: var(--stone-charcoal);
+  line-height: 1.2;
+  margin-top: 0.875rem;
 }
 
-.service-info > p {
-  font-size: 1.1rem;
+.service-row-content > p {
+  font-size: 1rem;
   color: var(--stone-river);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  line-height: 1.75;
+  margin-bottom: 0.875rem;
+}
+
+.service-row-content > p:last-of-type {
+  margin-bottom: 1.25rem;
+}
+
+.features-label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone-river);
+  margin-bottom: 0.75rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .service-features-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.75rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 2rem;
 }
 
 .service-features-list li {
-  padding: 0.75rem 0;
-  padding-left: 1.5rem;
+  padding: 0.35rem 0;
+  padding-left: 1.25rem;
   position: relative;
   color: var(--stone-river);
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .service-features-list li::before {
@@ -2777,12 +2806,15 @@ html {
   margin-bottom: 3rem;
 }
 
+.process-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .process-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 .process-step {
@@ -3321,17 +3353,19 @@ html {
     text-align: center;
   }
 
-  .service-detail-content {
+  .service-row {
     grid-template-columns: 1fr;
-    text-align: center;
+    gap: 1.25rem;
+    padding: 2.5rem 1.5rem;
   }
 
-  .service-detail-content.reverse {
-    direction: ltr;
+  .service-row-label h2 {
+    font-size: 1.6rem;
+    margin-top: 0.625rem;
   }
 
-  .service-icon-large {
-    margin-bottom: 1rem;
+  .service-features-list {
+    grid-template-columns: 1fr;
   }
 
   .service-features-list li {
@@ -3499,34 +3533,22 @@ html {
   }
 
   /* Services Page Mobile */
-  .service-detail {
-    margin-bottom: 2.5rem;
-    padding-bottom: 2.5rem;
+  .service-row {
+    padding: 2rem 1.25rem;
+    gap: 1.25rem;
   }
 
-  .service-detail-content {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .service-row-label h2 {
+    font-size: 1.35rem;
   }
 
-  .service-icon-large {
-    font-size: 3.5rem;
-    margin-bottom: 0;
-  }
-
-  .service-info h2 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  .service-info > p {
-    font-size: 0.95rem;
-    text-align: left;
+  .service-row-content > p {
+    font-size: 0.9rem;
   }
 
   .service-features-list li {
-    font-size: 0.9rem;
-    padding: 0.5rem 0 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    padding: 0.3rem 0 0.3rem 1.25rem;
   }
 
   .process-section {
@@ -4042,5 +4064,38 @@ html {
 
   .contact-cta .contact-item-value {
     font-size: 1rem;
+  }
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+
+.service-name-dark {
+  color: var(--accent-bronze);
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.animate-on-scroll.from-left {
+  transform: translateX(-28px) translateY(0);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }

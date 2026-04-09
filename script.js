@@ -647,3 +647,33 @@ if (!document.querySelector('#portfolio-animations')) {
   `;
   document.head.appendChild(style);
 }
+
+// ========================================
+// Scroll Animations (Apple-style)
+// ========================================
+
+(function initScrollAnimations() {
+  const els = document.querySelectorAll('.animate-on-scroll');
+  if (!els.length) return;
+
+  // Fallback for browsers without IntersectionObserver
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const delay = parseInt(el.dataset.animDelay || '0', 10);
+      setTimeout(() => el.classList.add('is-visible'), delay);
+      observer.unobserve(el);
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  els.forEach(el => observer.observe(el));
+})();
