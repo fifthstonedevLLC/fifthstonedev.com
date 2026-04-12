@@ -27,7 +27,7 @@
   
   <!-- About Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/about.html</loc>
+    <loc>https://www.fifthstonedev.com/about</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -40,7 +40,7 @@
   
   <!-- Services Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/services.html</loc>
+    <loc>https://www.fifthstonedev.com/services</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -48,7 +48,7 @@
   
   <!-- Portfolio Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/portfolio.html</loc>
+    <loc>https://www.fifthstonedev.com/portfolio</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -71,7 +71,7 @@
   
   <!-- Contact Page -->
   <url>
-    <loc>https://www.fifthstonedev.com/contact.html</loc>
+    <loc>https://www.fifthstonedev.com/contact</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -79,7 +79,7 @@
   
   <!-- Privacy Policy -->
   <url>
-    <loc>https://www.fifthstonedev.com/privacy-policy.html</loc>
+    <loc>https://www.fifthstonedev.com/privacy-policy</loc>
     <lastmod>2026-02-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
