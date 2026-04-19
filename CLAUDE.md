@@ -10,7 +10,11 @@ Static multi-page website for Fifth Stone Dev LLC (fifthstonedev.com), a web dev
 
 There is **no build step**. Edit files directly and deploy. The site runs on Apache-based hosting with `.htaccess` for routing, security headers, compression, and caching.
 
-**Cache busting** is done via query params on CSS/JS references (e.g., `styles.css?v=20260207`). When modifying `styles.css` or `script.js`, update the version string in all HTML files that reference them.
+**The site has not been deployed to production yet.** All changes are local only.
+
+**Cache busting** is done via query params on CSS/JS references (e.g., `styles.css?v=20260412t`). When modifying `styles.css` or `script.js`, update the version string in all HTML files that reference them. Current versions: `styles.css?v=20260412t`, `script.js?v=20260412k`. Note: `index.html` is currently behind — it still references `styles.css?v=20260409` and `script.js?v=20260331` and should be updated when next touched.
+
+> Note: Query string cache busting only works over HTTP (Apache hosting). When previewing locally via `file://`, it has no effect — use a hard refresh (`Ctrl+Shift+R`) instead.
 
 **Contact forms** use EmailJS (client-side, no backend). Configuration details are in `EMAILJS_SETUP.md`. The public keys in the HTML are intentionally client-facing.
 
@@ -18,8 +22,8 @@ There is **no build step**. Edit files directly and deploy. The site runs on Apa
 
 ### File Organization
 - **6 HTML pages**: `index.html`, `about.html`, `services.html`, `portfolio.html`, `contact.html`, `privacy-policy.html`
-- **1 CSS file**: `styles.css` (~3800 lines) — all styling including responsive breakpoints
-- **1 JS file**: `script.js` (~590 lines) — all client-side behavior
+- **1 CSS file**: `styles.css` (~4100 lines) — all styling including responsive breakpoints
+- **1 JS file**: `script.js` (~680 lines) — all client-side behavior
 - **`assets/`** — logos, photos, portfolio preview images
 - **`.htaccess`** — HTTPS redirect, www canonicalization, security headers, gzip, browser caching
 - **`sitemap.xml`** / **`robots.txt`** — SEO configuration
@@ -65,7 +69,8 @@ Performance patterns already in place:
 
 ## Deployment
 
-Static files deploy directly to Apache hosting. No CI/CD pipeline. When updating:
+Static files deploy directly to Apache hosting. No CI/CD pipeline. **Nothing has been deployed yet — the site is pre-launch.** When ready to deploy:
 1. Edit source files
 2. Update cache-busting version params if CSS/JS changed
 3. Update `sitemap.xml` `<lastmod>` dates for modified pages
+4. Upload all changed files to Apache hosting
