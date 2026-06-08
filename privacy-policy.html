@@ -21,12 +21,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="styles.css?v=20260412t" />
+    <link rel="stylesheet" href="styles.css?v=20260607" />
     <style>
       .privacy-container {
         max-width: 900px;
         margin: 0 auto;
-        padding: 120px 24px 80px;
+        padding: 48px 24px 80px;
       }
       
       .privacy-header {
@@ -145,22 +145,32 @@
         }
       }
       
-      .privacy-logo {
-        display: block;
-        max-width: 280px;
-        height: auto;
-        margin: 0 auto 32px;
-      }
     </style>
   </head>
   <body>
+    <header class="masthead" id="masthead">
+      <div class="bar">
+        <a class="logo" href="/" aria-label="Fifth Stone Development — return to homepage">
+          <img
+            src="assets/horizontal_logo_webp.webp"
+            alt="Fifth Stone Development"
+            loading="eager"
+            width="125"
+            height="125"
+          />
+        </a>
+        <div class="nav" role="navigation" aria-label="Primary navigation">
+          <a href="about" aria-label="About Fifth Stone Dev">About</a>
+          <a href="services" aria-label="Services">Services</a>
+          <a href="portfolio" aria-label="Portfolio — view our work">Portfolio</a>
+          <a href="contact" class="nav-cta" aria-label="Start a project — contact us">Start a project</a>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
     <main class="privacy-container">
-      <a href="/" class="back-link">← Back to Home</a>
-      
-      <a href="/">
-        <img src="assets/horz-logo.png" alt="Fifth Stone Dev Logo" class="privacy-logo" />
-      </a>
-      
       <header class="privacy-header">
         <h1>Privacy Policy</h1>
         <p class="last-updated">Last Updated: January 20, 2026</p>
@@ -328,5 +338,6 @@
         <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
       </div>
     </footer>
+    <script defer src="script.js?v=20260607"></script>
   </body>
 </html>

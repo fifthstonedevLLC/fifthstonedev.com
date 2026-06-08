@@ -143,7 +143,7 @@ nav .container {
 
 /* Hero Section */
 .hero {
-  margin-top: 80px;
+  margin-top: 0;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -1495,12 +1495,20 @@ footer {
   background: var(--stone-charcoal);
   color: var(--stone-sand);
   padding: 3rem 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 footer .container {
   max-width: 1400px;
   margin: 0 auto;
+}
+
+.footer-grid {
+  text-align: left;
+}
+
+.footer-bottom {
+  text-align: left;
 }
 
 footer .footer-logo {
@@ -1713,7 +1721,7 @@ footer p {
 
   /* Hero Section */
   .hero {
-    margin-top: 70px;
+    margin-top: 0;
     min-height: auto;
     padding: 0;
   }
@@ -2027,17 +2035,25 @@ footer p {
   }
 
   .footer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 2rem;
+    text-align: left;
     padding-bottom: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: start;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-contact {
+    width: 100%;
+    max-width: none;
   }
 
   .footer-brand {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .footer-logo {
@@ -2063,7 +2079,7 @@ footer p {
   .footer-links ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 0.5rem 1rem;
     padding: 0;
     margin: 0;
@@ -2080,6 +2096,9 @@ footer p {
 
   .footer-contact {
     order: 3;
+    width: 100%;
+    max-width: none;
+    text-align: left;
   }
 
   .footer-contact h4 {
@@ -2098,7 +2117,9 @@ footer p {
   }
 
   .footer-bottom {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
     text-align: center;
     padding-top: 0;
@@ -2113,6 +2134,20 @@ footer p {
 
   .footer-bottom a {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-links ul {
+    justify-content: center;
+  }
+
+  .footer-contact {
+    text-align: left;
   }
 }
 
@@ -2283,6 +2318,21 @@ footer p {
   .footer-bottom p,
   .footer-bottom a {
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-links ul {
+    justify-content: center;
+  }
+
+  .footer-contact {
+    text-align: center;
   }
 }
 
@@ -2530,7 +2580,7 @@ html {
 
 /* Page Header - Used on interior pages */
 .page-header {
-  margin-top: 130px;
+  margin-top: 0;
   padding: 4rem 2rem;
   background: linear-gradient(
     135deg,
@@ -2609,11 +2659,23 @@ html {
 /* Enhanced Footer for Multi-Page */
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: auto 1fr auto;
   gap: 3rem;
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  align-items: start;
+}
+
+.footer-links {
+  justify-self: center;
+  text-align: center;
+  max-width: 320px;
+}
+
+.footer-contact {
+  justify-self: end;
+  text-align: right;
 }
 
 .footer-brand .footer-logo {
@@ -3336,7 +3398,7 @@ html {
 
 @media (max-width: 768px) {
   .page-header {
-    margin-top: 70px;
+    margin-top: 0;
     padding: 2.5rem 1rem;
   }
 
@@ -3349,7 +3411,26 @@ html {
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    text-align: left;
+    align-items: start;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    grid-column: 1;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer-contact {
+    grid-column: 2;
+    justify-self: center;
     text-align: center;
   }
 
@@ -4102,5 +4183,139 @@ html {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ========================================
+   MASTHEAD — sticky portfolio-style nav
+   ======================================== */
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(14px) saturate(1.1);
+  border-bottom: 1px solid rgba(44, 62, 80, 0.07);
+  transition: background 0.4s ease, border-color 0.4s ease;
+}
+.masthead.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(44, 62, 80, 0.12);
+}
+.masthead .bar {
+  width: min(1320px, 92vw);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 78px;
+}
+.masthead a.logo {
+  display: block;
+  line-height: 0;
+  flex-shrink: 0;
+}
+.masthead .logo img {
+  height: 58px;
+  width: auto;
+}
+.masthead .nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 2.6vw, 2.8rem);
+}
+.masthead .nav a {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--stone-river);
+  text-decoration: none;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+}
+.masthead .nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--accent-bronze);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.32s ease;
+}
+.masthead .nav a:hover { color: var(--stone-charcoal); }
+.masthead .nav a:hover::after,
+.masthead .nav a.active::after { transform: scaleX(1); }
+.masthead .nav a.active { color: var(--stone-charcoal); }
+.masthead .nav-cta {
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: var(--stone-charcoal) !important;
+  border: 1px solid var(--stone-charcoal);
+  border-radius: 100px;
+  padding: 0.55rem 1.25rem !important;
+  transition: background 0.28s ease, color 0.28s ease;
+}
+.masthead .nav-cta::after { display: none; }
+.masthead .nav-cta:hover { background: var(--stone-charcoal); color: #fff !important; }
+.masthead .menu-toggle { display: none; }
+
+@media (max-width: 920px) {
+  .masthead .bar { height: 70px; }
+  .masthead .logo img { height: 48px; }
+}
+@media (max-width: 600px) {
+  .masthead .nav {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--off-white);
+    flex-direction: column;
+    padding: 5rem 1.5rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.12);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+  }
+  .masthead .nav.active {
+    transform: translateX(0);
+  }
+  .masthead .nav a {
+    font-size: 1.1rem;
+    display: block;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(28, 37, 48, 0.08);
+  }
+  .masthead .nav a.nav-cta {
+    border-bottom: none;
+  }
+  .masthead .bar {
+    height: calc(86px + env(safe-area-inset-top, 0));
+  }
+  .masthead .logo {
+    padding-top: 0.35rem;
+  }
+  .masthead .menu-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    margin-top: 0.15rem;
+    z-index: 1001;
+  }
+  .masthead .menu-toggle span {
+    width: 26px;
+    height: 2px;
+    background: var(--stone-charcoal);
+    display: block;
   }
 }

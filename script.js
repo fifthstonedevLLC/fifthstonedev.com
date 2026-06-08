@@ -213,15 +213,31 @@ function showNotification(message, type = "success") {
   }, 5000);
 }
 
+// Masthead scroll state
+(function () {
+  var masthead = document.getElementById("masthead");
+  if (!masthead) return;
+  function onMastheadScroll() {
+    if (window.scrollY > 12) masthead.classList.add("scrolled");
+    else masthead.classList.remove("scrolled");
+  }
+  window.addEventListener("scroll", onMastheadScroll, { passive: true });
+  onMastheadScroll();
+})();
+
 // Mobile menu toggle
 document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".mobile-menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
+  const menuToggle = document.querySelector(".mobile-menu-toggle, .menu-toggle");
+  const navLinks = document.querySelector(".nav-links, .masthead .nav");
 
-  if (menuToggle) {
+  if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", function () {
       menuToggle.classList.toggle("active");
       navLinks.classList.toggle("active");
+      menuToggle.setAttribute(
+        "aria-expanded",
+        menuToggle.classList.contains("active") ? "true" : "false"
+      );
     });
 
     // Close menu when clicking on a link
@@ -230,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
       link.addEventListener("click", function () {
         menuToggle.classList.remove("active");
         navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
       });
     });
 
@@ -241,6 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
       ) {
         menuToggle.classList.remove("active");
         navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
       }
     });
   }
@@ -560,93 +578,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
-
-// ========================================
-// April Promo Popup
-// ========================================
-
-(function initAprilPromoPopup() {
-  const STORAGE_KEY = 'fifthstonedev_april_promo_dismissed';
-  const PROMO_EXPIRY = new Date('2026-05-01'); // Hide permanently after April
-
-  function shouldShowPromo() {
-    if (new Date() >= PROMO_EXPIRY) return false;
-    return !localStorage.getItem(STORAGE_KEY);
-  }
-
-  function showPromoPopup() {
-    const popup = document.getElementById('april-promo-popup');
-    if (!popup) return;
-    popup.removeAttribute('hidden');
-    document.body.style.overflow = 'hidden';
-  }
-
-  if (shouldShowPromo()) {
-    document.addEventListener('DOMContentLoaded', function () {
-      setTimeout(showPromoPopup, 2500);
-    });
-  }
-})();
-
-function closePromoPopup() {
-  const popup = document.getElementById('april-promo-popup');
-  if (!popup) return;
-  popup.setAttribute('hidden', '');
-  document.body.style.overflow = '';
-}
-
-function dismissPromoPopup() {
-  closePromoPopup();
-  localStorage.setItem('fifthstonedev_april_promo_dismissed', '1');
-}
-
-function claimAprilOffer() {
-  dismissPromoPopup();
-  openModal('webDevModal');
-}
-
-// Close promo popup when clicking the backdrop
-document.addEventListener('click', function (e) {
-  const popup = document.getElementById('april-promo-popup');
-  if (popup && !popup.hasAttribute('hidden') && e.target === popup) {
-    closePromoPopup();
-  }
-});
-
-// Add fade out animation to stylesheet dynamically
-if (!document.querySelector('#portfolio-animations')) {
-  const style = document.createElement('style');
-  style.id = 'portfolio-animations';
-  style.textContent = `
-    @keyframes fadeOut {
-      from {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      to {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-    }
-    
-    /* Smooth scrolling for page */
-    html {
-      scroll-behavior: smooth;
-    }
-    
-    /* Enhanced focus states for accessibility */
-    .filter-btn:focus-visible {
-      outline: 3px solid var(--accent-bronze);
-      outline-offset: 2px;
-    }
-    
-    .btn-case-study:focus-visible {
-      outline: 3px solid var(--accent-bronze);
-      outline-offset: 2px;
-    }
-  `;
-  document.head.appendChild(style);
-}
 
 // ========================================
 // Scroll Animations (Apple-style)

@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fifth Stone Dev | Custom Web Development & Automation | Cedar Falls, Iowa</title>
+    <title>
+      Fifth Stone Dev | Custom Web Development & Automation | Cedar Falls, Iowa
+    </title>
 
     <!-- SEO Meta Tags -->
     <meta
@@ -15,7 +17,10 @@
       content="web development Cedar Falls, process automation Iowa, software engineering, custom software Cedar Falls, workflow automation, digital transformation, business automation, web developer Iowa, website design Cedar Falls, AI integration, small business websites Iowa"
     />
     <meta name="author" content="Fifth Stone Dev LLC" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="3 days" />
     <meta name="rating" content="general" />
@@ -31,7 +36,11 @@
     <meta name="msapplication-TileColor" content="#1a1a2e" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="assets/fifth_stone_dev_favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/fifth_stone_dev_favicon.ico"
+    />
     <link rel="shortcut icon" href="assets/fifth_stone_dev_favicon.ico" />
 
     <!-- Open Graph Meta Tags -->
@@ -244,7 +253,7 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=optional"
       rel="stylesheet"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <noscript>
       <link
@@ -255,53 +264,221 @@
     <!-- Critical CSS inlined to avoid render-blocking -->
     <style>
       /* Critical above-the-fold styles with font fallback */
-      @font-face{font-family:'Archivo Fallback';src:local('Arial');size-adjust:97.5%;ascent-override:95%;descent-override:22%;line-gap-override:0%}
-      :root{--stone-slate:#2c3e50;--stone-charcoal:#1a252f;--stone-river:#5d6d7e;--stone-sand:#bdc3c7;--stone-light:#ecf0f1;--accent-bronze:#b8956a;--white:#ffffff;--off-white:#f8f9fa}
-      *{margin:0;padding:0;box-sizing:border-box}
-      body{font-family:"Archivo","Archivo Fallback",-apple-system,BlinkMacSystemFont,sans-serif;color:var(--stone-charcoal);background:var(--off-white);line-height:1.6;overflow-x:hidden}
-      nav{position:fixed;top:0;width:100%;background:#fff;z-index:1000;border-bottom:1px solid rgba(44,62,80,.1)}
-      nav .container{max-width:1400px;margin:0 auto;padding:.1rem 2rem;display:flex;justify-content:space-between;align-items:center}
-      .logo{display:flex;align-items:center;gap:.5rem;position:relative;z-index:1001}
-      .logo a{display:block;line-height:0;cursor:pointer}
-      .logo img{height:130px;width:auto;display:block}
-      .nav-links{display:flex;gap:2.5rem;list-style:none}
-      .nav-links a{color:var(--stone-river);text-decoration:none;font-weight:500;font-size:1.1rem}
-      .hero{margin-top:80px;min-height:90vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--stone-charcoal) 0%,var(--stone-slate) 100%)}
-      .hero .container{max-width:1400px;margin:0 auto;padding:4rem 2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-      .hero-content h1{font-family:"Archivo","Archivo Fallback",sans-serif;font-size:4.5rem;font-weight:300;line-height:1.1;margin-bottom:2rem;color:var(--white)}
-      .hero-content h1 strong{font-weight:700;color:var(--accent-bronze);display:block}
-      .hero-content p{font-size:1.25rem;color:var(--stone-sand);margin-bottom:2.5rem;max-width:600px;line-height:1.8}
-      .btn{padding:1rem 2.5rem;font-size:1rem;font-weight:500;text-decoration:none;border-radius:4px;cursor:pointer;border:none;display:inline-block}
-      .btn-primary{background:var(--accent-bronze);color:var(--white)}
-      .btn-secondary{background:transparent;color:var(--white);border:2px solid var(--white)}
-      .cta-buttons{display:flex;gap:1.5rem}
-      .mobile-menu-toggle{display:none}
-      @media(max-width:768px){.logo img{height:70px}nav .container{padding:.5rem 1rem}.mobile-menu-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.mobile-menu-toggle span{width:25px;height:3px;background:var(--stone-slate);border-radius:2px}.nav-links{position:fixed;top:0;right:0;height:100vh;width:100%;background:var(--white);flex-direction:column;padding:5rem 2rem 2rem;gap:1.5rem;transform:translateX(100%);transition:transform .3s ease;z-index:999}.nav-links.active{transform:translateX(0)}.nav-links a{font-size:1.25rem;padding:1rem 0;border-bottom:1px solid var(--stone-light)}.hero{margin-top:70px;min-height:auto}.hero .container{grid-template-columns:1fr;padding:2.5rem 1.25rem 3rem;gap:2rem}.hero-content h1{font-size:2rem;line-height:1.2;margin-bottom:1.25rem}.hero-content p{font-size:1rem;margin-bottom:1.5rem}.hero-visual{display:none}.cta-buttons{flex-direction:column;gap:.75rem;width:100%}.btn{padding:.875rem 1.5rem;min-height:48px;width:100%;text-align:center;display:flex;align-items:center;justify-content:center}}
+      @font-face {
+        font-family: "Archivo Fallback";
+        src: local("Arial");
+        size-adjust: 97.5%;
+        ascent-override: 95%;
+        descent-override: 22%;
+        line-gap-override: 0%;
+      }
+      :root {
+        --stone-slate: #2c3e50;
+        --stone-charcoal: #1a252f;
+        --stone-river: #5d6d7e;
+        --stone-sand: #bdc3c7;
+        --stone-light: #ecf0f1;
+        --accent-bronze: #b8956a;
+        --white: #ffffff;
+        --off-white: #f8f9fa;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family:
+          "Archivo",
+          "Archivo Fallback",
+          -apple-system,
+          BlinkMacSystemFont,
+          sans-serif;
+        color: var(--stone-charcoal);
+        background: var(--off-white);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      .hero {
+        margin-top: 0;
+        min-height: 90vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          var(--stone-charcoal) 0%,
+          var(--stone-slate) 100%
+        );
+      }
+      .hero .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+      .hero-content h1 {
+        font-family: "Archivo", "Archivo Fallback", sans-serif;
+        font-size: 4.5rem;
+        font-weight: 300;
+        line-height: 1.1;
+        margin-bottom: 2rem;
+        color: var(--white);
+      }
+      .hero-content h1 strong {
+        font-weight: 700;
+        color: var(--accent-bronze);
+        display: block;
+      }
+      .hero-content p {
+        font-size: 1.25rem;
+        color: var(--stone-sand);
+        margin-bottom: 2.5rem;
+        max-width: 600px;
+        line-height: 1.8;
+      }
+      .btn {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        text-decoration: none;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        display: inline-block;
+      }
+      .btn-primary {
+        background: var(--accent-bronze);
+        color: var(--white);
+      }
+      .btn-secondary {
+        background: transparent;
+        color: var(--white);
+        border: 2px solid var(--white);
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+      }
+      @media (max-width: 768px) {
+        .hero {
+          margin-top: 0;
+          min-height: auto;
+        }
+        .hero .container {
+          grid-template-columns: 1fr;
+          padding: 2.5rem 1.25rem 3rem;
+          gap: 2rem;
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+          line-height: 1.2;
+          margin-bottom: 1.25rem;
+        }
+        .hero-content p {
+          font-size: 1rem;
+          margin-bottom: 1.5rem;
+        }
+        .hero-visual {
+          display: none;
+        }
+        .cta-buttons {
+          flex-direction: column;
+          gap: 0.75rem;
+          width: 100%;
+        }
+        .btn {
+          padding: 0.875rem 1.5rem;
+          min-height: 48px;
+          width: 100%;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
     </style>
     <!-- Main stylesheet loaded asynchronously -->
-    <link rel="preload" href="styles.css?v=20260409" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="styles.css?v=20260409" /></noscript>
+    <link
+      rel="preload"
+      href="styles.css?v=20260607"
+      as="style"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
+    />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260607" /></noscript>
 
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
   </head>
   <body>
     <!-- Cookie Consent Banner - hidden by default, shown via JS to avoid blocking LCP -->
-    <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true" style="display:none;position:fixed;bottom:0;left:0;right:0;top:auto;z-index:10000;">
+    <div
+      id="cookie-consent-banner"
+      class="cookie-banner hidden"
+      role="dialog"
+      aria-labelledby="cookie-title"
+      aria-describedby="cookie-description"
+      aria-modal="true"
+      style="
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        z-index: 10000;
+      "
+    >
       <div class="cookie-content">
         <div class="cookie-text">
           <h3 id="cookie-title">🍪 We value your privacy</h3>
           <p id="cookie-description">
-            We use cookies to enhance your browsing experience and analyze site traffic.
-            By clicking "Accept All", you consent to our use of cookies.
-            For more information about how we use this data, please review
-            <a href="privacy-policy" class="cookie-privacy-link" style="color: white;">View our Privacy Policy</a>.
-            </p>
+            We use cookies to enhance your browsing experience and analyze site
+            traffic. By clicking "Accept All", you consent to our use of
+            cookies. For more information about how we use this data, please
+            review
+            <a
+              href="privacy-policy"
+              class="cookie-privacy-link"
+              style="color: white"
+              >View our Privacy Policy</a
+            >.
+          </p>
         </div>
         <div class="cookie-buttons">
-          <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="Accept All cookies">Accept All</button>
-          <button id="cookie-reject" class="cookie-btn cookie-reject" aria-label="Reject All non-essential cookies">Reject All</button>
-          <button id="cookie-settings" class="cookie-btn cookie-settings" aria-label="Customize cookie settings">Customize</button>
+          <button
+            id="cookie-accept"
+            class="cookie-btn cookie-accept"
+            aria-label="Accept All cookies"
+          >
+            Accept All
+          </button>
+          <button
+            id="cookie-reject"
+            class="cookie-btn cookie-reject"
+            aria-label="Reject All non-essential cookies"
+          >
+            Reject All
+          </button>
+          <button
+            id="cookie-settings"
+            class="cookie-btn cookie-settings"
+            aria-label="Customize cookie settings"
+          >
+            Customize
+          </button>
         </div>
       </div>
 
@@ -311,227 +488,290 @@
         <div class="cookie-option">
           <label>
             <input type="checkbox" id="cookie-essential" checked disabled />
-            <span><strong>Essential Cookies</strong> - Required for the website to function. Cannot be disabled.</span>
+            <span
+              ><strong>Essential Cookies</strong> - Required for the website to
+              function. Cannot be disabled.</span
+            >
           </label>
         </div>
         <div class="cookie-option">
           <label>
             <input type="checkbox" id="cookie-analytics" />
-            <span><strong>Analytics Cookies</strong> - Help us understand how visitors interact with our website (Google Analytics, Microsoft Clarity).</span>
+            <span
+              ><strong>Analytics Cookies</strong> - Help us understand how
+              visitors interact with our website (Google Analytics, Microsoft
+              Clarity).</span
+            >
           </label>
         </div>
         <div class="cookie-settings-buttons">
-          <button id="cookie-save" class="cookie-btn cookie-accept">Save Preferences</button>
+          <button id="cookie-save" class="cookie-btn cookie-accept">
+            Save Preferences
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Navigation -->
-    <nav>
-      <div class="container">
-        <div class="logo">
-          <a href="#top" aria-label="Fifth Stone Dev - Return to top of page">
-            <img
-              src="assets/horizontal_logo_webp.webp"
-              alt="Fifth Stone Dev Logo"
-              loading="eager"
-              width="125"
-              height="125"
-            />
-          </a>
+    <header class="masthead" id="masthead">
+      <div class="bar">
+        <a class="logo" href="/" aria-label="Fifth Stone Development — return to homepage">
+          <img
+            src="assets/horizontal_logo_webp.webp"
+            alt="Fifth Stone Development"
+            loading="eager"
+            width="125"
+            height="125"
+          />
+        </a>
+        <div class="nav" role="navigation" aria-label="Primary navigation">
+          <a href="about" aria-label="About Fifth Stone Dev">About</a>
+          <a href="services" aria-label="Services">Services</a>
+          <a href="portfolio" aria-label="Portfolio — view our work">Portfolio</a>
+          <a href="contact" class="nav-cta" aria-label="Start a project — contact us">Start a project</a>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
-          <li><a href="about" aria-label="About - Learn about Fifth Stone Dev">About</a></li>
-          <li><a href="services" aria-label="Services - Explore our services">Services</a></li>
-          <li><a href="portfolio" aria-label="Portfolio - View our work">Portfolio</a></li>
-          <li><a href="contact" aria-label="Contact - Contact Fifth Stone Dev">Contact</a></li>
-        </ul>
       </div>
-    </nav>
+    </header>
 
     <main id="main-content">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Build with <strong>purpose.</strong></h1>
-          <p>
-            We craft clean, modern websites and digital tools rooted in clarity,
-            functionality, and faith. Serving businesses, organizations, and
-            mission-driven ventures, we bring Midwest integrity to every line of
-            code.
-          </p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Build with <strong>purpose.</strong></h1>
+            <p>
+              We craft clean, modern websites and digital tools rooted in
+              clarity, functionality, and faith. Serving businesses,
+              organizations, and mission-driven ventures, we bring Midwest
+              integrity to every line of code.
+            </p>
+            <div class="cta-buttons">
+              <a
+                href="contact"
+                class="btn btn-primary"
+                aria-label="Start Your Project - Contact us"
+                >Start Your Project</a
+              >
+              <a
+                href="services"
+                class="btn btn-secondary"
+                aria-label="Our Services - View web development and automation"
+                >Our Services</a
+              >
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="logo-graphic">
+              <img
+                src="assets/stone_and_sling.png"
+                alt="Fifth Stone Dev - Web Development and Process Automation Services in Cedar Falls Iowa"
+                class="hero-image"
+                fetchpriority="high"
+                width="500"
+                height="500"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Preview Section -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="services-header">
+            <h2>Services Built <strong>for Impact</strong></h2>
+            <p>
+              Whether you're launching a new venture or optimizing existing
+              systems, we provide the tools and expertise to help you succeed.
+            </p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-card-img">
+                <img
+                  src="assets/custom_web_development.jpg"
+                  alt="Custom web development"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Custom Web Development</h3>
+              <p>
+                Custom websites that are beautiful, functional, and built to
+                grow with your organization. From landing pages to full-scale
+                web applications.
+              </p>
+              <ul class="service-features">
+                <li>Responsive, mobile-first design</li>
+                <li>Modern frameworks & technologies</li>
+                <li>SEO optimization</li>
+                <li>Website Hosting & Management</li>
+              </ul>
+              <a
+                href="services#web-development"
+                class="btn-service"
+                aria-label="Learn more about web development services"
+              >
+                Learn More
+              </a>
+            </div>
+
+            <div class="service-card">
+              <div class="service-card-img">
+                <img
+                  src="assets/process_automation.jpg"
+                  alt="Process automation"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Process Automation</h3>
+              <p>
+                Streamline your operations with custom internal tools that save
+                time, reduce errors, and increase efficiency across your team.
+              </p>
+              <ul class="service-features">
+                <li>Workflow automation</li>
+                <li>Custom business tools</li>
+                <li>AI-powered automation</li>
+                <li>Task automation</li>
+              </ul>
+              <a
+                href="services#process-automation"
+                class="btn-service"
+                aria-label="Learn more about process automation services"
+              >
+                Learn More
+              </a>
+            </div>
+
+            <div class="service-card consulting">
+              <div class="service-card-img">
+                <img
+                  src="assets/digital_strategy_consulting.png"
+                  alt="Digital strategy consulting"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Digital Strategy Consulting</h3>
+              <p>
+                Expert guidance for small businesses managing their digital
+                presence. We help improve user experience and maximize your
+                website's impact.
+              </p>
+              <ul class="service-features">
+                <li>UX/UI analysis & recommendations</li>
+                <li>Website audits</li>
+                <li>Performance optimization</li>
+                <li>Training & documentation</li>
+              </ul>
+              <a
+                href="services#consulting"
+                class="btn-service"
+                aria-label="Learn more about consulting services"
+              >
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Preview Section -->
+      <section id="portfolio" class="portfolio-preview">
+        <div class="container">
+          <div class="portfolio-header">
+            <h2>Projects <strong>We've Built</strong></h2>
+            <p>
+              A selection of solutions we've crafted for businesses,
+              organizations, and mission-driven ventures.
+            </p>
+          </div>
+
+          <div class="portfolio-preview-grid">
+            <!-- Project 1 -->
+            <div class="portfolio-preview-item">
+              <div class="portfolio-image">
+                <img
+                  src="assets/Candeo_Our_Team_Page.png"
+                  alt="Candeo Counseling Center website redesign"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category">Web Development</span>
+                <h3>Candeo Counseling Center</h3>
+                <p>
+                  Comprehensive website redesign improving user engagement and
+                  compliance.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="portfolio-preview-item">
+              <div class="portfolio-image">
+                <img
+                  src="assets/ai_blog_daily_app.png"
+                  alt="AI Blog Platform - Full-stack web application"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category">Web Application</span>
+                <h3>AI Blog Platform</h3>
+                <p>
+                  Full-stack application aggregating AI-generated content with
+                  subscription-based access.
+                </p>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio-preview-item">
+              <div class="portfolio-image">
+                <img
+                  src="assets/gov_agency_app.png"
+                  alt="Government agency data processing automation tool"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category">Process Automation</span>
+                <h3>Government Data Processing</h3>
+                <p>
+                  Automation tool for disaster recovery with 90%+ time savings.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-cta">
+            <a href="portfolio" class="btn btn-primary">View Full Portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section">
+        <div class="container">
+          <h2>Ready to Start Your Project?</h2>
+          <p>Let's discuss how we can help bring your vision to life.</p>
           <div class="cta-buttons">
-            <a href="contact" class="btn btn-primary" aria-label="Start Your Project - Contact us">Start Your Project</a>
-            <a href="services" class="btn btn-secondary" aria-label="Our Services - View web development and automation">Our Services</a>
+            <a href="contact" class="btn btn-primary">Get In Touch</a>
+            <a href="about" class="btn btn-secondary-dark"
+              >Learn More About Us</a
+            >
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="logo-graphic">
-            <img
-              src="assets/stone_and_sling.png"
-              alt="Fifth Stone Dev - Web Development and Process Automation Services in Cedar Falls Iowa"
-              class="hero-image"
-              fetchpriority="high"
-              width="500"
-              height="500"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Preview Section -->
-    <section id="services" class="services">
-      <div class="container">
-        <div class="services-header">
-          <h2>Services Built <strong>for Impact</strong></h2>
-          <p>
-            Whether you're launching a new venture or optimizing existing
-            systems, we provide the tools and expertise to help you succeed.
-          </p>
-        </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <div class="service-card-img">
-              <img src="assets/custom_web_development.jpg" alt="Custom web development" loading="lazy" />
-            </div>
-            <h3>Custom Web Development</h3>
-            <p>
-              Custom websites that are beautiful, functional, and built to grow
-              with your organization. From landing pages to full-scale web
-              applications.
-            </p>
-            <ul class="service-features">
-              <li>Responsive, mobile-first design</li>
-              <li>Modern frameworks & technologies</li>
-              <li>SEO optimization</li>
-              <li>Website Hosting & Management</li>
-            </ul>
-            <a href="services#web-development" class="btn-service" aria-label="Learn more about web development services">
-              Learn More
-            </a>
-          </div>
-
-          <div class="service-card">
-            <div class="service-card-img">
-              <img src="assets/process_automation.jpg" alt="Process automation" loading="lazy" />
-            </div>
-            <h3>Process Automation</h3>
-            <p>
-              Streamline your operations with custom internal tools that save
-              time, reduce errors, and increase efficiency across your team.
-            </p>
-            <ul class="service-features">
-              <li>Workflow automation</li>
-              <li>Custom business tools</li>
-              <li>AI-powered automation</li>
-              <li>Task automation</li>
-            </ul>
-            <a href="services#process-automation" class="btn-service" aria-label="Learn more about process automation services">
-              Learn More
-            </a>
-          </div>
-
-          <div class="service-card consulting">
-            <div class="service-card-img">
-              <img src="assets/digital_strategy_consulting.png" alt="Digital strategy consulting" loading="lazy" />
-            </div>
-            <h3>Digital Strategy Consulting</h3>
-            <p>
-              Expert guidance for small businesses managing their digital
-              presence. We help improve user experience and maximize your
-              website's impact.
-            </p>
-            <ul class="service-features">
-              <li>UX/UI analysis & recommendations</li>
-              <li>Website audits</li>
-              <li>Performance optimization</li>
-              <li>Training & documentation</li>
-            </ul>
-            <a href="services#consulting" class="btn-service" aria-label="Learn more about consulting services">
-              Learn More
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Portfolio Preview Section -->
-    <section id="portfolio" class="portfolio-preview">
-      <div class="container">
-        <div class="portfolio-header">
-          <h2>Projects <strong>We've Built</strong></h2>
-          <p>
-            A selection of solutions we've crafted for businesses, organizations, and mission-driven ventures.
-          </p>
-        </div>
-
-        <div class="portfolio-preview-grid">
-          <!-- Project 1 -->
-           <div class="portfolio-preview-item">
-            <div class="portfolio-image">
-              <img src="assets/Candeo_Our_Team_Page.png" alt="Candeo Counseling Center website redesign" loading="lazy" width="600" height="400" />
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Web Development</span>
-              <h3>Candeo Counseling Center</h3>
-              <p>Comprehensive website redesign improving user engagement and compliance.</p>
-            </div>
-          </div>
-          
-          <!-- Project 2 -->
-          <div class="portfolio-preview-item">
-            <div class="portfolio-image">
-              <img src="assets/ai_blog_daily_app.png" alt="AI Blog Platform - Full-stack web application" loading="lazy" width="600" height="400" />
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Web Application</span>
-              <h3>AI Blog Platform</h3>
-              <p>Full-stack application aggregating AI-generated content with subscription-based access.</p>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="portfolio-preview-item">
-            <div class="portfolio-image">
-              <img src="assets/gov_agency_app.png" alt="Government agency data processing automation tool" loading="lazy" width="600" height="400" />
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-category">Process Automation</span>
-              <h3>Government Data Processing</h3>
-              <p>Automation tool for disaster recovery with 90%+ time savings.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-cta">
-          <a href="portfolio" class="btn btn-primary">View Full Portfolio</a>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-      <div class="container">
-        <h2>Ready to Start Your Project?</h2>
-        <p>Let's discuss how we can help bring your vision to life.</p>
-        <div class="cta-buttons">
-          <a href="contact" class="btn btn-primary">Get In Touch</a>
-          <a href="about" class="btn btn-secondary-dark">Learn More About Us</a>
-        </div>
-      </div>
-    </section>
-
+      </section>
     </main>
 
     <!-- Footer -->
@@ -566,81 +806,6 @@
       </div>
     </footer>
 
-    <!-- April Promo Popup -->
-    <div id="april-promo-popup" class="promo-popup" role="dialog" aria-modal="true" aria-labelledby="promo-popup-title" hidden>
-      <div class="promo-popup-content">
-        <button class="promo-popup-close" onclick="closePromoPopup()" aria-label="Close promotion">&times;</button>
-        <div class="promo-popup-badge">April Special</div>
-        <h2 id="promo-popup-title" class="promo-popup-headline">$250 Off Your New Website</h2>
-        <p class="promo-popup-body">Launch your professional website this April and save $250. Custom-built, SEO-optimized, and ready to convert visitors into clients.</p>
-        <p class="promo-popup-expiry">Offer expires April 30, 2026</p>
-        <div class="promo-popup-actions">
-          <button class="btn btn-primary promo-popup-cta" onclick="claimAprilOffer()">Claim This Offer</button>
-          <button class="promo-popup-dismiss" onclick="dismissPromoPopup()">No thanks</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Web Development Request Modal (used by April promo) -->
-    <div id="webDevModal" class="modal" role="dialog" aria-labelledby="webDevModalTitle" aria-modal="true">
-      <div class="modal-content">
-        <button class="modal-close" onclick="closeModal('webDevModal')" aria-label="Close web development request form">&times;</button>
-        <h2 id="webDevModalTitle">Claim Your April Discount</h2>
-        <p>Fill out the form below and we'll apply your <strong>$250 April discount</strong> to your new website project.</p>
-        <form onsubmit="handleFormSubmit(event, 'webDevModal')">
-          <input type="hidden" name="promo" value="April Special – $250 Off New Website" />
-          <div class="form-group">
-            <label for="webdev-name">Name *</label>
-            <input type="text" id="webdev-name" name="name" required />
-          </div>
-          <div class="form-group">
-            <label for="webdev-email">Email *</label>
-            <input type="email" id="webdev-email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="webdev-phone">Phone</label>
-            <input type="tel" id="webdev-phone" name="phone" />
-          </div>
-          <div class="form-group">
-            <label for="webdev-company">Company/Organization</label>
-            <input type="text" id="webdev-company" name="company" />
-          </div>
-          <div class="form-group">
-            <label for="webdev-type">Project Type *</label>
-            <select id="webdev-type" name="project-type" required>
-              <option value="">Select a project type</option>
-              <option value="new-website">New Website</option>
-              <option value="redesign">Website Redesign</option>
-              <option value="web-app">Web Application</option>
-              <option value="landing-page">Landing Page</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="webdev-timeline">Desired Timeline</label>
-            <input type="text" id="webdev-timeline" name="timeline" placeholder="e.g., 2-3 months" />
-          </div>
-          <div class="form-group">
-            <label for="webdev-budget">Budget Range</label>
-            <select id="webdev-budget" name="budget">
-              <option value="">Select a budget range</option>
-              <option value="under-1k">Under $1,000</option>
-              <option value="1k-3k">$1,000 - $3,000</option>
-              <option value="3k-5k">$3,000 - $5,000</option>
-              <option value="5k-10k">$5,000 - $10,000</option>
-              <option value="10k-plus">$10,000+</option>
-              <option value="not-sure">Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="webdev-details">Project Details *</label>
-            <textarea id="webdev-details" name="details" required placeholder="Please describe your project, goals, and any specific requirements..."></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Submit Request</button>
-        </form>
-      </div>
-    </div>
-
-    <script defer src="script.js?v=20260331"></script>
+    <script defer src="script.js?v=20260607"></script>
   </body>
 </html>

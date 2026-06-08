@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Web Development Portfolio | Case Studies & Projects | Fifth Stone Dev</title>
+    <title>Web Development Portfolio | Case Studies &amp; Projects | Fifth Stone Dev</title>
+
+    <!-- Reveal animation gate — set before paint so elements are hidden correctly -->
+    <script>document.documentElement.classList.add("js");</script>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Explore our web development portfolio: AI blog platforms, nonprofit websites, government automation tools & more. See real results from Fifth Stone Dev projects in Cedar Falls, Iowa."
+      content="Explore our web development portfolio: AI blog platforms, nonprofit websites, government automation tools &amp; more. See real results from Fifth Stone Dev projects in Cedar Falls, Iowa."
     />
     <meta
       name="keywords"
@@ -33,51 +36,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/fifth_stone_dev_favicon.ico" />
     <link rel="shortcut icon" href="assets/fifth_stone_dev_favicon.ico" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta
-      property="og:title"
-      content="Web Development Portfolio | Fifth Stone Dev Cedar Falls, Iowa"
-    />
-    <meta
-      property="og:description"
-      content="View our portfolio of web development and process automation projects. See how Fifth Stone Dev delivers results for businesses in Iowa and beyond."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.fifthstonedev.com/portfolio" />
-    <meta property="og:site_name" content="Fifth Stone Dev" />
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:image"
-      content="https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png"
-    />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Fifth Stone Dev Portfolio - Web Development Projects"
-    />
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Web Development Portfolio | Fifth Stone Dev Cedar Falls, Iowa"
-    />
-    <meta
-      name="twitter:description"
-      content="View our portfolio of web development and process automation projects. See how Fifth Stone Dev delivers results for businesses in Iowa and beyond."
-    />
-    <meta
-      name="twitter:image"
-      content="https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Fifth Stone Dev Portfolio - Web Development Projects"
-    />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -86,7 +44,26 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.fifthstonedev.com/portfolio" />
 
-    <!-- Structured Data (JSON-LD) - CollectionPage -->
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Web Development Portfolio | Fifth Stone Dev Cedar Falls, Iowa" />
+    <meta property="og:description" content="View our portfolio of web development and process automation projects. See how Fifth Stone Dev delivers results for businesses in Iowa and beyond." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fifthstonedev.com/portfolio" />
+    <meta property="og:site_name" content="Fifth Stone Dev" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fifth Stone Dev Portfolio - Web Development Projects" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Web Development Portfolio | Fifth Stone Dev Cedar Falls, Iowa" />
+    <meta name="twitter:description" content="View our portfolio of web development and process automation projects. See how Fifth Stone Dev delivers results for businesses in Iowa and beyond." />
+    <meta name="twitter:image" content="https://www.fifthstonedev.com/assets/Candeo_Our_Team_Page.png" />
+    <meta name="twitter:image:alt" content="Fifth Stone Dev Portfolio - Web Development Projects" />
+
+    <!-- Structured Data — CollectionPage -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -95,93 +72,34 @@
         "url": "https://www.fifthstonedev.com/portfolio",
         "name": "Web Development Portfolio",
         "description": "View our portfolio of web development and process automation projects from Fifth Stone Dev.",
-        "isPartOf": {
-          "@id": "https://www.fifthstonedev.com/#website"
-        },
-        "about": {
-          "@id": "https://www.fifthstonedev.com/#business"
-        },
+        "isPartOf": { "@id": "https://www.fifthstonedev.com/#website" },
+        "about":    { "@id": "https://www.fifthstonedev.com/#business" },
         "mainEntity": {
           "@type": "ItemList",
           "itemListElement": [
-            {
-              "@type": "SoftwareApplication",
-              "position": 1,
-              "name": "AI Blog Platform",
-              "description": "Full-stack web application aggregating and comparing AI-generated content from multiple models with subscription-based access.",
-              "applicationCategory": "WebApplication",
-              "url": "https://www.aiblogdaily.com",
-              "creator": {
-                "@id": "https://www.fifthstonedev.com/#business"
-              }
-            },
-            {
-              "@type": "CreativeWork",
-              "position": 2,
-              "name": "Candeo Counseling Center",
-              "description": "Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.",
-              "url": "https://candeocounseling.com/our-team",
-              "creator": {
-                "@id": "https://www.fifthstonedev.com/#business"
-              }
-            },
-            {
-              "@type": "SoftwareApplication",
-              "position": 3,
-              "name": "Internal Database Querying Tool",
-              "description": "Enterprise-level process automation and internal tool development for a healthcare technology SaaS company.",
-              "applicationCategory": "BusinessApplication",
-              "creator": {
-                "@id": "https://www.fifthstonedev.com/#business"
-              }
-            },
-            {
-              "@type": "SoftwareApplication",
-              "position": 4,
-              "name": "Government Agency Data Processing Tool",
-              "description": "Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.",
-              "applicationCategory": "BusinessApplication",
-              "creator": {
-                "@id": "https://www.fifthstonedev.com/#business"
-              }
-            },
-            {
-              "@type": "CreativeWork",
-              "position": 5,
-              "name": "Isles of Hope International",
-              "description": "Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.",
-              "url": "https://www.islesofhopeintl.com",
-              "creator": {
-                "@id": "https://www.fifthstonedev.com/#business"
-              }
-            }
+            { "@type": "CreativeWork",      "position": 1, "name": "Candeo Counseling Center",           "description": "Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.", "url": "https://candeocounseling.com/our-team", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "CreativeWork",      "position": 2, "name": "Isles of Hope International",        "description": "Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.", "url": "https://www.islesofhopeintl.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "SoftwareApplication","position": 3, "name": "Government Agency Data Processing Tool","description": "Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.", "applicationCategory": "BusinessApplication", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "SoftwareApplication","position": 4, "name": "Internal Database Querying Tool",   "description": "Enterprise-level process automation and internal tool development for a healthcare technology SaaS company.", "applicationCategory": "BusinessApplication", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "SoftwareApplication","position": 5, "name": "AI Blog Platform",                 "description": "Full-stack web application aggregating and comparing AI-generated content from multiple models with subscription-based access.", "applicationCategory": "WebApplication", "url": "https://www.aiblogdaily.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } }
           ]
         }
       }
     </script>
 
-    <!-- Structured Data (JSON-LD) - BreadcrumbList -->
+    <!-- Structured Data — BreadcrumbList -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://www.fifthstonedev.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Portfolio",
-            "item": "https://www.fifthstonedev.com/portfolio"
-          }
+          { "@type": "ListItem", "position": 1, "name": "Home",      "item": "https://www.fifthstonedev.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.fifthstonedev.com/portfolio" }
         ]
       }
     </script>
 
+    <!-- Fonts & performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
@@ -190,35 +108,41 @@
     <link
       rel="preload"
       href="https://fonts.gstatic.com/s/archivo/v25/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxKsv4Rn.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
+      as="font" type="font/woff2" crossorigin
     />
+
+    <!-- Archivo + Newsreader (async, non-blocking) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=optional"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=optional"
       rel="stylesheet"
       media="print"
       onload="this.media='all'"
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=optional"
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=optional"
         rel="stylesheet"
       />
     </noscript>
-    <link rel="preload" href="styles.css?v=20260412t" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="styles.css?v=20260412t" /></noscript>
+
+    <!-- Base site styles (handles cookie banner, utilities shared across pages) -->
+    <link rel="preload" href="styles.css?v=20260607" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260607" /></noscript>
+
+    <!-- Portfolio redesign styles (loads after styles.css; wins on specificity for portfolio elements) -->
+    <link rel="stylesheet" href="portfolio.css?v=20260607" />
   </head>
   <body>
-    <!-- Cookie Consent Banner -->
+
+    <!-- Cookie Consent Banner (handled by script.js) -->
     <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true" style="display:none;position:fixed;bottom:0;left:0;right:0;top:auto;z-index:10000;">
       <div class="cookie-content">
         <div class="cookie-text">
           <h3 id="cookie-title">🍪 We value your privacy</h3>
           <p id="cookie-description">
-            We use cookies to enhance your browsing experience and analyze site traffic. 
+            We use cookies to enhance your browsing experience and analyze site traffic.
             By clicking "Accept All", you consent to our use of cookies.
-            <a href="privacy-policy" class="cookie-privacy-link" style="color: white;">View our Privacy Policy</a>.
+            <a href="privacy-policy" class="cookie-privacy-link" style="color:white;">View our Privacy Policy</a>.
           </p>
         </div>
         <div class="cookie-buttons">
@@ -247,181 +171,271 @@
       </div>
     </div>
 
-    <!-- Navigation -->
-    <nav>
-      <div class="container">
-        <div class="logo">
-          <a href="/" aria-label="Fifth Stone Dev - Return to homepage">
-            <img
-              src="assets/horizontal_logo_webp.webp"
-              alt="Fifth Stone Dev Logo"
-              loading="eager"
-              width="125"
-              height="125"
-            />
-          </a>
+    <!-- Masthead (portfolio redesign; uses portfolio.css) -->
+    <header class="masthead" id="masthead">
+      <div class="bar">
+        <a class="logo" href="/" aria-label="Fifth Stone Development — return to homepage">
+          <img
+            src="assets/horizontal_logo_webp.webp"
+            alt="Fifth Stone Development"
+            loading="eager"
+            width="125"
+            height="125"
+          />
+        </a>
+        <!-- Note: intentionally a <div> not <nav> to prevent styles.css nav{} from conflicting -->
+        <div class="nav" role="navigation" aria-label="Primary navigation">
+          <a href="about" aria-label="About Fifth Stone Dev">About</a>
+          <a href="services" aria-label="Services">Services</a>
+          <a href="portfolio" class="active" aria-current="page" aria-label="Portfolio — current page">Portfolio</a>
+          <a href="contact" class="nav-cta" aria-label="Start a project — contact us">Start a project</a>
         </div>
-        <button class="mobile-menu-toggle" aria-label="Toggle menu">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
-        <ul class="nav-links">
-          <li><a href="about" aria-label="About - Learn about Fifth Stone Dev">About</a></li>
-          <li><a href="services" aria-label="Services - Explore our services">Services</a></li>
-          <li><a href="portfolio" class="active" aria-label="Portfolio - View our work">Portfolio</a></li>
-          <li><a href="contact" aria-label="Contact - Contact Fifth Stone Dev">Contact</a></li>
-        </ul>
       </div>
-    </nav>
+    </header>
 
     <main id="main-content">
-      <!-- Page Header -->
-      <section class="page-header">
-        <div class="container">
-          <h1>Our <strong>Portfolio</strong></h1>
-          <p>A selection of projects we've built for businesses, organizations, and mission-driven ventures.</p>
-        </div>
-      </section>
 
-      <!-- Portfolio Grid Section -->
-      <section id="portfolio" class="portfolio portfolio-page">
-        <div class="container">
-          <div class="portfolio-grid">
-            <!-- Project 1 -->
-            
-            <article class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="assets/candeo_counseling_home.png" alt="Candeo Counseling Center website redesign - Home page showing updated design" loading="lazy" width="600" height="400" />
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category">Web Development</span>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <h2>Candeo Counseling Center</h2>
-                <p>Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.</p>
-                <button class="btn-case-study" onclick="openModal('candeoCaseStudyModal')" aria-label="View Case Study - Candeo Counseling Center">
-                  View Case Study
-                </button>
-                <div class="portfolio-tags">
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">CSS</span>
-                  <span class="tag">UI/UX Design</span>
-                  <span class="tag">Google Workspace</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="assets/ai_blog_daily_app.png" alt="AI Blog Platform - Full-stack web application aggregating AI-generated content from multiple models" loading="lazy" width="600" height="400" />
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category">Web Application</span>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <h2>AI Blog Platform</h2>
-                <p>Full-stack web application aggregating and comparing AI-generated content from ChatGPT, Claude, Gemini, and Grok with tiered subscriptions.</p>
-                <button class="btn-case-study" onclick="openModal('aiBlogPlatformModal')" aria-label="View Case Study - AI Blog Platform">
-                  View Case Study
-                </button>
-                <div class="portfolio-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Flask</span>
-                  <span class="tag">PostgreSQL</span>
-                  <span class="tag">Stripe</span>
-                  <span class="tag">AI Integration</span>
-                </div>
-              </div>
-            </article>
-
-
-            <!-- Project 3 -->
-            <article class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="assets/Inovalon_Query_Tool.png" alt="Internal database querying tool built with Python for enterprise healthcare data analysis" loading="lazy" width="600" height="400" />
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category">Custom Tool</span>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <h2>Internal Database Querying Tool</h2>
-                <p>Enterprise-level process automation and internal tool development for a healthcare technology SaaS company.</p>
-                <button class="btn-case-study" onclick="openModal('inovalonCaseStudyModal')" aria-label="View Case Study - Internal Database Querying Tool">
-                  View Case Study
-                </button>
-                <div class="portfolio-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Process Automation</span>
-                  <span class="tag">Workflow Optimization</span>
-                  <span class="tag">Internal Tools</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="assets/gov_agency_app.png" alt="Government agency data processing automation tool for disaster recovery Excel reconciliation and PDF parsing" loading="lazy" width="600" height="400" />
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category">Process Automation</span>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <h2>Government Agency Data Processing</h2>
-                <p>Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.</p>
-                <button class="btn-case-study" onclick="openModal('govDataProcessingModal')" aria-label="View Case Study - Government Agency Data Processing">
-                  View Case Study
-                </button>
-                <div class="portfolio-tags">
-                  <span class="tag">Python</span>
-                  <span class="tag">Data Automation</span>
-                  <span class="tag">Excel Processing</span>
-                  <span class="tag">PDF Parsing</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 5 -->
-            <article class="portfolio-card">
-              <div class="portfolio-image">
-                <img src="assets/isles_of_hope_Page.png" alt="Isles of Hope International nonprofit website with donation integration and mission storytelling" loading="lazy" width="600" height="400" />
-                <div class="portfolio-overlay">
-                  <span class="portfolio-category">Web Development</span>
-                </div>
-              </div>
-              <div class="portfolio-content">
-                <h2>Isles of Hope International</h2>
-                <p>Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.</p>
-                <button class="btn-case-study" onclick="openModal('islesOfHopeIntlModal')" aria-label="View Case Study - Isles of Hope International">
-                  View Case Study
-                </button>
-                <div class="portfolio-tags">
-                  <span class="tag">Web Development</span>
-                  <span class="tag">Nonprofit</span>
-                  <span class="tag">Squarespace</span>
-                </div>
-              </div>
-            </article>
+      <!-- ================= Index intro ================= -->
+      <section class="intro">
+        <div class="shell">
+          <div class="intro-grid">
+            <div class="reveal">
+              <h1>The work behind <em>built&nbsp;with purpose.</em></h1>
+            </div>
+            <div class="reveal d1">
+              <p class="lead">A small studio's record of finished things — <strong>websites, full-stack web apps, and the quiet automations</strong> that give people their week back. Every one shipped for a real client, here in the Cedar Valley and beyond.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- CTA Section -->
-      <section class="cta-section">
-        <div class="container">
-          <h2>Ready to Start Your Project?</h2>
-          <p>Let's discuss how we can help bring your vision to life.</p>
-          <div class="cta-buttons">
-            <a href="contact" class="btn btn-primary">Get In Touch</a>
-            <a href="services" class="btn btn-secondary-dark">View Our Services</a>
+
+      <!-- ================= Work — Web Development ================= -->
+      <div class="work shell">
+
+        <!-- 01 — Featured: Candeo Counseling Center -->
+        <article class="entry featured filter-item" data-group="web-dev" data-project="candeo">
+          <span class="entry-index reveal">01</span>
+          <div class="featured-grid">
+            <div class="media reveal">
+              <div class="frame browser">
+                <div class="chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="addr">candeocounseling.com</div>
+                </div>
+                <img class="shot" src="assets/candeo_counseling_home.png" alt="Candeo Counseling Center — redesigned home page" />
+              </div>
+            </div>
+            <div class="body reveal d1">
+              <div class="kicker">
+                <span class="cat">Web Development</span>
+                <span class="dot"></span><span>Custom build</span>
+                <span class="dot"></span><span>UI/UX</span>
+              </div>
+              <h2>A counseling practice built to grow across state lines.</h2>
+              <p class="summary">We rebuilt the parts of Candeo's site that mattered most — <strong>clinician profiles, location pages, and a PHI-compliant intake</strong> — so a client reaches the right provider in a click or two.</p>
+              <div class="metrics">
+                <div class="metric"><div class="mv">100%</div><div class="ml">Custom rebuild</div></div>
+                <div class="metric"><div class="mv">PHI</div><div class="ml">Compliant intake</div></div>
+                
+              </div>
+              <div class="footerline">
+                <button class="read" data-open="candeo" aria-label="Read case study — Candeo Counseling Center">Read the case
+                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </button>
+                <div class="tags">
+                  <span class="tag">UI/UX</span><span class="tag">JavaScript</span><span class="tag">Google Workspace</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — Isles of Hope (offset tile) -->
+        <div class="stagger" id="stagger">
+          <article class="entry tile lone filter-item" data-group="web-dev" data-project="isles">
+            <div class="media reveal">
+              <div class="frame browser">
+                <div class="chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="addr">islesofhopeintl.com</div>
+                </div>
+                <img class="shot" src="assets/isles_of_hope_Page.png" alt="Isles of Hope International — nonprofit website" />
+              </div>
+            </div>
+            <div class="kicker reveal">
+              <span class="num">02</span><span class="dot"></span>
+              <span class="cat">Web Development</span>
+            </div>
+            <h2 class="reveal">Four countries, one mission, told with clarity.</h2>
+            <p class="summary reveal d1">A ground-up site for a Christian nonprofit serving women in Zimbabwe, Uganda, Nepal and the DRC — built around storytelling, in-country leadership, and a frictionless path to give.</p>
+            <div class="tile-foot reveal d1">
+              <button class="read" data-open="isles" aria-label="Read case study — Isles of Hope International">Read the case
+                <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+              </button>
+              <div class="tags"><span class="tag">Web Development</span><span class="tag">Nonprofit</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ================= Dark automation band ================= -->
+      <section class="band" id="band">
+        <div class="shell">
+          <div class="head reveal">
+            <div>
+              <span class="eyebrow">Automation &amp; Internal Tools</span>
+              <h2>The unglamorous software that gives people their week back.</h2>
+            </div>
+            <p>Not everything we build has a homepage. Some of it is a single window that quietly turns days of manual reconciliation into a same-day job.</p>
+          </div>
+          <div class="band-grid">
+
+            <!-- 03 — Government tool -->
+            <article class="entry tool filter-item" data-group="automation" data-project="gov">
+              <div class="media reveal">
+                <div class="frame app">
+                  <div class="chrome">
+                    <div class="titlebar"><span class="badge"></span>Disaster Recovery — Data Toolkit</div>
+                    <div class="winbtns"><span>—</span><span>▢</span><span>✕</span></div>
+                  </div>
+                  <div class="pad"><img src="assets/gov_agency_app.png" alt="Government agency data processing tool interface" /></div>
+                </div>
+              </div>
+              <div class="kicker reveal">
+                <span>03</span><span class="dot"></span><span class="cat">Process Automation</span>
+              </div>
+              <h3 class="reveal">Weeks of disaster-recovery reconciliation, done same-day.</h3>
+              <p class="summary reveal d1">A single Windows tool that reconciles Excel load tickets, parses unstructured PDFs and aggregates invoices — replacing the manual cross-checking field analysts used to do by hand.</p>
+              <div class="footerline reveal d1">
+                <button class="read" data-open="gov" aria-label="Read case study — Government Data Processing Tool">Read the case
+                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </button>
+                <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span></div>
+              </div>
+            </article>
+
+            <!-- 04 — Inovalon tool -->
+            <article class="entry tool filter-item" data-group="automation" data-project="inovalon">
+              <div class="media reveal">
+                <div class="frame app portrait">
+                  <div class="chrome">
+                    <div class="titlebar"><span class="badge"></span>Internal Data Query Tool</div>
+                    <div class="winbtns"><span>—</span><span>▢</span><span>✕</span></div>
+                  </div>
+                  <div class="pad"><img src="assets/Inovalon_Query_Tool.png" alt="Internal database querying tool interface" /></div>
+                </div>
+              </div>
+              <div class="kicker reveal">
+                <span>04</span><span class="dot"></span><span class="cat">Internal Tooling</span>
+              </div>
+              <h3 class="reveal">Enterprise data, without the schema scavenger hunt.</h3>
+              <p class="summary reveal d1">A curated query app that lets pharmacy-support analysts pull vetted insights from hundreds of tables — no SQL spelunking, no tribal knowledge required to get a confident answer.</p>
+              <div class="footerline reveal d1">
+                <button class="read" data-open="inovalon" aria-label="Read case study — Internal Data Query Tool">Read the case
+                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </button>
+                <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Internal Tools</span></div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
+
+      <!-- ================= Work — Web Application ================= -->
+      <div class="work shell webapp">
+
+        <!-- 05 — Featured: AI Blog Daily (mirrored) -->
+        <article class="entry featured mirror filter-item" data-group="web-app" data-project="aiblog">
+          <span class="entry-index reveal">05</span>
+          <div class="featured-grid">
+            <div class="media reveal">
+              <div class="frame browser">
+                <div class="chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="addr">aiblogdaily.com</div>
+                </div>
+                <img class="shot" src="assets/ai_blog_daily_app.png" alt="AI Blog Daily — platform aggregating AI-generated content from multiple models" />
+              </div>
+            </div>
+            <div class="body reveal d1">
+              <div class="kicker">
+                <span class="cat">Web Application</span>
+                <span class="dot"></span><span>Full-stack platform</span>
+                <span class="dot"></span><span>2026</span>
+              </div>
+              <h2>Which AI writes it better? Let the crowd decide — blind.</h2>
+              <p class="summary">A daily-refreshed platform that pits <strong>ChatGPT, Claude, Gemini and Grok</strong> against each other in blind, head-to-head reads, then reveals who wrote what only after you've voted. Around 64 routes, fully automated, Stripe-backed subscriptions.</p>
+              <div class="metrics">
+                <div class="metric"><div class="mv">5</div><div class="ml">AI models</div></div>
+                <div class="metric"><div class="mv">100%</div><div class="ml">Automated daily</div></div>
+                <div class="metric"><div class="mv">15+</div><div class="ml">Categories</div></div>
+              </div>
+              <div class="footerline">
+                <button class="read" data-open="aiblog" aria-label="Read case study — AI Blog Daily">Read the case
+                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </button>
+                <div class="tags">
+                  <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">PostgreSQL</span><span class="tag">Stripe</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ================= CTA ================= -->
+      <section class="cta">
+        <div class="shell">
+          <span class="eyebrow no-rule reveal">Have something in mind?</span>
+          <h2 class="reveal">Let's build the <em>next</em> one together.</h2>
+          <p class="reveal d1">Tell us what's slowing you down — a site that needs to grow up, or a process that should've been automated yesterday.</p>
+          <div class="cta-row reveal d1">
+            <a href="contact" class="btn btn-primary">Start a project</a>
+            <a href="services" class="btn btn-ghost">View our services</a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- Footer -->
+    <!-- ================= Footer ================= -->
+    <!-- <footer>
+      <div class="shell">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <div class="fl">Fifth Stone Development</div>
+            <p>Built with purpose. Websites, web apps, and process automation for businesses and mission-driven ventures.</p>
+          </div>
+          <div class="foot-col">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="services">Services</a></li>
+              <li><a href="portfolio">Portfolio</a></li>
+              <li><a href="contact">Contact</a></li>
+              <li><a href="contact#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h4>Studio</h4>
+            <p>Cedar Falls, Iowa</p>
+            <p><a href="tel:+16418497311">(641) 849-7311</a></p>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
+          <p><a href="privacy-policy">Privacy Policy</a></p>
+        </div>
+      </div>
+    </footer> -->
+
+
     <footer>
       <div class="container">
         <div class="footer-grid">
@@ -453,370 +467,25 @@
       </div>
     </footer>
 
-    <!-- Case Study Modals -->
-    <!-- Candeo Counseling Center Case Study Modal -->
-    <div id="candeoCaseStudyModal" class="modal" role="dialog" aria-labelledby="candeoCaseStudyTitle" aria-modal="true">
-      <div class="modal-content case-study-modal">
-        <button class="modal-close" onclick="closeModal('candeoCaseStudyModal')" aria-label="Close Candeo Counseling Center case study">
-          &times;
-        </button>
-        <h2 id="candeoCaseStudyTitle">Candeo Counseling Center</h2>
-        <div class="case-study-category">Custom Web Page Build</div>
-        <a href="https://www.candeocounseling.com/" target="_blank" rel="noopener noreferrer" class="case-study-website-link" aria-label="Visit Candeo Counseling Center website (opens in new tab)">Visit Website</a>
-        
-        <section class="case-study">
-          <div class="case-section">
-            <h3>Project Overview</h3>
-            <p>
-              Candeo Counseling Center wanted to expand its reach beyond Iowa while maintaining a strong local presence.
-              Their existing website was largely static, with limited engagement, difficult navigation for clients,
-              and a contact process that lacked efficiency and compliance considerations.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Challenge</h3>
-            <p>
-              The primary challenges were improving user engagement, making it easier for clients to find critical
-              resources such as the client portal login, and restructuring the site to support multi-state growth.
-              Additionally, the contact and intake process needed to be streamlined while ensuring protection of
-              patient health information (PHI).
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Solution</h3>
-            <p>
-              Key areas of the website were redesigned to improve usability, scalability, and compliance.
-              The <strong>Our Team</strong> page was rebuilt to provide each clinician with a concise summary and
-              a dedicated profile page, allowing clients to quickly find the right provider.
-              The <strong>Locations</strong> section was enhanced with individual location tabs featuring maps,
-              facility photos, and the clinicians available at each location, with direct links back to clinician profiles.
-              The <strong>Contact</strong> page was upgraded with a PHI-compliant Google Form to securely collect
-              patient information and streamline the intake workflow.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>Measurable Outcomes</h3>
-            <ul>
-              <li><strong>Improved navigation:</strong> Reduced the number of clicks required to access clinician profiles and the client portal to 1–2 steps.</li>
-              <li><strong>Increased engagement:</strong> Replaced static bios with dynamic clinician profiles, encouraging longer site visits and deeper exploration.</li>
-              <li><strong>Scalable growth:</strong> Implemented a site structure that allows new locations and providers to be added without redesign.</li>
-              <li><strong>Streamlined intake:</strong> Secure, PHI-compliant form submissions reduced manual data handling and follow-up for clinic leadership.</li>
-              <li><strong>Improved trust and compliance:</strong> Enhanced data protection increased client confidence when submitting sensitive information online.</li>
-            </ul>
-          </div>
-        </section>
-        
-        <div class="case-study-tags">
-          <span class="tag">JavaScript</span>
-          <span class="tag">Squarespace</span>
-          <span class="tag">UI/UX Design</span>
-          <span class="tag">Google Workspace Integration</span>
+    <!-- ================= Case-study reader overlay ================= -->
+    <div class="reader" id="reader" aria-hidden="true">
+      <div class="scrim" data-close></div>
+      <aside class="panel" role="dialog" aria-modal="true" aria-labelledby="readerTitle">
+        <div class="closebar">
+          <span class="lbl" id="readerLbl">Case Study</span>
+          <button class="close" data-close aria-label="Close case study">Close
+            <span class="x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+          </button>
         </div>
-      </div>
+        <div class="panel-inner" id="readerBody"></div>
+      </aside>
     </div>
 
-    <!-- Inovalon Case Study Modal -->
-    <div id="inovalonCaseStudyModal" class="modal" role="dialog" aria-labelledby="inovalonCaseStudyTitle" aria-modal="true">
-      <div class="modal-content case-study-modal">
-        <button class="modal-close" onclick="closeModal('inovalonCaseStudyModal')" aria-label="Close Internal Data Query Tool case study">
-          &times;
-        </button>
+    <!-- Site-wide scripts (cookie consent, mobile-menu in original nav, shared utilities) -->
+    <script defer src="script.js?v=20260607"></script>
 
-        <h2 id="inovalonCaseStudyTitle">Pharmacy Application Support – Internal Data Query Tool</h2>
-        <div class="case-study-category">Internal Tooling & Data Enablement</div>
-        <button class="case-study-website-link" onclick="openToolImage('inovalonToolImage')" aria-label="View screenshot of the Internal Data Query Tool">View Tool</button>
-        
-        <div id="inovalonToolImage" class="tool-image-container" style="display: none;">
-          <img src="assets/Inovalon_Query_Tool.png" alt="Inovalon Data Query Tool Screenshot" class="tool-screenshot" width="376" height="556" />
-          <button class="tool-image-close" onclick="closeToolImage('inovalonToolImage')" aria-label="Close tool screenshot">&times;</button>
-        </div>
+    <!-- Portfolio redesign scripts (masthead scroll, reveals, filtering, case-study reader, mobile menu for new masthead) -->
+    <script src="portfolio.js?v=20260607"></script>
 
-        <section class="case-study">
-          <div class="case-section">
-            <h3>Project Overview</h3>
-            <p>
-              While working on a Specialty Pharmacy Support team, I identified an opportunity to improve how analysts
-              triage and resolve customer issues by making enterprise data more accessible. The goal was to reduce
-              friction when querying large databases while empowering analysts to confidently extract the insights
-              they need.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Challenge</h3>
-            <p>
-              Analysts regularly rely on SQL queries to investigate customer-reported issues, but enterprise-scale
-              databases contain hundreds of tables, making it difficult to know where to start. This challenge was
-              especially impactful for newer team members who were still learning the system architecture, resulting
-              in slower triage and inconsistent investigation workflows.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Solution</h3>
-            <p>
-              I designed and built an internal querying application using <strong>Python</strong> with a
-              Tkinter-based graphical interface. The tool connects to pre-configured databases and
-              provides a curated library of predefined SQL queries, including contributions from experienced internal
-              analysts and engineers. Each dataset includes a clear description of the insights it provides, and the application
-              dynamically displays only the relevant input fields based on the selected dataset. This enables analysts
-              to retrieve targeted data quickly without needing to understand or navigate the underlying database
-              structure.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>Measurable Outcomes</h3>
-            <ul>
-              <li><strong>Faster issue triage:</strong> Reduced time spent identifying relevant tables and queries during investigations.</li>
-              <li><strong>Improved analyst confidence:</strong> Enabled newer team members to work effectively with enterprise data without deep schema knowledge.</li>
-              <li><strong>Standardized insights:</strong> Centralized and reused vetted SQL queries to ensure consistent results across analysts.</li>
-              <li><strong>Scalable internal tooling:</strong> Designed the application to support additional datasets, queries, and teams.</li>
-              <li><strong>Knowledge sharing:</strong> Created a platform for experienced analysts to contribute and document high-value queries.</li>
-            </ul>
-          </div>
-        </section>
-
-        <div class="case-study-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Tkinter</span>
-          <span class="tag">SQL</span>
-          <span class="tag">Internal Tools</span>
-          <span class="tag">Data Enablement</span>
-          <span class="tag">Enterprise Systems</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Government Agency Data Processing Case Study Modal -->
-    <div id="govDataProcessingModal" class="modal" role="dialog" aria-labelledby="govDataProcessingTitle" aria-modal="true">
-      <div class="modal-content case-study-modal">
-        <button class="modal-close" onclick="closeModal('govDataProcessingModal')" aria-label="Close Government Agency Data Processing case study">
-          &times;
-        </button>
-
-        <h2 id="govDataProcessingTitle">Government Agency Data Processing & Analysis Tool</h2>
-        <div class="case-study-category">Process Automation</div>
-        <button class="case-study-website-link" onclick="openToolImage('govToolImage')" aria-label="View screenshot of the Government Data Processing Tool">View Tool</button>
-        
-        <div id="govToolImage" class="tool-image-container" style="display: none;">
-          <img src="assets/gov_agency_app.png" alt="Government Agency Data Processing Tool Screenshot" class="tool-screenshot" width="1396" height="1000" />
-          <button class="tool-image-close" onclick="closeToolImage('govToolImage')" aria-label="Close tool screenshot">&times;</button>
-        </div>
-
-        <section class="case-study">
-          <div class="case-section">
-            <h3>Project Overview</h3>
-            <p>
-              This project focused on building a purpose-driven automation tool to support government disaster
-              recovery operations. The application streamlines how large volumes of spreadsheets, PDFs, and invoices
-              are processed, reconciled, and transformed into standardized, audit-ready reports for field teams and
-              analysts.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Challenge</h3>
-            <p>
-              Disaster recovery projects generate extensive documentation, including load ticket spreadsheets,
-              debris tracking records, waterway assessment PDFs, and multi-sheet invoices. Analysts were required
-              to manually reconcile data across files, extract critical information from unstructured documents,
-              and standardize outputs—often taking days per project and introducing risk of human error.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Solution</h3>
-            <p>
-              I designed and built a standalone automation application that performs intelligent Excel reconciliation,
-              PDF data extraction, and invoice aggregation. The tool automatically detects duplicate records across
-              files, parses structured data from complex PDF reports, and consolidates transactional invoice data
-              while maintaining full traceability. Delivered as a single Windows executable, the application requires
-              no installation or technical expertise and provides a guided, user-friendly interface.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>Measurable Outcomes</h3>
-            <ul>
-              <li><strong>90%+ reduction in reconciliation time:</strong> Automated duplicate detection replaced manual spreadsheet comparisons.</li>
-              <li><strong>Significant accuracy improvements:</strong> Eliminated transcription and comparison errors.</li>
-              <li><strong>Expanded accessibility:</strong> Enabled non-technical users to perform advanced data processing.</li>
-              <li><strong>Reduced end-to-end processing cycles:</strong> Typical document processing workflows were reduced from multi-week efforts to same-day completion.</li>
-            </ul>
-          </div>
-        </section>
-
-        <div class="case-study-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Data Automation</span>
-          <span class="tag">Excel Processing</span>
-          <span class="tag">PDF Parsing</span>
-          <span class="tag">Government Operations</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Isles of Hope International Case Study Modal -->
-    <div id="islesOfHopeIntlModal" class="modal" role="dialog" aria-labelledby="islesOfHopeIntlTitle" aria-modal="true">
-      <div class="modal-content case-study-modal">
-        <button class="modal-close" onclick="closeModal('islesOfHopeIntlModal')" aria-label="Close Isles of Hope International case study">
-          &times;
-        </button>
-
-        <h2 id="islesOfHopeIntlTitle">Isles of Hope International</h2>
-        <div class="case-study-category">Web Development & Mission-Driven Content</div>
-        <a href="https://www.islesofhopeintl.com" target="_blank" rel="noopener noreferrer" class="case-study-website-link" aria-label="Visit Isles of Hope International website (opens in new tab)">Visit Website</a>
-
-        <section class="case-study">
-          <div class="case-section">
-            <h3>Project Overview</h3>
-            <p>
-              Isles of Hope International is a Christian nonprofit organization dedicated to supporting women in need
-              across multiple countries. The new website was built from the ground up to provide clear navigation of
-              ministries, enhance storytelling of global outreach, and facilitate supporter engagement and donations.
-              It highlights partner ministries in Zimbabwe, Uganda, Nepal, and the Democratic Republic of the Congo.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Challenge</h3>
-            <p>
-              The organization needed a modern, mobile-friendly website that could effectively communicate its mission,
-              showcase international partnerships, and provide an intuitive way for supporters to learn more and give.
-              The site had to support multifaceted content—region pages, mission statements, faith commitments, and
-              donation calls to action—while remaining clear and navigable for diverse audiences.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Solution</h3>
-            <p>
-              A fully custom website was developed featuring a clear top-level content structure highlighting:
-              ministry efforts by country, the organization's mission and statement of faith, and multiple supporter
-              touchpoints. Each country page presents background on local leadership, the scope of services offered,
-              and opportunities for support or partnership. The design emphasizes readability, mobile responsiveness,
-              and ease of updates for ongoing storytelling.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>Measurable Outcomes</h3>
-            <ul>
-              <li><strong>Improved engagement:</strong> Clear country-by-country calls to action make it easy for visitors to explore regional ministry work.</li>
-              <li><strong>Enhanced donation visibility:</strong> Prominent "Send Support" and "Give" links guide visitors toward giving.</li>
-              <li><strong>Structured content:</strong> Mission, faith, and leadership information organized for clarity and storytelling depth.</li>
-              <li><strong>Mobile accessibility:</strong> A responsive layout improves user experience across devices.</li>
-              <li><strong>Scalable architecture:</strong> Added flexibility for future updates—events, newsletters, and international expansion stories.</li>
-            </ul>
-          </div>
-        </section>
-
-        <div class="case-study-tags">
-          <span class="tag">Web Development</span>
-          <span class="tag">Squarespace</span>
-          <span class="tag">Nonprofit</span>
-          <span class="tag">International Outreach</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- AI Blog Platform Case Study Modal -->
-    <div id="aiBlogPlatformModal" class="modal" role="dialog" aria-labelledby="aiBlogPlatformTitle" aria-modal="true">
-      <div class="modal-content case-study-modal">
-        <button class="modal-close" onclick="closeModal('aiBlogPlatformModal')" aria-label="Close AI Blog Platform case study">
-          &times;
-        </button>
-
-        <h2 id="aiBlogPlatformTitle">AI Blog Platform</h2>
-        <div class="case-study-category">Full-Stack Web Application</div>
-        <a href="https://www.aiblogdaily.com" target="_blank" rel="noopener noreferrer" class="case-study-website-link" aria-label="Visit AI Blog Platform website (opens in new tab)">Visit Website</a>
-
-        <section class="case-study">
-          <div class="case-section">
-            <h3>Project Overview</h3>
-            <p>
-              AI Blog Daily is a full-stack web application that aggregates and compares AI-generated content from multiple
-              leading AI models (ChatGPT, Claude, Gemini, Grok, and Llama) in a single, unified platform. The application
-              automatically generates fresh blog posts daily across 15+ categories and features a blind head-to-head voting
-              system, allowing users to evaluate how different AI models approach identical topics — without bias.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Challenge</h3>
-            <p>
-              With the rapid proliferation of AI language models, users face several key challenges: content from
-              different AI models is scattered across multiple platforms, there's no easy way to compare outputs
-              from different models on the same topic, separate subscriptions are required to access multiple AI
-              services, and it's difficult to systematically explore diverse AI-generated content. The goal was to
-              create a centralized platform with meaningful comparison tools and a sustainable monetization strategy.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>The Solution</h3>
-            <p>
-              Built a comprehensive platform using <strong>Python</strong> and <strong>Flask</strong> with a
-              <strong>PostgreSQL</strong> database, integrating 5 AI APIs (OpenAI, Anthropic, Google, xAI, Together AI).
-              The core feature is a <strong>blind voting system</strong> — users read paired posts without knowing which AI
-              wrote them, vote across 5 categories (Writing Quality, Accuracy, Creativity, Usefulness, Overall), and only
-              then are the authors revealed. Position randomization prevents positional bias, and a 5-minute edit window
-              locks votes permanently. Free users receive 3 votes per week to seed community data.
-            </p>
-            <p>
-              Additional features include a premium analytics dashboard with leaderboards and head-to-head matrices,
-              a follow system for AI tool notifications, <strong>Stripe</strong>-powered tiered subscriptions,
-              bookmarking, threaded comments, in-app notifications, dark/light theming, and a comprehensive admin panel —
-              spanning ~64 distinct routes across the platform.
-            </p>
-          </div>
-
-          <div class="case-section">
-            <h3>Measurable Outcomes</h3>
-            <ul>
-              <li><strong>100% Automated:</strong> Zero manual intervention for daily content generation across 5 AI providers with modular, fault-tolerant architecture.</li>
-              <li><strong>Bias-Free Comparisons:</strong> Blind voting with position randomization eliminates brand and positional bias, producing authentic crowdsourced insights into AI model strengths.</li>
-              <li><strong>Sustainable Monetization:</strong> Freemium model with bootstrap free voting (3/week), 5 posts/month free tier, and premium subscriptions ($4.99/month, $49.99/year).</li>
-              <li><strong>Data-Driven Analytics:</strong> Premium leaderboards with confidence badges, head-to-head matrices, personal vote history, and 7-day trend tracking.</li>
-              <li><strong>Production-Grade Security:</strong> CSRF protection, rate limiting with IP whitelisting, parameterized queries, webhook signature verification, and secure session management.</li>
-              <li><strong>Rich Engagement:</strong> Follow system with email notifications, threaded comments, bookmarks, in-app notifications with badge counts, and dark/light theme toggle.</li>
-            </ul>
-          </div>
-        </section>
-
-        <div class="case-study-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">OpenAI API</span>
-          <span class="tag">Anthropic API</span>
-          <span class="tag">Google AI API</span>
-          <span class="tag">Stripe Payments</span>
-          <span class="tag">Full-Stack Development</span>
-        </div>
-      </div>
-    </div>
-
-    <script defer src="script.js?v=20260412k"></script>
-    <script>
-      // Tool image toggle functions
-      function openToolImage(imageId) {
-        const container = document.getElementById(imageId);
-        if (container) {
-          container.style.display = 'block';
-        }
-      }
-      
-      function closeToolImage(imageId) {
-        const container = document.getElementById(imageId);
-        if (container) {
-          container.style.display = 'none';
-        }
-      }
-    </script>
   </body>
 </html>
