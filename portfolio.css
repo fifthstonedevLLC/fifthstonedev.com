@@ -19,7 +19,7 @@
   --paper: #f1ede4;
   --paper-soft: #f6f3ec;
   --card: #fbfaf6;
-  --ink: #1c2530;
+  --ink: #2c3e50;
   --ink-soft: #4a5662;
   --hairline: rgba(28, 37, 48, 0.12);
   --hairline-soft: rgba(28, 37, 48, 0.07);
@@ -118,7 +118,7 @@ img { display: block; max-width: 100%; }
 .nav a {
   font-size: 0.98rem;
   font-weight: 500;
-  color: var(--ink-soft);
+  color: var(--stone-river);
   position: relative;
   padding: 0.3rem 0;
   transition: color 0.25s var(--ease);
@@ -129,26 +129,27 @@ img { display: block; max-width: 100%; }
   left: 0; bottom: -2px;
   width: 100%;
   height: 1.5px;
-  background: var(--accent);
+  background: var(--stone-river);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.32s var(--ease);
 }
-.nav a:hover { color: var(--ink); }
+.nav a:hover { color: var(--stone-slate); }
 .nav a:hover::after,
 .nav a.active::after { transform: scaleX(1); }
-.nav a.active { color: var(--ink); }
+.nav a.active { color: var(--stone-slate); }
 .nav-cta {
   font-size: 0.92rem !important;
   font-weight: 600 !important;
-  color: var(--ink) !important;
-  border: 1px solid var(--ink);
+  color: var(--stone-river) !important;
+  background: transparent;
+  border: 1px solid var(--stone-river);
   border-radius: 100px;
   padding: 0.55rem 1.25rem !important;
   transition: background 0.28s var(--ease), color 0.28s var(--ease);
 }
 .nav-cta::after { display: none; }
-.nav-cta:hover { background: var(--ink); color: var(--ground) !important; }
+.nav-cta:hover { background: var(--stone-slate); color: var(--ground) !important; }
 .menu-toggle { display: none; }
 
 /* =========================================================================
