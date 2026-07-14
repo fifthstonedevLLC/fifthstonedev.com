@@ -4164,9 +4164,8 @@ html {
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
-  transition:
-    opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
@@ -4197,9 +4196,7 @@ html {
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px) saturate(1.1);
   border-bottom: 1px solid rgba(44, 62, 80, 0.07);
-  transition:
-    background 0.4s ease,
-    border-color 0.4s ease;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 .masthead.scrolled {
   background: rgba(255, 255, 255, 0.94);
@@ -4248,16 +4245,10 @@ html {
   transform-origin: left;
   transition: transform 0.32s ease;
 }
-.masthead .nav a:hover {
-  color: var(--stone-charcoal);
-}
+.masthead .nav a:hover { color: var(--stone-charcoal); }
 .masthead .nav a:hover::after,
-.masthead .nav a.active::after {
-  transform: scaleX(1);
-}
-.masthead .nav a.active {
-  color: var(--stone-charcoal);
-}
+.masthead .nav a.active::after { transform: scaleX(1); }
+.masthead .nav a.active { color: var(--stone-charcoal); }
 .masthead .nav-cta {
   font-size: 0.92rem !important;
   font-weight: 600 !important;
@@ -4265,28 +4256,15 @@ html {
   border: 1px solid var(--stone-charcoal);
   border-radius: 100px;
   padding: 0.55rem 1.25rem !important;
-  transition:
-    background 0.28s ease,
-    color 0.28s ease;
+  transition: background 0.28s ease, color 0.28s ease;
 }
-.masthead .nav-cta::after {
-  display: none;
-}
-.masthead .nav-cta:hover {
-  background: var(--stone-charcoal);
-  color: #fff !important;
-}
-.masthead .menu-toggle {
-  display: none;
-}
+.masthead .nav-cta::after { display: none; }
+.masthead .nav-cta:hover { background: var(--stone-charcoal); color: #fff !important; }
+.masthead .menu-toggle { display: none; }
 
 @media (max-width: 920px) {
-  .masthead .bar {
-    height: 70px;
-  }
-  .masthead .logo img {
-    height: 48px;
-  }
+  .masthead .bar { height: 70px; }
+  .masthead .logo img { height: 48px; }
 }
 @media (max-width: 600px) {
   .masthead .nav {

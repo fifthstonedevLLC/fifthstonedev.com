@@ -416,6 +416,13 @@
     />
     <noscript><link rel="stylesheet" href="styles.css?v=20260607" /></noscript>
 
+    <!-- Landing refresh: display serif + hero/nav/services overrides -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fsd-refresh.css" />
+
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
     <script
       defer
@@ -538,237 +545,165 @@
 
     <main id="main-content">
       <!-- Hero Section -->
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Build with <strong>purpose.</strong></h1>
-            <p>
-              We craft clean, modern websites and digital tools rooted in
-              clarity, functionality, and faith. Serving businesses,
-              organizations, and mission-driven ventures, we bring Midwest
-              integrity to every line of code.
-            </p>
-            <div class="cta-buttons">
-              <a
-                href="contact"
-                class="btn btn-primary"
-                aria-label="Start Your Project - Contact us"
-                >Start Your Project</a
-              >
-              <a
-                href="services"
-                class="btn btn-secondary"
-                aria-label="Our Services - View web development and automation"
-                >Our Services</a
-              >
-            </div>
+      <section class="fsd-hero">
+        <div class="fsd-hero__aura" aria-hidden="true"></div>
+        <div class="fsd-hero__grain" aria-hidden="true"></div>
+        <div class="fsd-hero__mark" aria-hidden="true"><span>Fifth Stone</span></div>
+        <div class="fsd-hero__inner">
+          <h1 class="fsd-headline">
+            <span class="line">Build with</span>
+            <span class="line accent">purpose.</span>
+          </h1>
+          <div class="fsd-cta-row">
+            <a href="contact" class="fsd-btn fsd-btn--primary" aria-label="Start your project - contact us">
+              Start your project
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="services" class="fsd-btn fsd-btn--ghost" aria-label="Our services">Our services</a>
           </div>
-          <div class="hero-visual">
-            <div class="logo-graphic">
-              <img
-                src="assets/stone_and_sling.png"
-                alt="Fifth Stone Dev - Web Development and Process Automation Services in Cedar Falls Iowa"
-                class="hero-image"
-                fetchpriority="high"
-                width="500"
-                height="500"
-              />
+          <div class="fsd-flow" role="img" aria-label="Our process, step by step: Discovery, then Strategy, then Build, then Launch and support">
+            <div class="fsd-node">
+              <span class="fsd-node__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><line x1="16" y1="16" x2="20.5" y2="20.5"></line></svg></span>
+              <span class="fsd-node__tag">01</span>
+              <span class="fsd-node__label">Discovery</span>
+              <span class="fsd-node__note">We listen first</span>
+            </div>
+            <div class="fsd-edge"></div>
+            <div class="fsd-node">
+              <span class="fsd-node__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20 L9 5 L13 14 L16 8 L20 20 Z"></path><line x1="4" y1="20" x2="20" y2="20"></line></svg></span>
+              <span class="fsd-node__tag">02</span>
+              <span class="fsd-node__label">Strategy</span>
+              <span class="fsd-node__note">A clear plan</span>
+            </div>
+            <div class="fsd-edge"></div>
+            <div class="fsd-node fsd-node--hot">
+              <span class="fsd-node__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="8.5,8 4,12 8.5,16"></polyline><polyline points="15.5,8 20,12 15.5,16"></polyline></svg></span>
+              <span class="fsd-node__tag">03</span>
+              <span class="fsd-node__label">Build</span>
+              <span class="fsd-node__note">Working software</span>
+            </div>
+            <div class="fsd-edge"></div>
+            <div class="fsd-node">
+              <span class="fsd-node__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 C15.5 6 17 9.5 17 13 L7 13 C7 9.5 8.5 6 12 3 Z"></path><circle cx="12" cy="9.5" r="1.6"></circle><path d="M7 13 L4.5 16 L8.5 16"></path><path d="M17 13 L19.5 16 L15.5 16"></path><line x1="10" y1="17.5" x2="12" y2="20.5"></line><line x1="14" y1="17.5" x2="12" y2="20.5"></line></svg></span>
+              <span class="fsd-node__tag">04</span>
+              <span class="fsd-node__label">Launch</span>
+              <span class="fsd-node__note">Live &amp; supported</span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Services Preview Section -->
-      <section id="services" class="services">
-        <div class="container">
-          <div class="services-header">
-            <h2>Services Built <strong>for Impact</strong></h2>
+      <section id="services" class="fsd-services">
+        <div class="fsd-services__inner">
+          <div class="fsd-services__head">
+            <h2>Services built <em>for impact.</em></h2>
             <p>
-              Whether you're launching a new venture or optimizing existing
-              systems, we provide the tools and expertise to help you succeed.
+              Whether you're launching something new or optimizing what you
+              already run, we scope the right solution for your budget and
+              timeline — no over-engineering, no unnecessary complexity.
             </p>
           </div>
-          <div class="services-grid">
-            <div class="service-card">
-              <div class="service-card-img">
-                <img
-                  src="assets/custom_web_development.jpg"
-                  alt="Custom web development"
-                  loading="lazy"
-                />
-              </div>
-              <h3>Custom Web Development</h3>
+          <div class="fsd-svc-cards">
+            <a class="fsd-svc-card" href="services#web-development">
+              <div class="fsd-svc-card__n">01</div>
+              <h3>Websites &amp; web applications</h3>
               <p>
-                Custom websites that are beautiful, functional, and built to
-                grow with your organization. From landing pages to full-scale
-                web applications.
+                Clean code, fast load times, and a structure built to scale —
+                from a polished marketing site to a full custom web application.
               </p>
-              <ul class="service-features">
-                <li>Responsive, mobile-first design</li>
-                <li>Modern frameworks & technologies</li>
-                <li>SEO optimization</li>
-                <li>Website Hosting & Management</li>
-              </ul>
-              <a
-                href="services#web-development"
-                class="btn-service"
-                aria-label="Learn more about web development services"
-              >
-                Learn More
-              </a>
-            </div>
-
-            <div class="service-card">
-              <div class="service-card-img">
-                <img
-                  src="assets/process_automation.jpg"
-                  alt="Process automation"
-                  loading="lazy"
-                />
-              </div>
-              <h3>Process Automation</h3>
+              <span class="fsd-svc-card__more">Explore web development <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+            <a class="fsd-svc-card" href="services#process-automation">
+              <div class="fsd-svc-card__n">02</div>
+              <h3>Automation &amp; internal tools</h3>
               <p>
-                Streamline your operations with custom internal tools that save
-                time, reduce errors, and increase efficiency across your team.
+                We map your workflows and build targeted solutions. Clients have
+                seen time savings exceeding 90% on previously manual processes.
               </p>
-              <ul class="service-features">
-                <li>Workflow automation</li>
-                <li>Custom business tools</li>
-                <li>AI-powered automation</li>
-                <li>Task automation</li>
-              </ul>
-              <a
-                href="services#process-automation"
-                class="btn-service"
-                aria-label="Learn more about process automation services"
-              >
-                Learn More
-              </a>
-            </div>
-
-            <div class="service-card consulting">
-              <div class="service-card-img">
-                <img
-                  src="assets/digital_strategy_consulting.png"
-                  alt="Digital strategy consulting"
-                  loading="lazy"
-                />
-              </div>
-              <h3>Digital Strategy Consulting</h3>
+              <span class="fsd-svc-card__more">Explore automation <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+            <a class="fsd-svc-card" href="services#consulting">
+              <div class="fsd-svc-card__n">03</div>
+              <h3>Strategy &amp; second opinions</h3>
               <p>
-                Expert guidance for small businesses managing their digital
-                presence. We help improve user experience and maximize your
-                website's impact.
+                An outside perspective on your digital presence — scoped by the
+                hour or project, with no long-term retainer required.
               </p>
-              <ul class="service-features">
-                <li>UX/UI analysis & recommendations</li>
-                <li>Website audits</li>
-                <li>Performance optimization</li>
-                <li>Training & documentation</li>
-              </ul>
-              <a
-                href="services#consulting"
-                class="btn-service"
-                aria-label="Learn more about consulting services"
-              >
-                Learn More
-              </a>
-            </div>
+              <span class="fsd-svc-card__more">Explore consulting <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+          </div>
+          <div class="fsd-services__foot">
+            <a class="fsd-btn fsd-btn--ghost" href="services">View all services</a>
           </div>
         </div>
       </section>
 
       <!-- Portfolio Preview Section -->
-      <section id="portfolio" class="portfolio-preview">
-        <div class="container">
-          <div class="portfolio-header">
-            <h2>Projects <strong>We've Built</strong></h2>
+      <section id="portfolio" class="fsd-work">
+        <div class="fsd-work__inner">
+          <div class="fsd-work__head">
+            <h2>Projects <em>we've built.</em></h2>
             <p>
               A selection of solutions we've crafted for businesses,
               organizations, and mission-driven ventures.
             </p>
           </div>
-
-          <div class="portfolio-preview-grid">
-            <!-- Project 1 -->
-            <div class="portfolio-preview-item">
-              <div class="portfolio-image">
-                <img
-                  src="assets/Candeo_Our_Team_Page.png"
-                  alt="Candeo Counseling Center website redesign"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
+          <div class="fsd-work-grid">
+            <a class="fsd-work-card" href="portfolio">
+              <div class="fsd-work-card__img">
+                <img src="assets/Candeo_Our_Team_Page.png" alt="Candeo Counseling Center website redesign" loading="lazy" width="600" height="400" />
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category">Web Development</span>
+              <div class="fsd-work-card__body">
+                <span class="fsd-work-card__cat">Web Development</span>
                 <h3>Candeo Counseling Center</h3>
-                <p>
-                  Comprehensive website redesign improving user engagement and
-                  compliance.
-                </p>
+                <p>Comprehensive website redesign improving user engagement and compliance.</p>
+                <span class="fsd-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
               </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="portfolio-preview-item">
-              <div class="portfolio-image">
-                <img
-                  src="assets/ai_blog_daily_app.png"
-                  alt="AI Blog Platform - Full-stack web application"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
+            </a>
+            <a class="fsd-work-card" href="portfolio">
+              <div class="fsd-work-card__img">
+                <img src="assets/ai_blog_daily_app.png" alt="AI Blog Platform - Full-stack web application" loading="lazy" width="600" height="400" />
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category">Web Application</span>
+              <div class="fsd-work-card__body">
+                <span class="fsd-work-card__cat">Web Application</span>
                 <h3>AI Blog Platform</h3>
-                <p>
-                  Full-stack application aggregating AI-generated content with
-                  subscription-based access.
-                </p>
+                <p>Full-stack application aggregating AI-generated content with subscription-based access.</p>
+                <span class="fsd-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
               </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="portfolio-preview-item">
-              <div class="portfolio-image">
-                <img
-                  src="assets/gov_agency_app.png"
-                  alt="Government agency data processing automation tool"
-                  loading="lazy"
-                  width="600"
-                  height="400"
-                />
+            </a>
+            <a class="fsd-work-card" href="portfolio">
+              <div class="fsd-work-card__img">
+                <img src="assets/gov_agency_app.png" alt="Government agency data processing automation tool" loading="lazy" width="600" height="400" />
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category">Process Automation</span>
+              <div class="fsd-work-card__body">
+                <span class="fsd-work-card__cat">Process Automation</span>
                 <h3>Government Data Processing</h3>
-                <p>
-                  Automation tool for disaster recovery with 90%+ time savings.
-                </p>
+                <p>Automation tool for disaster recovery with 90%+ time savings.</p>
+                <span class="fsd-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
               </div>
-            </div>
+            </a>
           </div>
-
-          <div class="section-cta">
-            <a href="portfolio" class="btn btn-primary">View Full Portfolio</a>
+          <div class="fsd-work__foot">
+            <a class="fsd-btn fsd-btn--ghost" href="portfolio">View full portfolio</a>
           </div>
         </div>
       </section>
 
       <!-- CTA Section -->
-      <section class="cta-section">
-        <div class="container">
-          <h2>Ready to Start Your Project?</h2>
-          <p>Let's discuss how we can help bring your vision to life.</p>
-          <div class="cta-buttons">
-            <a href="contact" class="btn btn-primary">Get In Touch</a>
-            <a href="about" class="btn btn-secondary-dark"
-              >Learn More About Us</a
-            >
+      <section class="fsd-finale">
+        <div class="fsd-finale__inner">
+          <h2>Ready to <em>start your project?</em></h2>
+          <p>
+            Tell us what you're working on — we'll be honest about whether we're
+            the right fit, and the first conversation is always free.
+          </p>
+          <div class="fsd-cta-row">
+            <a href="contact" class="fsd-btn fsd-btn--primary">
+              Get in touch
+              <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="about" class="fsd-btn fsd-btn--ghost">Learn more about us</a>
           </div>
         </div>
       </section>
