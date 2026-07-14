@@ -4194,16 +4194,16 @@ html {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(238, 241, 245, 0.86);
   backdrop-filter: blur(14px) saturate(1.1);
-  border-bottom: 1px solid rgba(44, 62, 80, 0.07);
+  border-bottom: 1px solid rgba(20, 32, 43, 0.08);
   transition:
     background 0.4s ease,
     border-color 0.4s ease;
 }
 .masthead.scrolled {
-  background: rgba(255, 255, 255, 0.94);
-  border-bottom-color: rgba(44, 62, 80, 0.12);
+  background: rgba(238, 241, 245, 0.95);
+  border-bottom-color: rgba(20, 32, 43, 0.12);
 }
 .masthead .bar {
   width: min(1320px, 92vw);
@@ -4230,7 +4230,8 @@ html {
 .masthead .nav a {
   font-size: 0.98rem;
   font-weight: 500;
-  color: var(--stone-river);
+  color: #3a4a58;
+  letter-spacing: -0.01em;
   text-decoration: none;
   position: relative;
   padding: 0.3rem 0;
@@ -4243,28 +4244,29 @@ html {
   bottom: -2px;
   width: 100%;
   height: 1.5px;
-  background: var(--accent-bronze);
+  background: #9a6b34;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.32s ease;
 }
 .masthead .nav a:hover {
-  color: var(--stone-charcoal);
+  color: #14202b;
 }
 .masthead .nav a:hover::after,
 .masthead .nav a.active::after {
   transform: scaleX(1);
 }
 .masthead .nav a.active {
-  color: var(--stone-charcoal);
+  color: #14202b;
 }
 .masthead .nav-cta {
   font-size: 0.92rem !important;
   font-weight: 600 !important;
-  color: var(--stone-charcoal) !important;
-  border: 1px solid var(--stone-charcoal);
-  border-radius: 100px;
-  padding: 0.55rem 1.25rem !important;
+  color: #14202b !important;
+  border: 1.5px solid #14202b;
+  border-radius: 5px;
+  padding: 0.6rem 1.3rem !important;
+  white-space: nowrap;
   transition:
     background 0.28s ease,
     color 0.28s ease;
@@ -4273,8 +4275,8 @@ html {
   display: none;
 }
 .masthead .nav-cta:hover {
-  background: var(--stone-charcoal);
-  color: #fff !important;
+  background: #14202b;
+  color: #eef1f5 !important;
 }
 .masthead .menu-toggle {
   display: none;

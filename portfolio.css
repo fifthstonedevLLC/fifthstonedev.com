@@ -92,14 +92,14 @@ img { display: block; max-width: 100%; }
   position: sticky;
   top: 0;
   z-index: 200;
-  background: color-mix(in srgb, var(--ground) 82%, transparent);
+  background: rgba(238, 241, 245, 0.86);
   backdrop-filter: blur(14px) saturate(1.1);
-  border-bottom: 1px solid var(--hairline-soft);
+  border-bottom: 1px solid rgba(20, 32, 43, 0.08);
   transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
 }
 .masthead.scrolled {
-  background: color-mix(in srgb, var(--ground) 94%, transparent);
-  border-bottom-color: var(--hairline);
+  background: rgba(238, 241, 245, 0.95);
+  border-bottom-color: rgba(20, 32, 43, 0.12);
 }
 .masthead .bar {
   width: var(--shell);

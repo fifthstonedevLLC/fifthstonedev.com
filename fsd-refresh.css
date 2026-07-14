@@ -25,39 +25,10 @@
 }
 
 /* ============================================================
-   NAVIGATION — refine the existing masthead (keeps its JS)
+   NAVIGATION — now defined site-wide in styles.css (.masthead)
+   so every page shares one nav design. Kept here intentionally
+   empty to document that this file no longer overrides the nav.
    ============================================================ */
-.masthead {
-  background: rgba(238, 241, 245, 0.86);
-  border-bottom: 1px solid rgba(20, 32, 43, 0.08);
-}
-.masthead.scrolled {
-  background: rgba(238, 241, 245, 0.95);
-  border-bottom-color: rgba(20, 32, 43, 0.12);
-}
-.masthead .nav a {
-  color: var(--fsd-ink-soft);
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.masthead .nav a:hover,
-.masthead .nav a.active {
-  color: var(--fsd-ink);
-}
-.masthead .nav a::after {
-  background: var(--fsd-bronze);
-}
-.masthead .nav-cta {
-  color: var(--fsd-ink) !important;
-  border: 1.5px solid var(--fsd-ink);
-  border-radius: 5px;
-  padding: 0.6rem 1.3rem !important;
-  white-space: nowrap;
-}
-.masthead .nav-cta:hover {
-  background: var(--fsd-ink);
-  color: var(--fsd-paper) !important;
-}
 
 /* ============================================================
    HERO — centered magazine hero with process flow graph
