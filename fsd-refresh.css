@@ -261,7 +261,7 @@
   align-items: center;
   gap: 9px;
   padding: 22px 24px;
-  min-width: 138px;
+  width: 160px;
   border-radius: 18px;
   background: linear-gradient(
     180deg,
