@@ -10,9 +10,11 @@ Static multi-page website for Fifth Stone Dev LLC (fifthstonedev.com), a web dev
 
 There is **no build step**. Edit files directly and deploy. The site runs on Apache-based hosting with `.htaccess` for routing, security headers, compression, and caching.
 
-**The site has not been deployed to production yet.** All changes are local only.
+**The site is live.** `origin/main` tracks what is deployed — commit `ee6c9ae` ("updated node statements") is the version currently being served. Local `main` should stay in sync with `origin/main` unless you are actively building something unreleased.
 
-**Cache busting** is done via query params on CSS/JS references (e.g., `styles.css?v=20260412t`). When modifying `styles.css` or `script.js`, update the version string in all HTML files that reference them. Current versions: `styles.css?v=20260412t`, `script.js?v=20260412k`. Note: `index.html` is currently behind — it still references `styles.css?v=20260409` and `script.js?v=20260331` and should be updated when next touched.
+**Cache busting** is done via query params on CSS/JS references. When modifying any CSS or JS file, update its version string in **every** HTML file that references it. Current versions (uniform across all pages):
+- `styles.css?v=20260714a`, `portfolio.css?v=20260714a`, `fsd-refresh.css?v=20260714a`
+- `script.js?v=20260607`, `portfolio.js?v=20260607`
 
 > Note: Query string cache busting only works over HTTP (Apache hosting). When previewing locally via `file://`, it has no effect — use a hard refresh (`Ctrl+Shift+R`) instead.
 
@@ -22,17 +24,27 @@ There is **no build step**. Edit files directly and deploy. The site runs on Apa
 
 ### File Organization
 - **6 HTML pages**: `index.html`, `about.html`, `services.html`, `portfolio.html`, `contact.html`, `privacy-policy.html`
-- **1 CSS file**: `styles.css` (~4100 lines) — all styling including responsive breakpoints
-- **1 JS file**: `script.js` (~680 lines) — all client-side behavior
-- **`assets/`** — logos, photos, portfolio preview images
+- **CSS** (3 files, cascade order matters):
+  - `styles.css` (~3700 lines) — base site styles, shared components, cookie banner, responsive breakpoints. Loaded by every page.
+  - `fsd-refresh.css` (~800 lines) — landing-page refresh layer (display serif, hero/nav/services overrides). **`index.html` only**, loaded after `styles.css`.
+  - `portfolio.css` (~675 lines) — portfolio redesign layer. **`portfolio.html` only**, loaded after `styles.css`; wins on specificity for portfolio elements.
+- **JS** (2 files):
+  - `script.js` (~560 lines) — shared behavior, loaded by every page.
+  - `portfolio.js` (~225 lines) — portfolio page only; IIFE-scoped, loaded after `script.js`.
+- **`assets/`** — logos, photos, portfolio preview images (~23 files)
 - **`.htaccess`** — HTTPS redirect, www canonicalization, security headers, gzip, browser caching
 - **`sitemap.xml`** / **`robots.txt`** — SEO configuration
+- **`SEO_ENHANCEMENT_PLAN.md`**, **`EMAILJS_SETUP.md`** — planning/setup notes, not shipped content
 
-### Subdirectories (separate projects, excluded from sitemap/robots)
-- `StepsToSerenityBasic/` and `StepsToSerenityStarter/` — client site templates (Tailwind-based)
-- `proposal-survey/` — client proposal form
+### Subdirectories
+- `live-site/` — reference snapshot of the previously deployed `styles.css`, `script.js`, and assets. **Not served; do not edit.** Useful for diffing against what production looked like.
+- `proposal-survey/` — standalone client proposal form, excluded from sitemap/robots. Contains an `index-DESKTOP-K59D2AU.html` merge artifact alongside the real `index.html`.
+
+Note: `robots.txt` still disallows `/StepsToSerenityBasic/` and `/StepsToSerenityStarter/`, which no longer exist in the repo. Harmless, but stale.
 
 ### Design System (CSS Variables)
+
+Core stone/accent palette (`styles.css`, re-declared in `portfolio.css`):
 ```
 --stone-slate: #2c3e50    --accent-bronze: #b8956a
 --stone-charcoal: #1a252f  --accent-copper: #cd7f32
@@ -40,16 +52,32 @@ There is **no build step**. Edit files directly and deploy. The site runs on Apa
 --stone-sand: #bdc3c7     --off-white: #f8f9fa
 --stone-light: #ecf0f1
 ```
-Font: Archivo (Google Fonts, async-loaded). CSS classes use kebab-case.
 
-### JavaScript Components (`script.js`)
+`portfolio.css` adds an editorial layer on top: `--paper: #f1ede4`, `--paper-soft`, `--card`, `--ink`, `--ink-soft`, `--hairline`, plus `--shell` / `--gutter` layout tokens and `--ease: cubic-bezier(0.22, 1, 0.36, 1)`.
+
+`fsd-refresh.css` uses its own `--fsd-*` namespace (`--fsd-paper: #eef1f5`, `--fsd-ink: #14202b`, `--fsd-bronze: #9a6b34`, …) to avoid colliding with the base sheet.
+
+**Fonts**: Archivo (sans, body) + Newsreader (serif display, used by the portfolio and landing refresh). Both from Google Fonts, async-loaded. CSS classes use kebab-case.
+
+### JavaScript Components
+
+`script.js` (all pages):
 - Hash navigation with smooth scroll
+- Masthead scroll state
 - Mobile menu toggle
 - Modal system (4 form types: web dev, automation, consulting, general contact)
 - EmailJS form submission with validation
-- Portfolio carousel (responsive: 2 items desktop, 1 mobile)
-- Cookie consent with localStorage persistence
+- Portfolio carousel (responsive: 2 items desktop, 1 mobile) with auto-advance
+- Portfolio filter system
+- Scroll animations
+- Cookie consent with localStorage persistence — **gates the Google Analytics `gtag` load**
 - Toast notifications
+
+`portfolio.js` (portfolio page only):
+- `CASES` object holding all case-study content (copy, media, outcomes, tags) as data
+- Case-study reader overlay rendered from `CASES`
+- Masthead scroll state and scroll reveals
+- A tweaks-panel hook that applies CSS variable changes posted in via `postMessage` (dev affordance)
 
 ## SEO & Performance Conventions
 
@@ -62,15 +90,17 @@ This site is heavily SEO-optimized. When modifying pages, preserve:
 
 Performance patterns already in place:
 - Critical CSS inlined in `<head>` to prevent render-blocking
-- Google Fonts loaded async via `media="print"` + `onload` swap
+- `styles.css` loaded via `rel="preload"` + `onload` swap, with a `<noscript>` fallback
+- Google Fonts loaded async, with `<noscript>` fallback
 - EmailJS script deferred
 - Percentage-based carousel transforms (avoids layout thrashing)
 - Responsive breakpoint at 768px
 
 ## Deployment
 
-Static files deploy directly to Apache hosting. No CI/CD pipeline. **Nothing has been deployed yet — the site is pre-launch.** When ready to deploy:
+Static files deploy directly to Apache hosting. No CI/CD pipeline — uploads are manual. Deploy steps:
 1. Edit source files
-2. Update cache-busting version params if CSS/JS changed
+2. Update cache-busting version params in all HTML files if any CSS/JS changed
 3. Update `sitemap.xml` `<lastmod>` dates for modified pages
-4. Upload all changed files to Apache hosting
+4. Upload changed files to Apache hosting
+5. Push to `origin/main` so the remote continues to reflect what is live

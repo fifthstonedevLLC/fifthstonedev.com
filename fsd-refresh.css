@@ -287,6 +287,16 @@
     0 30px 60px -28px rgba(0, 0, 0, 0.95),
     0 0 40px -10px rgba(203, 160, 116, 0.4);
 }
+/* nodes are links to the matching page — reset anchor defaults */
+a.fsd-node {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+a.fsd-node:focus-visible {
+  outline: 2px solid var(--fsd-bronze-soft);
+  outline-offset: 3px;
+}
 .fsd-node--hot {
   border-color: rgba(203, 160, 116, 0.65);
   background: linear-gradient(

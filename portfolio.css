@@ -534,7 +534,7 @@ img { display: block; max-width: 100%; }
   font-weight: 600;
   font-size: 1rem;
   padding: 0.95rem 1.9rem;
-  border-radius: 100px;
+  border-radius: 5px;
   cursor: pointer;
   transition: all 0.28s var(--ease);
   border: 1px solid var(--ink);

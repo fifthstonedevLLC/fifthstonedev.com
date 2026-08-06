@@ -421,7 +421,7 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="fsd-refresh.css?v=20260714a" />
+    <link rel="stylesheet" href="fsd-refresh.css?v=20260806a" />
 
     <!-- EmailJS SDK (deferred - not needed until form submission) -->
     <script
@@ -589,10 +589,14 @@
           </div>
           <div
             class="fsd-flow"
-            role="img"
+            role="group"
             aria-label="Our process, step by step: Discovery, then Strategy, then Build, then Launch and support"
           >
-            <div class="fsd-node">
+            <a
+              class="fsd-node"
+              href="contact"
+              aria-label="Discovery — we listen first. Get in touch to start the conversation."
+            >
               <span class="fsd-node__ico"
                 ><svg viewBox="0 0 24 24" aria-hidden="true">
                   <circle cx="11" cy="11" r="6.5"></circle>
@@ -601,9 +605,13 @@
               <!-- <span class="fsd-node__tag">01</span> -->
               <span class="fsd-node__label">Discovery</span>
               <span class="fsd-node__note">We listen first</span>
-            </div>
+            </a>
             <div class="fsd-edge"></div>
-            <div class="fsd-node">
+            <a
+              class="fsd-node"
+              href="about"
+              aria-label="Strategy — plan accordingly. Learn about how we work."
+            >
               <span class="fsd-node__ico"
                 ><svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M4 20 L9 5 L13 14 L16 8 L20 20 Z"></path>
@@ -612,9 +620,13 @@
               <!-- <span class="fsd-node__tag">02</span> -->
               <span class="fsd-node__label">Strategy</span>
               <span class="fsd-node__note">Plan accordingly</span>
-            </div>
+            </a>
             <div class="fsd-edge"></div>
-            <div class="fsd-node fsd-node--hot">
+            <a
+              class="fsd-node fsd-node--hot"
+              href="services"
+              aria-label="Build — execute confidently. View our services."
+            >
               <span class="fsd-node__ico"
                 ><svg viewBox="0 0 24 24" aria-hidden="true">
                   <polyline points="8.5,8 4,12 8.5,16"></polyline>
@@ -623,9 +635,13 @@
               <!-- <span class="fsd-node__tag">03</span> -->
               <span class="fsd-node__label">Build</span>
               <span class="fsd-node__note">Execute confidently</span>
-            </div>
+            </a>
             <div class="fsd-edge"></div>
-            <div class="fsd-node">
+            <a
+              class="fsd-node"
+              href="portfolio"
+              aria-label="Launch — deliver results. See our portfolio."
+            >
               <span class="fsd-node__ico"
                 ><svg viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -640,7 +656,7 @@
               <!-- <span class="fsd-node__tag">04</span> -->
               <span class="fsd-node__label">Launch</span>
               <span class="fsd-node__note">Deliver results</span>
-            </div>
+            </a>
           </div>
         </div>
       </section>
