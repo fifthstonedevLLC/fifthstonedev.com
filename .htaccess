@@ -27,6 +27,12 @@ RewriteRule ^(.+)$ $1.html [L]
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Belt-and-braces alongside mod_expires: HTML revalidates every load so
+    # updated ?v= asset references are picked up immediately after a deploy.
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache, must-revalidate"
+    </FilesMatch>
 </IfModule>
 
 # Enable Gzip Compression
@@ -37,6 +43,9 @@ RewriteRule ^(.+)$ $1.html [L]
 # Browser Caching
 <IfModule mod_expires.c>
     ExpiresActive On
+    # HTML must always revalidate — it carries the ?v= cache-busting strings
+    # for CSS/JS, so a stale document pins visitors to stale assets.
+    ExpiresByType text/html "access plus 0 seconds"
     ExpiresByType image/jpg "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"

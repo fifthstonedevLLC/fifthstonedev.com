@@ -16,7 +16,9 @@ There is **no build step**. Edit files directly and deploy. The site runs on Apa
 - `styles.css?v=20260714a`, `portfolio.css?v=20260714a`, `fsd-refresh.css?v=20260714a`
 - `script.js?v=20260607`, `portfolio.js?v=20260607`
 
-> Note: Query string cache busting only works over HTTP (Apache hosting). When previewing locally via `file://`, it has no effect — use a hard refresh (`Ctrl+Shift+R`) instead.
+> Note: Query string cache busting only works over HTTP (Apache hosting). When previewing locally via `file://`, it has no effect — use a hard refresh (`Ctrl+Shift+R`) instead. Extensionless links (`href="contact"`) also 404 under `file://`, since they depend on the `.htaccess` rewrite; that is expected locally, not a broken link.
+
+For cache busting to work in production, the HTML itself must never be cached — the version strings live inside it. `.htaccess` enforces this with `ExpiresByType text/html "access plus 0 seconds"` plus a `Cache-Control: no-cache, must-revalidate` header on `.html`. Do not add a long expiry for HTML; it silently pins visitors to stale CSS/JS.
 
 **Contact forms** use EmailJS (client-side, no backend). Configuration details are in `EMAILJS_SETUP.md`. The public keys in the HTML are intentionally client-facing.
 
