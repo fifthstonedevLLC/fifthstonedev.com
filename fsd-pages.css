@@ -1,0 +1,397 @@
+/* ============================================================
+   Fifth Stone Dev — About & Services editorial layer
+   Load AFTER styles.css and fsd-refresh.css:
+     <link rel="stylesheet" href="fsd-pages.css" />
+   Namespaced .fsp-* so it never collides with the base sheet,
+   the portfolio layer, or the landing refresh. Reuses the
+   .fsd-btn / .fsd-finale families from fsd-refresh.css for a
+   nav/CTA that matches the home page exactly.
+   ============================================================ */
+
+:root {
+  --fsp-paper: #f1ede4;
+  --fsp-paper-2: #e8e1d3;
+  --fsp-card: #fbfaf6;
+  --fsp-ink: #22303c;
+  --fsp-ink-soft: #4a5662;
+  --fsp-ink-mute: #5d6d7e;
+  --fsp-charcoal: #16202b;
+  --fsp-charcoal-2: #1d2b39;
+  --fsp-bronze: #9a6b34;
+  --fsp-bronze-soft: #b8956a;
+  --fsp-hairline: rgba(28, 37, 48, 0.13);
+  --fsp-hairline-soft: rgba(28, 37, 48, 0.07);
+  --fsp-serif: "Newsreader", Georgia, "Times New Roman", serif;
+  --fsp-shell: min(1240px, 91vw);
+  --fsp-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --fsp-grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* page ground — warm paper instead of clinical off-white */
+body.fsp {
+  background: var(--fsp-paper);
+  color: var(--fsp-ink);
+}
+body.fsp ::selection { background: var(--fsp-bronze); color: #fff; }
+
+.fsp-shell { width: var(--fsp-shell); margin-inline: auto; }
+
+/* eyebrow */
+.fsp-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fsp-ink-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.fsp-eyebrow::before { content: ""; width: 1.7rem; height: 1px; background: var(--fsp-bronze); }
+.fsp-eyebrow--light { color: rgba(226, 233, 242, 0.72); }
+.fsp-eyebrow--light::before { background: var(--fsp-bronze-soft); }
+
+/* ============================================================
+   PAGE INTRO — asymmetric editorial header (shared)
+   ============================================================ */
+.fsp-intro { padding: clamp(3.4rem, 8vw, 7rem) 0 clamp(2.4rem, 5vw, 4rem); }
+.fsp-intro__grid {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+}
+.fsp-intro h1 {
+  font-family: var(--fsp-serif);
+  font-weight: 400;
+  font-size: clamp(2.7rem, 6.2vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: var(--fsp-ink);
+  margin: 1.4rem 0 0;
+  text-wrap: balance;
+}
+.fsp-intro h1 em { font-style: italic; color: var(--fsp-bronze); }
+.fsp-intro__lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.26rem);
+  color: var(--fsp-ink-soft);
+  max-width: 44ch;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+.fsp-intro__lead strong { color: var(--fsp-ink); font-weight: 600; }
+.fsp-rule {
+  width: var(--fsp-shell);
+  margin: clamp(2.4rem, 5vw, 3.6rem) auto 0;
+  height: 1px;
+  background: var(--fsp-hairline);
+}
+
+/* ============================================================
+   SERVICES — numbered editorial rows
+   ============================================================ */
+.fsp-services { padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(2rem, 4vw, 3rem); }
+.fsp-srow {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--fsp-hairline);
+  align-items: start;
+}
+.fsp-srow:last-child { border-bottom: 1px solid var(--fsp-hairline); }
+.fsp-srow__label { position: sticky; top: 110px; }
+.fsp-srow__mark {
+  width: 74px; height: 74px;
+  display: grid; place-items: center;
+  border: 1px solid var(--fsp-hairline);
+  border-radius: 14px;
+  background: var(--fsp-card);
+  margin-bottom: 1.6rem;
+}
+.fsp-srow__mark svg { width: 38px; height: 38px; stroke: var(--fsp-bronze); stroke-width: 1.5; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.fsp-srow__idx {
+  font-family: var(--fsp-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--fsp-bronze);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.fsp-srow__label h2 {
+  font-family: var(--fsp-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.4vw, 3rem);
+  line-height: 1.02;
+  letter-spacing: -0.018em;
+  color: var(--fsp-ink);
+  text-wrap: balance;
+}
+.fsp-srow__label h2 .dk { color: var(--fsp-bronze); font-style: italic; }
+.fsp-srow__body p {
+  font-size: 1.06rem;
+  line-height: 1.68;
+  color: var(--fsp-ink-soft);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+.fsp-srow__body p + p { margin-top: 1.1rem; }
+.fsp-feat-label {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--fsp-ink-mute); font-weight: 600;
+  margin: 2rem 0 1.1rem;
+}
+.fsp-feat-label::before { content: ""; width: 1.6rem; height: 1px; background: var(--fsp-bronze); }
+.fsp-feats {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.05rem 2rem;
+  margin: 0 0 2rem;
+}
+.fsp-feats li {
+  display: grid; grid-template-columns: auto 1fr; gap: 0.8rem; align-items: baseline;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--fsp-hairline-soft);
+  font-size: 1rem; color: var(--fsp-ink);
+}
+.fsp-feats li::before {
+  content: ""; width: 0.42rem; height: 0.42rem; border-radius: 50%;
+  background: var(--fsp-bronze); transform: translateY(-0.15rem);
+}
+
+/* ============================================================
+   IMPACT BAND — the one dark charcoal moment (Services)
+   ============================================================ */
+.fsp-band {
+  position: relative;
+  overflow: hidden;
+  background: var(--fsp-charcoal);
+  color: #e7ebef;
+}
+.fsp-band::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: var(--fsp-grain); background-size: 170px;
+  opacity: 0.06; mix-blend-mode: screen; pointer-events: none;
+}
+.fsp-band__inner {
+  position: relative; z-index: 1;
+  padding: clamp(3.6rem, 7vw, 6rem) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.fsp-band__intro h2 {
+  font-family: var(--fsp-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  line-height: 1.06;
+  color: #fff;
+  margin: 1rem 0 0;
+  text-wrap: balance;
+}
+.fsp-band__intro h2 em { font-style: italic; color: var(--fsp-bronze-soft); }
+.fsp-band__intro p { color: #9aa6b1; font-size: 1.06rem; line-height: 1.65; margin-top: 1.1rem; max-width: 44ch; }
+.fsp-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.12); }
+.fsp-stat { background: var(--fsp-charcoal); padding: 1.8rem 1.6rem; }
+.fsp-stat__n { font-family: var(--fsp-serif); font-weight: 400; font-size: clamp(2.4rem, 4vw, 3.4rem); line-height: 0.9; color: #fff; letter-spacing: -0.02em; }
+.fsp-stat__n sup { font-size: 0.34em; color: var(--fsp-bronze-soft); vertical-align: super; }
+.fsp-stat__l { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: #9aa6b1; margin-top: 0.9rem; line-height: 1.45; }
+
+/* request button (paper section) */
+.fsp-req {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: "Archivo", sans-serif;
+  font-weight: 600; font-size: 0.98rem;
+  color: #fbf6ee; background: var(--fsp-ink);
+  border: 1.5px solid var(--fsp-ink);
+  padding: 0.85rem 1.6rem; border-radius: 5px; cursor: pointer;
+  transition: transform 0.28s var(--fsp-ease), background 0.28s var(--fsp-ease), color 0.28s var(--fsp-ease);
+}
+.fsp-req .ar { transition: transform 0.28s var(--fsp-ease); }
+.fsp-req:hover { transform: translateY(-2px); background: var(--fsp-bronze); border-color: var(--fsp-bronze); }
+.fsp-req:hover .ar { transform: translateX(4px); }
+
+/* ============================================================
+   ABOUT — story split
+   ============================================================ */
+.fsp-story { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.fsp-story__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.fsp-story__body h2 {
+  font-family: var(--fsp-serif);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  line-height: 1.04;
+  letter-spacing: -0.018em;
+  color: var(--fsp-ink);
+  margin: 1.2rem 0 1.4rem;
+  text-wrap: balance;
+}
+.fsp-story__body h2 em { font-style: italic; color: var(--fsp-bronze); }
+.fsp-story__body p { font-size: 1.08rem; line-height: 1.72; color: var(--fsp-ink-soft); max-width: 54ch; text-wrap: pretty; }
+.fsp-story__body p + p { margin-top: 1.1rem; }
+.fsp-story__body p strong { color: var(--fsp-ink); font-weight: 600; }
+.fsp-quote {
+  margin-top: 2rem;
+  padding: 1.6rem 0 0.4rem 1.8rem;
+  border-left: 2px solid var(--fsp-bronze);
+  font-family: var(--fsp-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.8vw, 1.5rem);
+  line-height: 1.4;
+  color: var(--fsp-ink);
+  text-wrap: pretty;
+}
+.fsp-figure { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--fsp-hairline); box-shadow: 0 1px 1px rgba(28,37,48,0.04), 0 30px 60px -34px rgba(28,37,48,0.5); }
+.fsp-figure picture { display: block; width: 100%; height: 100%; }
+.fsp-figure img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.fsp-figure::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: var(--fsp-grain); background-size: 150px;
+  opacity: 0.08; mix-blend-mode: multiply; pointer-events: none;
+}
+.fsp-figure--tall { aspect-ratio: 4 / 5; }
+.fsp-figcap {
+  margin-top: 0.9rem;
+  font-size: 0.8rem; letter-spacing: 0.04em;
+  color: var(--fsp-ink-mute);
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.fsp-figcap::before { content: ""; width: 1.4rem; height: 1px; background: var(--fsp-bronze); flex: none; }
+
+/* ============================================================
+   ABOUT — developer bio split
+   ============================================================ */
+.fsp-bio { background: var(--fsp-paper-2); padding: clamp(3.6rem, 7vw, 6rem) 0; }
+.fsp-bio__grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+.fsp-bio__photo { position: sticky; top: 110px; }
+.fsp-bio__body h2 {
+  font-family: var(--fsp-serif); font-weight: 400;
+  font-size: clamp(2rem, 3.6vw, 3.1rem); line-height: 1.02;
+  letter-spacing: -0.018em; color: var(--fsp-ink); margin: 1rem 0 1.3rem;
+}
+.fsp-bio__body p { font-size: 1.06rem; line-height: 1.72; color: var(--fsp-ink-soft); max-width: 60ch; text-wrap: pretty; }
+.fsp-bio__body p + p { margin-top: 1.1rem; }
+.fsp-bio__body p strong { color: var(--fsp-ink); font-weight: 600; }
+.fsp-creds {
+  list-style: none; margin: 2rem 0 0; padding-top: 1.6rem;
+  border-top: 1px solid var(--fsp-hairline);
+  display: grid; gap: 1rem;
+}
+.fsp-creds li {
+  display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start;
+  font-size: 1rem; line-height: 1.5; color: var(--fsp-ink);
+}
+.fsp-creds .n { font-family: var(--fsp-serif); font-style: italic; color: var(--fsp-bronze); font-size: 1.1rem; }
+
+/* ============================================================
+   ABOUT — process timeline (moved from Services)
+   ============================================================ */
+.fsp-process { padding: clamp(3.8rem, 7vw, 6.5rem) 0; }
+.fsp-process__head { max-width: 620px; margin-bottom: clamp(2.6rem, 5vw, 4rem); }
+.fsp-process__head h2 {
+  font-family: var(--fsp-serif); font-weight: 400;
+  font-size: clamp(2rem, 3.8vw, 3.2rem); line-height: 1.04;
+  letter-spacing: -0.02em; color: var(--fsp-ink); margin: 1rem 0 0.9rem; text-wrap: balance;
+}
+.fsp-process__head h2 em { font-style: italic; color: var(--fsp-bronze); }
+.fsp-process__head p { color: var(--fsp-ink-soft); font-size: 1.08rem; line-height: 1.6; max-width: 52ch; }
+.fsp-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.4rem, 2.5vw, 2.4rem);
+  counter-reset: step;
+}
+.fsp-step { position: relative; padding-top: 2.6rem; }
+.fsp-step::before {
+  content: ""; position: absolute; top: 1.05rem; left: 0; right: -1.6rem;
+  height: 1px; background: var(--fsp-hairline);
+}
+.fsp-step:last-child::before { right: 0; }
+.fsp-step__dot {
+  position: absolute; top: 0; left: 0;
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  background: var(--fsp-paper); border: 1px solid var(--fsp-bronze);
+  display: grid; place-items: center;
+}
+.fsp-step__dot svg { width: 1.05rem; height: 1.05rem; stroke: var(--fsp-bronze); stroke-width: 1.7; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.fsp-step__n { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--fsp-bronze); font-weight: 700; margin-bottom: 0.5rem; }
+.fsp-step h3 { font-family: var(--fsp-serif); font-weight: 500; font-size: 1.4rem; line-height: 1.1; color: var(--fsp-ink); margin-bottom: 0.6rem; letter-spacing: -0.01em; }
+.fsp-step p { font-size: 0.98rem; line-height: 1.6; color: var(--fsp-ink-soft); text-wrap: pretty; }
+
+/* ============================================================
+   ABOUT — values grid
+   ============================================================ */
+.fsp-values { background: var(--fsp-charcoal); color: #e7ebef; position: relative; overflow: hidden; }
+.fsp-values::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: var(--fsp-grain); background-size: 170px; opacity: 0.06; mix-blend-mode: screen; pointer-events: none;
+}
+.fsp-values__inner { position: relative; z-index: 1; padding: clamp(3.8rem, 7vw, 6.5rem) 0; }
+.fsp-values__head { max-width: 620px; margin-bottom: clamp(2.6rem, 5vw, 3.6rem); }
+.fsp-values__head h2 {
+  font-family: var(--fsp-serif); font-weight: 400;
+  font-size: clamp(2rem, 3.8vw, 3.2rem); line-height: 1.04;
+  letter-spacing: -0.02em; color: #fff; margin: 1rem 0 0; text-wrap: balance;
+}
+.fsp-values__head h2 em { font-style: italic; color: var(--fsp-bronze-soft); }
+.fsp-vgrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+.fsp-value { background: var(--fsp-charcoal); padding: clamp(1.8rem, 3vw, 2.6rem); }
+.fsp-value__n { font-family: var(--fsp-serif); font-style: italic; font-size: 1.15rem; color: var(--fsp-bronze-soft); margin-bottom: 1rem; }
+.fsp-value h3 { font-family: var(--fsp-serif); font-weight: 500; font-size: 1.5rem; line-height: 1.1; color: #fff; margin-bottom: 0.7rem; letter-spacing: -0.01em; }
+.fsp-value p { font-size: 1rem; line-height: 1.65; color: #9aa6b1; text-wrap: pretty; }
+
+/* ============================================================
+   Section header helper (centered)
+   ============================================================ */
+.fsp-sec-head { max-width: 640px; margin: 0 auto clamp(2.6rem, 5vw, 3.6rem); text-align: center; }
+.fsp-sec-head .fsp-eyebrow { justify-content: center; }
+.fsp-sec-head h2 {
+  font-family: var(--fsp-serif); font-weight: 400;
+  font-size: clamp(2rem, 3.8vw, 3.2rem); line-height: 1.05;
+  letter-spacing: -0.02em; color: var(--fsp-ink); margin: 1rem 0 0; text-wrap: balance;
+}
+.fsp-sec-head h2 em { font-style: italic; color: var(--fsp-bronze); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 920px) {
+  .fsp-intro__grid { grid-template-columns: 1fr; gap: 1.6rem; align-items: start; }
+  .fsp-srow { grid-template-columns: 1fr; gap: 1.6rem; }
+  .fsp-srow__label { position: static; }
+  .fsp-srow__mark { width: 60px; height: 60px; }
+  .fsp-srow__mark svg { width: 30px; height: 30px; }
+  .fsp-band__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .fsp-story__grid { grid-template-columns: 1fr; gap: 2rem; }
+  .fsp-story__media { order: -1; }
+  /* Fill the rounded frame on a shorter crop, anchored low so the stones stay in view */
+  .fsp-story__media .fsp-figure--tall { aspect-ratio: 1 / 1; }
+  .fsp-story__media .fsp-figure--tall img { object-fit: cover; object-position: center bottom; }
+  .fsp-bio__grid { grid-template-columns: 1fr; gap: 2rem; }
+  /* Portrait runs the full width of the viewport as a landscape crop */
+  .fsp-bio__photo { position: static; max-width: none; width: 100%; }
+  .fsp-bio__photo .fsp-figure--tall { aspect-ratio: 4 / 3; }
+  .fsp-bio__photo .fsp-figure--tall img { object-position: center 12%; }
+  .fsp-steps { grid-template-columns: 1fr 1fr; gap: 2.4rem 1.6rem; }
+  .fsp-step::before { display: none; }
+  .fsp-vgrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .fsp-feats { grid-template-columns: 1fr; }
+  .fsp-stats { grid-template-columns: 1fr; }
+  .fsp-steps { grid-template-columns: 1fr; }
+  .fsp-req { width: 100%; justify-content: center; }
+}

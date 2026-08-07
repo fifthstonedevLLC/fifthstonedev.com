@@ -4310,15 +4310,13 @@ html {
   .masthead .nav.active {
     transform: translateX(0);
   }
-  .masthead .nav a {
+  .masthead .nav a:not(.nav-cta) {
     font-size: 1.1rem;
     display: block;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(28, 37, 48, 0.08);
   }
-  .masthead .nav a.nav-cta {
-    border-bottom: none;
-  }
+  /* CTA keeps its own full border — no divider override */
   .masthead .bar {
     height: calc(86px + env(safe-area-inset-top, 0));
   }
