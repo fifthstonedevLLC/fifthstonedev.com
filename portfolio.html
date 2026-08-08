@@ -126,8 +126,8 @@
     </noscript>
 
     <!-- Base site styles (handles cookie banner, utilities shared across pages) -->
-    <link rel="preload" href="styles.css?v=20260806a" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link rel="stylesheet" href="styles.css?v=20260806a" /></noscript>
+    <link rel="preload" href="styles.css?v=20260807a" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260807a" /></noscript>
 
     <!-- Portfolio redesign styles (loads after styles.css; wins on specificity for portfolio elements) -->
     <link rel="stylesheet" href="portfolio.css?v=20260806a" />
@@ -462,7 +462,11 @@
         </div>
         <div class="footer-bottom">
           <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
-          <p><a href="privacy-policy">Privacy Policy</a></p>
+          <p class="footer-legal">
+            <a href="privacy-policy">Privacy Policy</a>
+            <span class="footer-legal-sep" aria-hidden="true">|</span>
+            <a href="terms-and-conditions">Terms &amp; Conditions</a>
+          </p>
         </div>
       </div>
     </footer>
