@@ -718,3 +718,100 @@ html.motion-off .reveal.in { animation: none !important; }
   .featured .metrics { gap: 1.5rem 2rem; }
   .foot-grid { grid-template-columns: 1fr; }
 }
+
+/* =========================================================================
+   Case-study additions — WayMaker Ink (September 2026)
+   Two featured entries, a centered reader modal, and inline reader figures.
+   Appended last so it keeps the cascade position the inline block had.
+   ========================================================================= */
+
+/* Two featured entries now stack in the same .work block; the sheet only
+   ever expected one, so give the second some air. */
+.work .entry.featured + .entry.featured { margin-top: clamp(4rem, 9vw, 7.5rem); }
+
+/* Give the offset tile the same display numeral the featured entries get,
+   so the run 01–06 reads as one sequence instead of two treatments. */
+.tile .entry-index { left: 0; z-index: 1; }
+
+/* A featured entry with no stat tiles loses the rule that normally closes
+   the column, so hand it to the footer row instead. */
+.featured .summary + .footerline {
+  margin-top: 1.9rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--hairline);
+}
+
+/* -------------------------------------------------------------------------
+   Case reader: centered modal instead of the right-hand slide-in drawer.
+   Markup is unchanged — this only re-lays-out .reader / .scrim / .panel.
+   ------------------------------------------------------------------------- */
+.reader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 5vh, 3rem) clamp(1rem, 4vw, 2rem);
+}
+/* The scrim was a grid cell; as a modal backdrop it covers the whole field.
+   A centered card floats on the page rather than anchoring to an edge, so
+   it needs a heavier scrim than the drawer did to read as separate. */
+.reader .scrim {
+  position: absolute;
+  inset: 0;
+}
+.reader.open .scrim {
+  background: rgba(20, 27, 35, 0.7);
+  backdrop-filter: blur(4px);
+}
+.reader .panel {
+  position: relative;
+  z-index: 1;
+  width: min(760px, 100%);
+  height: auto;
+  max-height: 100%;
+  border-radius: 10px;
+  box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.55);
+  /* Rise and settle, rather than slide in from the edge. */
+  transform: translateY(20px) scale(0.985);
+  opacity: 0;
+  transition: transform 0.45s var(--ease), opacity 0.3s var(--ease);
+}
+.reader.open .panel {
+  transform: none;
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reader .panel { transition: opacity 0.2s linear; transform: none; }
+}
+/* Near-fullscreen on a phone, where a floating card would just waste edges. */
+@media (max-width: 768px) {
+  .reader { padding: 0; }
+  .reader .panel { max-height: 100%; border-radius: 0; }
+}
+
+/* Inline figure inside a reader section — supports a case study that needs
+   to show more than one screen. */
+.reader .r-figure {
+  margin: 1.6rem 0 0;
+  padding: 0;
+}
+.reader .r-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--hairline);
+  background: var(--paper-soft);
+}
+/* A tall capture (a full form, a long email) is allowed to scroll in place
+   rather than shrink to illegibility. */
+.reader .r-figure.tall img {
+  max-height: 620px;
+  object-fit: cover;
+  object-position: top center;
+}
+.reader .r-figure figcaption {
+  margin-top: 0.7rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}

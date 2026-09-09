@@ -11,7 +11,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Explore our web development portfolio: AI blog platforms, nonprofit websites, government automation tools &amp; more. See real results from Fifth Stone Dev projects in Cedar Falls, Iowa."
+      content="Explore our web development portfolio: custom booking pipelines, AI blog platforms, nonprofit websites, government automation tools &amp; more. See real results from Fifth Stone Dev projects in Cedar Falls, Iowa."
     />
     <meta
       name="keywords"
@@ -77,10 +77,10 @@
         "mainEntity": {
           "@type": "ItemList",
           "itemListElement": [
-            { "@type": "CreativeWork",      "position": 1, "name": "Candeo Counseling Center",           "description": "Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.", "url": "https://candeocounseling.com/our-team", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
-            { "@type": "CreativeWork",      "position": 2, "name": "Isles of Hope International",        "description": "Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.", "url": "https://www.islesofhopeintl.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
-            { "@type": "SoftwareApplication","position": 3, "name": "Government Agency Data Processing Tool","description": "Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.", "applicationCategory": "BusinessApplication", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
-            { "@type": "SoftwareApplication","position": 4, "name": "Internal Database Querying Tool",   "description": "Enterprise-level process automation and internal tool development for a healthcare technology SaaS company.", "applicationCategory": "BusinessApplication", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "CreativeWork",      "position": 1, "name": "WayMaker Ink",                       "description": "Website build plus a custom artist portal and request queue with online deposits, digital waivers, and automated filing for a tattoo studio.", "url": "https://www.waymakerink.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "CreativeWork",      "position": 2, "name": "Candeo Counseling Center",           "description": "Comprehensive website redesign improving user engagement, navigation, and compliance for a growing counseling center.", "url": "https://candeocounseling.com/our-team", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "CreativeWork",      "position": 3, "name": "Isles of Hope International",        "description": "Custom website for Christian nonprofit supporting women globally with clear navigation, mission storytelling, and donation integration.", "url": "https://www.islesofhopeintl.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
+            { "@type": "SoftwareApplication","position": 4, "name": "Government Agency Data Processing Tool","description": "Automation tool supporting disaster recovery operations with Excel reconciliation, PDF parsing, and invoice aggregation.", "applicationCategory": "BusinessApplication", "creator": { "@id": "https://www.fifthstonedev.com/#business" } },
             { "@type": "SoftwareApplication","position": 5, "name": "AI Blog Platform",                 "description": "Full-stack web application aggregating and comparing AI-generated content from multiple models with subscription-based access.", "applicationCategory": "WebApplication", "url": "https://www.aiblogdaily.com", "creator": { "@id": "https://www.fifthstonedev.com/#business" } }
           ]
         }
@@ -130,7 +130,7 @@
     <noscript><link rel="stylesheet" href="styles.css?v=20260807a" /></noscript>
 
     <!-- Portfolio redesign styles (loads after styles.css; wins on specificity for portfolio elements) -->
-    <link rel="stylesheet" href="portfolio.css?v=20260806a" />
+    <link rel="stylesheet" href="portfolio.css?v=20260909b" />
   </head>
   <body>
 
@@ -216,9 +216,42 @@
       <!-- ================= Work — Web Development ================= -->
       <div class="work shell">
 
-        <!-- 01 — Featured: Candeo Counseling Center -->
-        <article class="entry featured filter-item" data-group="web-dev" data-project="candeo">
+        <!-- 01 — Featured: WayMaker Ink (mirrored) -->
+        <article class="entry featured mirror filter-item" data-group="web-dev" data-project="waymaker">
           <span class="entry-index reveal">01</span>
+          <div class="featured-grid">
+            <div class="media reveal">
+              <div class="frame browser">
+                <div class="chrome">
+                  <div class="dots"><i></i><i></i><i></i></div>
+                  <div class="addr">waymakerink.com</div>
+                </div>
+                <img class="shot" src="assets/WayMakerInk/waymaker_ink_home.jpg" alt="WayMaker Ink — tattoo studio home page" />
+              </div>
+            </div>
+            <div class="body reveal d1">
+              <div class="kicker">
+                <span class="cat">Web Build, Custom App &amp; Automation</span>
+                <span class="dot"></span><span>Booking pipeline</span>
+                <span class="dot"></span><span>2026</span>
+              </div>
+              <h2>From Messenger to a booking pipeline.</h2>
+              <p class="summary">A custom <strong>request queue</strong> that keeps the artist in control of the calendar, takes the deposit at booking, and files the signed waiver — without anyone touching a spreadsheet or a paper form.</p>
+              <div class="footerline">
+                <button class="read" data-open="waymaker" aria-label="Read case study — WayMaker Ink">Read the case
+                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+                </button>
+                <div class="tags">
+                  <span class="tag">Squarespace</span><span class="tag">Custom Web App</span><span class="tag">n8n</span><span class="tag">Acuity</span><span class="tag">Square</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 02 — Featured: Candeo Counseling Center -->
+        <article class="entry featured filter-item" data-group="web-dev" data-project="candeo">
+          <span class="entry-index reveal">02</span>
           <div class="featured-grid">
             <div class="media reveal">
               <div class="frame browser">
@@ -254,9 +287,10 @@
           </div>
         </article>
 
-        <!-- 02 — Isles of Hope (offset tile) -->
+        <!-- 03 — Isles of Hope (offset tile) -->
         <div class="stagger" id="stagger">
           <article class="entry tile lone filter-item" data-group="web-dev" data-project="isles">
+            <span class="entry-index reveal">03</span>
             <div class="media reveal">
               <div class="frame browser">
                 <div class="chrome">
@@ -267,7 +301,6 @@
               </div>
             </div>
             <div class="kicker reveal">
-              <span class="num">02</span><span class="dot"></span>
               <span class="cat">Web Development</span>
             </div>
             <h2 class="reveal">Four countries, one mission, told with clarity.</h2>
@@ -282,69 +315,42 @@
         </div>
       </div>
 
-      <!-- ================= Dark automation band ================= -->
-      <section class="band" id="band">
-        <div class="shell">
-          <div class="head reveal">
-            <div>
-              <span class="eyebrow">Automation &amp; Internal Tools</span>
-              <h2>The unglamorous software that gives people their week back.</h2>
-            </div>
-            <p>Not everything we build has a homepage. Some of it is a single window that quietly turns days of manual reconciliation into a same-day job.</p>
-          </div>
-          <div class="band-grid">
+      <!-- ================= Work — Process Automation ================= -->
+      <div class="work shell">
 
-            <!-- 03 — Government tool -->
-            <article class="entry tool filter-item" data-group="automation" data-project="gov">
-              <div class="media reveal">
-                <div class="frame app">
-                  <div class="chrome">
-                    <div class="titlebar"><span class="badge"></span>Disaster Recovery — Data Toolkit</div>
-                    <div class="winbtns"><span>—</span><span>▢</span><span>✕</span></div>
-                  </div>
-                  <div class="pad"><img src="assets/gov_agency_app.png" alt="Government agency data processing tool interface" /></div>
+        <!-- 04 — Featured: Government data processing tool -->
+        <article class="entry featured filter-item" data-group="automation" data-project="gov">
+          <span class="entry-index reveal">04</span>
+          <div class="featured-grid">
+            <div class="media reveal">
+              <div class="frame app">
+                <div class="chrome">
+                  <div class="titlebar"><span class="badge"></span>Disaster Recovery — Data Toolkit</div>
+                  <div class="winbtns"><span>—</span><span>▢</span><span>✕</span></div>
                 </div>
+                <div class="pad"><img src="assets/gov_agency_app.png" alt="Government agency data processing tool interface" /></div>
               </div>
-              <div class="kicker reveal">
-                <span>03</span><span class="dot"></span><span class="cat">Process Automation</span>
+            </div>
+            <div class="body reveal d1">
+              <div class="kicker">
+                <span class="cat">Process Automation</span>
+                <span class="dot"></span><span>Disaster recovery</span>
+                <span class="dot"></span><span>Python</span>
               </div>
-              <h3 class="reveal">Weeks of disaster-recovery reconciliation, done same-day.</h3>
-              <p class="summary reveal d1">A single Windows tool that reconciles Excel load tickets, parses unstructured PDFs and aggregates invoices — replacing the manual cross-checking field analysts used to do by hand.</p>
-              <div class="footerline reveal d1">
+              <h2>Weeks of disaster-recovery reconciliation, done same-day.</h2>
+              <p class="summary">A single Windows tool that reconciles Excel load tickets, parses unstructured PDFs and aggregates invoices — replacing the manual cross-checking field analysts used to do by hand.</p>
+              <div class="footerline">
                 <button class="read" data-open="gov" aria-label="Read case study — Government Data Processing Tool">Read the case
                   <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
                 </button>
-                <div class="tags"><span class="tag">Python</span><span class="tag">Automation</span></div>
-              </div>
-            </article>
-
-            <!-- 04 — Inovalon tool -->
-            <article class="entry tool filter-item" data-group="automation" data-project="inovalon">
-              <div class="media reveal">
-                <div class="frame app portrait">
-                  <div class="chrome">
-                    <div class="titlebar"><span class="badge"></span>Internal Data Query Tool</div>
-                    <div class="winbtns"><span>—</span><span>▢</span><span>✕</span></div>
-                  </div>
-                  <div class="pad"><img src="assets/Inovalon_Query_Tool.png" alt="Internal database querying tool interface" /></div>
+                <div class="tags">
+                  <span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Excel</span><span class="tag">PDF Parsing</span>
                 </div>
               </div>
-              <div class="kicker reveal">
-                <span>04</span><span class="dot"></span><span class="cat">Internal Tooling</span>
-              </div>
-              <h3 class="reveal">Enterprise data, without the schema scavenger hunt.</h3>
-              <p class="summary reveal d1">A curated query app that lets pharmacy-support analysts pull vetted insights from hundreds of tables — no SQL spelunking, no tribal knowledge required to get a confident answer.</p>
-              <div class="footerline reveal d1">
-                <button class="read" data-open="inovalon" aria-label="Read case study — Internal Data Query Tool">Read the case
-                  <span class="arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-                </button>
-                <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Internal Tools</span></div>
-              </div>
-            </article>
-
+            </div>
           </div>
-        </div>
-      </section>
+        </article>
+      </div>
 
       <!-- ================= Work — Web Application ================= -->
       <div class="work shell webapp">
@@ -489,7 +495,7 @@
     <script defer src="script.js?v=20260607"></script>
 
     <!-- Portfolio redesign scripts (masthead scroll, reveals, filtering, case-study reader, mobile menu for new masthead) -->
-    <script src="portfolio.js?v=20260607"></script>
+    <script src="portfolio.js?v=20260909b"></script>
 
   </body>
 </html>

@@ -10,6 +10,42 @@
      re-typeset into the editorial reader).
      --------------------------------------------------------------------- */
   var CASES = {
+    waymaker: {
+      lbl: "Case Study — Web Build, Custom Application & Automation",
+      cat: "Web Build, Custom Application & Automation",
+      title: "WayMaker Ink",
+      link: { href: "https://www.waymakerink.com", label: "Visit waymakerink.com" },
+      media: { type: "browser", addr: "waymakerink.com", src: "assets/WayMakerInk/waymaker_ink_home.jpg", alt: "WayMaker Ink — tattoo studio home page" },
+      sections: [
+        ["Overview", "WayMaker Ink is a tattoo and piercing studio in Grundy Center, Iowa. We built the studio a seven-page site and, behind it, a <strong>custom request queue</strong> that keeps the artist in control of the calendar, takes the deposit at the point of booking, and files the signed waiver on its own — without anyone touching a spreadsheet or a paper form."],
+        ["The Challenge", "Bookings were running out of Facebook Messenger. Every consultation started as a DM, every date got negotiated by hand, and every waiver was a piece of paper that had to be scanned and filed after the client walked out.<br><br>Tattoo work isn't a haircut. Session length depends on the piece, the placement and the detail, and none of that is knowable from a dropdown. A conventional click-a-time system would have let a walk-in book a two-hour slot for a full sleeve, and the artist would find out on the day. The studio needed the convenience of online booking without giving up the judgment call that has to come first."],
+        ["The Approach", "We inverted the usual flow. <strong>Nothing reaches the calendar until the artist approves it.</strong><br><br>The client doesn't pick a time — they describe the work and send reference photos. That request lands in a queue. The artist reviews it, sets the session tier, and writes back in their own words. Only then does a booking link get issued, and only then does the calendar open up.<br><br>The result feels like online booking to the client and like a triaged worklist to the artist. The studio kept every bit of control it had over Messenger, and lost all of the admin.",
+          { src: "assets/WayMakerInk/waymaker_ink_get_started.png", alt: "WayMaker Ink appointment request hub — begin a request", caption: "Every path through the site funnels to one action: Get Started." }],
+        ["Intake: Three Ways In", "One form on a dedicated subdomain, with three paths through it — <strong>tattoo, piercing and touch-up</strong> — switched at the top and routed to the artist the client picked. The client describes the piece, the placement, the size and the style, and attaches up to five reference photos. Touch-up requests require at least one, because a faded line is something you have to see.<br><br>The form does the studio's screening for it: an age gate on tattoo work, a confirmation the client has to tick, and a closing line that says plainly this is a request and not a confirmed booking. No calendar in sight. This is the gate.",
+          { src: "assets/WayMakerInk/waymaker_ink_request_form.png", alt: "The WayMaker Ink appointment request form — a Tattoo / Piercing / Touch Up switch, client details, a description of the piece, and a reference upload", caption: "One form, three paths. The tattoo route shown: the brief, the age gate, and a five-photo reference upload — with no calendar anywhere on it.", tall: true }],
+        ["The Artist Portal", "Every request lives in a <strong>custom web application</strong> at the studio's own subdomain until it's handled. Each artist signs in and sees their own queue; the owner can switch between artists or see both at once. Live counters break the new work down by type — tattoo, piercing, touch-up — and one row of filters covers the rest: <strong>needs a response, link sent, declined</strong>. “What still needs me” is one tap rather than a scroll through an inbox, and a single search box finds any request by name, email, phone or request ID.<br><br>Open a request and the artist gets the reference photos at a size worth judging, the client's own description, the placement, the size and the style, how they heard about the studio, and whether this is their first tattoo.<br><br>The response panel is the whole job on one screen: pick the session tier from a priced list, edit the estimate the client will actually see, and write a message in your own words — or decline, which sends the note without a price or a booking link. It's built mobile-first, because the artist is standing in the shop holding a phone, not sitting at a desk.<br><br>Once answered, the request keeps its own record: what was quoted, when it went out, the message that was sent, a timestamped history, and a one-click resend of the booking link if the client loses the email.",
+          [{ src: "assets/WayMakerInk/waymaker_ink_portal_dashboard.png", alt: "The WayMaker Ink request queue — counters by request type, status filters, and a list of incoming requests", caption: "The queue. Counters by type, filters by status, and every request in one place. Test data throughout." },
+           { src: "assets/WayMakerInk/waymaker_ink_request_profile.png", alt: "A single request open in the portal, with the client's brief and references on the left and the response panel on the right", caption: "One request, one screen: the brief and the references on the left, the priced tiers and the artist's message on the right.", tall: true }]],
+        ["Where the Data Lives", "Requests, client records and reference photographs are stored in a private database hosted and maintained by Fifth Stone Dev. Photos are <strong>never publicly addressable</strong> — the portal issues short-lived links only after it has confirmed who's asking."],
+        ["Booking and Deposit", "An approved client receives a branded email carrying the artist's message, the estimated session length, the price and a booking link that opens Acuity with the session length already set. Acuity handles the calendar and takes the deposit through Square at the point of booking, and reminders at 48 and 24 hours restate the cancellation policy — so the terms are in front of the client several times before the chair is ever warmed.<br><br>That email is composed and dispatched by an <strong>n8n workflow</strong> running on Fifth Stone Dev's own infrastructure — the same layer that alerts the artist when a request arrives and writes the outcome back to the request record once the client has been answered.",
+          [{ src: "assets/WayMakerInk/waymaker_ink_request_profile_sent.png", alt: "A request marked Link sent, showing the estimate that was quoted, the message, a timestamped history and a resend option", caption: "After the response goes out: what was quoted, what was said, when it happened — and a resend if the client loses the email.", tall: true },
+           { src: "assets/WayMakerInk/waymakerink_booking_email.png", alt: "The client-facing estimate email — the artist's message, the estimated session and price, and a Book Your Appointment button", caption: "What the client receives. The artist's own words, the estimate, and one button into a calendar that already knows how long to block.", tall: true }]],
+        ["Waivers and Automatic Filing", "Separate branded waivers for tattoo and piercing are signed on screen in-shop on arrival. No printing, no clipboard, no “we'll get that from you at the end.”<br><br>What happens next is the part nobody sees. A signed waiver fires a webhook that looks up the client's folder in the studio's Google Drive, creates one if this is their first visit, renders the completed waiver to a PDF and files it. Records accumulate correctly with <strong>zero manual handling</strong>, which matters most in exactly the moment you'd least want to go looking for a paper file.",
+          { src: "assets/WayMakerInk/waymaker_ink_workflow.png", alt: "The waiver filing automation — a branching workflow from webhook through folder lookup, PDF rendering and upload to Google Drive", caption: "The filing pipeline behind a signed waiver: look up the client folder, create it if it's their first visit, render the PDF, file it." }]
+      ],
+      outcomes: [
+        ["Approval before the calendar", "no session reaches the schedule until the artist has read the request and set the tier."],
+        ["One queue instead of an inbox", "status filters and per-type counters make “what still needs me” one tap, on a phone, in the shop."],
+        ["Every quote on the record", "what was estimated, what was said and when it went out is kept against the request, with a one-click resend."],
+        ["Deposits collected at booking", "Square takes the deposit at the point of booking rather than the studio chasing it afterward."],
+        ["The policy states itself", "cancellation terms appear at booking, in the approval email, and in both the 48- and 24-hour reminders."],
+        ["Client photos stay private", "reference images are never publicly addressable; the portal issues short-lived links after checking who's asking."],
+        ["Waivers file themselves", "signed on screen, rendered to PDF, and filed into Google Drive with no manual handling."],
+        ["Messenger retired as an intake channel", "every request now arrives structured, attributed and in one place."]
+      ],
+      tags: ["Squarespace", "Custom Web App", "n8n", "Acuity Scheduling", "Square", "Google Drive"]
+    },
+
     aiblog: {
       lbl: "Case Study — Full-Stack Web Application",
       cat: "Full-Stack Web Application",
@@ -88,26 +124,6 @@
         ["Same-day cycles", "multi-week document workflows compressed to same-day completion."]
       ],
       tags: ["Python", "Data Automation", "Excel Processing", "PDF Parsing"]
-    },
-
-    inovalon: {
-      lbl: "Case Study — Internal Tooling",
-      cat: "Internal Tooling & Data Enablement",
-      title: "Internal Data Query Tool",
-      link: null,
-      media: { type: "app", title: "Internal Data Query Tool", src: "assets/Inovalon_Query_Tool.png", alt: "Internal data query tool", portrait: true },
-      sections: [
-        ["Overview", "On a specialty-pharmacy support team, an opportunity surfaced: make enterprise data more accessible so analysts could triage and resolve customer issues with less friction — and more confidence."],
-        ["The Challenge", "Analysts rely on SQL to investigate customer-reported issues, but enterprise databases hold hundreds of tables, making it hard to know where to start. The cost fell hardest on newer team members still learning the architecture, slowing triage and creating inconsistent workflows."],
-        ["The Solution", "An internal querying app built in <strong>Python</strong> with a Tkinter interface. It connects to pre-configured databases and offers a curated library of vetted SQL queries — contributed by experienced analysts and engineers. Each dataset carries a plain-language description, and the app shows only the input fields relevant to the selection, so analysts retrieve targeted data without navigating the schema."]
-      ],
-      outcomes: [
-        ["Faster triage", "less time spent identifying the right tables and queries during investigations."],
-        ["More analyst confidence", "newer members worked effectively without deep schema knowledge."],
-        ["Standardized insight", "vetted queries were centralized and reused for consistent results."],
-        ["Shared knowledge", "experienced analysts had a place to contribute high-value queries."]
-      ],
-      tags: ["Python", "Tkinter", "SQL", "Internal Tools", "Enterprise Systems"]
     }
   };
 
@@ -182,7 +198,18 @@
     }
     html += mediaHTML(c.media);
     c.sections.forEach(function (s) {
-      html += '<div class="r-section"><h3>' + s[0] + "</h3><p>" + s[1] + "</p></div>";
+      html += '<div class="r-section"><h3>' + s[0] + "</h3><p>" + s[1] + "</p>";
+      // Optional third element: one inline figure, or an array of them.
+      if (s[2]) {
+        var figs = Array.isArray(s[2]) ? s[2] : [s[2]];
+        figs.forEach(function (f) {
+          html += '<figure class="r-figure' + (f.tall ? " tall" : "") + '">' +
+            '<img src="' + f.src + '" alt="' + f.alt + '" loading="lazy" />' +
+            (f.caption ? "<figcaption>" + f.caption + "</figcaption>" : "") +
+            "</figure>";
+        });
+      }
+      html += "</div>";
     });
     html += '<div class="r-section"><h3>Measurable Outcomes</h3><ul class="r-outcomes">';
     c.outcomes.forEach(function (o) {

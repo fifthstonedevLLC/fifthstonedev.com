@@ -1,0 +1,26 @@
+# Line-ending policy.
+#
+# Every file committed to this repository uses LF — HEAD is LF end to end.
+# Windows editors had been rewriting working-tree files to CRLF, which buried
+# real changes under thousands of line-ending-only diff lines.
+#
+#   text=auto  git detects text vs binary and stores text with LF in the repo
+#   eol=lf     text files are checked out with LF regardless of core.autocrlf
+#
+# This keeps diffs honest without forcing anyone to reconfigure their editor:
+# a working-tree file saved as CRLF no longer registers as a change.
+
+* text=auto eol=lf
+
+# Binary assets — never transform these.
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.pdf   binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.eot   binary
