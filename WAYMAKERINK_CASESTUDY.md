@@ -96,12 +96,7 @@ When a request comes in, the artist gets a short notification email carrying a s
 straight to that request in the portal — the alert points to the work, and the work happens in
 one place.
 
-**4. The request database**
-Requests, client records, and reference photographs are stored in a private database hosted and
-maintained by Fifth Stone Dev. Photos are never publicly addressable — the portal issues
-short-lived links only after it has confirmed who's asking.
-
-**5. Booking and deposit**
+**4. Booking and deposit**
 An approved client receives a branded email carrying the artist's message, the estimated session
 length, the price, and a booking link that opens Acuity with the session length already set.
 Acuity handles the calendar and takes the deposit through Square at the point of booking, and
@@ -117,11 +112,11 @@ That email is composed and dispatched by an n8n workflow running on Fifth Stone 
 infrastructure — the same layer that alerts the artist when a request arrives and writes the
 outcome back to the request record once the client has been answered.
 
-**6. Digital waivers**
+**5. Digital waivers**
 Separate branded waivers for tattoo and piercing, signed on screen in-shop on arrival. No
 printing, no clipboard, no "we'll get that from you at the end."
 
-**7. Automatic filing**
+**6. Automatic filing**
 Completed waivers generate a PDF and file themselves into the studio's Google Drive, one folder
 per client. Records accumulate correctly with zero manual handling — which matters most in
 exactly the moment you'd least want to go looking for a paper file.
@@ -209,9 +204,9 @@ The same applies to the Drive folder view and any email screenshots.
 | After "The problem" | #4 Before/after booking page | Sets up the pain |
 | After "The approach" | #14 Pipeline diagram | Makes the inversion concrete |
 | **After "What we built" §3** | **#6, #7, #8+9 portal block** | **The centerpiece — give this the most space** |
-| After §5 | #9b answered request, then #12 the estimate email | The reply, and what the client gets |
-| After §5 | #11 Acuity + deposit | Client-side proof |
-| After §7 | #13 Drive filing | The unglamorous win |
+| After §4 | #9b answered request, then #12 the estimate email | The reply, and what the client gets |
+| After §4 | #11 Acuity + deposit | Client-side proof |
+| After §6 | #13 Drive filing | The unglamorous win |
 | Inline with the portal block | #10 Notification email | Shows how a request reaches the artist |
 
 ### ★ The portal — your best assets
@@ -331,6 +326,12 @@ actually booked, because Acuity's API sits behind a plan the studio isn't on. Th
 written carefully around this — it says the client *receives a booking link*, never that the
 system *tracks the booking through to confirmation*. Keep it that way if you rewrite anything.
 
+**The storage / photo-privacy copy was cut, September 2026.** An earlier version carried a
+"request database" section describing reference photos as never publicly addressable, served by
+short-lived links — and then repeated the same claim as an outcome bullet. Both were removed
+from the published case study at the client's request. Don't reintroduce either without asking:
+it was cut deliberately, not lost in an edit.
+
 **There is no archive and no undo.** An earlier draft of this document claimed a fourth
 "archived" state and a sixty-second undo after sending. Neither exists: the queue has three
 status filters (needs a response, link sent, declined) plus an all view, and the delete panel
@@ -344,12 +345,12 @@ is fine, but get it in writing — this is a public commercial page.
 
 **Three things to decide:**
 
-- **Naming the platforms — partly settled.** n8n is now named, in the stack row and once in the
-  body copy. The **database is still unnamed** ("request database", "custom web application"),
-  since you only cleared n8n. Naming it is a further credibility signal to a technical buyer;
-  leaving it generic keeps the page consistent with the client-facing docs Nic already has.
-  Either is defensible — just don't half-do it, and keep the image captions matching whichever
-  you pick.
+- **Naming the platforms — settled for now.** n8n is named, in the stack row and once in the
+  body copy. The database is not named, and as of September 2026 the published copy no longer
+  describes the storage layer at all — the "request database" section was cut (see below), so
+  the only remaining mention is the hosting line in "What's next". If you ever reinstate a
+  storage section, decide the naming question then and keep the image captions consistent with
+  whichever way you go.
 - **Never publish the n8n host.** The copy says "Fifth Stone Dev's own infrastructure" and names
   no URL. Hold that line in the captions too, and see the crop warning on shot #14 — the
   hostname is far more likely to leak through a screenshot than through prose.
