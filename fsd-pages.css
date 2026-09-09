@@ -1,5 +1,5 @@
 /* ============================================================
-   Fifth Stone Dev — About & Services editorial layer
+   Fifth Stone Dev — About, Services & Contact editorial layer
    Load AFTER styles.css and fsd-refresh.css:
      <link rel="stylesheet" href="fsd-pages.css" />
    Namespaced .fsp-* so it never collides with the base sheet,
@@ -366,6 +366,144 @@ body.fsp ::selection { background: var(--fsp-bronze); color: #fff; }
 .fsp-sec-head h2 em { font-style: italic; color: var(--fsp-bronze); }
 
 /* ============================================================
+   CONTACT — details rail + form card
+   ============================================================ */
+.fsp-contact { padding: clamp(3rem, 6vw, 5rem) 0 clamp(3.5rem, 7vw, 6rem); }
+.fsp-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: clamp(2.4rem, 5vw, 5rem);
+  align-items: start;
+}
+
+/* --- left rail --- */
+.fsp-crail h2,
+.fsp-form__head h2 {
+  font-family: var(--fsp-serif); font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.06;
+  letter-spacing: -0.02em; color: var(--fsp-ink); margin: 1rem 0 0; text-wrap: balance;
+}
+.fsp-crail h2 em,
+.fsp-form__head h2 em { font-style: italic; color: var(--fsp-bronze); }
+.fsp-crail__lead {
+  font-size: 1.06rem; line-height: 1.7; color: var(--fsp-ink-soft);
+  max-width: 42ch; margin-top: 1rem; text-wrap: pretty;
+}
+
+/* detail rows — hairline rhythm, bronze line-art marks */
+.fsp-cdetails { margin-top: clamp(2rem, 4vw, 2.8rem); border-top: 1px solid var(--fsp-hairline); }
+.fsp-cdetail {
+  display: grid; grid-template-columns: 2.1rem 1fr;
+  gap: 1.1rem; align-items: start;
+  padding: 1.35rem 0;
+  border-bottom: 1px solid var(--fsp-hairline);
+}
+.fsp-cdetail__mark {
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  border: 1px solid var(--fsp-bronze); background: var(--fsp-paper);
+  display: grid; place-items: center; flex: none;
+}
+.fsp-cdetail__mark svg {
+  width: 1.05rem; height: 1.05rem; stroke: var(--fsp-bronze);
+  stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round;
+}
+.fsp-cdetail h3 {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--fsp-ink-mute); margin-bottom: 0.4rem;
+}
+.fsp-cdetail p { font-size: 1.02rem; line-height: 1.55; color: var(--fsp-ink); }
+.fsp-cdetail a { color: var(--fsp-ink); text-decoration: none; border-bottom: 1px solid var(--fsp-bronze); transition: color 0.22s var(--fsp-ease); }
+.fsp-cdetail a:hover { color: var(--fsp-bronze); }
+
+/* quick service links */
+.fsp-qlinks { margin-top: clamp(1.8rem, 3vw, 2.4rem); }
+.fsp-qlinks h3 {
+  font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--fsp-ink-soft);
+  display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 1rem;
+}
+.fsp-qlinks h3::before { content: ""; width: 1.6rem; height: 1px; background: var(--fsp-bronze); }
+.fsp-qlink-row { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+/* Rectangular to match .fsd-btn / .btn across the rest of the site. */
+.fsp-qlink {
+  display: inline-flex; align-items: center;
+  font-size: 0.94rem; font-weight: 600; color: var(--fsp-ink); text-decoration: none;
+  padding: 0.72rem 1.2rem; border: 1px solid var(--fsp-hairline);
+  border-radius: 5px; background: var(--fsp-card);
+  transition: background 0.24s var(--fsp-ease), color 0.24s var(--fsp-ease), border-color 0.24s var(--fsp-ease), transform 0.24s var(--fsp-ease);
+}
+.fsp-qlink:hover { background: var(--fsp-bronze); border-color: var(--fsp-bronze); color: #fff; transform: translateY(-2px); }
+
+/* --- form card --- */
+.fsp-formcard {
+  background: var(--fsp-card);
+  border: 1px solid var(--fsp-hairline);
+  border-radius: 12px;
+  padding: clamp(1.6rem, 3.2vw, 2.6rem);
+  box-shadow: 0 1px 1px rgba(28,37,48,0.03), 0 30px 60px -40px rgba(28,37,48,0.4);
+}
+.fsp-form__head { margin-bottom: clamp(1.4rem, 2.6vw, 2rem); }
+.fsp-form__head p { font-size: 0.98rem; line-height: 1.6; color: var(--fsp-ink-soft); margin-top: 0.7rem; }
+
+.fsp-form .form-group { margin-bottom: 1.15rem; }
+.fsp-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.15rem; }
+.fsp-form label {
+  display: block;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--fsp-ink-mute); margin-bottom: 0.5rem;
+}
+.fsp-form input,
+.fsp-form select,
+.fsp-form textarea {
+  width: 100%;
+  font-family: inherit; font-size: 1rem; color: var(--fsp-ink);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid var(--fsp-hairline);
+  border-radius: 3px;
+  padding: 0.8rem 0.9rem;
+  transition: border-color 0.22s var(--fsp-ease), box-shadow 0.22s var(--fsp-ease), background 0.22s var(--fsp-ease);
+}
+.fsp-form textarea { resize: vertical; min-height: 8.5rem; line-height: 1.6; }
+.fsp-form input::placeholder,
+.fsp-form textarea::placeholder { color: rgba(93, 109, 126, 0.62); }
+.fsp-form input:focus,
+.fsp-form select:focus,
+.fsp-form textarea:focus {
+  outline: none;
+  background: #fff;
+  border-color: var(--fsp-bronze);
+  box-shadow: 0 0 0 3px rgba(154, 107, 52, 0.13);
+}
+/* Native select arrow, drawn to match the bronze line-art marks */
+.fsp-form select {
+  appearance: none; -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239a6b34' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.85rem center;
+  background-size: 1.05rem;
+  padding-right: 2.6rem;
+}
+/* Keep the shared .btn-submit JS hook, but let .fsd-btn own the look. */
+.fsp-form .btn-submit { width: 100%; margin-top: 0.6rem; border: none; cursor: pointer; }
+
+/* ============================================================
+   CONTACT — FAQ
+   ============================================================ */
+.fsp-faq { background: var(--fsp-paper-2); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+.fsp-faq__grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0 clamp(2.4rem, 5vw, 4.5rem);
+  border-top: 1px solid var(--fsp-hairline);
+}
+.fsp-faq__item { padding: clamp(1.6rem, 3vw, 2.2rem) 0; border-bottom: 1px solid var(--fsp-hairline); }
+.fsp-faq__item h3 {
+  font-family: var(--fsp-serif); font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.5rem); line-height: 1.15;
+  color: var(--fsp-ink); letter-spacing: -0.01em; margin-bottom: 0.7rem;
+}
+.fsp-faq__item p { font-size: 1rem; line-height: 1.68; color: var(--fsp-ink-soft); text-wrap: pretty; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 920px) {
@@ -388,10 +526,16 @@ body.fsp ::selection { background: var(--fsp-bronze); color: #fff; }
   .fsp-steps { grid-template-columns: 1fr 1fr; gap: 2.4rem 1.6rem; }
   .fsp-step::before { display: none; }
   .fsp-vgrid { grid-template-columns: 1fr; }
+  /* Form first on narrow screens — it is what the page is for. */
+  .fsp-contact__grid { grid-template-columns: 1fr; gap: 2.6rem; }
+  .fsp-contact__form { order: -1; }
+  .fsp-faq__grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .fsp-feats { grid-template-columns: 1fr; }
   .fsp-stats { grid-template-columns: 1fr; }
   .fsp-steps { grid-template-columns: 1fr; }
   .fsp-req { width: 100%; justify-content: center; }
+  .fsp-form .form-row { grid-template-columns: 1fr; gap: 0; }
+  .fsp-formcard { padding: 1.4rem 1.2rem; border-radius: 8px; }
 }

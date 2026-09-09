@@ -511,23 +511,46 @@ img { display: block; max-width: 100%; }
 /* =========================================================================
    CTA + footer
    ========================================================================= */
+/* Deep navy ink field with a bronze glow — mirrors .fsd-finale on the home,
+   about and services pages so all five pages close the same way. Values are
+   restated here rather than pulled in from fsd-refresh.css, which the
+   portfolio does not load. */
 .cta {
+  position: relative;
+  overflow: hidden;
   padding: clamp(5rem, 10vw, 9rem) 0;
   text-align: center;
+  color: var(--paper);
+  background:
+    radial-gradient(90% 80% at 50% 0%, rgba(184, 149, 106, 0.16), transparent 62%),
+    linear-gradient(167deg, #0d141c 0%, #141f2b 60%, #1a2734 100%);
 }
-.cta .eyebrow { justify-content: center; }
+/* Dotted field, masked to a soft centre — same texture as the home finale. */
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(226, 233, 242, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+  -webkit-mask-image: radial-gradient(80% 80% at 50% 30%, #000, transparent 78%);
+  mask-image: radial-gradient(80% 80% at 50% 30%, #000, transparent 78%);
+  pointer-events: none;
+}
+.cta > .shell { position: relative; z-index: 1; }
+.cta .eyebrow { justify-content: center; color: var(--accent-bronze); }
 .cta h2 {
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.0;
   letter-spacing: -0.02em;
+  color: #fff;
   margin: 1.2rem auto 0;
   max-width: 16ch;
   text-wrap: balance;
 }
-.cta h2 em { font-style: italic; color: var(--accent); }
-.cta p { color: var(--ink-soft); font-size: 1.15rem; margin: 1.3rem auto 2.3rem; max-width: 40ch; }
+.cta h2 em { font-style: italic; color: var(--accent-bronze); }
+.cta p { color: rgba(226, 233, 242, 0.76); font-size: 1.15rem; margin: 1.3rem auto 2.3rem; max-width: 40ch; }
 .cta-row { display: flex; gap: 0.9rem; justify-content: center; flex-wrap: wrap; }
 .btn {
   font-family: var(--sans);
@@ -543,6 +566,15 @@ img { display: block; max-width: 100%; }
 .btn-primary:hover { background: transparent; color: var(--ink); }
 .btn-ghost { background: transparent; color: var(--ink); }
 .btn-ghost:hover { background: var(--ink); color: var(--ground); }
+/* Buttons sit on navy here, so the ink/paper roles invert. */
+.cta .btn-primary {
+  background: var(--accent-bronze);
+  border-color: var(--accent-bronze);
+  color: #17222e;
+}
+.cta .btn-primary:hover { background: var(--paper); border-color: var(--paper); color: #17222e; }
+.cta .btn-ghost { color: var(--paper); border-color: rgba(226, 233, 242, 0.4); }
+.cta .btn-ghost:hover { background: var(--paper); border-color: var(--paper); color: #17222e; }
 
 footer {
   background: var(--stone-charcoal);
