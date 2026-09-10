@@ -410,8 +410,13 @@ img { display: block; max-width: 100%; }
 }
 .featured .metric .ml { font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-top: 0.5rem; }
 .featured .footerline {
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 1rem; 
+  flex-wrap: wrap;
   margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Mirrored feature — media on the left, body on the right (visual variety) */
