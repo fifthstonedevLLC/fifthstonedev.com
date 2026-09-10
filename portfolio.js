@@ -233,7 +233,19 @@
     reader.setAttribute("aria-hidden", "true");
     document.body.classList.remove("reader-open");
     if (lastFocus && lastFocus.focus) lastFocus.focus();
+    // Drop a deep-link hash so a refresh doesn't reopen the case.
+    if (CASES[location.hash.slice(1)]) {
+      history.replaceState(null, "", location.pathname + location.search);
+    }
   }
+
+  // Deep links from the home page (portfolio#waymaker) open that case directly.
+  function openFromHash() {
+    var key = location.hash.slice(1);
+    if (CASES[key]) openReader(key);
+  }
+  openFromHash();
+  window.addEventListener("hashchange", openFromHash);
 
   document.querySelectorAll("[data-open]").forEach(function (btn) {
     btn.addEventListener("click", function () { openReader(btn.dataset.open); });
