@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Concept — Fifth Stone Dev Homepage Redesign</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="concept-banner">
+      Design concept preview — not the live site. Layout inspired by client
+      reference video, restyled with Fifth Stone Dev brand tokens.
+    </div>
+
+    <!-- Nav -->
+    <header class="mk-nav">
+      <div class="mk-nav__bar">
+        <a class="mk-nav__logo" href="#top" aria-label="Fifth Stone Dev — home">
+          <img
+            class="mk-logo-invert"
+            src="../../assets/horizontal_logo_webp.webp"
+            alt="Fifth Stone Dev"
+          />
+        </a>
+        <nav class="mk-nav__links" id="mk-nav-links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#work">Portfolio</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </nav>
+        <a class="mk-nav__cta" href="#contact">
+          Start a project <span aria-hidden="true">→</span>
+        </a>
+        <button
+          class="mk-nav__toggle"
+          id="mk-nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mk-nav-links"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="mk-hero">
+        <div class="shell">
+          <div class="mk-marquee" aria-hidden="true">
+            <div class="mk-marquee__track">
+              <span class="mk-marquee__item">Start a project →</span>
+              <span class="mk-marquee__item">Web development</span>
+              <span class="mk-marquee__item">Process automation</span>
+              <span class="mk-marquee__item">AI consulting</span>
+              <span class="mk-marquee__item">Start a project →</span>
+              <span class="mk-marquee__item">Web development</span>
+              <span class="mk-marquee__item">Process automation</span>
+              <span class="mk-marquee__item">AI consulting</span>
+              <span class="mk-marquee__item">Start a project →</span>
+              <span class="mk-marquee__item">Web development</span>
+              <span class="mk-marquee__item">Process automation</span>
+              <span class="mk-marquee__item">AI consulting</span>
+            </div>
+          </div>
+
+          <div class="mk-hero__grid">
+            <div class="mk-hero__copy panel">
+              <div class="mk-proof">
+                <div class="mk-proof__avatars" aria-hidden="true">
+                  <span>WI</span>
+                  <span>CC</span>
+                  <span>GA</span>
+                </div>
+                <p class="mk-proof__text">
+                  Trusted by businesses<br />across Iowa
+                </p>
+              </div>
+
+              <span class="mk-eyebrow">Cedar Falls &amp; Waterloo, Iowa</span>
+              <h1 class="mk-h1">Build with<br /><em>purpose.</em></h1>
+              <p>
+                Custom web development, process automation, and practical
+                <span class="mk-highlight">AI integration</span> for
+                businesses that want tools built around how they actually
+                work — not the other way around.
+              </p>
+
+              <div class="mk-cta-row">
+                <a class="mk-btn mk-btn--primary" href="#contact"
+                  >Start your project <span class="arrow" aria-hidden="true">→</span></a
+                >
+                <a class="mk-btn mk-btn--ghost" href="#services">Our services</a>
+              </div>
+
+              <div class="mk-stats">
+                <div class="mk-stat">
+                  <div class="mk-stat__num">90%+</div>
+                  <div class="mk-stat__label">
+                    Time savings clients have seen on manual processes
+                  </div>
+                </div>
+                <div class="mk-stat">
+                  <div class="mk-stat__num">5+</div>
+                  <div class="mk-stat__label">
+                    Years building tools that hold up
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mk-hero__visual" aria-hidden="true">
+              <div class="mk-ring"></div>
+              <svg
+                class="mk-stone"
+                viewBox="0 0 400 400"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="stoneFace1" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#e3c184" />
+                    <stop offset="100%" stop-color="#b8956a" />
+                  </linearGradient>
+                  <linearGradient id="stoneFace2" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#cd7f32" />
+                    <stop offset="100%" stop-color="#8a5a2e" />
+                  </linearGradient>
+                  <linearGradient id="stoneFace3" x1="0" y1="1" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#7d9d8e" />
+                    <stop offset="100%" stop-color="#4c6459" />
+                  </linearGradient>
+                </defs>
+                <polygon points="200,20 320,110 260,220 140,220 80,110" fill="url(#stoneFace1)" />
+                <polygon points="140,220 260,220 320,110 340,260 200,380" fill="url(#stoneFace2)" />
+                <polygon points="140,220 200,380 60,260 80,110" fill="url(#stoneFace3)" />
+                <polygon points="200,20 260,220 200,380 140,220" fill="#1a1410" opacity="0.18" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="mk-flow" id="process">
+        <div class="shell mk-flow__inner">
+          <div class="mk-flow__node">
+            <span class="mk-flow__tag">01</span>
+            <h4>Discovery</h4>
+            <p>We listen first.</p>
+          </div>
+          <div class="mk-flow__node">
+            <span class="mk-flow__tag">02</span>
+            <h4>Strategy</h4>
+            <p>Plan accordingly.</p>
+          </div>
+          <div class="mk-flow__node">
+            <span class="mk-flow__tag">03</span>
+            <h4>Build</h4>
+            <p>Execute confidently.</p>
+          </div>
+          <div class="mk-flow__node">
+            <span class="mk-flow__tag">04</span>
+            <h4>Launch</h4>
+            <p>Deliver results.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section class="mk-section" id="services">
+        <div class="shell">
+          <div class="mk-section__head">
+            <h2 class="mk-h2">Services built <em>for impact.</em></h2>
+            <p>
+              Whether you're launching something new or optimizing what you
+              already run, we scope the right solution for your budget and
+              timeline — no over-engineering, no unnecessary complexity.
+            </p>
+          </div>
+
+          <div class="mk-services__grid">
+            <div class="mk-svc-card">
+              <span class="mk-svc-card__n">01</span>
+              <h3>Websites &amp; web applications</h3>
+              <p>
+                Clean code, fast load times, and a structure built to scale.
+              </p>
+              <p>
+                From a polished marketing site to a full custom web
+                application — built around how your business actually runs.
+              </p>
+              <a class="mk-svc-more" href="#" aria-label="Explore web development"
+                >→</a
+              >
+            </div>
+
+            <div class="mk-svc-card">
+              <span class="mk-svc-card__n">02</span>
+              <h3>Automation &amp; internal tools</h3>
+              <p>
+                We map your workflows and build targeted solutions. Clients
+                have seen time savings exceeding 90% on previously manual
+                processes.
+              </p>
+              <a class="mk-svc-more" href="#" aria-label="Explore automation">→</a>
+            </div>
+
+            <div class="mk-svc-card mk-svc-card--accent">
+              <span class="mk-svc-card__n">03</span>
+              <h3>Strategy &amp; second opinions</h3>
+              <p>
+                An outside perspective on your digital presence — scoped by
+                the hour or project, with no long-term retainer required.
+              </p>
+              <a class="mk-svc-more" href="#" aria-label="Explore consulting">→</a>
+            </div>
+
+            <div class="mk-cloud" aria-hidden="true">
+              <span class="mk-cloud__tag" style="--r: -4deg">Automation</span>
+              <span class="mk-cloud__tag" style="--r: 3deg">Custom-Built</span>
+              <span class="mk-cloud__tag" style="--r: -2deg">Practical AI</span>
+              <span class="mk-cloud__tag--dot"></span>
+              <span class="mk-cloud__tag" style="--r: 5deg">Cedar Falls</span>
+              <span class="mk-cloud__tag" style="--r: -3deg">No Overengineering</span>
+              <span class="mk-cloud__tag" style="--r: 2deg">Honest Scoping</span>
+              <span class="mk-cloud__tag--dot"></span>
+              <span class="mk-cloud__tag" style="--r: -5deg">Workflow Mapping</span>
+              <span class="mk-cloud__tag" style="--r: 4deg">Fast Turnaround</span>
+              <span class="mk-cloud__tag" style="--r: -1deg">Iowa-Based</span>
+            </div>
+          </div>
+
+          <div class="mk-section__foot">
+            <a class="mk-btn mk-btn--ghost" href="#">View all services</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="mk-section mk-section--panel" id="work">
+        <div class="shell">
+          <div class="mk-section__head">
+            <h2 class="mk-h2">Projects <em>we've built.</em></h2>
+            <p>
+              A selection of solutions we've crafted for businesses,
+              organizations, and mission-driven ventures.
+            </p>
+          </div>
+
+          <div class="mk-work__grid">
+            <a class="mk-work-card" href="#">
+              <div class="mk-work-card__img">
+                <img
+                  src="../../assets/WayMakerInk/waymaker_ink_home.jpg"
+                  alt="WayMaker Ink — tattoo studio home page"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mk-work-card__body">
+                <span class="mk-work-card__n">01</span>
+                <span class="mk-work-card__cat"
+                  >Web Design &amp; Process Automation</span
+                >
+                <h3>WayMaker Ink</h3>
+                <p>
+                  Custom website design and development for a modern tattoo
+                  studio brand experience, including booking request pipeline
+                  automation.
+                </p>
+                <span class="mk-work-card__more"
+                  >View project <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+
+            <a class="mk-work-card" href="#">
+              <div class="mk-work-card__img">
+                <img
+                  src="../../assets/Candeo_Our_Team_Page.png"
+                  alt="Candeo Counseling Center website redesign"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mk-work-card__body">
+                <span class="mk-work-card__n">02</span>
+                <span class="mk-work-card__cat">Web Development</span>
+                <h3>Candeo Counseling Center</h3>
+                <p>
+                  Comprehensive website redesign improving user engagement
+                  and compliance.
+                </p>
+                <span class="mk-work-card__more"
+                  >View project <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+
+            <a class="mk-work-card" href="#">
+              <div class="mk-work-card__img">
+                <img
+                  src="../../assets/gov_agency_app.png"
+                  alt="Government agency data processing automation tool"
+                  loading="lazy"
+                />
+              </div>
+              <div class="mk-work-card__body">
+                <span class="mk-work-card__n">03</span>
+                <span class="mk-work-card__cat">Process Automation</span>
+                <h3>Government Data Processing</h3>
+                <p>
+                  Automation tool built for a government disaster recovery
+                  team, saving hundreds of hours of manual data entry.
+                </p>
+                <span class="mk-work-card__more"
+                  >View project <span aria-hidden="true">→</span></span
+                >
+              </div>
+            </a>
+          </div>
+
+          <div class="mk-section__foot">
+            <a class="mk-btn mk-btn--ghost" href="#">View full portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Finale CTA -->
+      <section class="mk-finale" id="contact">
+        <div class="shell">
+          <div class="mk-finale__panel panel">
+            <h2 class="mk-h2">Ready to <em>start your project?</em></h2>
+            <p>
+              Tell us what you're working on — we'll be honest about whether
+              we're the right fit, and the first conversation is always free.
+            </p>
+            <div class="mk-cta-row">
+              <a class="mk-btn mk-btn--primary" href="#"
+                >Get in touch <span class="arrow" aria-hidden="true">→</span></a
+              >
+              <a class="mk-btn mk-btn--ghost" href="#" id="about"
+                >Learn more about us</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mk-footer">
+      <div class="shell">
+        <div class="mk-footer__grid">
+          <div class="mk-footer__brand">
+            <img
+              class="mk-logo-invert"
+              src="../../assets/horizontal_logo_webp.webp"
+              alt="Fifth Stone Dev"
+            />
+            <p>Built with purpose.</p>
+          </div>
+          <div class="mk-footer__links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#work">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="mk-footer__contact">
+            <h4>Contact</h4>
+            <p>Cedar Falls, Iowa</p>
+            <p><a href="tel:+16418497311">(641) 849-7311</a></p>
+          </div>
+        </div>
+        <div class="mk-footer__bottom">
+          <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
+          <p>
+            <a href="#">Privacy Policy</a> &nbsp;|&nbsp;
+            <a href="#">Terms &amp; Conditions</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById("mk-nav-toggle");
+      const navLinks = document.getElementById("mk-nav-links");
+      navToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.textContent = open ? "Close" : "Menu";
+      });
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.textContent = "Menu";
+        });
+      });
+    </script>
+  </body>
+</html>

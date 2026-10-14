@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Concept — Fifth Stone Dev "Devtools" Homepage Redesign</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Reusable gem-mark sprite -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="gem" viewBox="0 0 48 48">
+        <path
+          class="dt-gem"
+          d="M14 10 L34 10 L42 20 L24 44 L6 20 Z M14 10 L24 20 L34 10 M6 20 L24 20 L42 20 M24 20 L24 44"
+        />
+      </symbol>
+      <symbol id="ico-web" viewBox="0 0 24 24">
+        <path class="dt-gem" d="M8.5 8 4 12l4.5 4M15.5 8 20 12l-4.5 4M14 5l-4 14" />
+      </symbol>
+      <symbol id="ico-automation" viewBox="0 0 24 24">
+        <path
+          class="dt-gem"
+          d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"
+        />
+        <circle class="dt-gem" cx="12" cy="12" r="4.5" />
+      </symbol>
+      <symbol id="ico-consulting" viewBox="0 0 24 24">
+        <path
+          class="dt-gem"
+          d="M4 5h16v10.5H9.5L5 19v-3.5H4Z"
+        />
+        <path class="dt-gem" d="M8 9.5h8M8 12.5h5" />
+      </symbol>
+      <symbol id="ico-discovery" viewBox="0 0 24 24">
+        <circle class="dt-gem" cx="11" cy="11" r="6.5" />
+        <line class="dt-gem" x1="16" y1="16" x2="20.5" y2="20.5" />
+      </symbol>
+      <symbol id="ico-strategy" viewBox="0 0 24 24">
+        <path class="dt-gem" d="M4 20 L9 5 L13 14 L16 8 L20 20 Z" />
+        <line class="dt-gem" x1="4" y1="20" x2="20" y2="20" />
+      </symbol>
+      <symbol id="ico-build" viewBox="0 0 24 24">
+        <polyline class="dt-gem" points="8.5,8 4,12 8.5,16" />
+        <polyline class="dt-gem" points="15.5,8 20,12 15.5,16" />
+      </symbol>
+      <symbol id="ico-launch" viewBox="0 0 24 24">
+        <path
+          class="dt-gem"
+          d="M12 3 C15.5 6 17 9.5 17 13 L7 13 C7 9.5 8.5 6 12 3 Z"
+        />
+        <circle class="dt-gem" cx="12" cy="9.5" r="1.6" />
+        <path class="dt-gem" d="M7 13 L4.5 16 L8.5 16" />
+        <path class="dt-gem" d="M17 13 L19.5 16 L15.5 16" />
+      </symbol>
+    </svg>
+
+    <!-- Nav -->
+    <header class="dt-nav">
+      <div class="dt-nav__bar">
+        <a class="dt-nav__logo" href="#top" aria-label="Fifth Stone Dev — home">
+          <img
+            src="../../assets/fifth-stone-logo-reversed.png"
+            alt="Fifth Stone Dev"
+          />
+        </a>
+        <nav class="dt-nav__links" id="dt-nav-links" aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#work">Portfolio</a>
+          <a href="#process">Process</a>
+          <a href="../../about">About</a>
+        </nav>
+        <a class="dt-nav__cta" href="#contact">
+          Start a project <span aria-hidden="true">→</span>
+        </a>
+        <button
+          class="dt-nav__toggle"
+          id="dt-nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="dt-nav-links"
+        >
+          Menu
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="dt-hero" id="hero">
+        <div class="dt-grid" aria-hidden="true"></div>
+        <span class="dt-watermark" aria-hidden="true">Fifth Stone Dev · Cedar Falls, Iowa</span>
+        <div class="shell">
+          <div class="dt-hero__inner">
+            <div class="dt-hero__copy dt-reveal">
+              <span class="dt-eyebrow">
+                <span class="dt-eyebrow__dot" aria-hidden="true"></span>
+                Cedar Falls &amp; Waterloo, Iowa
+              </span>
+              <h1>Web, automation &amp; AI — <em>built with purpose.</em></h1>
+              <p class="lede">
+                We design custom websites, automate the busywork out of your
+                operations, and help you find where AI actually fits — for
+                businesses across Iowa who want software that just works.
+              </p>
+              <div class="dt-cta-row">
+                <a href="#contact" class="dt-btn dt-btn--primary">
+                  Start your project <span class="arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="#services" class="dt-btn dt-btn--ghost">Our services</a>
+              </div>
+              <div class="dt-proof">
+                <span>Free first consultation</span>
+                <span class="dt-proof__rule" aria-hidden="true"></span>
+                <span>No long-term retainers</span>
+                <span class="dt-proof__rule" aria-hidden="true"></span>
+                <span>Iowa-based</span>
+              </div>
+            </div>
+
+            <div class="dt-hero__visual dt-reveal">
+              <div class="dt-hero__panel">
+                <div class="dt-hatch" aria-hidden="true"></div>
+                <span class="dt-hero__tab">// fifth_stone.svg</span>
+                <div class="dt-gem-glow" aria-hidden="true"></div>
+                <div class="dt-hero__ring" aria-hidden="true"></div>
+                <svg class="dt-hero__gem" viewBox="0 0 48 48" aria-hidden="true">
+                  <use href="#gem" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="dt-pipeline dt-reveal"
+            role="group"
+            aria-label="Our process, step by step: Discovery, then Strategy, then Build, then Launch and support"
+          >
+            <a class="dt-pipeline__node" href="#contact">
+              <svg class="dt-pipeline__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--dt-bronze-soft)"><use href="#ico-discovery" /></svg>
+              <span class="dt-pipeline__tag">STEP_01</span>
+              <span class="dt-pipeline__label">Discovery</span>
+              <span class="dt-pipeline__note">We listen first</span>
+            </a>
+            <a class="dt-pipeline__node" href="../../about">
+              <svg class="dt-pipeline__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--dt-bronze-soft)"><use href="#ico-strategy" /></svg>
+              <span class="dt-pipeline__tag">STEP_02</span>
+              <span class="dt-pipeline__label">Strategy</span>
+              <span class="dt-pipeline__note">Plan accordingly</span>
+            </a>
+            <a class="dt-pipeline__node" href="#services">
+              <svg class="dt-pipeline__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--dt-bronze-soft)"><use href="#ico-build" /></svg>
+              <span class="dt-pipeline__tag">STEP_03</span>
+              <span class="dt-pipeline__label">Build</span>
+              <span class="dt-pipeline__note">Execute confidently</span>
+            </a>
+            <a class="dt-pipeline__node" href="#work">
+              <svg class="dt-pipeline__icon" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" style="color: var(--dt-bronze-soft)"><use href="#ico-launch" /></svg>
+              <span class="dt-pipeline__tag">STEP_04</span>
+              <span class="dt-pipeline__label">Launch</span>
+              <span class="dt-pipeline__note">Deliver results</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="dt-section">
+        <div class="dt-grid" aria-hidden="true"></div>
+        <div class="shell">
+          <div class="dt-section__head dt-reveal">
+            <div>
+              <span class="dt-kicker">// services</span>
+              <h2>Scoped for <em>impact</em>, not overhead.</h2>
+            </div>
+            <p>
+              Whether you're launching something new or optimizing what you
+              already run, we scope the right solution for your budget and
+              timeline — no over-engineering, no unnecessary complexity.
+            </p>
+          </div>
+
+          <div class="dt-cards dt-reveal">
+            <a class="dt-card" href="../../services#web-development">
+              <span class="dt-card__tab">// 01 — WEB</span>
+              <div class="dt-hatch" aria-hidden="true"></div>
+              <svg class="dt-card__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-web" /></svg>
+              <h3>Websites &amp; web applications</h3>
+              <p>
+                Clean code, fast load times, and a structure built to scale —
+                from a polished marketing site to a full custom web
+                application.
+              </p>
+              <span class="dt-card__more">Explore web development <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+            <a class="dt-card" href="../../services#process-automation">
+              <span class="dt-card__tab">// 02 — AUTOMATION</span>
+              <div class="dt-hatch" aria-hidden="true"></div>
+              <svg class="dt-card__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-automation" /></svg>
+              <h3>Automation &amp; internal tools</h3>
+              <p>
+                We map your workflows and build targeted solutions. Clients
+                have seen time savings exceeding 90% on previously manual
+                processes.
+              </p>
+              <span class="dt-card__more">Explore automation <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+            <a class="dt-card" href="../../services#consulting">
+              <span class="dt-card__tab">// 03 — CONSULTING</span>
+              <div class="dt-hatch" aria-hidden="true"></div>
+              <svg class="dt-card__icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#ico-consulting" /></svg>
+              <h3>Strategy &amp; second opinions</h3>
+              <p>
+                An outside perspective on your digital presence — scoped by
+                the hour or project, with no long-term retainer required.
+              </p>
+              <span class="dt-card__more">Explore consulting <span class="arrow" aria-hidden="true">→</span></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section id="work" class="dt-section dt-section--alt">
+        <div class="dt-grid" aria-hidden="true"></div>
+        <div class="shell">
+          <div class="dt-section__head dt-reveal">
+            <div>
+              <span class="dt-kicker">// portfolio</span>
+              <h2>Projects <em>we've built.</em></h2>
+            </div>
+            <p>
+              A selection of solutions we've crafted for businesses,
+              organizations, and mission-driven ventures.
+            </p>
+          </div>
+
+          <div class="dt-work-grid dt-reveal">
+            <a class="dt-work-card" href="../../portfolio#waymaker">
+              <div class="dt-work-card__img">
+                <span class="dt-work-card__tag">Web + Automation</span>
+                <img
+                  src="../../assets/WayMakerInk/waymaker_ink_home.jpg"
+                  alt="WayMaker Ink — tattoo studio home page"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="dt-work-card__body">
+                <h3>WayMaker Ink</h3>
+                <p>
+                  Custom website design and development for a modern tattoo
+                  studio brand experience, including automation and booking
+                  request pipeline integrations.
+                </p>
+                <span class="dt-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
+              </div>
+            </a>
+            <a class="dt-work-card" href="../../portfolio#candeo">
+              <div class="dt-work-card__img">
+                <span class="dt-work-card__tag">Web Development</span>
+                <img
+                  src="../../assets/Candeo_Our_Team_Page.png"
+                  alt="Candeo Counseling Center website redesign"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="dt-work-card__body">
+                <h3>Candeo Counseling Center</h3>
+                <p>
+                  Comprehensive website redesign improving user engagement
+                  and compliance.
+                </p>
+                <span class="dt-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
+              </div>
+            </a>
+            <a class="dt-work-card" href="../../portfolio#gov">
+              <div class="dt-work-card__img">
+                <span class="dt-work-card__tag">Process Automation</span>
+                <img
+                  src="../../assets/gov_agency_app.png"
+                  alt="Government agency data processing automation tool"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </div>
+              <div class="dt-work-card__body">
+                <h3>Government Data Processing</h3>
+                <p>
+                  Automation tool built for Government Disaster Recovery
+                  teams, saving hundreds of hours of manual data entry and
+                  processing time.
+                </p>
+                <span class="dt-work-card__more">View project <span class="arrow" aria-hidden="true">→</span></span>
+              </div>
+            </a>
+          </div>
+
+          <div class="dt-section__foot dt-reveal">
+            <a class="dt-btn dt-btn--ghost" href="../../portfolio">View full portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="dt-finale" id="contact">
+        <div class="dt-grid" aria-hidden="true"></div>
+        <div class="shell dt-finale__inner dt-reveal">
+          <h2>Ready to <em>start your project?</em></h2>
+          <p>
+            Tell us what you're working on — we'll be honest about whether
+            we're the right fit, and the first conversation is always free.
+          </p>
+          <div class="dt-cta-row">
+            <a href="../../contact" class="dt-btn dt-btn--primary">
+              Get in touch <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="../../about" class="dt-btn dt-btn--ghost">Learn more about us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dt-footer">
+      <div class="shell">
+        <div class="dt-footer__grid">
+          <div class="dt-footer__brand">
+            <img src="../../assets/fifth-stone-logo-reversed.png" alt="Fifth Stone Dev" />
+            <p>Web development, process automation &amp; AI consulting for businesses across Iowa.</p>
+          </div>
+          <div class="dt-footer__col">
+            <h4>Quick links</h4>
+            <ul>
+              <li><a href="#top">Home</a></li>
+              <li><a href="../../about">About</a></li>
+              <li><a href="../../services">Services</a></li>
+              <li><a href="../../portfolio">Portfolio</a></li>
+              <li><a href="../../contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="dt-footer__col">
+            <h4>Contact</h4>
+            <ul>
+              <li>Cedar Falls, Iowa</li>
+              <li><a href="tel:+16418497311">(641) 849-7311</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="dt-footer__bottom">
+          <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
+          <div class="dt-footer__legal">
+            <a href="../../privacy-policy">Privacy Policy</a>
+            <a href="../../terms-and-conditions">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const toggle = document.getElementById("dt-nav-toggle");
+      const links = document.getElementById("dt-nav-links");
+      if (toggle && links) {
+        toggle.addEventListener("click", () => {
+          const open = links.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", String(open));
+        });
+      }
+
+      // Scroll reveal
+      const revealEls = document.querySelectorAll(".dt-reveal");
+      if ("IntersectionObserver" in window && revealEls.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("is-visible"));
+      }
+    </script>
+  </body>
+</html>
