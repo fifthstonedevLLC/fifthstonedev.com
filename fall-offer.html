@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Fall Offer: A New Website in Four Weeks, $50/Month | Fifth Stone Dev</title>
+    <title>Fall Offer: A Custom Website for $50/Month | Fifth Stone Dev</title>
 
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Fall 2026 offer from Fifth Stone Dev in Cedar Falls, Iowa: a custom website of up to five pages, built in four weeks, with hosting, security and updates for $50 a month after a $1,000 startup fee."
+      content="Fall 2026 offer, ends December 20, from Fifth Stone Dev in Cedar Falls, Iowa: a custom website of up to five pages, built for your business, with hosting, security and updates for $50 a month after a $1,000 startup fee."
     />
     <meta name="author" content="Fifth Stone Dev LLC" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -25,7 +25,7 @@
     <link rel="shortcut icon" href="assets/fifth_stone_dev_favicon.ico" />
 
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="A better website, in four weeks | Fifth Stone Dev Fall Offer" />
+    <meta property="og:title" content="A better website, built for your business | Fifth Stone Dev Fall Offer" />
     <meta
       property="og:description"
       content="Up to five custom pages with hosting, security and updates included. $50 a month after a $1,000 startup fee."
@@ -39,7 +39,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="A better website, in four weeks | Fifth Stone Dev Fall Offer" />
+    <meta name="twitter:title" content="A better website, built for your business | Fifth Stone Dev Fall Offer" />
     <meta
       name="twitter:description"
       content="Up to five custom pages with hosting, security and updates included. $50 a month after a $1,000 startup fee."
@@ -62,9 +62,10 @@
         "mainEntity": {
           "@type": "Offer",
           "name": "Website Build & Care — Fall 2026",
-          "description": "A custom website of up to five pages, built in four weeks, with hosting, SSL, security, backups and updates included.",
+          "description": "A custom website of up to five pages, built for your business, with hosting, SSL, security, backups and updates included.",
           "seller": { "@id": "https://www.fifthstonedev.com/#business" },
           "areaServed": "US",
+          "validThrough": "2026-12-20",
           "priceSpecification": [
             {
               "@type": "UnitPriceSpecification",
@@ -176,6 +177,14 @@
         margin: 0.12em 0.06em 0 0;
         color: #d2ad80;
       }
+      .fo-ends span {
+        display: block;
+        margin-top: 0.2rem;
+        font-family: "Archivo", sans-serif;
+        font-style: normal;
+        font-size: 0.86rem;
+        color: rgba(243, 238, 230, 0.72);
+      }
       .fo-per {
         font-family: var(--fsp-serif);
         font-style: italic;
@@ -189,6 +198,14 @@
         font-size: 0.98rem;
         line-height: 1.6;
         color: rgba(243, 238, 230, 0.82);
+      }
+
+      .fo-ends {
+        margin-top: 1rem;
+        font-family: var(--fsp-serif);
+        font-style: italic;
+        font-size: 1.15rem;
+        color: #d2ad80;
       }
 
       .fo-formcard h2 {
@@ -344,10 +361,10 @@
       <section class="fo-hero">
         <div class="fsp-shell fo-hero__grid">
           <div>
-            <p class="fo-season">Fall offer, 2026</p>
-            <h1>A better website, <em>in four weeks.</em></h1>
+            <p class="fo-season">Fall offer, ends December 20</p>
+            <h1>A better website, <em>built for your business.</em></h1>
             <p class="fo-lead">
-              Up to five custom pages, designed for your business.
+              Up to five custom pages, with your brand front and center.
               <strong>Hosting, security and updates included.</strong>
             </p>
 
@@ -355,6 +372,7 @@
               <div class="fo-price" aria-label="$50"><sup aria-hidden="true">$</sup><span aria-hidden="true">50</span></div>
               <p class="fo-per">a month</p>
               <p class="fo-terms">After a $1,000 startup fee. Twelve-month term, then month to month.</p>
+              <p class="fo-ends">Offer ends the last day of fall.<span>December 20</span></p>
             </div>
           </div>
 
@@ -420,7 +438,7 @@
                 <p>We talk through your goals, your pages and how customers find you.</p>
               </li>
               <li>
-                <h3>Launch in four weeks</h3>
+                <h3>Launch your new site</h3>
                 <p>$500 to begin and $500 at launch. Two rounds of revisions along the way.</p>
               </li>
             </ol>
@@ -510,7 +528,7 @@
               company: data.company || "N/A",
               project_type: "Fall Offer: Website Build & Care ($1,000 startup + $50/mo)",
               message: (data.message || "N/A") + "\n\nSource: " + source,
-              timeline: "Four-week build",
+              timeline: "N/A",
               budget: "$1,000 startup fee + $50/month",
               tools: "N/A",
               website: data.website || "N/A",
