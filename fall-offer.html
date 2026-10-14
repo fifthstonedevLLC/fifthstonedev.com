@@ -136,7 +136,7 @@
       .fo-hero h1 {
         font-family: var(--fsp-serif);
         font-weight: 400;
-        font-size: clamp(2.9rem, 6.4vw, 5.6rem);
+        font-size: clamp(2.5rem, 5.1vw, 5.1rem);
         line-height: 0.96;
         letter-spacing: -0.025em;
         color: var(--fsp-ink);
@@ -144,6 +144,7 @@
         text-wrap: balance;
       }
       .fo-hero h1 em { font-style: italic; color: var(--fsp-bronze); }
+      .fo-h1-line { display: block; white-space: nowrap; }
       .fo-lead {
         margin-top: 1.6rem;
         font-size: clamp(1.05rem, 1.4vw, 1.22rem);
@@ -284,10 +285,18 @@
 
       @media (max-width: 920px) {
         .fo-hero__grid, .fo-details__grid { grid-template-columns: 1fr; }
+        .fo-hero h1 { font-size: clamp(2.5rem, 9vw, 4.4rem); }
       }
       @media (max-width: 560px) {
         .fo-hero { padding-top: 2rem; }
         .fo-lead { margin-top: 1.1rem; }
+        /* Phones: flatten the stone's top curve so the $50 sits inside it, not against the edge */
+        .fo-stone {
+          padding: 3.6rem 1.6rem 1.8rem;
+          border-radius: 50% 44% 14px 14px / 16% 14% 14px 14px;
+        }
+        .fo-price { font-size: clamp(4.6rem, 22vw, 6rem); }
+        .fo-price sup { margin: 0.16em 0.04em 0 0; }
       }
     </style>
 
@@ -362,7 +371,7 @@
         <div class="fsp-shell fo-hero__grid">
           <div>
             <p class="fo-season">Fall offer, ends December 20</p>
-            <h1>A better website, <em>built for your business.</em></h1>
+            <h1><span class="fo-h1-line">A better website,</span> <em>built for your business.</em></h1>
             <p class="fo-lead">
               Up to five custom pages, with your brand front and center.
               <strong>Hosting, security and updates included.</strong>
