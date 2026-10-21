@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free PHP Vulnerability Website Review | Fifth Stone Dev</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="CISA has issued an alert about critical PHP vulnerabilities affecting millions of websites, including many WordPress sites. Fifth Stone Dev in Cedar Falls, Iowa will review your website at no cost and with no obligation."
+    />
+    <meta name="author" content="Fifth Stone Dev LLC" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Local SEO Geo Tags -->
+    <meta name="geo.region" content="US-IA" />
+    <meta name="geo.placename" content="Cedar Falls, Iowa" />
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/fifth_stone_dev_favicon.ico" />
+    <link rel="shortcut icon" href="assets/fifth_stone_dev_favicon.ico" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Is your website affected by the new PHP vulnerabilities? | Free review from Fifth Stone Dev" />
+    <meta
+      property="og:description"
+      content="CISA has flagged critical PHP vulnerabilities, including on many WordPress sites. Request a review of your website at no cost and with no obligation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.fifthstonedev.com/php-review" />
+    <meta property="og:site_name" content="Fifth Stone Dev" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://www.fifthstonedev.com/assets/logo-with-overflow.png" />
+    <meta property="og:image:alt" content="Fifth Stone Dev - Free PHP Website Review" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Is your website affected by the new PHP vulnerabilities? | Fifth Stone Dev" />
+    <meta
+      name="twitter:description"
+      content="CISA has flagged critical PHP vulnerabilities, including on many WordPress sites. Request a review of your website at no cost and with no obligation."
+    />
+    <meta name="twitter:image" content="https://www.fifthstonedev.com/assets/logo-with-overflow.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.fifthstonedev.com/php-review" />
+
+    <!-- Structured Data (JSON-LD) - Offer -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "@id": "https://www.fifthstonedev.com/php-review#webpage",
+        "url": "https://www.fifthstonedev.com/php-review",
+        "name": "Free PHP Vulnerability Website Review",
+        "isPartOf": { "@id": "https://www.fifthstonedev.com/#website" },
+        "about": { "@id": "https://www.fifthstonedev.com/#business" },
+        "mainEntity": {
+          "@type": "Offer",
+          "name": "PHP Vulnerability Website Review",
+          "description": "A no-cost, no-obligation review of whether a small business website may be affected by the critical PHP vulnerabilities in the October 2026 CISA alert.",
+          "seller": { "@id": "https://www.fifthstonedev.com/#business" },
+          "areaServed": "US",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <!-- Structured Data (JSON-LD) - BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.fifthstonedev.com/" },
+          { "@type": "ListItem", "position": 2, "name": "PHP Website Review", "item": "https://www.fifthstonedev.com/php-review" }
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+    <link rel="preload" href="styles.css?v=20260925d" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="styles.css?v=20260925d" /></noscript>
+    <link rel="stylesheet" href="fsd-refresh.css?v=20260806a" />
+    <link rel="stylesheet" href="fsd-pages.css?v=20260909b" />
+
+    <!-- Campaign page layer — only this page uses it, so it lives inline -->
+    <style>
+      .pr-hero { padding: clamp(2.6rem, 6vw, 5.5rem) 0 clamp(3rem, 6vw, 5rem); }
+      .pr-hero__grid {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: clamp(2.4rem, 6vw, 6rem);
+        align-items: start;
+      }
+      .pr-alert {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        font-size: 0.74rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--fsp-bronze);
+      }
+      .pr-alert svg { width: 1.05rem; height: 1.05rem; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+      .pr-hero h1 {
+        font-family: var(--fsp-serif);
+        font-weight: 400;
+        font-size: clamp(2.5rem, 5.1vw, 5.1rem);
+        line-height: 0.96;
+        letter-spacing: -0.025em;
+        color: var(--fsp-ink);
+        margin: 0.9rem 0 0;
+        text-wrap: balance;
+      }
+      .pr-hero h1 em { font-style: italic; color: var(--fsp-bronze); }
+      .pr-lead {
+        margin-top: 1.6rem;
+        font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+        line-height: 1.6;
+        color: var(--fsp-ink-soft);
+        max-width: 42ch;
+      }
+      .pr-lead strong { color: var(--fsp-ink); font-weight: 600; }
+      /* Phones only: the form stacks below the notice, so give a shortcut to it */
+      .pr-jump { display: none; }
+      #request { scroll-margin-top: 7.5rem; }
+
+      /* The notice "stone" — same pebble silhouette as the logo and the fall offer */
+      .pr-stone {
+        margin-top: clamp(2rem, 4vw, 3rem);
+        max-width: 31rem;
+        padding: 3.8rem clamp(1.8rem, 4vw, 2.6rem) clamp(1.8rem, 3.5vw, 2.3rem);
+        color: #f3eee6;
+        background: radial-gradient(120% 90% at 28% 12%, #2a3946 0%, #1b2732 55%, #121c25 100%);
+        /* Fixed-height top curve: a % of height would grow with the list and clip the heading */
+        border-radius: 58% 46% 14px 14px / 6rem 5.2rem 14px 14px;
+      }
+      .pr-stone h2 {
+        font-family: var(--fsp-serif);
+        font-weight: 400;
+        font-size: clamp(1.6rem, 2.6vw, 2rem);
+        line-height: 1.1;
+        color: #fff;
+      }
+      .pr-stone h2 em { font-style: italic; color: #d2ad80; }
+      .pr-facts { list-style: none; margin-top: 1.1rem; }
+      .pr-facts li {
+        position: relative;
+        padding: 0.7rem 0 0.7rem 1.5rem;
+        border-top: 1px solid rgba(210, 173, 128, 0.28);
+        font-size: 0.98rem;
+        line-height: 1.55;
+        color: rgba(243, 238, 230, 0.86);
+      }
+      .pr-facts li::before {
+        content: "";
+        position: absolute;
+        left: 0.1rem;
+        top: 1.42rem;
+        width: 0.65rem;
+        height: 1px;
+        background: #d2ad80;
+      }
+      .pr-source {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        margin-top: 1.2rem;
+        padding: 0.35rem 0;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #d2ad80;
+        text-underline-offset: 0.2em;
+      }
+      .pr-source:hover, .pr-source:focus-visible { color: #fff; }
+      .pr-source:focus-visible { outline: 2px solid #d2ad80; outline-offset: 3px; border-radius: 2px; }
+      .pr-source svg { width: 0.95rem; height: 0.95rem; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+      .pr-formcard h2 {
+        font-family: var(--fsp-serif);
+        font-weight: 400;
+        font-size: clamp(1.9rem, 3vw, 2.4rem);
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        color: var(--fsp-ink);
+      }
+      .pr-formcard h2 em { font-style: italic; color: var(--fsp-bronze); }
+      .pr-optional { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--fsp-ink-mute); }
+      .pr-hint { margin-top: 0.4rem; font-size: 0.86rem; line-height: 1.45; color: var(--fsp-ink-mute); }
+
+      /* Inline validation — message below the field, tied in with aria-describedby */
+      .pr-error { display: none; margin-top: 0.4rem; font-size: 0.88rem; font-weight: 500; color: #a3352b; }
+      .pr-error::before { content: "! "; font-weight: 700; }
+      .form-group.is-invalid .pr-error { display: block; }
+      .fsp-form .form-group.is-invalid input,
+      .fsp-form .form-group.is-invalid select { border-color: #a3352b; }
+
+      /* Authorization checkbox — undo the full-width text-input styling */
+      .fsp-form .pr-check { display: grid; grid-template-columns: auto 1fr; gap: 0.75rem; align-items: start; cursor: pointer; }
+      .fsp-form .pr-check input {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin: 0.1rem 0 0;
+        padding: 0;
+        accent-color: var(--fsp-bronze);
+        cursor: pointer;
+      }
+      .fsp-form .pr-check span {
+        font-size: 0.95rem;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+        line-height: 1.5;
+        color: var(--fsp-ink-soft);
+      }
+      .pr-check-group { padding-top: 0.2rem; }
+
+      .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+      /* Honeypot — off-screen for people, still in the DOM for bots */
+      .pr-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+      .pr-fineprint { margin-top: 1rem; font-size: 0.86rem; line-height: 1.5; color: var(--fsp-ink-mute); text-align: center; }
+      .pr-fineprint a { color: var(--fsp-ink-soft); }
+      .pr-thanks { text-align: center; padding: 1.5rem 0.5rem; }
+      .pr-thanks:focus { outline: none; }
+      .pr-thanks h2 { margin-bottom: 0.8rem; }
+      .pr-thanks p { color: var(--fsp-ink-soft); line-height: 1.6; max-width: 36ch; margin: 0 auto; }
+      .pr-thanks a { color: var(--fsp-ink); font-weight: 600; }
+
+      /* Details: how it works + what you get */
+      .pr-details { background: var(--fsp-paper-2); padding: clamp(3.5rem, 7vw, 6rem) 0; }
+      /* Single column now; cap the width so the steps don't stretch across the page */
+      .pr-details__grid > div { max-width: 46rem; }
+      .pr-details h2 {
+        font-family: var(--fsp-serif);
+        font-weight: 400;
+        font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        color: var(--fsp-ink);
+        margin-bottom: 1.6rem;
+      }
+      .pr-details h2 em { font-style: italic; color: var(--fsp-bronze); }
+      .pr-steps { list-style: none; counter-reset: step; border-top: 1px solid var(--fsp-hairline); }
+      .pr-steps li {
+        counter-increment: step;
+        display: grid;
+        grid-template-columns: 2.6rem 1fr;
+        gap: 0.4rem 1rem;
+        padding: 1.3rem 0;
+        border-bottom: 1px solid var(--fsp-hairline);
+      }
+      .pr-steps li::before {
+        content: counter(step);
+        grid-row: span 2;
+        font-family: var(--fsp-serif);
+        font-style: italic;
+        font-size: 1.9rem;
+        line-height: 1;
+        color: var(--fsp-bronze);
+      }
+      .pr-steps h3 { font-size: 1.08rem; font-weight: 600; color: var(--fsp-ink); }
+      .pr-steps p { font-size: 1rem; line-height: 1.6; color: var(--fsp-ink-soft); }
+
+      @media (max-width: 920px) {
+        .pr-hero__grid { grid-template-columns: 1fr; }
+        .pr-hero h1 { font-size: clamp(2.5rem, 9vw, 4.4rem); }
+        .pr-jump { display: inline-flex; margin-top: 1.4rem; }
+      }
+      @media (max-width: 560px) {
+        .pr-hero { padding-top: 2rem; }
+        .pr-lead { margin-top: 1.1rem; }
+        /* Phones: flatten the stone's top curve so the heading sits inside it */
+        .pr-stone {
+          padding: 3rem 1.5rem 1.7rem;
+          border-radius: 50% 44% 14px 14px / 4rem 3.4rem 14px 14px;
+        }
+      }
+    </style>
+
+    <!-- EmailJS SDK -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  </head>
+  <body class="fsp">
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" class="cookie-banner hidden" role="dialog" aria-labelledby="cookie-title" aria-describedby="cookie-description" aria-modal="true" style="display:none;position:fixed;bottom:0;left:0;right:0;top:auto;z-index:10000;">
+      <div class="cookie-content">
+        <div class="cookie-text">
+          <h3 id="cookie-title">🍪 We value your privacy</h3>
+          <p id="cookie-description">
+            We use cookies to enhance your browsing experience and analyze site traffic.
+            By clicking "Accept All", you consent to our use of cookies.
+            <a href="privacy-policy" class="cookie-privacy-link" style="color: white;">View our Privacy Policy</a>.
+          </p>
+        </div>
+        <div class="cookie-buttons">
+          <button id="cookie-accept" class="cookie-btn cookie-accept" aria-label="Accept All cookies">Accept All</button>
+          <button id="cookie-reject" class="cookie-btn cookie-reject" aria-label="Reject All non-essential cookies">Reject All</button>
+          <button id="cookie-settings" class="cookie-btn cookie-settings" aria-label="Customize cookie settings">Customize</button>
+        </div>
+      </div>
+      <div id="cookie-settings-panel" class="cookie-settings-panel" hidden>
+        <h4>Cookie Preferences</h4>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="cookie-essential" checked disabled />
+            <span><strong>Essential Cookies</strong> - Required for the website to function.</span>
+          </label>
+        </div>
+        <div class="cookie-option">
+          <label>
+            <input type="checkbox" id="cookie-analytics" />
+            <span><strong>Analytics Cookies</strong> - Help us understand how visitors interact with our website.</span>
+          </label>
+        </div>
+        <div class="cookie-settings-buttons">
+          <button id="cookie-save" class="cookie-btn cookie-accept">Save Preferences</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="masthead" id="masthead">
+      <div class="bar">
+        <a class="logo" href="/" aria-label="Fifth Stone Development — return to homepage">
+          <img
+            src="assets/horizontal_logo_webp.webp"
+            alt="Fifth Stone Development"
+            loading="eager"
+            width="125"
+            height="125"
+          />
+        </a>
+        <div class="nav" role="navigation" aria-label="Primary navigation">
+          <a href="about" aria-label="About Fifth Stone Dev">About</a>
+          <a href="services" aria-label="Services">Services</a>
+          <a href="portfolio" aria-label="Portfolio — view our work">Portfolio</a>
+          <a href="contact" class="nav-cta" aria-label="Start a project">Start a project</a>
+        </div>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Alert summary + review request form -->
+      <section class="pr-hero">
+        <div class="fsp-shell pr-hero__grid">
+          <div>
+            <p class="pr-alert">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 16H3z" /><path d="M12 10v4" /><path d="M12 17h.01" /></svg>
+              Security alert &middot; October 21, 2026
+            </p>
+            <h1>Is your website <em>affected?</em></h1>
+            <p class="pr-lead">
+              CISA has issued an alert about critical vulnerabilities in PHP, the technology behind millions of websites,
+              including many WordPress sites. <strong>We'll review your website at no cost and with no obligation.</strong>
+            </p>
+            <a class="fsd-btn fsd-btn--primary pr-jump" href="#request">Request my free review</a>
+
+            <div class="pr-stone">
+              <h2>What the alert <em>means for you.</em></h2>
+              <ul class="pr-facts">
+                <li>PHP powers WordPress and many other small business websites.</li>
+                <li>CISA says the vulnerabilities are critical and require immediate patching.</li>
+                <li>If you manage your own site, or aren't sure who does, it's worth a check.</li>
+              </ul>
+              <a
+                class="pr-source"
+                href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching"
+                target="_blank"
+                rel="noopener"
+              >
+                Read the official CISA alert
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6" /><path d="M20 4l-9 9" /><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" /></svg>
+                <span class="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="fsp-formcard pr-formcard" id="request">
+            <div id="pr-form-wrap">
+              <div class="fsp-form__head">
+                <h2>Request your <em>free review.</em></h2>
+                <p>Tell us where your website lives. We'll take a look and follow up within one business day with what we found, in plain English.</p>
+              </div>
+              <form id="phpReviewForm" class="fsp-form" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pr-name">Name *</label>
+                    <input type="text" id="pr-name" name="name" autocomplete="name" required aria-describedby="pr-name-error" />
+                    <p class="pr-error" id="pr-name-error">Enter your name.</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="pr-business">Business <span class="pr-optional">(optional)</span></label>
+                    <input type="text" id="pr-business" name="company" autocomplete="organization" />
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pr-email">Email *</label>
+                    <input type="email" id="pr-email" name="email" autocomplete="email" inputmode="email" required aria-describedby="pr-email-error" />
+                    <p class="pr-error" id="pr-email-error">Enter an email address, like name@example.com.</p>
+                  </div>
+                  <div class="form-group">
+                    <label for="pr-phone">Phone <span class="pr-optional">(optional)</span></label>
+                    <input type="tel" id="pr-phone" name="phone" autocomplete="tel" inputmode="tel" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pr-website">Website address *</label>
+                  <input
+                    type="text"
+                    id="pr-website"
+                    name="website"
+                    autocomplete="url"
+                    inputmode="url"
+                    placeholder="e.g. mybusiness.com"
+                    required
+                    pattern="^\s*(https?://)?[^\s/.]+(\.[^\s/.]+)+.*$"
+                    aria-describedby="pr-website-error"
+                  />
+                  <p class="pr-error" id="pr-website-error">Enter your website's address, like mybusiness.com.</p>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="pr-platform">Built with</label>
+                    <select id="pr-platform" name="platform">
+                      <option value="Not sure">Not sure</option>
+                      <option value="WordPress">WordPress</option>
+                      <option value="Other PHP site (Joomla, Drupal, custom)">Other PHP (Joomla, Drupal, custom)</option>
+                      <option value="Website builder (Wix, Squarespace, Shopify)">Wix, Squarespace or Shopify</option>
+                      <option value="Something else">Something else</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="pr-host">Web host <span class="pr-optional">(if known)</span></label>
+                    <input type="text" id="pr-host" name="host" placeholder="e.g. GoDaddy, Bluehost" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="pr-message">Anything we should know? <span class="pr-optional">(optional)</span></label>
+                  <textarea id="pr-message" name="message" rows="3" placeholder="Who built it, when it was last updated, anything that's been acting up…"></textarea>
+                </div>
+                <div class="form-group pr-check-group">
+                  <label class="pr-check" for="pr-authorized">
+                    <input type="checkbox" id="pr-authorized" name="authorized" value="Yes" required aria-describedby="pr-authorized-error" />
+                    <span>I own this website or I'm authorized to request a review of it. *</span>
+                  </label>
+                  <p class="pr-error" id="pr-authorized-error">Please confirm you own or manage this website.</p>
+                </div>
+                <div class="pr-hp" aria-hidden="true">
+                  <label for="pr-company-url">Leave this field empty</label>
+                  <input type="text" id="pr-company-url" name="company_url" tabindex="-1" autocomplete="off" />
+                </div>
+                <button type="submit" class="fsd-btn fsd-btn--primary btn-submit">Request my free review</button>
+                <p class="pr-fineprint">No cost. No obligation. No passwords needed to get started. Prefer to talk? Call <a href="tel:+16418497311">641-849-7311</a>.</p>
+              </form>
+            </div>
+            <div class="pr-thanks" id="pr-thanks" hidden tabindex="-1">
+              <h2>Thank you, <em>we've got it.</em></h2>
+              <p>We'll take a look at your website and follow up within one business day. If it's urgent, call <a href="tel:+16418497311">641-849-7311</a>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works + what you get -->
+      <section class="pr-details">
+        <div class="fsp-shell pr-details__grid">
+          <div>
+            <h2>How the review <em>works.</em></h2>
+            <ol class="pr-steps">
+              <li>
+                <h3>Send your website address</h3>
+                <p>That's all we need to start. No logins, no passwords.</p>
+              </li>
+              <li>
+                <h3>We take a look</h3>
+                <p>We check what your site runs on and whether it appears to be exposed. If a closer look at your site files would help, we'll ask first.</p>
+              </li>
+              <li>
+                <h3>You hear back in plain English</h3>
+                <p>What we found and what to do next. Fix it yourself, ask your host, or have us help. Your call.</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-logo">Fifth Stone Dev</div>
+            <p class="footer-tagline">Built with purpose.</p>
+          </div>
+          <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="about">About</a></li>
+              <li><a href="services">Services</a></li>
+              <li><a href="portfolio">Portfolio</a></li>
+              <li><a href="contact">Contact</a></li>
+              <li><a href="contact#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>Cedar Falls, Iowa</p>
+            <p><a href="tel:+16418497311">(641) 849-7311</a></p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Fifth Stone Dev LLC. All rights reserved.</p>
+          <p class="footer-legal">
+            <a href="privacy-policy">Privacy Policy</a>
+            <span class="footer-legal-sep" aria-hidden="true">|</span>
+            <a href="terms-and-conditions">Terms &amp; Conditions</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="script.js?v=20260607"></script>
+    <script>
+      // PHP review request form — same EmailJS service/template as the contact page
+      (function () {
+        const form = document.getElementById("phpReviewForm");
+        const wrap = document.getElementById("pr-form-wrap");
+        const thanks = document.getElementById("pr-thanks");
+        const params = new URLSearchParams(window.location.search);
+        const source = params.get("utm_source") ? params.get("utm_source") + (params.get("utm_medium") ? " / " + params.get("utm_medium") : "") : "Website";
+        const required = Array.from(form.querySelectorAll("[required]"));
+
+        function checkField(field) {
+          const valid = field.checkValidity();
+          field.closest(".form-group").classList.toggle("is-invalid", !valid);
+          field.setAttribute("aria-invalid", String(!valid));
+          return valid;
+        }
+
+        // Validate on blur, then live once a field has shown an error
+        required.forEach(function (field) {
+          field.addEventListener(field.type === "checkbox" ? "change" : "blur", function () { checkField(field); });
+          field.addEventListener("input", function () {
+            if (field.closest(".form-group").classList.contains("is-invalid")) checkField(field);
+          });
+        });
+
+        form.addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const invalid = required.filter(function (field) { return !checkField(field); });
+          if (invalid.length) {
+            invalid[0].focus();
+            return;
+          }
+
+          const data = Object.fromEntries(new FormData(form).entries());
+
+          // Honeypot filled in: act like it worked, send nothing
+          if (data.company_url) {
+            wrap.hidden = true;
+            thanks.hidden = false;
+            return;
+          }
+
+          const submitButton = form.querySelector(".btn-submit");
+          const originalButtonText = submitButton.textContent;
+          submitButton.disabled = true;
+          submitButton.textContent = "Sending...";
+
+          try {
+            const emailParams = {
+              form_type: "PHP Vulnerability Review Request",
+              from_name: data.name || "N/A",
+              from_email: data.email || "N/A",
+              phone: data.phone || "N/A",
+              company: data.company || "N/A",
+              project_type: "Free PHP vulnerability website review (CISA alert, Oct 21 2026)",
+              message:
+                (data.message || "N/A") +
+                "\n\nAuthorized to request review: " + (data.authorized ? "Yes" : "No") +
+                "\nSource: " + source,
+              timeline: "N/A",
+              budget: "N/A",
+              tools: "Platform: " + (data.platform || "Not sure") + " | Host: " + (data.host || "Unknown"),
+              website: data.website.trim(),
+              goals: "Check exposure to the PHP vulnerabilities in the CISA alert",
+              timestamp: new Date().toLocaleString(),
+              to_email: "fifthstonedev@outlook.com",
+            };
+
+            await emailjs.send("service_n965k06", "template_ekk9kgu", emailParams, "euyy_dhHmVC2Mgkv5");
+
+            wrap.hidden = true;
+            thanks.hidden = false;
+            thanks.focus();
+          } catch (error) {
+            console.error("Form submission error:", error);
+            showNotification(
+              "Something went wrong sending your request. Please call 641-849-7311 or email fifthstonedev@outlook.com.",
+              "error"
+            );
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
